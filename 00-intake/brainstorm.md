@@ -97,29 +97,42 @@ Three variations are explored below. Each holds the *problem* constant (counselo
 
 ---
 
-## Converge
+## Converge (revised 2026-05-13 after founder pushback on V3)
 
-The variations are not mutually exclusive. The most defensible synthesis I see:
+**Founder objection to pay-per-report:** A counselor evaluating whether to put this tool in front of paying families is making a *considered B2B purchase*, not an impulse PDF buy. A single ₹500 transaction is too thin a slice to evaluate workflow integration, data trust, or family reaction. **Objection accepted as valid.** Pay-per-report is downgraded from launch mode → optional self-serve overflow lane.
+
+The most defensible synthesis:
 
 | Element | Source | Why |
 |---|---|---|
-| **Product surface** = counselor-facing web app + PDF report | V1 | Aligned with the actual pain. |
-| **GTM entry mode** = report-as-product (₹500–2,000, no login, instant) | V3 | Fastest possible validation of willingness-to-pay and usage frequency. Removes 90% of objections to a first try. |
-| **Revenue destination** = subscription tiers for any agency exceeding N reports/month | V1 | Captures the value of repeat usage; gives retention surface. |
-| **V2+ optionality** = white-label after 12+ months, only with one or two enterprise design partners | V2 | Plausible expansion; designed for, not built for, at launch. |
+| **Product surface** = counselor-facing web app + PDF report + dashboard with saved student profiles / templates / report history | V1 | Aligned with the actual pain; gives retention surface. |
+| **Launch mode** = **free 30-day structured design-partner pilot** with 3–5 mid-size Indian agencies | New synthesis | Honors the "excited but not serious until functional" signal; gives workflow integration evidence, not transactional evidence; converts soft validation into signed pilot agreements. |
+| **Revenue mode** = subscription tiers metered by report generations, activated at pilot end | V1 | Captures the value of repeat usage; pricing point informed by real pilot-end conversion data, not guesses. |
+| **Self-serve overflow** = pay-per-report (₹500–2,000) for solo consultants who don't fit the pilot model | V3 (residual) | Optional secondary path, *only if* solo-consultant demand surfaces during Phase 3 customer-voice work. Not the primary motion. |
+| **V2+ optionality** = white-label after 12+ months, only with one or two enterprise design partners | V2 | Plausible year-2 expansion; designed for, not built for, at launch. Keep V1 architecture clean of agency-name hardcoding so the door stays open. |
 
-**The single biggest decision in front of you is not which variation to pick — it is whether the launch surface is "credit card → PDF" or "demo → pilot → contract → invoice."** The former probably gets you to revenue 90 days faster; the latter probably gets you to a single ₹50k MRR ceiling 6 months faster. Given a 2-SDE side-project team with no sales experience, **the report-as-product entry is materially more tractable.**
+### 30-day pilot structure (not 60–90, per founder decision)
 
-The "counselor's package" section is preserved in all three variations — it is the design choice that converts the disintermediation problem into a counselor-asset. Hold this constant.
+| Week | Milestone |
+|---|---|
+| 1 | Onboard counselor + first 2 students. First PDFs generated. Founders sit in on at least one real student-family meeting. |
+| 2 | Counselor self-serves; founders observe usage. **30-min weekly interview.** |
+| 3 | Counselor uses tool across ≥ 5 students. Tool is actually used in real client meetings. |
+| 4 | Conversion conversation: would you pay ₹X/month for this? At what tier? What would have to change? |
+
+**What 30 days validates:** process value (time saved), data trust (no embarrassing errors in front of families), workflow fit, willingness to pay going forward, family reaction to the PDF.
+
+**What 30 days does NOT validate** (do not overclaim): outcome value (did students get better admissions / save money — that takes 3–8 months for Germany/Australia visa+admit cycles), renewal/churn behavior, full-agency rollout dynamics across multiple counselors.
+
+The "counselor's package" section in the PDF is preserved in this synthesis — it is the design choice that converts the disintermediation problem into a counselor-asset. Hold this constant.
 
 ---
 
-## Questions for the Founder (round-trip these before Phase 3)
+## Resolved (founder confirmed 2026-05-13)
 
-1. **Entry mode** — does report-as-product as a *launch surface* (Variation 3's mechanic, evolving into Variation 1's SaaS) feel right, or does it feel like it cheapens the product? Counselor-side perception matters here.
-2. **Pricing experiment** — willing to launch with three different per-report prices to three different counselor cohorts (₹500, ₹1,000, ₹2,000) and watch what converts? This is real validation data, not opinion.
-3. **White-label optionality** — do you want me to factor white-label into Phase 4 strategy as a year-2 milestone, or ignore it for now?
-4. **Anything missing?** — is there a fourth variation that excited you while reading these three?
+1. **Entry mode** — design-partner pilot, not pay-per-report. Pay-per-report retained only as overflow lane.
+2. **Pilot duration** — 30 days (founder's call). Tradeoff: outcome validation is forfeited; process validation is preserved.
+3. **White-label optionality** — keep as year-2 strategic option; do not architect against it. *(Founder still to confirm explicitly; default = keep optional.)*
 
 ---
 
