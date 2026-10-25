@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A local product planning workspace for the shift to helping college students directly.">
+  <meta name="color-scheme" content="light">
+  <title>Student Discovery · Product workspace</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23b64b32'/%3E%3Cpath d='M10 29V11h18M11 28L28 11M18 28h10V18' fill='none' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E">
+  <style>
+    :root { --paper:#f7f5ef; --surface:#fffefa; --ink:#292b28; --soft:#66695f; --rule:#dedfd5; --brand:#a94029; --tint:#f4e6df; --muted:#eeeee6; --body:"Avenir Next",Avenir,"Segoe UI",sans-serif; --display:"Iowan Old Style","Palatino Linotype",Palatino,serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:var(--paper); font:15px/1.65 var(--body); -webkit-font-smoothing:antialiased; }
+    button,input,textarea,select { font:inherit; }
+    a { color:inherit; text-underline-offset:4px; }
+    button,a,input,textarea,select { -webkit-tap-highlight-color:transparent; }
+    button { cursor:pointer; }
+    button:disabled { cursor:default; opacity:.55; }
+    :focus-visible { outline:3px solid var(--brand); outline-offset:4px; }
+    [hidden] { display:none!important; }
+    ::selection { background:#ecd2c4; }
+    .skip { position:fixed; top:-100px; left:16px; z-index:20; background:var(--ink); color:white; padding:10px 20px; }
+    .skip:focus { top:16px; }
+    .shell { display:grid; grid-template-columns:230px minmax(0,1fr); min-height:100vh; }
+    .sidebar { padding:32px 22px 24px; border-right:1px solid var(--rule); background:#eeeee7; position:sticky; top:0; height:100vh; display:flex; flex-direction:column; }
+    .wordmark { display:flex; gap:11px; align-items:center; margin-bottom:42px; font-size:16px; letter-spacing:-.6px; font-weight:650; }
+    .mark { width:32px; height:32px; color:var(--brand); flex:none; }
+    .tiny { font-size:10px; font-weight:650; text-transform:uppercase; letter-spacing:1.5px; }
+    .sidebar-label { margin:0 12px 12px; color:var(--soft); }
+    nav { display:grid; gap:5px; }
+    .nav-link { display:flex; gap:12px; align-items:center; padding:11px 12px; border-radius:5px; font-size:13px; text-decoration:none; color:#55594f; transition:background .18s,color .18s; }
+    .nav-link:hover { background:#e5e6dc; }
+    .nav-link[aria-current="page"] { background:var(--surface); color:var(--ink); box-shadow:0 1px 3px #292b2808; }
+    .nav-link svg { width:17px; height:17px; flex:none; stroke:currentColor; fill:none; stroke-width:1.6; }
+    .nav-no { margin-left:auto; font-size:10px; color:var(--soft); }
+    .sidebar-foot { margin-top:auto; padding:26px 12px 0; }
+    .version { display:inline-flex; align-items:center; gap:8px; font-size:11px; }
+    .dot { width:6px; height:6px; border-radius:50%; background:var(--brand); display:inline-block; }
+    .sidebar-foot p { font-size:11px; color:var(--soft); margin:9px 0 16px; line-height:1.65; }
+    .quiet { border:0; background:none; color:var(--soft); padding:0; font-size:12px; text-align:left; text-decoration:underline; text-underline-offset:4px; }
+    .main { min-width:0; padding:0 50px; }
+    .topbar { min-height:87px; border-bottom:1px solid var(--rule); display:flex; justify-content:space-between; gap:16px; align-items:center; }
+    .crumb { color:var(--soft); font-size:10px; letter-spacing:1.35px; text-transform:uppercase; }
+    .crumb span { margin:0 12px; color:#a4a69d; }
+    .toolbar { display:flex; align-items:center; gap:18px; }
+    .save-state { color:var(--soft); font-size:11px; white-space:nowrap; }
+    .btn { display:inline-flex; justify-content:center; align-items:center; gap:10px; min-height:40px; border:1px solid var(--rule); border-radius:4px; padding:8px 15px; font-size:12px; font-weight:600; background:var(--surface); color:var(--ink); text-decoration:none; transition:background .2s,transform .2s; }
+    .btn:hover { background:#eeeee6; transform:translateY(-1px); }
+    .btn-primary { color:white; background:var(--brand); border-color:var(--brand); }
+    .btn-primary:hover { background:#8e3420; }
+    .btn svg { width:14px; height:14px; fill:none; stroke:currentColor; stroke-width:1.6; }
+    .view { max-width:1180px; margin:0 auto; padding:45px 0 54px; animation:arrive .3s ease both; }
+    .eyebrow { display:flex; align-items:center; gap:13px; color:var(--soft); margin-bottom:20px; }
+    .eyebrow .line { width:26px; height:1px; background:var(--brand); }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { font:normal clamp(38px,4.5vw,64px)/1.05 var(--display); letter-spacing:-1.9px; margin-bottom:20px; max-width:830px; }
+    h2 { font:normal 29px/1.2 var(--display); letter-spacing:-.6px; margin:0; }
+    h3 { font-size:14px; font-weight:600; margin-bottom:9px; }
+    .intro { color:var(--soft); max-width:650px; font-size:14px; line-height:1.8; margin-bottom:26px; }
+    .heading-row { display:flex; align-items:flex-start; justify-content:space-between; gap:24px; }
+    .edition { flex:none; text-align:right; color:var(--soft); font-size:11px; padding-top:4px; }
+    .edition strong { display:block; font:normal 50px/1.1 var(--display); color:#9c9f90; }
+    .pill { display:inline-flex; align-items:center; gap:6px; border:1px solid #dbc1b4; border-radius:3px; padding:3px 7px; font-size:9px; font-weight:650; letter-spacing:.8px; text-transform:uppercase; color:var(--brand); white-space:nowrap; }
+    .pill-neutral { border-color:var(--rule); color:var(--soft); }
+    .summary-band { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); margin-top:32px; padding:24px 0; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
+    .summary-item { padding:0 24px; border-left:1px solid var(--rule); }
+    .summary-item:first-child { padding-left:0; border-left:0; }
+    .summary-item:last-child { padding-right:0; }
+    .summary-item .tiny { color:var(--soft); display:block; margin-bottom:8px; }
+    .summary-item strong { display:block; font-size:15px; font-weight:550; margin-bottom:4px; }
+    .summary-item p { color:var(--soft); font-size:12px; margin:0; line-height:1.6; }
+    .section-head { display:flex; justify-content:space-between; align-items:center; gap:20px; margin:38px 0 21px; }
+    .text-link { color:var(--brand); font-size:12px; font-weight:600; text-decoration:none; }
+    .text-link:hover { text-decoration:underline; }
+    .direction { display:grid; grid-template-columns:minmax(0,1fr) 58px minmax(0,1.15fr); align-items:center; border-bottom:1px solid var(--rule); padding:0 0 27px; }
+    .direction small { display:block; margin-bottom:9px; color:var(--soft); }
+    .direction h3 { font:normal 23px/1.2 var(--display); letter-spacing:-.3px; }
+    .direction p { color:var(--soft); font-size:12px; max-width:330px; margin:0; }
+    .direction .arrow { color:var(--brand); font-size:27px; align-self:center; }
+    .new-direction { border-left:2px solid var(--brand); padding-left:22px; }
+    .overview-bottom { display:grid; grid-template-columns:1.45fr 1fr; gap:42px; }
+    .question-row { display:flex; gap:16px; align-items:center; padding:17px 0; border-bottom:1px solid var(--rule); text-decoration:none; transition:padding .2s; }
+    .question-row:hover { padding-left:6px; }
+    .question-row .number { font:italic 20px var(--display); color:var(--brand); width:24px; flex:none; }
+    .question-row strong { font-size:13px; font-weight:550; display:block; }
+    .question-row small { font-size:11px; color:var(--soft); }
+    .question-row .go { margin-left:auto; color:var(--soft); }
+    .next-step { background:#eaece2; padding:24px; margin-top:38px; align-self:start; border-radius:3px; }
+    .next-step .tiny { color:var(--soft); }
+    .next-step h3 { font:normal 27px/1.2 var(--display); margin:13px 0; }
+    .next-step p { font-size:12px; color:#5c6154; line-height:1.8; }
+    .next-step .text-link { display:inline-block; margin-top:5px; }
+    .footer { max-width:1180px; margin:0 auto; border-top:1px solid var(--rule); padding:18px 0 24px; display:flex; justify-content:space-between; gap:16px; color:var(--soft); font-size:10px; }
+    .footer a { text-decoration:none; }
+    .notice { border-left:2px solid var(--brand); padding:13px 18px; background:var(--tint); color:#6e493b; font-size:12px; margin:25px 0; }
+    .brief-grid { display:grid; grid-template-columns:minmax(0,1fr) 235px; gap:38px; margin-top:30px; }
+    .field { margin-bottom:23px; }
+    label { display:block; font-size:12px; font-weight:600; margin-bottom:8px; }
+    .field-help { font-size:11px; color:var(--soft); margin:6px 0 0; }
+    input[type="text"],textarea,select { width:100%; border:1px solid #d5d8cc; border-radius:4px; background:var(--surface); color:var(--ink); padding:11px 12px; font-size:13px; transition:border-color .2s; }
+    textarea { min-height:100px; resize:vertical; line-height:1.65; }
+    input:hover,textarea:hover,select:hover { border-color:#a4a99a; }
+    input::placeholder,textarea::placeholder { color:#777c70; opacity:1; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .form-divider { margin:27px 0 23px; padding-top:24px; border-top:1px solid var(--rule); }
+    .form-divider h3 { font:normal 24px/1.2 var(--display); }
+    .form-divider p { font-size:12px; color:var(--soft); }
+    .form-actions { display:flex; align-items:center; gap:16px; flex-wrap:wrap; padding-top:6px; }
+    .form-status { font-size:11px; color:var(--soft); }
+    .context { border-top:1px solid var(--rule); padding:20px 0; align-self:start; }
+    .context h3 { margin:9px 0 14px; font:normal 23px var(--display); }
+    .context p { font-size:12px; color:var(--soft); line-height:1.8; }
+    .context ul { font-size:12px; padding-left:16px; color:var(--soft); }
+    .context li { margin-bottom:10px; }
+    .quote { font:normal 20px/1.5 var(--display); color:var(--ink); border:0; margin:0 0 18px; }
+    .filter-bar { display:flex; gap:8px; flex-wrap:wrap; margin:25px 0 0; }
+    .filter { border:1px solid var(--rule); border-radius:3px; padding:7px 12px; background:none; color:var(--soft); font-size:11px; }
+    .filter[aria-pressed="true"] { color:var(--ink); border-color:#a9ad9e; background:var(--surface); }
+    .research-table { margin-top:23px; border-top:1px solid var(--rule); }
+    .research-item { display:grid; grid-template-columns:145px minmax(0,1fr) 125px; gap:25px; padding:24px 0; border-bottom:1px solid var(--rule); align-items:start; }
+    .research-item h3 { font-size:14px; margin-bottom:7px; }
+    .research-item p { font-size:12px; color:var(--soft); margin-bottom:8px; }
+    .research-item a { font-size:11px; }
+    .review-label { color:var(--soft); font-size:10px; line-height:1.7; }
+    .archive-block { margin-top:33px; padding-top:28px; border-top:1px solid var(--rule); }
+    .archive-links { display:flex; gap:18px; flex-wrap:wrap; margin-top:15px; font-size:12px; color:var(--soft); }
+    .timeline { border-left:1px solid #cdd0c3; margin:26px 0 0 5px; padding-left:23px; }
+    .timeline-item { position:relative; margin-bottom:28px; }
+    .timeline-item:before { content:""; width:7px; height:7px; border-radius:50%; background:#a4a997; position:absolute; left:-27px; top:7px; }
+    .timeline-item.current:before { background:var(--brand); }
+    .timeline-item .tiny { color:var(--soft); font-size:9px; }
+    .timeline-item p { font-size:12px; color:var(--soft); margin:7px 0 0; }
+    .timeline-item strong { display:block; font-size:13px; font-weight:600; }
+    .task-list { border-top:1px solid var(--rule); margin-top:27px; }
+    .task { display:grid; grid-template-columns:22px minmax(0,1fr) 92px; align-items:start; gap:15px; padding:22px 0; border-bottom:1px solid var(--rule); }
+    .task input { margin:5px 0 0; width:17px; height:17px; accent-color:var(--brand); cursor:pointer; }
+    .task label { cursor:pointer; font-size:13px; margin:0; font-weight:550; }
+    .task p { font-size:12px; color:var(--soft); margin:5px 0 0; }
+    .task .task-stage { font-size:10px; color:var(--soft); text-align:right; padding-top:3px; }
+    .task.done label { text-decoration:line-through; color:var(--soft); }
+    .experiment-note { margin-top:30px; max-width:740px; }
+    .decision-grid { display:grid; grid-template-columns:1.15fr 1fr; gap:40px; margin-top:35px; }
+    .decision-list { margin:0; }
+    .decision-list div { border-top:1px solid var(--rule); padding:18px 0; }
+    .decision-list dt { font-size:12px; font-weight:600; }
+    .decision-list dd { font-size:12px; color:var(--soft); margin:6px 0 0; }
+    .notes-area { min-height:270px; }
+    .help-dialog { max-width:560px; width:calc(100% - 32px); border:1px solid var(--rule); border-radius:6px; background:var(--surface); color:var(--ink); padding:30px; }
+    .help-dialog::backdrop { background:#20261a70; backdrop-filter:blur(3px); }
+    .help-dialog h2 { margin-bottom:18px; }
+    .help-dialog p,.help-dialog li { font-size:13px; color:var(--soft); }
+    .help-dialog li { margin-bottom:12px; }
+    .help-dialog code { font-size:11px; overflow-wrap:anywhere; }
+    .dialog-foot { display:flex; justify-content:flex-end; margin-top:23px; }
+    .toast { position:fixed; bottom:24px; right:24px; max-width:calc(100% - 48px); padding:13px 19px; border-radius:4px; color:white; background:#30362a; font-size:12px; z-index:30; box-shadow:0 5px 25px #0002; }
+    .empty { color:var(--soft); font-style:italic; font-size:12px; }
+    .print-only { display:none; }
+    @keyframes arrive { from { transform:translateY(7px); } to { transform:translateY(0); } }
+    @media(min-width:1550px) { .main { padding:0 75px; } .sidebar { padding-top:36px; } }
+    @media(max-width:1100px) { .main { padding:0 30px; } .shell { grid-template-columns:205px minmax(0,1fr); } .sidebar { padding:28px 14px; } .brief-grid { grid-template-columns:minmax(0,1fr) 200px; gap:25px; } .overview-bottom { gap:26px; } .save-state { display:none; } }
+    @media(max-width:850px) { .shell { display:block; } .sidebar { position:static; height:auto; padding:17px 24px 13px; border-right:0; border-bottom:1px solid var(--rule); } .wordmark { margin:0 0 16px; } .sidebar-label,.sidebar-foot { display:none; } nav { display:flex; flex-wrap:wrap; gap:5px; overflow-x:visible; padding:2px 2px 6px; } .nav-link { flex:none; padding:9px 12px; font-size:12px; } .nav-no { display:none; } .main { padding:0 26px; } .topbar { min-height:70px; } .view { padding-top:34px; } .brief-grid { grid-template-columns:1fr; } .context { max-width:650px; } .context ul { display:grid; grid-template-columns:1fr 1fr; gap:0 35px; } }
+    @media(max-width:560px) { .main { padding:0 20px; } .sidebar { padding:16px 16px 8px; } .nav-link { gap:7px; padding:8px 10px; } .nav-link svg { width:14px; height:14px; } .crumb { font-size:9px; letter-spacing:.7px; } .crumb span { margin:0 6px; } .toolbar { gap:8px; } .toolbar .btn { min-height:36px; padding:7px 10px; font-size:10px; } .toolbar svg { display:none; } .topbar { gap:8px; } h1 { font-size:42px; letter-spacing:-1.3px; } h2 { font-size:25px; } .edition { display:none; } .intro { font-size:13px; } .summary-band { grid-template-columns:1fr; padding:6px 0; margin-top:25px; } .summary-item { padding:15px 0!important; border-left:0; border-bottom:1px solid var(--rule); } .summary-item:last-child { border-bottom:0; } .summary-item .tiny { margin-bottom:4px; font-size:9px; } .summary-item strong { font-size:14px; } .direction { grid-template-columns:1fr; gap:15px; } .direction .arrow { font-size:22px; line-height:1; transform:rotate(90deg); transform-origin:10px 10px; margin:0 0 0 3px; } .new-direction { padding-left:16px; } .overview-bottom,.decision-grid { grid-template-columns:1fr; gap:15px; } .next-step { margin-top:12px; } .section-head { margin-top:29px; } .form-row { grid-template-columns:1fr; gap:0; } .research-item { grid-template-columns:1fr; gap:10px; padding:20px 0; } .review-label { display:none; } .context ul { display:block; } .task { grid-template-columns:20px minmax(0,1fr); gap:12px; } .task-stage { display:none; } .footer { flex-direction:column; gap:4px; } .toast { bottom:16px; right:16px; } }
+    @media(prefers-reduced-motion:reduce) { *,*:before,*:after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+    @media print { .sidebar,.topbar,.footer,.btn,.quiet,.filter-bar,.toast,.help-dialog,.form-actions { display:none!important; } .shell { display:block; } .main { padding:0; } .view[hidden] { display:block!important; } .view { page-break-before:always; padding:20px 0; } .view:first-child { page-break-before:auto; } body { background:white; } .print-only { display:block; } input,textarea,select { border:0!important; padding-left:0!important; } textarea { height:auto; min-height:150px; } }
+  </style>
+</head>
+<body>
+<a class="skip" href="#workspace-main">Skip to content</a>
+<div class="shell">
+  <aside class="sidebar" aria-label="Workspace navigation">
+    <div class="wordmark"><svg class="mark" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M6 29V7h23M7 28 29 7M17 28h12V16" stroke="currentColor" stroke-width="1.8"/></svg>Fieldnotes<span class="tiny" style="font-size:8px;color:var(--soft);margin-top:3px">/ 02</span></div>
+    <p class="sidebar-label tiny">Product workspace</p>
+    <nav aria-label="Sections">
+      <a class="nav-link" href="#overview" data-route="overview" aria-current="page"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="1"/><path d="M3 8h14M8 8v9"/></svg>Overview<span class="nav-no">01</span></a>
+      <a class="nav-link" href="#brief" data-route="brief"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2.5h7l3 3v12H5zM12 2.5v4h3M8 10h5M8 13h5"/></svg>Product brief<span class="nav-no">02</span></a>
+      <a class="nav-link" href="#research" data-route="research"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4M6 8h5M8.5 5.5v5"/></svg>Research review<span class="nav-no">03</span></a>
+      <a class="nav-link" href="#experiments" data-route="experiments"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 2h6M8 2v6l-5 8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1l-5-8V2M6 12h8"/></svg>Next experiments<span class="nav-no">04</span></a>
+      <a class="nav-link" href="#decisions" data-route="decisions"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 4h12M5 10h12M5 16h12M2 4h.2M2 10h.2M2 16h.2"/></svg>Decision log<span class="nav-no">05</span></a>
+    </nav>
+    <div class="sidebar-foot"><span class="version"><span class="dot"></span>Student-facing pivot</span><p>Working draft · 25 October 2026<br>Local workspace. No account needed.</p><button class="quiet" id="open-help" type="button">How this workspace works ↗</button></div>
+  </aside>
+  <main class="main" id="workspace-main" tabindex="-1">
+    <header class="topbar"><div class="crumb">Career discovery<span>/</span><b id="crumb-current">Overview</b></div><div class="toolbar"><span class="save-state" id="save-state" role="status">Repo version</span><button class="btn" id="export-workspace" type="button"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2v10m-4-4 4 4 4-4M3 12v5h14v-5"/></svg>Export workspace</button></div></header>
+
+    <section class="view" id="view-overview" aria-labelledby="title-overview">
+      <div class="eyebrow tiny"><span class="line"></span>Direction 02 · Founder brief</div>
+      <div class="heading-row"><div><h1 id="title-overview">Find a study path.<br>Make it yours.</h1><p class="intro">Help Indian college students find study-abroad options in Germany matched to their profile. Start with a little context, then refine through an expandable profile and a conversation.</p><span class="pill"><span class="dot"></span>Direction confirmed · validation next</span></div><div class="edition"><span class="tiny">New chapter</span><strong>02</strong>25 OCT 2026</div></div>
+      <div class="summary-band"><div class="summary-item"><span class="tiny">01 / Who uses it</span><strong>Indian college students</strong><p>Considering bachelor’s or master’s study in Germany.</p></div><div class="summary-item"><span class="tiny">02 / How we reach them</span><strong>Direct founder outreach</strong><p>Start by reaching out to students.</p></div><div class="summary-item"><span class="tiny">03 / How much they share</span><strong>Profile + conversation</strong><p>Students choose how much detail to share.</p></div></div>
+      <div class="section-head"><h2>The direction has changed.</h2><a class="text-link" href="#research">Review what carries forward ↗</a></div>
+      <div class="direction"><div><small class="tiny">Previous direction</small><h3>An agency add-on</h3><p>A counselor-operated tool for established study-abroad agencies, delivering a branded family report.</p></div><div class="arrow" aria-hidden="true">→</div><div class="new-direction"><small class="tiny" style="color:var(--brand)">Current direction · founder confirmed</small><h3>A tool students use directly</h3><p>Profile-matched study options in Germany, used directly by Indian college students. Both bachelor’s and master’s levels stay in scope.</p></div></div>
+      <div class="overview-bottom"><div><div class="section-head"><h2>The agreed direction</h2><span class="tiny" id="open-count" style="color:var(--soft)">4 confirmed</span></div><a class="question-row" href="#brief"><span class="number">01</span><span><strong>Student outcome</strong><small id="summary-outcome">Study-abroad options matched to their profile.</small></span><span class="go" aria-hidden="true">↗</span></a><a class="question-row" href="#brief"><span class="number">02</span><span><strong>First market</strong><small id="summary-geography">India → Germany</small></span><span class="go" aria-hidden="true">↗</span></a><a class="question-row" href="#brief"><span class="number">03</span><span><strong>Input format</strong><small id="summary-intake">Both a profile and a conversation.</small></span><span class="go" aria-hidden="true">↗</span></a><a class="question-row" href="#brief"><span class="number">04</span><span><strong>Study level</strong><small id="summary-studyLevel">Bachelor’s and master’s; keep the level flexible.</small></span><span class="go" aria-hidden="true">↗</span></a></div><aside class="next-step"><span class="tiny">Proposed experience · to test</span><h3>Start with a profile.<br>Refine in conversation.</h3><p>Choose a study level and share a little context. Explore initial options, then ask questions or add details to refine them.</p><p>Show missing information clearly. A possible match should not become an eligibility claim without the required evidence.</p><a class="text-link" href="#experiments">Test the first useful result →</a></aside></div>
+    </section>
+
+    <section class="view" id="view-brief" aria-labelledby="title-brief" hidden>
+      <div class="eyebrow tiny"><span class="line"></span>02 / Product brief</div><h1 id="title-brief">Define the student’s<br>next step.</h1><p class="intro">Audience, Germany scope, study levels, and input format are founder-confirmed. The problem details, matching experience, and business model still need student evidence.</p>
+      <div class="brief-grid"><form id="brief-form"><div class="field"><label for="brief-promise">The product in one sentence</label><textarea id="brief-promise" name="promise" placeholder="We help [which college students] achieve [one outcome] by [how it works]."></textarea><p class="field-help">A draft promise, rather than a validated claim.</p></div><div class="field"><label for="brief-problem">What problem brings a student here?</label><textarea id="brief-problem" name="problem" placeholder="Describe a recent situation and what the student struggles to do today."></textarea></div><div class="field"><label for="brief-outcome">What should a student leave with?</label><textarea id="brief-outcome" name="outcome" placeholder="Name one concrete result: a decision, a shortlist, a plan, or something else."></textarea></div><div class="form-row"><div class="field"><label for="brief-cohort">First student cohort</label><input id="brief-cohort" name="cohort" type="text" placeholder="Year of study, degree, situation…"></div><div class="field"><label for="brief-geography">First geography / destination scope</label><input id="brief-geography" name="geography" type="text" placeholder="Still open"></div></div><div class="field"><label for="brief-studyLevel">Study levels supported</label><select id="brief-studyLevel" name="studyLevel"><option value="">Still open</option><option>Bachelor’s programmes / transfers</option><option>Master’s programmes</option><option>Both bachelor’s and master’s — keep the level flexible</option></select><p class="field-help">Founder-confirmed scope. Requirements and matching logic need separate paths for each level.</p></div><div class="field"><label for="brief-intake">How should students share context?</label><select id="brief-intake" name="intake"><option value="">Still open</option><option>A profile they can expand over time</option><option>A free-form conversation</option><option>Both a profile and a conversation</option><option>Another approach (describe below)</option></select></div><div class="field"><label for="brief-depth">What changes when they share more?</label><textarea id="brief-depth" name="depth" placeholder="What is useful with very little input? What becomes possible with more detail?"></textarea><p class="field-help">Design proposal to test: show what is unknown, ask only what helps, and let students skip.</p></div><div class="form-divider"><h3>Business questions</h3><p>Direct student use doesn’t yet tell us who pays.</p></div><div class="form-row"><div class="field"><label for="brief-payer">Who might pay?</label><input id="brief-payer" name="payer" type="text" placeholder="Student, parent, sponsor, or undecided"></div><div class="field"><label for="brief-pricing">Pricing hypothesis</label><input id="brief-pricing" name="pricing" type="text" placeholder="Unvalidated / undecided"></div></div><div class="field"><label for="brief-reach">How will we reach the first students?</label><textarea id="brief-reach" name="reach" placeholder="Which students can you speak to this week? Through what route?"></textarea></div><div class="form-actions"><button class="btn btn-primary" type="submit">Save working brief <span aria-hidden="true">↗</span></button><span class="form-status" id="brief-status" role="status">Saved in this browser. Export to keep a portable copy.</span></div></form><aside class="context"><span class="tiny" style="color:var(--brand)">Confirmed so far</span><h3>The starting point</h3><ul><li>Indian college students considering Germany.</li><li>Study-abroad options matched to their profile.</li><li>Both bachelor’s and master’s study levels.</li><li>An expandable profile and a conversation.</li><li>Optional depth and direct founder outreach.</li></ul><h3>Decide through discovery</h3><ul><li>First subject area and target intake.</li><li>Minimum input for a useful first result.</li><li>What makes students trust and revisit a match.</li><li>Who pays and what they pay for.</li></ul><p>A PDF deliverable, paid subscription, and a specific AI model remain open. Interface behavior described here is a proposal, not validated demand.</p><p>Source: founder clarification, 25 October 2026.</p></aside></div>
+    </section>
+
+    <section class="view" id="view-research" aria-labelledby="title-research" hidden>
+      <div class="eyebrow tiny"><span class="line"></span>03 / Research review</div><h1 id="title-research">Keep the evidence.<br>Revisit the conclusions.</h1><p class="intro">The previous research addressed agency buyers. This is an initial relevance review for the student-facing direction, rather than fresh market validation.</p><div class="filter-bar" role="group" aria-label="Filter research"><button class="filter" type="button" data-filter="all" aria-pressed="true">All research</button><button class="filter" type="button" data-filter="conditional" aria-pressed="false">Reusable foundation</button><button class="filter" type="button" data-filter="recheck" aria-pressed="false">Research again</button><button class="filter" type="button" data-filter="historical" aria-pressed="false">Historical context</button></div><div class="research-table" id="research-list"></div><div class="archive-block"><h2>Earlier direction, preserved.</h2><p class="intro" style="margin:12px 0 0">The agency plan remains a record of how we got here. Its market size, prices, and customer pain claims should not be used as student-market evidence.</p><div class="archive-links"><a href="../00-intake/brief.pre-pivot-2026-10-25.md" target="_blank" rel="noopener">Previous product brief ↗</a><a href="../00-intake/progress.pre-pivot-2026-10-25.md" target="_blank" rel="noopener">Previous progress snapshot ↗</a><a href="../01-discovery/verification-report.md" target="_blank" rel="noopener">Research verification report ↗</a></div></div>
+    </section>
+
+    <section class="view" id="view-experiments" aria-labelledby="title-experiments" hidden>
+      <div class="eyebrow tiny"><span class="line"></span>04 / Next experiments</div><h1 id="title-experiments">Learn from the<br>first students.</h1><p class="intro">A suggested sequence for this new direction. The counts below are small experiment targets, not research findings or evidence of demand.</p><div class="notice"><b>First question:</b> what decision is a student already trying to make, and what do they do about it today?</div><div class="section-head"><h2>The first learning loop</h2><span class="tiny" id="task-progress" style="color:var(--soft)">0 / 6 completed</span></div><div class="task-list" id="task-list"></div><form class="experiment-note" id="experiment-form"><label for="experiment-notes">Interview notes &amp; evidence</label><textarea id="experiment-notes" class="notes-area" placeholder="Date / student context / exact words / what they tried / useful result / what surprised us. Use anonymized notes."></textarea><p class="field-help">Capture observed behavior and quotes separately from your interpretation.</p><div class="form-actions" style="margin-top:14px"><button class="btn btn-primary" type="submit">Save interview notes</button><span class="form-status" id="experiment-status" role="status"></span></div></form>
+    </section>
+
+    <section class="view" id="view-decisions" aria-labelledby="title-decisions" hidden>
+      <div class="eyebrow tiny"><span class="line"></span>05 / Decision log</div><h1 id="title-decisions">Know what changed.<br>And why.</h1><p class="intro">A short record of the current direction, its open questions, and the decisions that shaped it.</p><div class="decision-grid"><div><h2>Current decisions</h2><dl class="decision-list" style="margin-top:22px"><div><dt>Primary user &amp; destination · confirmed</dt><dd>Indian college students considering study in Germany, using the product directly.</dd></div><div><dt>Student outcome · confirmed</dt><dd>Study-abroad options matched to the student’s profile.</dd></div><div><dt>Study levels · confirmed</dt><dd>Keep the level flexible across bachelor’s and master’s options. Model the requirements separately.</div><div><dt>Initial distribution · confirmed</dt><dd>Founder outreach to students.</dd></div><div><dt>Input principle · confirmed</dt><dd>Both an expandable profile and a conversation, with as little or as much detail as the student chooses.</dd></div><div><dt>Planning format · confirmed</dt><dd>A local HTML workspace in this repository.</dd></div><div><dt>Business model · open</dt><dd>Student use is confirmed. Payer, price, and revenue model remain hypotheses.</dd></div></dl><form id="decision-form" style="margin-top:22px"><label for="decision-notes">New decisions &amp; rationale</label><textarea id="decision-notes" class="notes-area" placeholder="Date / decision / why / evidence / what would change our mind"></textarea><div class="form-actions" style="margin-top:14px"><button class="btn btn-primary" type="submit">Save decision notes</button><span class="form-status" id="decision-status" role="status"></span></div></form></div><aside><h2>Project history</h2><div class="timeline"><div class="timeline-item"><span class="tiny">April 2026</span><strong>Career discovery for schools</strong><p>Original concept: a school-facing career discovery product.</p></div><div class="timeline-item"><span class="tiny">13 May 2026</span><strong>Study-abroad counselor copilot</strong><p>Pivoted to Indian agencies, Germany and Australia, with a take-home PDF.</p></div><div class="timeline-item"><span class="tiny">25 May 2026</span><strong>Customer discovery checkpoint</strong><p>Research gate recorded unresolved assumptions and a need for agency design partners.</p></div><div class="timeline-item"><span class="tiny">29–30 July 2026</span><strong>Germany data architecture</strong><p>Added specifications for the knowledge base, data sources, and extraction pipeline.</p></div><div class="timeline-item current"><span class="tiny">25 October 2026</span><strong>Students become the direct users</strong><p>Confirmed profile-matched study options in Germany for Indian college students, flexible bachelor’s / master’s scope, and both a profile and a conversation. Switched planning to local HTML.</p></div></div><button class="quiet" type="button" id="help-secondary">Saving, exporting &amp; reopening ↗</button></aside></div>
+    </section>
+    <footer class="footer"><span>Student discovery · working title · direction 02</span><span>Confirmed inputs + open hypotheses <span aria-hidden="true">/</span> <a href="#decisions">View decision log ↗</a></span></footer>
+  </main>
+</div>
+<dialog class="help-dialog" id="help-dialog" aria-labelledby="help-title"><h2 id="help-title">Your local working copy.</h2><p>Open <code>product-workspace/index.html</code> in a browser. Everything runs locally, with no installation or account.</p><ol><li>Fill in the brief and save it. Check off experiments and save your notes.</li><li>Edits are saved to this browser when storage is available. They do not rewrite files in your repo.</li><li>Choose <b>Export workspace</b> to download a complete HTML copy with your saved answers. Replace <code>product-workspace/index.html</code> with that copy to keep changes in the repo.</li><li>Keep this file inside <code>product-workspace/</code> so archive links continue to work. You can also ask the coding agent to update the file directly.</li></ol><p id="storage-explanation">No data is sent to a server. Browser drafts are specific to the browser and address you use.</p><div class="dialog-foot"><button class="btn btn-primary" type="button" id="close-help">Got it</button></div></dialog>
+<div class="toast" id="toast" role="status" hidden></div>
+<noscript><p style="padding:24px">This local workspace needs JavaScript for navigation, editing, and export. Enable JavaScript to use all sections. The overview remains readable.</p></noscript>
+<script id="workspace-data" type="application/json">
+{"schemaVersion":2,"revision":"2026-10-25-germany-student-scope-v2","updatedAt":"2026-10-24T19:03:46.835Z","brief":{"promise":"We help Indian college students find study-abroad options in Germany matched to their profile, through an expandable profile and a conversation.","problem":"","outcome":"Study-abroad options in Germany matched to the student’s profile.","cohort":"Indian college students considering Germany; exact year of study and first subject area remain open.","geography":"India → Germany","intake":"Both a profile and a conversation","depth":"Proposed behavior to validate: begin with a short profile and show exploratory options with unknowns. Let students add academic, language, preference, and budget context through their profile or conversation to refine matches. Missing detail must not be treated as eligibility evidence.","payer":"","pricing":"","reach":"Founder outreach to Indian college students considering study in Germany. The first subject area and exact outreach channel remain open.","studyLevel":"Both bachelor’s and master’s — keep the level flexible"},"completedTasks":["promise"],"experimentNotes":"","decisionNotes":"2026-10-25 — Founder confirmed: Indian college students considering Germany; study-abroad options matched to their profile; both an expandable profile and a conversation; flexible bachelor’s and master’s scope. Pricing, payer, and first subject area are still open.","previousRevision":"2026-10-25-student-pivot-v1","confirmedBrief":{"outcome":"Study-abroad options in Germany matched to the student’s profile.","cohort":"Indian college students considering Germany; exact year of study and first subject area remain open.","geography":"India → Germany","studyLevel":"Both bachelor’s and master’s — keep the level flexible","intake":"Both a profile and a conversation"}}
+</script>
+<script>
+(() => {
+  'use strict';
+  const embedded = JSON.parse(document.getElementById('workspace-data').textContent);
+  const storageKey = 'career-discovery-product-workspace:' + embedded.revision;
+  const ownKeys = ['promise','problem','outcome','cohort','geography','studyLevel','intake','depth','payer','pricing','reach'];
+  const clone = value => JSON.parse(JSON.stringify(value));
+  const validState = value => value && value.schemaVersion === embedded.schemaVersion && value.revision === embedded.revision && value.brief && ownKeys.every(key => typeof value.brief[key] === 'string') && Array.isArray(value.completedTasks) && value.completedTasks.every(id => typeof id === 'string') && typeof value.experimentNotes === 'string' && typeof value.decisionNotes === 'string';
+  let state = clone(embedded), storageAvailable = true, browserDraft = false, carriedNotes = false;
+  try {
+    const raw = localStorage.getItem(storageKey);
+    if (raw) {
+      const draft = JSON.parse(raw);
+      if (validState(draft) && Date.parse(draft.updatedAt) > Date.parse(embedded.updatedAt)) { state = draft; browserDraft = true; }
+    }
+    if (!raw && embedded.previousRevision) {
+      const previousRaw = localStorage.getItem('career-discovery-product-workspace:' + embedded.previousRevision);
+      if (previousRaw) {
+        const previous = JSON.parse(previousRaw);
+        if (previous.schemaVersion === 1 && previous.revision === embedded.previousRevision && previous.brief) {
+          // Keep prior notes and hypotheses; apply the newly confirmed scope from the repo.
+          for (const key of ['problem','depth','payer','pricing']) {
+            if (typeof previous.brief[key] === 'string' && previous.brief[key].trim()) state.brief[key] = previous.brief[key];
+          }
+          if (typeof previous.experimentNotes === 'string') state.experimentNotes = previous.experimentNotes;
+          if (typeof previous.decisionNotes === 'string' && previous.decisionNotes.trim()) state.decisionNotes += '\n\nEarlier browser notes:\n' + previous.decisionNotes;
+          if (Array.isArray(previous.completedTasks)) state.completedTasks = [...new Set([...state.completedTasks, ...previous.completedTasks.filter(id => typeof id === 'string')])];
+          carriedNotes = true;
+        }
+      }
+    }
+    localStorage.setItem(storageKey + ':check', '1');
+    localStorage.removeItem(storageKey + ':check');
+  } catch (_) { storageAvailable = false; }
+  const routes = { overview:'Overview', brief:'Product brief', research:'Research review', experiments:'Next experiments', decisions:'Decision log' };
+  const $ = selector => document.querySelector(selector);
+  const $$ = selector => [...document.querySelectorAll(selector)];
+  const esc = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+  const saveLabel = $('#save-state');
+  saveLabel.textContent = storageAvailable ? (browserDraft ? 'Browser draft restored' : carriedNotes ? 'Earlier draft notes retained' : 'Repo version') : 'Export to keep edits';
+  if (!storageAvailable) {
+    $('#storage-explanation').textContent = 'Browser storage is unavailable here. Keep this page open and export a copy before closing it. No data is sent to a server.';
+    $('#brief-status').textContent = 'Export to keep edits; browser storage is unavailable.';
+  }
+  let toastTimer;
+  function toast(message) { $('#toast').textContent = message; $('#toast').hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => { $('#toast').hidden = true; }, 4200); }
+  function persist(message = 'Saved in this browser') {
+    state.updatedAt = new Date(Math.max(Date.now(), Date.parse(state.updatedAt) + 1)).toISOString();
+    try { localStorage.setItem(storageKey, JSON.stringify(state)); storageAvailable = true; saveLabel.textContent = 'Browser draft saved'; }
+    catch (_) { storageAvailable = false; saveLabel.textContent = 'Export to keep edits'; }
+    toast(storageAvailable ? message : 'Updated for this session. Export a copy to keep your changes.');
+    updateSummary();
+  }
+  function navigate(focus = false) {
+    const route = location.hash.slice(1) || 'overview';
+    const active = Object.hasOwn(routes, route) ? route : 'overview';
+    $$('.view').forEach(view => { view.hidden = view.id !== 'view-' + active; });
+    $$('.nav-link').forEach(link => { if (link.dataset.route === active) link.setAttribute('aria-current','page'); else link.removeAttribute('aria-current'); });
+    $('#crumb-current').textContent = routes[active];
+    document.title = routes[active] + ' · Student Discovery';
+    if (focus) { $('#workspace-main').focus({preventScroll:true}); window.scrollTo({top:0, behavior:'instant'}); }
+  }
+  window.addEventListener('hashchange', () => navigate(true));
+  navigate();
+  function fillForms() {
+    ownKeys.forEach(key => { document.getElementById('brief-' + key).value = state.brief[key]; });
+    $('#experiment-notes').value = state.experimentNotes;
+    $('#decision-notes').value = state.decisionNotes;
+  }
+  function captureForms() {
+    ownKeys.forEach(key => { state.brief[key] = document.getElementById('brief-' + key).value.trim(); });
+    state.experimentNotes = $('#experiment-notes').value;
+    state.decisionNotes = $('#decision-notes').value;
+  }
+  function updateSummary() {
+    const snippets = [ ['outcome','Define the student result.'], ['geography','Define the first market.'], ['intake','Choose the input format.'], ['studyLevel','Choose the study levels.'] ];
+    let confirmed = 0, pending = 0;
+    snippets.forEach(([key, fallback]) => {
+      const value = state.brief[key], isConfirmed = value && value === embedded.confirmedBrief[key];
+      $('#summary-' + key).textContent = value ? (isConfirmed ? 'Confirmed: ' : 'Working answer: ') + value : fallback;
+      if (isConfirmed) confirmed++;
+      if (!value) pending++;
+    });
+    $('#open-count').textContent = confirmed === snippets.length ? '4 confirmed' : pending ? pending + ' open' : confirmed + ' confirmed · ' + (snippets.length - confirmed) + ' working';
+  }
+  $('#brief-form').addEventListener('submit', event => { event.preventDefault(); captureForms(); persist(); $('#brief-status').textContent = storageAvailable ? 'Working brief saved in this browser. Export to update your repo copy.' : 'Working brief updated. Export now to keep a copy.'; });
+  $('#experiment-form').addEventListener('submit', event => { event.preventDefault(); captureForms(); persist('Interview notes saved'); $('#experiment-status').textContent = storageAvailable ? 'Saved in this browser.' : 'Export to keep these notes.'; });
+  $('#decision-form').addEventListener('submit', event => { event.preventDefault(); captureForms(); persist('Decision notes saved'); $('#decision-status').textContent = storageAvailable ? 'Saved in this browser.' : 'Export to keep these notes.'; });
+  ['#brief-form','#experiment-form','#decision-form'].forEach(selector => $(selector).addEventListener('input', () => { saveLabel.textContent = 'Unsaved edits'; }));
+  const research = [
+    {status:'conditional',label:'Reusable foundation',title:'Germany knowledge-base design',detail:'The confirmed Germany matching scope makes the entity model, source provenance, and eligibility approach relevant. Reassess bachelor’s and master’s coverage separately; the old master’s-only starting slice no longer covers the full product scope. No pipeline is implemented.',file:'../scraping/01-DATA-MODEL.md',source:'Data model · July 2026',note:'Relevant design; data not yet verified'},
+    {status:'conditional',label:'Reusable foundation',title:'Data sources & extraction design',detail:'The source inventory and acquisition design can be reused selectively. Verify access, freshness, and rights before implementing anything.',file:'../scraping/03-SCRAPING-TOOLCHAIN.md',source:'Scraping toolchain · July 2026',note:'Technical reference only'},
+    {status:'recheck',label:'Research again',title:'Student problems & existing alternatives',detail:'Interview students directly. Agency-owner personas and willingness-to-pay evidence do not establish student needs, trust, or purchasing behavior.',file:'../01-discovery/target-audience.md',source:'Previous audience research · May 2026',note:'New user and buyer context'},
+    {status:'recheck',label:'Research again',title:'Market size, competitors & distribution',detail:'Rebuild the picture around Indian students matching to German bachelor’s and master’s study options. Agency counts, counselor software pricing, and agency outreach funnels cannot size this opportunity.',file:'../01-discovery/market-analysis.md',source:'Previous market analysis · May 2026',note:'Previous conclusions superseded'},
+    {status:'recheck',label:'Research again',title:'Privacy & student data',detail:'Review requirements for direct student use after choosing age range, input types, and storage behavior. The earlier agency workflow does not settle this design.',file:'../next-step/dpdp-explainer.md',source:'Previous privacy explainer · May 2026',note:'Historical legal notes; not reverified'},
+    {status:'historical',label:'Historical context',title:'Agency subscription & branded PDF',detail:'The earlier subscription tiers, counselor-package section, and design-partner sales plan belonged to the agency product. They are not decisions for the new product.',file:'../00-intake/brief.pre-pivot-2026-10-25.md',source:'Archived agency brief',note:'Retained for decision history'},
+    {status:'historical',label:'Historical context',title:'The agency research gate',detail:'Its yellow-light assessment evaluated an agency-facing business. The new direction needs its own learning plan and decision criteria.',file:'../01-discovery/research-gate.md',source:'Previous checkpoint · May 2026',note:'No current go / no-go verdict'}
+  ];
+  function renderResearch(filter = 'all') {
+    const entries = research.filter(item => filter === 'all' || item.status === filter);
+    $('#research-list').innerHTML = entries.map(item => '<article class="research-item"><div><span class="pill ' + (item.status === 'recheck' ? '' : 'pill-neutral') + '">' + esc(item.label) + '</span></div><div><h3>' + esc(item.title) + '</h3><p>' + esc(item.detail) + '</p><a target="_blank" rel="noopener" href="' + esc(item.file) + '">' + esc(item.source) + ' ↗</a></div><span class="review-label">' + esc(item.note) + '</span></article>').join('');
+  }
+  $$('.filter').forEach(button => button.addEventListener('click', () => { $$('.filter').forEach(item => item.setAttribute('aria-pressed',String(item === button))); renderResearch(button.dataset.filter); }));
+  const tasks = [
+    {id:'promise',title:'Define the outcome, destination, and study levels',detail:'Founder confirmed: matched Germany study options for Indian college students; both bachelor’s and master’s; profile plus conversation.',stage:'Confirmed'},
+    {id:'interviews',title:'Speak with 5 Indian students considering Germany',detail:'Suggested target. Include bachelor’s and master’s intentions. Ask how they find options today and what makes a shortlist useful.',stage:'Listen'},
+    {id:'inputs',title:'Test a short profile and optional conversation',detail:'Use a mock-up with both input modes. Let students skip details; observe which questions help refine their options and which cause friction.',stage:'Observe'},
+    {id:'manual',title:'Deliver the intended result manually',detail:'Manually match 3 profiles to Germany study options, covering both study levels. Show reasons and unknowns; learn which information changes the matches.',stage:'Try'},
+    {id:'return',title:'Look for a concrete commitment',detail:'Ask for another session, a referral, or an appropriate payment test. Record behavior separately from compliments.',stage:'Validate'},
+    {id:'scope',title:'Choose the first product slice',detail:'Keep both study levels in the product scope. Use evidence to choose the first subject/data slice and define what must be verified before a match is shown.',stage:'Decide'}
+  ];
+  function renderTasks() {
+    $('#task-list').innerHTML = tasks.map(task => { const done = state.completedTasks.includes(task.id); return '<div class="task ' + (done ? 'done' : '') + '"><input type="checkbox" id="task-' + task.id + '" data-task="' + task.id + '" ' + (done ? 'checked' : '') + '><div><label for="task-' + task.id + '">' + esc(task.title) + '</label><p>' + esc(task.detail) + '</p></div><span class="task-stage">' + esc(task.stage) + '</span></div>'; }).join('');
+    $('#task-progress').textContent = tasks.filter(task => state.completedTasks.includes(task.id)).length + ' / ' + tasks.length + ' completed';
+  }
+  $('#task-list').addEventListener('change', event => {
+    const input = event.target;
+    if (!input.matches('input[data-task]')) return;
+    state.completedTasks = state.completedTasks.filter(id => id !== input.dataset.task);
+    if (input.checked) state.completedTasks.push(input.dataset.task);
+    captureForms(); persist('Experiment progress saved'); renderTasks();
+    document.getElementById('task-' + input.dataset.task).focus({preventScroll:true});
+  });
+  const dialog = $('#help-dialog');
+  $('#open-help').addEventListener('click', () => dialog.showModal());
+  $('#help-secondary').addEventListener('click', () => dialog.showModal());
+  $('#close-help').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => { if (event.target === dialog) { const r = dialog.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close(); } });
+  $('#export-workspace').addEventListener('click', () => {
+    captureForms(); persist('Preparing your complete HTML copy…');
+    const doc = document.documentElement.cloneNode(true);
+    doc.querySelector('#workspace-data').textContent = JSON.stringify(state).replace(/</g,'\\u003c');
+    doc.querySelector('#toast').hidden = true;
+    doc.querySelector('#help-dialog').removeAttribute('open');
+    doc.querySelector('#save-state').textContent = 'Exported copy';
+    const blob = new Blob(['<!doctype html>\n' + doc.outerHTML],{type:'text/html;charset=utf-8'});
+    const url = URL.createObjectURL(blob), link = document.createElement('a');
+    link.href = url; link.download = 'index.html'; document.body.appendChild(link); link.click(); link.remove(); setTimeout(() => URL.revokeObjectURL(url),10000);
+    toast('HTML copy exported. Replace product-workspace/index.html to save it in your repo.');
+  });
+  fillForms(); updateSummary(); renderResearch(); renderTasks();
+})();
+</script>
+</body>
+</html>

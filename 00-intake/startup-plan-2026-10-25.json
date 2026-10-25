@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-25",
+  "founder_source": "founder-brief-2026-10-25.json",
+  "intake_status": "Captured for planning; remaining unknowns declared in HTML",
+  "recommended_core": "Evidence-backed study navigator",
+  "recommended_pilot": "Manually assisted discovery",
+  "concepts": [
+    "Evidence-backed study navigator",
+    "Budget-first feasibility check",
+    "Existing shortlist review",
+    "Programme-first matching",
+    "Country comparison explorer (later)",
+    "Manually assisted discovery pilot"
+  ],
+  "research": {
+    "recommendation": "Standard",
+    "status": "Four waves complete; self-review fallback documented",
+    "provisional_score": 5,
+    "score_note": "Planning assessment, not verified market evidence",
+    "waves": [
+      {
+        "name": "Market",
+        "workstreams": 3
+      },
+      {
+        "name": "Alternatives",
+        "workstreams": 3
+      },
+      {
+        "name": "Students",
+        "workstreams": 3
+      },
+      {
+        "name": "Distribution",
+        "workstreams": 2
+      }
+    ],
+    "selected": "Standard",
+    "report": "../product-workspace/research.html"
+  },
+  "not_completed": [
+    "Founder strategy review before Brand",
+    "Brand, detailed Product, Financial and Validation phases",
+    "Primary student interviews and pilot experiments"
+  ],
+  "strategy": "../product-workspace/strategy.html"
+}

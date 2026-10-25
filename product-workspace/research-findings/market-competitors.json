@@ -1,0 +1,624 @@
+{
+  "id": "market-competitors",
+  "title": "Germany-first student market, competitors & distribution",
+  "asOf": "2026-10-25",
+  "summary": "A real India–Germany corridor and crowded guidance market justify a narrow usefulness test, not a revenue forecast. Fresh research compares official tools, specialists and agencies, examines named Reddit allegations with counterevidence, and identifies trust and distribution constraints for the free student product.",
+  "sections": [
+    {
+      "title": "Decision: compete on verified usefulness, not free guidance alone",
+      "body": "The student-facing pivot enters an existing category. Official personalised guidance, Germany specialists and large counsellors already offer profile assessment, shortlists or application roadmaps. The defensible hypothesis is a result a specific Indian student can verify and act on with less confusion. Desk research establishes competitive overlap and trust risks; it does not establish demand for this product.",
+      "bullets": [
+        "Founder-confirmed scope: Germany first; Indian students directly; bachelor’s and master’s kept distinct; profile plus optional conversation; free founder-funded launch.",
+        "Proposed edge to test: show the exact eligibility rule, missing information, total-cost assumptions and official source for each option; let the student cross-check and disagree.",
+        "Do not claim an uncontested market, no free personalised alternatives, guaranteed admission, or validated willingness to pay."
+      ],
+      "sources": [
+        {
+          "title": "Study Guide — personal Germany study roadmap",
+          "url": "https://www.study-guide.com/en/",
+          "note": "myguide.de redirects here. Published features and free pricing observed; logged-in matching accuracy not tested."
+        },
+        {
+          "title": "MS in Germany — free student dashboard",
+          "url": "https://msingermany.com/",
+          "note": "Old .co.in homepage redirects to .com. Current homepage advertises free profile-aware matching, source-linked guidance and an AI adviser. This supersedes an older static-package-only description; product accuracy and adoption untested."
+        },
+        {
+          "title": "YourWeg programme matching and pricing",
+          "url": "https://www.yourweg.com/",
+          "note": "₹0 preview / five matches; ₹1,999 + GST one-time season plan with four months access. Admission bands and catalogue size are claims, not independently calibrated probabilities."
+        },
+        {
+          "title": "Nikshala pricing and free tools",
+          "url": "https://nikshala.com/pricing",
+          "note": "Free master search/bachelor pathway; human shortlist ₹6,000; single application filing from ₹3,999. Some services say payments being finalised. Advertised offer, not a completed purchase or delivery test."
+        }
+      ]
+    },
+    {
+      "title": "Market: a substantial corridor, with no defensible paid TAM yet",
+      "body": "The latest report retrieved for this pass is Wissenschaft weltoffen 2026. Its chart Z2 shows 69,076 Indian international students (Bildungsausländer) in winter 2025/26, against 58,833 in winter 2024/25. This is enrolled stock across levels, not the number of fresh annual customers. Table B2.15 records 26,185 Indian uni-assist applicants in study year 2025 versus 24,018 in 2024; that year combines summer 2025 and winter 2025/26.",
+      "bullets": [
+        "The applicant measure covers one processing channel, excluding direct routes and many early explorers. It is neither total aspirants nor this product’s reachable audience; do not add it to enrolled stock.",
+        "59,419 appears in an older DAAD India publication under a different description. Use report-specific populations; do not splice counts or assume foreign citizenship equals education obtained abroad.",
+        "India-specific bachelor/master reachable demand, initial subject, intake, conversion, recurring use and distribution access remain unmeasured. Paid TAM/SAM and Year-1 SOM should remain unknown.",
+        "Free launch means no assumed launch sales revenue. Later ₹500/month or plan remains a founder hypothesis; agency service prices and enrolled stock cannot validate it."
+      ],
+      "sources": [
+        {
+          "title": "Wissenschaft weltoffen 2026 — Z2 and B2.15",
+          "url": "https://www.wissenschaft-weltoffen.de/content/uploads/2026/10/WWO_2026_web.pdf",
+          "note": "PDF page 9, chart Z2; PDF page 52 / printed page 50, table B2.15 and footnote 1. These datasets are not separate corroboration of each other."
+        },
+        {
+          "title": "Indian Students in Germany at an all-time high",
+          "url": "https://www.daad.in/en/2025/09/22/indian-students-in-germany-at-an-all-time-high/",
+          "note": "Reports 59,419 degree-seeking Indian students across bachelor/master/PhD. Its subject percentages total 105%; do not reuse that breakdown or reconcile counts without definitions."
+        }
+      ]
+    },
+    {
+      "title": "Separate the bachelor’s and master’s opportunities",
+      "body": "Keep both levels in product scope while testing separate journeys. This is a design recommendation, not a measured India-specific market split. Pooling the two would hide different eligibility bottlenecks and may make a small pilot misleading.",
+      "bullets": [
+        "Bachelor’s discovery: clarify school board/qualification, intended subject, language, direct versus preparatory route and additional preparation costs; do not promise that a generic profile score establishes university entrance eligibility.",
+        "Master’s discovery: compare the actual previous degree and subject requirements, credits/content, grades, language and programme-specific application route; unusual qualifications need an explicit unknown and official contact.",
+        "Test one narrow field/intake cohort per level using the same source-backed result format, reporting outcomes separately. Choosing a small pilot slice does not remove the other level from the product vision."
+      ],
+      "sources": [
+        {
+          "title": "Study Guide — personal Germany study roadmap",
+          "url": "https://www.study-guide.com/en/",
+          "note": "myguide.de redirects here. Published features and free pricing observed; logged-in matching accuracy not tested."
+        },
+        {
+          "title": "uni-assist FAQs: get information",
+          "url": "https://www.uni-assist.de/en/faqs/get-information/",
+          "note": "No commercial-agency cooperation or agency priority; universities decide admission. Points to university international offices and official application channels."
+        },
+        {
+          "title": "How much can you trust Consultancies for MS in Germany?",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1h18uex/how_much_can_you_trust_consultancies_for_ms_in/",
+          "note": "Original poster describes conflicting public/private eligibility advice. Later comments name MS in Germany and allege guarantee/service failure; do not conflate those comments with original author or current business terms."
+        }
+      ]
+    },
+    {
+      "title": "Official and DIY alternatives: the baseline to beat",
+      "body": "DAAD Study Guide is already a free personalised assistant, with profiles, eligibility orientation, bachelor/master programme discovery, funding and checklists. University international offices and uni-assist guidance remain important direct alternatives. A Germany master’s DIY narrative illustrates a workflow using DAAD plus a personal tracker, while describing the burden of many websites.",
+      "bullets": [
+        "DAAD Study Guide: free, authoritative broad starting point; benchmark the product against its actual personalised workflow rather than calling DAAD a static directory.",
+        "University programme pages / international offices: primary rules and escalation path; the product should make them easier to navigate, not substitute unsupported conclusions.",
+        "DIY spreadsheet plus Reddit/YouTube/alumni: flexible and inexpensive, with time, freshness and reliability costs. The anecdote supports a workflow hypothesis, not a population-wide time estimate."
+      ],
+      "sources": [
+        {
+          "title": "Study Guide — personal Germany study roadmap",
+          "url": "https://www.study-guide.com/en/",
+          "note": "myguide.de redirects here. Published features and free pricing observed; logged-in matching accuracy not tested."
+        },
+        {
+          "title": "uni-assist FAQs: get information",
+          "url": "https://www.uni-assist.de/en/faqs/get-information/",
+          "note": "No commercial-agency cooperation or agency priority; universities decide admission. Points to university international offices and official application channels."
+        },
+        {
+          "title": "My Germany Masters Application Experience (A detailed post)",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1h5qib7/my_germany_masters_application_experience_a/",
+          "note": "Describes self-shortlisting, a tracker and fragmented application steps. Historical anecdote; its specific fees, APS procedures and dates are not current official instructions."
+        }
+      ]
+    },
+    {
+      "title": "Direct specialists: YourWeg, Nikshala and MS in Germany",
+      "body": "These offers overlap the proposed product closely. Published catalogue sizes and admission bands are provider claims; none of the matching engines was tested with real documents or audited for eligibility accuracy.",
+      "bullets": [
+        "YourWeg: Germany profile matching, reasons, tracker, document vault and deadlines; shows bachelor/master/PhD options. Free five-match tier; Pro ₹1,999 + GST once per season with four months access. Calibration and real degree-level depth unverified.",
+        "Nikshala: free master’s search and bachelor’s roadmap/Studienkolleg tools; human shortlisting ₹6,000 and application filing from ₹3,999 advertised. Paid service delivery was not purchased; some checkout wording says payments are being finalised. Referral links support the free service.",
+        "MS in Germany: the former .co.in homepage now redirects to msingermany.com, advertising free master’s profile-aware matching, source-linked programme facts, application tracking and an AI adviser. This is a direct free software competitor; it should not be represented only as an old consultancy package.",
+        "Benchmark on missing-input handling, hard-rule accuracy, provenance, exclusions, costs, study-level coverage and time to a verified useful result. A feature checklist or low price alone does not demonstrate student value."
+      ],
+      "sources": [
+        {
+          "title": "MS in Germany — free student dashboard",
+          "url": "https://msingermany.com/",
+          "note": "Old .co.in homepage redirects to .com. Current homepage advertises free profile-aware matching, source-linked guidance and an AI adviser. This supersedes an older static-package-only description; product accuracy and adoption untested."
+        },
+        {
+          "title": "YourWeg programme matching and pricing",
+          "url": "https://www.yourweg.com/",
+          "note": "₹0 preview / five matches; ₹1,999 + GST one-time season plan with four months access. Admission bands and catalogue size are claims, not independently calibrated probabilities."
+        },
+        {
+          "title": "Nikshala pricing and free tools",
+          "url": "https://nikshala.com/pricing",
+          "note": "Free master search/bachelor pathway; human shortlist ₹6,000; single application filing from ₹3,999. Some services say payments being finalised. Advertised offer, not a completed purchase or delivery test."
+        },
+        {
+          "title": "Nikshala partners and referral disclosure",
+          "url": "https://nikshala.com/partners",
+          "note": "Some referral links support Nikshala without extra student cost. Referral disclosure does not prove recommendations are biased; it establishes a commercial relationship."
+        }
+      ]
+    },
+    {
+      "title": "Counsellor and creator alternatives: Yocket, LeapScholar, Edwise, BiG and IDP",
+      "body": "Large agencies bundle human reassurance and execution; creators bundle content, communities and paid help. Current terms vary by destination and service, so quote-based fees should remain unknown rather than taking Reddit payment reports as a price list.",
+      "bullets": [
+        "Yocket Premium: advertises Germany among destinations, profile-led counselling and application support, and an admission guarantee. A free consultation is advertised; a reliable current fixed price and guarantee contract were not established. Testimonials and performance multipliers are not independent proof.",
+        "LeapScholar: Germany counselling and application assistance advertised. Its own September 2026 disclosure says partner institutions pay commissions after enrolment. Another service page describes free initial consultation and paid full support while also using broader free-service wording; obtain a written scope-specific quote.",
+        "Edwise: advertises free counselling including Germany, university/course selection, application guidance, essays and financial/travel services, with university partnerships. Exact Germany coverage, limits and commercial payment terms were not established.",
+        "Bharat in Germany / BiG Academy: bachelor/master Germany guidance, study courses, language training and document review advertised. Relevant creator-led distribution and DIY education alternative; current study-course price and outcomes were not independently verified.",
+        "IDP: a major free-counselling and partner-institution alternative for destination exploration. Germany was absent from the inspected main destination list. Treat comprehensive Germany/public-university service as unverified rather than inferring it from the brand’s size."
+      ],
+      "sources": [
+        {
+          "title": "Yocket Premium",
+          "url": "https://yocket.com/premium",
+          "note": "Germany appears among destinations. Performance multipliers, guarantees, success rates and testimonials are vendor claims; contract and prices were not verified."
+        },
+        {
+          "title": "LeapScholar commission disclosure",
+          "url": "https://leapscholar.com/questions/does-leapscholar-earn-any-commission-from-partner-universities",
+          "note": "Says partner universities pay after enrolment. Establishes a financial incentive, not misconduct or per-university bias."
+        },
+        {
+          "title": "LeapScholar Ghaziabad service scope and fees",
+          "url": "https://leapscholar.com/study-abroad-consultant/ghaziabad",
+          "note": "Lists Germany, free initial counselling and paid full application support; also contains broader free-service wording. Obtain a written destination-specific quote; no universal price inferred."
+        },
+        {
+          "title": "Choosing Edwise as your Overseas Education Consultant",
+          "url": "https://www.edwiseinternational.com/blogs/choosing-edwise-as-your-overseas-education-consultant.html",
+          "note": "Free counselling, Germany and university partnerships are advertised. Article contains older company-age language; not evidence of current outcomes or exact Germany service terms."
+        },
+        {
+          "title": "Bharat in Germany / BiG Academy",
+          "url": "https://bharatingermany.com/",
+          "note": "Advertises bachelor/master guidance, paid courses and document review. Testimonials and enrolled-student counts are vendor claims, not audited outcomes. Current study-course checkout price not established."
+        },
+        {
+          "title": "IDP India — services and destinations",
+          "url": "https://www.idp.com/india/",
+          "note": "Free counselling and partner institution model advertised. Germany is absent from the inspected main destination list; do not treat broad IDP counselling as verified comprehensive Germany/public-university coverage."
+        }
+      ]
+    },
+    {
+      "title": "Named Reddit reports: specific allegations, not a misconduct verdict",
+      "body": "Reddit supplies leads about trust failures and workflow pain. It does not verify the buyer, contract, company response or full outcome. No regulator or court finding against the named agencies was established in this pass; a public warning about agency deception is not evidence against a particular company.",
+      "bullets": [
+        "Yocket — a Germany CS/Data Science applicant alleges poor profile matching and generic document support, then doing the research personally. Product lesson: source-linked hard requirements and a reproducible shortlist. Do not infer that every Yocket service performs this way.",
+        "LeapScholar — a Germany applicant alleges sales urgency, application/SOP mistakes and disagreement about included fees, while reporting one admit. A commenter reports satisfactory early shortlisting. Product lesson: precise scope, accountable corrections and a clear fee boundary; satisfaction and outcomes are not uniform.",
+        "MS in Germany — the original thread concerns two unnamed agencies giving conflicting public/private eligibility advice to an unusual BCA profile. Later commenters name MS in Germany and allege guarantee/service failure. These are different speakers; the comments do not establish present terms or causation.",
+        "IDP / Y-Axis / LeapScholar — another author alleges discouragement over a long study gap and steering to other destinations, then reports self-applying to Belgium. It is adjacent Europe evidence, not proof of German admission rules.",
+        "IDP / SI-UK / TC Global — one broad thread accuses commission-driven steering, but replies describe helpful IDP/SI-UK support in other destinations. Do not adopt its unsupported commission figures or generalisations as industry statistics."
+      ],
+      "sources": [
+        {
+          "title": "My honest experience with YOCKET – dont waste your money",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1vj7hbq/my_honest_experience_with_yocket_dont_waste_your/",
+          "note": "Author alleges poor Germany CS/Data Science shortlist and generic document support. Identity, purchase, contract, completeness and company response unverified. Timestamp conflict retained; no exact age asserted."
+        },
+        {
+          "title": "LeapScholar study abroad (Germany) review",
+          "url": "https://www.reddit.com/r/studyAbroad/comments/1mynxm0/leapscholar_study_abroad_germany_review/",
+          "note": "Author alleges sales pressure, errors and fee-scope disagreement but reports receiving one admit. A commenter reports satisfactory initial shortlisting; neither account independently verified."
+        },
+        {
+          "title": "How much can you trust Consultancies for MS in Germany?",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1h18uex/how_much_can_you_trust_consultancies_for_ms_in/",
+          "note": "Original poster describes conflicting public/private eligibility advice. Later comments name MS in Germany and allege guarantee/service failure; do not conflate those comments with original author or current business terms."
+        },
+        {
+          "title": "Why to avoid cheap Consultancies? Exposing: IDP, SIUK, TC Global etc",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1fpxnp7/why_to_avoid_cheap_consultancies_exposing_idp/",
+          "note": "Broad accusations include unverified commission amounts and sweeping generalisations, which this report does not adopt. Replies include favourable IDP/SI-UK experiences outside Germany; not Germany outcome evidence."
+        },
+        {
+          "title": "Experience: IDP, Y-Axis, Leap Scholar all told me no good uni because of 5+ years gap",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1q66xbq/experience_idp_yaxis_leap_scholar_all_told_me_no/",
+          "note": "Author alleges destination steering and later self-applied successfully to Belgium. Relevant to European advice incentives, not evidence of German admission eligibility or agency-wide practice."
+        }
+      ]
+    },
+    {
+      "title": "What “black practices” evidence actually supports",
+      "body": "Three evidence levels should stay visible. Official sources establish that false affiliation and agency-priority claims are risks to check. Provider disclosures establish some commercial incentives. Anonymous reviews describe alleged service failures. These levels cannot be combined into a company blacklist.",
+      "bullets": [
+        "Officially contradicted claims: uni-assist says it has no cooperation with commercial placement agencies and gives no priority to their applications; universities decide admission. Verify any agency claim of special uni-assist access directly.",
+        "Incentive risks: Leap discloses university commission; Nikshala discloses some referral-funded links. These may narrow a recommendation set or influence ancillary products, but disclosure alone does not establish harmful steering.",
+        "Allegations to investigate: pressure discounts, promised outcomes versus contract terms, private-university steering, generic profile matching, errors, surprise fees and weak post-sale responsiveness. Ask for documents and a company response before making stronger public claims.",
+        "Positive evidence has limits too: vendor testimonials are selected and Reddit praise can be unverifiable or promotional. Absence of a complaint in this search is not a quality certification."
+      ],
+      "sources": [
+        {
+          "title": "LeapScholar commission disclosure",
+          "url": "https://leapscholar.com/questions/does-leapscholar-earn-any-commission-from-partner-universities",
+          "note": "Says partner universities pay after enrolment. Establishes a financial incentive, not misconduct or per-university bias."
+        },
+        {
+          "title": "Nikshala partners and referral disclosure",
+          "url": "https://nikshala.com/partners",
+          "note": "Some referral links support Nikshala without extra student cost. Referral disclosure does not prove recommendations are biased; it establishes a commercial relationship."
+        },
+        {
+          "title": "uni-assist FAQs: get information",
+          "url": "https://www.uni-assist.de/en/faqs/get-information/",
+          "note": "No commercial-agency cooperation or agency priority; universities decide admission. Points to university international offices and official application channels."
+        },
+        {
+          "title": "Beware of Misleading Agencies",
+          "url": "https://www.daad.in/en/study-research-in-germany/studying-in-germany/beware-of-misleading-agencies/",
+          "note": "Warns generally about false representation and misuse of institutional identity. Does not name the agencies discussed here or adjudicate Reddit allegations."
+        },
+        {
+          "title": "My honest experience with YOCKET – dont waste your money",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1vj7hbq/my_honest_experience_with_yocket_dont_waste_your/",
+          "note": "Author alleges poor Germany CS/Data Science shortlist and generic document support. Identity, purchase, contract, completeness and company response unverified. Timestamp conflict retained; no exact age asserted."
+        },
+        {
+          "title": "LeapScholar study abroad (Germany) review",
+          "url": "https://www.reddit.com/r/studyAbroad/comments/1mynxm0/leapscholar_study_abroad_germany_review/",
+          "note": "Author alleges sales pressure, errors and fee-scope disagreement but reports receiving one admit. A commenter reports satisfactory initial shortlisting; neither account independently verified."
+        },
+        {
+          "title": "How much can you trust Consultancies for MS in Germany?",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1h18uex/how_much_can_you_trust_consultancies_for_ms_in/",
+          "note": "Original poster describes conflicting public/private eligibility advice. Later comments name MS in Germany and allege guarantee/service failure; do not conflate those comments with original author or current business terms."
+        },
+        {
+          "title": "Why to avoid cheap Consultancies? Exposing: IDP, SIUK, TC Global etc",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1fpxnp7/why_to_avoid_cheap_consultancies_exposing_idp/",
+          "note": "Broad accusations include unverified commission amounts and sweeping generalisations, which this report does not adopt. Replies include favourable IDP/SI-UK experiences outside Germany; not Germany outcome evidence."
+        }
+      ]
+    },
+    {
+      "title": "Distribution: use communities for listening within their rules",
+      "body": "The relevant subreddit is a rich source of questions and counterexamples, but its current rule 9 prohibits surveys and promotions. It is not an open recruitment funnel. Existing questions reveal useful wording and concerns; they do not give permission to send sales DMs or harvest profiles.",
+      "bullets": [
+        "Founder network / college groups: seek an administrator-approved opt-in introduction through existing contacts. Proposed experiment: recruit 12 adults, split bachelor/master intent, without asking for full documents initially; record who declines as well as who joins.",
+        "College alumni / German-language communities: propose one factual workshop showing an official-source eligibility check. Require host permission and disclose founder affiliation. Participants choose separately whether to test the tool.",
+        "Public source-backed explainers: publish a few narrow, maintained pages on checking programme fit and costs with dated official sources; measure qualified opt-ins and verified usefulness. This is an experiment, not a forecast of SEO traffic.",
+        "Reddit: no survey, promotion, product links or unsolicited sales outreach under current rules. Read relevant megathreads; any later exception would require moderator permission. Community size is not reachable users.",
+        "DAAD and universities are trusted information sources and existing event channels, not assumed partners or endorsement routes. No contact, posting or recruitment was performed in this research."
+      ],
+      "sources": [
+        {
+          "title": "r/Indians_StudyAbroad community rules and pinned announcements",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/",
+          "note": "Rule 9 says surveys and promotions are not allowed. Other rules require useful titles, source/context, relevant megathreads and civil discussion. Rules-page endpoint showed only empty headings, so rules were read from community homepage."
+        },
+        {
+          "title": "Study Guide — personal Germany study roadmap",
+          "url": "https://www.study-guide.com/en/",
+          "note": "myguide.de redirects here. Published features and free pricing observed; logged-in matching accuracy not tested."
+        },
+        {
+          "title": "Choosing Edwise as your Overseas Education Consultant",
+          "url": "https://www.edwiseinternational.com/blogs/choosing-edwise-as-your-overseas-education-consultant.html",
+          "note": "Free counselling, Germany and university partnerships are advertised. Article contains older company-age language; not evidence of current outcomes or exact Germany service terms."
+        },
+        {
+          "title": "My Germany Masters Application Experience (A detailed post)",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1h5qib7/my_germany_masters_application_experience_a/",
+          "note": "Describes self-shortlisting, a tracker and fragmented application steps. Historical anecdote; its specific fees, APS procedures and dates are not current official instructions."
+        }
+      ]
+    },
+    {
+      "title": "Pilot economics and success criteria",
+      "body": "Use a bounded learning pilot rather than a paid-market spreadsheet. The following numbers are proposed decision rules, not external benchmarks. They must be agreed with the founder and tracked separately by degree level.",
+      "bullets": [
+        "Proposed useful-result test: at least 8 of 12 participants can explain one viable option or a justified blocker and independently open the supporting official source; record every incorrect hard eligibility conclusion as a critical defect.",
+        "Compare against DAAD Study Guide plus DIY search on the same decision, tracking time, confidence calibration, missing requirements and what changed in the student’s shortlist; do not merely ask whether they like the interface.",
+        "Measure recruitment time, consented profile starts, completed useful results, source opens, one-week return and next action. Include manual research/review time, data maintenance, model/API charges and support in cost per useful result.",
+        "Leave paid CAC, LTV, churn, paid conversion and revenue forecasts blank until measured. A free session, agency invoice anecdote or competitor posted price establishes no willingness to pay for this tool."
+      ],
+      "sources": [
+        {
+          "title": "Study Guide — personal Germany study roadmap",
+          "url": "https://www.study-guide.com/en/",
+          "note": "myguide.de redirects here. Published features and free pricing observed; logged-in matching accuracy not tested."
+        },
+        {
+          "title": "MS in Germany — free student dashboard",
+          "url": "https://msingermany.com/",
+          "note": "Old .co.in homepage redirects to .com. Current homepage advertises free profile-aware matching, source-linked guidance and an AI adviser. This supersedes an older static-package-only description; product accuracy and adoption untested."
+        },
+        {
+          "title": "YourWeg programme matching and pricing",
+          "url": "https://www.yourweg.com/",
+          "note": "₹0 preview / five matches; ₹1,999 + GST one-time season plan with four months access. Admission bands and catalogue size are claims, not independently calibrated probabilities."
+        }
+      ]
+    },
+    {
+      "title": "Product safeguards that could earn trust",
+      "body": "These are recommended controls derived from the evidence, not validated differentiators. Many competitors already advertise source-backed or transparent support; the product must demonstrate the behaviour on difficult cases.",
+      "bullets": [
+        "Keep ranking independent of commercial payouts; disclose every commission/referral relationship and show relevant non-partner routes. Never imply free means financially disinterested.",
+        "For each result show official source, last checked date, study level, exact satisfied and missing criteria, cost components and next verification step; distinguish plausible fit from confirmed eligibility.",
+        "Offer anonymous/light exploration first, with optional deeper profile and conversation. Do not turn a simple shortlist into mandatory transcript, passport or family-document collection.",
+        "Allow corrections, export and deletion; show uncertainty and abstain when academic equivalence is unclear. Refer to the actual university or official service for a determination.",
+        "No admission, visa, job or part-time-income guarantee; avoid blanket public-university-is-free messaging and probability-style bands without calibration."
+      ],
+      "sources": [
+        {
+          "title": "Study Guide — personal Germany study roadmap",
+          "url": "https://www.study-guide.com/en/",
+          "note": "myguide.de redirects here. Published features and free pricing observed; logged-in matching accuracy not tested."
+        },
+        {
+          "title": "MS in Germany — free student dashboard",
+          "url": "https://msingermany.com/",
+          "note": "Old .co.in homepage redirects to .com. Current homepage advertises free profile-aware matching, source-linked guidance and an AI adviser. This supersedes an older static-package-only description; product accuracy and adoption untested."
+        },
+        {
+          "title": "uni-assist FAQs: get information",
+          "url": "https://www.uni-assist.de/en/faqs/get-information/",
+          "note": "No commercial-agency cooperation or agency priority; universities decide admission. Points to university international offices and official application channels."
+        },
+        {
+          "title": "Beware of Misleading Agencies",
+          "url": "https://www.daad.in/en/study-research-in-germany/studying-in-germany/beware-of-misleading-agencies/",
+          "note": "Warns generally about false representation and misuse of institutional identity. Does not name the agencies discussed here or adjudicate Reddit allegations."
+        },
+        {
+          "title": "My honest experience with YOCKET – dont waste your money",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1vj7hbq/my_honest_experience_with_yocket_dont_waste_your/",
+          "note": "Author alleges poor Germany CS/Data Science shortlist and generic document support. Identity, purchase, contract, completeness and company response unverified. Timestamp conflict retained; no exact age asserted."
+        },
+        {
+          "title": "LeapScholar study abroad (Germany) review",
+          "url": "https://www.reddit.com/r/studyAbroad/comments/1mynxm0/leapscholar_study_abroad_germany_review/",
+          "note": "Author alleges sales pressure, errors and fee-scope disagreement but reports receiving one admit. A commenter reports satisfactory initial shortlisting; neither account independently verified."
+        },
+        {
+          "title": "How much can you trust Consultancies for MS in Germany?",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1h18uex/how_much_can_you_trust_consultancies_for_ms_in/",
+          "note": "Original poster describes conflicting public/private eligibility advice. Later comments name MS in Germany and allege guarantee/service failure; do not conflate those comments with original author or current business terms."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "M01",
+      "title": "Wissenschaft weltoffen 2026 — Z2 and B2.15",
+      "url": "https://www.wissenschaft-weltoffen.de/content/uploads/2026/10/WWO_2026_web.pdf",
+      "publisher": "DAAD / DZHW; source statistics Destatis and uni-assist",
+      "date": "2026 report; stock winter 2025/26, applicant year 2025",
+      "access": "Web open failed; downloaded original PDF with curl and extracted relevant pages locally with pypdf.",
+      "kind": "Official statistics",
+      "notes": "PDF page 9, chart Z2; PDF page 52 / printed page 50, table B2.15 and footnote 1. These datasets are not separate corroboration of each other."
+    },
+    {
+      "id": "M02",
+      "title": "Indian Students in Germany at an all-time high",
+      "url": "https://www.daad.in/en/2025/09/22/indian-students-in-germany-at-an-all-time-high/",
+      "publisher": "DAAD India",
+      "date": "URL dated 2025-09-22; page displayed 2026-10-25",
+      "access": "Opened full public page with web tool",
+      "kind": "Official publication",
+      "notes": "Reports 59,419 degree-seeking Indian students across bachelor/master/PhD. Its subject percentages total 105%; do not reuse that breakdown or reconcile counts without definitions."
+    },
+    {
+      "id": "M03",
+      "title": "Study Guide — personal Germany study roadmap",
+      "url": "https://www.study-guide.com/en/",
+      "publisher": "DAAD",
+      "date": "Undated; checked 2026-10-25",
+      "access": "Opened full public page with web tool",
+      "kind": "Official free alternative",
+      "notes": "myguide.de redirects here. Published features and free pricing observed; logged-in matching accuracy not tested."
+    },
+    {
+      "id": "M04",
+      "title": "Yocket Premium",
+      "url": "https://yocket.com/premium",
+      "publisher": "Yocket",
+      "date": "Undated; checked 2026-10-25",
+      "access": "Opened full public page with web tool",
+      "kind": "Provider statement",
+      "notes": "Germany appears among destinations. Performance multipliers, guarantees, success rates and testimonials are vendor claims; contract and prices were not verified."
+    },
+    {
+      "id": "M05",
+      "title": "LeapScholar commission disclosure",
+      "url": "https://leapscholar.com/questions/does-leapscholar-earn-any-commission-from-partner-universities",
+      "publisher": "LeapScholar",
+      "date": "2026-09-21",
+      "access": "Opened full public page with web tool",
+      "kind": "Provider incentive disclosure",
+      "notes": "Says partner universities pay after enrolment. Establishes a financial incentive, not misconduct or per-university bias."
+    },
+    {
+      "id": "M06",
+      "title": "LeapScholar Ghaziabad service scope and fees",
+      "url": "https://leapscholar.com/study-abroad-consultant/ghaziabad",
+      "publisher": "LeapScholar",
+      "date": "Undated; checked 2026-10-25",
+      "access": "Opened full public page with web tool",
+      "kind": "Provider statement",
+      "notes": "Lists Germany, free initial counselling and paid full application support; also contains broader free-service wording. Obtain a written destination-specific quote; no universal price inferred."
+    },
+    {
+      "id": "M07",
+      "title": "Choosing Edwise as your Overseas Education Consultant",
+      "url": "https://www.edwiseinternational.com/blogs/choosing-edwise-as-your-overseas-education-consultant.html",
+      "publisher": "Edwise",
+      "date": "Undated; checked 2026-10-25",
+      "access": "Opened full public page with web tool",
+      "kind": "Provider statement",
+      "notes": "Free counselling, Germany and university partnerships are advertised. Article contains older company-age language; not evidence of current outcomes or exact Germany service terms."
+    },
+    {
+      "id": "M08",
+      "title": "Bharat in Germany / BiG Academy",
+      "url": "https://bharatingermany.com/",
+      "publisher": "Bharat in Germany",
+      "date": "Undated; checked 2026-10-25",
+      "access": "Opened full public page with web tool",
+      "kind": "Provider statement",
+      "notes": "Advertises bachelor/master guidance, paid courses and document review. Testimonials and enrolled-student counts are vendor claims, not audited outcomes. Current study-course checkout price not established."
+    },
+    {
+      "id": "M09",
+      "title": "MS in Germany — free student dashboard",
+      "url": "https://msingermany.com/",
+      "publisher": "MS in Germany",
+      "date": "Undated; checked 2026-10-25",
+      "access": "Opened full public page with web tool",
+      "kind": "Provider statement",
+      "notes": "Old .co.in homepage redirects to .com. Current homepage advertises free profile-aware matching, source-linked guidance and an AI adviser. This supersedes an older static-package-only description; product accuracy and adoption untested."
+    },
+    {
+      "id": "M10",
+      "title": "YourWeg programme matching and pricing",
+      "url": "https://www.yourweg.com/",
+      "publisher": "YourWeg",
+      "date": "Undated; checked 2026-10-25",
+      "access": "Opened full public page with web tool",
+      "kind": "Provider statement",
+      "notes": "₹0 preview / five matches; ₹1,999 + GST one-time season plan with four months access. Admission bands and catalogue size are claims, not independently calibrated probabilities."
+    },
+    {
+      "id": "M11",
+      "title": "Nikshala pricing and free tools",
+      "url": "https://nikshala.com/pricing",
+      "publisher": "Nikshala AI",
+      "date": "Undated; checked 2026-10-25",
+      "access": "Opened full public page with web tool",
+      "kind": "Provider statement",
+      "notes": "Free master search/bachelor pathway; human shortlist ₹6,000; single application filing from ₹3,999. Some services say payments being finalised. Advertised offer, not a completed purchase or delivery test."
+    },
+    {
+      "id": "M12",
+      "title": "Nikshala partners and referral disclosure",
+      "url": "https://nikshala.com/partners",
+      "publisher": "Nikshala AI",
+      "date": "Undated; checked 2026-10-25",
+      "access": "Opened full public page with web tool",
+      "kind": "Provider incentive disclosure",
+      "notes": "Some referral links support Nikshala without extra student cost. Referral disclosure does not prove recommendations are biased; it establishes a commercial relationship."
+    },
+    {
+      "id": "M13",
+      "title": "IDP India — services and destinations",
+      "url": "https://www.idp.com/india/",
+      "publisher": "IDP Education",
+      "date": "Undated; checked 2026-10-25",
+      "access": "Public page content returned in web search; homepage not separately opened in this workstream.",
+      "kind": "Provider statement",
+      "notes": "Free counselling and partner institution model advertised. Germany is absent from the inspected main destination list; do not treat broad IDP counselling as verified comprehensive Germany/public-university coverage."
+    },
+    {
+      "id": "M14",
+      "title": "uni-assist FAQs: get information",
+      "url": "https://www.uni-assist.de/en/faqs/get-information/",
+      "publisher": "uni-assist e.V.",
+      "date": "Undated; checked 2026-10-25",
+      "access": "Opened full public page with web tool",
+      "kind": "Official process guidance",
+      "notes": "No commercial-agency cooperation or agency priority; universities decide admission. Points to university international offices and official application channels."
+    },
+    {
+      "id": "M15",
+      "title": "Beware of Misleading Agencies",
+      "url": "https://www.daad.in/en/study-research-in-germany/studying-in-germany/beware-of-misleading-agencies/",
+      "publisher": "DAAD India",
+      "date": "Undated; checked 2026-10-25",
+      "access": "Opened full public page with web tool",
+      "kind": "Official warning",
+      "notes": "Warns generally about false representation and misuse of institutional identity. Does not name the agencies discussed here or adjudicate Reddit allegations."
+    },
+    {
+      "id": "R01",
+      "title": "My honest experience with YOCKET – dont waste your money",
+      "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1vj7hbq/my_honest_experience_with_yocket_dont_waste_your/",
+      "publisher": "Reddit / r/Indians_StudyAbroad",
+      "date": "Search index: 2026-08-08; opened page relative timestamp differed",
+      "access": "Opened full public page with web tool",
+      "kind": "Unverified first-person allegation",
+      "notes": "Author alleges poor Germany CS/Data Science shortlist and generic document support. Identity, purchase, contract, completeness and company response unverified. Timestamp conflict retained; no exact age asserted."
+    },
+    {
+      "id": "R02",
+      "title": "LeapScholar study abroad (Germany) review",
+      "url": "https://www.reddit.com/r/studyAbroad/comments/1mynxm0/leapscholar_study_abroad_germany_review/",
+      "publisher": "Reddit / r/studyAbroad",
+      "date": "Search index: 2025-08-24; comments span later dates",
+      "access": "Opened full public page with web tool",
+      "kind": "Unverified first-person allegation and mixed comments",
+      "notes": "Author alleges sales pressure, errors and fee-scope disagreement but reports receiving one admit. A commenter reports satisfactory initial shortlisting; neither account independently verified."
+    },
+    {
+      "id": "R03",
+      "title": "How much can you trust Consultancies for MS in Germany?",
+      "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1h18uex/how_much_can_you_trust_consultancies_for_ms_in/",
+      "publisher": "Reddit / r/Indians_StudyAbroad",
+      "date": "Search index: 2024-11-27; later comments present",
+      "access": "Opened full public page with web tool",
+      "kind": "Unverified first-person report",
+      "notes": "Original poster describes conflicting public/private eligibility advice. Later comments name MS in Germany and allege guarantee/service failure; do not conflate those comments with original author or current business terms."
+    },
+    {
+      "id": "R04",
+      "title": "Why to avoid cheap Consultancies? Exposing: IDP, SIUK, TC Global etc",
+      "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1fpxnp7/why_to_avoid_cheap_consultancies_exposing_idp/",
+      "publisher": "Reddit / r/Indians_StudyAbroad",
+      "date": "Search index: 2024-09-27; later comments present",
+      "access": "Opened full public page with web tool",
+      "kind": "Unverified claims and counterexamples",
+      "notes": "Broad accusations include unverified commission amounts and sweeping generalisations, which this report does not adopt. Replies include favourable IDP/SI-UK experiences outside Germany; not Germany outcome evidence."
+    },
+    {
+      "id": "R05",
+      "title": "Experience: IDP, Y-Axis, Leap Scholar all told me no good uni because of 5+ years gap",
+      "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1q66xbq/experience_idp_yaxis_leap_scholar_all_told_me_no/",
+      "publisher": "Reddit / r/Indians_StudyAbroad",
+      "date": "Search index: 2026-01-07",
+      "access": "Opened full public page with web tool",
+      "kind": "Unverified first-person report",
+      "notes": "Author alleges destination steering and later self-applied successfully to Belgium. Relevant to European advice incentives, not evidence of German admission eligibility or agency-wide practice."
+    },
+    {
+      "id": "R06",
+      "title": "My Germany Masters Application Experience (A detailed post)",
+      "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1h5qib7/my_germany_masters_application_experience_a/",
+      "publisher": "Reddit / r/Indians_StudyAbroad",
+      "date": "Search index: 2024-12-03; narrative 2023/24",
+      "access": "Opened full public page with web tool",
+      "kind": "Unverified DIY journey",
+      "notes": "Describes self-shortlisting, a tracker and fragmented application steps. Historical anecdote; its specific fees, APS procedures and dates are not current official instructions."
+    },
+    {
+      "id": "C01",
+      "title": "r/Indians_StudyAbroad community rules and pinned announcements",
+      "url": "https://www.reddit.com/r/Indians_StudyAbroad/",
+      "publisher": "Reddit moderators",
+      "date": "Live rules checked 2026-10-25",
+      "access": "Opened full public page with web tool",
+      "kind": "Community policy",
+      "notes": "Rule 9 says surveys and promotions are not allowed. Other rules require useful titles, source/context, relevant megathreads and civil discussion. Rules-page endpoint showed only empty headings, so rules were read from community homepage."
+    }
+  ],
+  "limitations": [
+    "Public desk research is not primary validation. No student interviews, agency purchases, account creation, applications or outreach occurred in this workstream.",
+    "Reddit sample was purposive, using Germany/agency/complaint queries. It overrepresents complaints and active posters; it cannot estimate misconduct prevalence, agency satisfaction or market share.",
+    "Anonymous claims, favourable comments, vendor testimonials and advertised outcomes are unverified. No named-company regulatory finding was established.",
+    "Search and opened-page dates sometimes differed. Relative dates, votes and scraped forum counts were not used as stable statistics; duplicate moderator backups are not independent reports.",
+    "Official WWO2026 PDF was downloaded and extracted locally after the web reader failed; exact page locators are retained. Its stock and channel-applicant figures are distinct populations. Other pages were opened except IDP homepage content, which was available only in returned search text in this pass.",
+    "Published competitor fees and features are snapshots. No logged-in matching benchmark, payment-flow completion, independent adoption metric or full contract/refund audit was performed.",
+    "No complete annual aspirant count, India-specific degree split, reachable audience, paid TAM/SAM, conversion or sustainable cost envelope was established."
+  ],
+  "recommendations": [
+    "Position the next experiment around a small, verifiable decision for each study level; retain both bachelor’s and master’s scope without pretending one eligibility flow covers both.",
+    "Benchmark real outputs against DAAD Study Guide, DIY official-source search and the specialist free offers before claiming differentiation.",
+    "Use opt-in founder/college/alumni channels with permission; honour the subreddit ban on surveys and promotions.",
+    "Build source provenance, explicit unknowns, full-cost context and commercial-interest disclosures into the result itself.",
+    "Keep launch free and measure cost per verified useful result. Revisit pricing only after usefulness and actual payment behaviour can be tested."
+  ]
+}

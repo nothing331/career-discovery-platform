@@ -1,0 +1,264 @@
+{
+  "title": "Indirect alternatives, status quo and platform risk — student Germany navigator",
+  "asOf": "2026-10-25",
+  "queries": [
+    "site:developers.openai.com ChatGPT search web citations",
+    "site:daad.de My GUIDE find degree programmes admissions requirements",
+    "site:uni-assist.de check university admission requirements Germany study",
+    "site:developers.openai.com ChatGPT search sources",
+    "site:hochschulkompass.de/en degree programmes search universities updated",
+    "site:daad.de My GUIDE free service academic background",
+    "site:uni-assist.de commercial agencies",
+    "site:daad.in free counselling online seminars study in Germany",
+    "site:study-in-germany.de planning study application checklist universities",
+    "site:reddit.com/r/Indians_StudyAbroad Germany shortlist spreadsheet DAAD ChatGPT",
+    "site:uni-assist.de do not cooperate",
+    "site:learn.chatgpt.com search sources research",
+    "site:developers.openai.com/training research sources ChatGPT"
+  ],
+  "findings": [
+    {
+      "id": "B2-01",
+      "claim": "The official My GUIDE address currently redirects to Study Guide Germany, which identifies itself as a free DAAD service funded by BMFTR. Its public page advertises a profile-based roadmap, bachelor’s/master’s discovery, qualification-related guidance, financing information and access to DAAD counseling.",
+      "label": "Data",
+      "sourceDate": "Live public pages checked 2026-10-25; launch date not established",
+      "confidence": "High for public service identity and advertised overlap; not assessed for recommendation quality",
+      "sources": [
+        {
+          "title": "Study Guide — your path to studying in Germany starts here",
+          "url": "https://www.study-guide.com/en/",
+          "publisher": "DAAD / Study Guide Germany",
+          "date": "Undated; accessed 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "My GUIDE Campus",
+          "url": "https://www.daad.de/en/the-daad/intersecting-dimensions-topics/digitalisation/myguidecampus/",
+          "publisher": "DAAD",
+          "date": "Undated; accessed 2026-10-25",
+          "tier": 1
+        }
+      ],
+      "limitations": "No account created and no matching-quality, completeness or usability audit performed. Advertised programme coverage and setup time are claims, not independently verified performance. DAAD pages and the service are related sources, not independent corroboration.",
+      "implication": "A free profile-based Germany navigator is already an official alternative. Treat Study Guide as a direct baseline to test, not simply a passive data source. Do not claim whitespace around personalization or a free launch."
+    },
+    {
+      "id": "B2-02",
+      "claim": "Official self-service discovery and orientation already form a viable reference chain: Hochschulkompass says participating institutions enter and update their own data; uni-assist’s certificate-based admission tool is non-binding orientation; DAAD says the final admission decision belongs to the higher-education institution.",
+      "label": "Data",
+      "sourceDate": "Current undated pages accessed 2026-10-25",
+      "confidence": "High for stated roles and boundaries",
+      "sources": [
+        {
+          "title": "About the Higher Education Compass",
+          "url": "https://www.hochschulkompass.de/en/about-us.html",
+          "publisher": "German Rectors’ Conference (HRK)",
+          "date": "Undated; accessed 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "Check: university admission",
+          "url": "https://www.uni-assist.de/en/tools/check-university-admission/",
+          "publisher": "uni-assist e.V.",
+          "date": "Undated; accessed 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "Requirements overview",
+          "url": "https://www.daad.de/en/studying-in-germany/requirements/overview/",
+          "publisher": "DAAD",
+          "date": "Undated; accessed 2026-10-25",
+          "tier": 1
+        }
+      ],
+      "limitations": "This establishes available functions, not that every record is fresh or that every student can complete the process unaided. General HZB orientation does not settle all programme-specific master’s requirements.",
+      "implication": "A useful product should assemble and explain the chain, preserve per-claim sources, and show unresolved conditions. It should not overrule university-specific requirements or turn an orientation result into guaranteed eligibility."
+    },
+    {
+      "id": "B2-03",
+      "claim": "General-purpose AI already supports sourced research. Official OpenAI documentation describes ChatGPT web search with citations and reviewable sources, subject to account/workspace availability. The API offers web search with source annotations and domain filters.",
+      "label": "Data",
+      "sourceDate": "Official OpenAI documentation accessed 2026-10-25",
+      "confidence": "High for documented availability of these features; no accuracy evaluation performed",
+      "sources": [
+        {
+          "title": "Web search",
+          "url": "https://learn.chatgpt.com/docs/web-search",
+          "publisher": "Official OpenAI documentation",
+          "date": "Undated; accessed 2026-10-25",
+          "tier": 2
+        },
+        {
+          "title": "Web search tool",
+          "url": "https://developers.openai.com/api/docs/guides/tools-web-search",
+          "publisher": "Official OpenAI documentation",
+          "date": "Undated; accessed 2026-10-25",
+          "tier": 2
+        }
+      ],
+      "limitations": "Consumer and API paths are different; no claim is made that every tier includes every feature, that all cited material is correct, or that a link automatically verifies a claim. No model choice, price or capability benchmark was inferred.",
+      "implication": "Chat plus citations is not a defensible differentiator by itself. Test the actual search/chat product available to pilot students as a baseline and measure whether verified facts, explicit unknowns and a structured next step add value."
+    },
+    {
+      "id": "B2-04",
+      "claim": "Recent firsthand student posts describe a DIY workflow combining DAAD discovery, direct university websites and regulations, and Docs/Sheets/Notion to organize programmes and deadlines. One describes using ChatGPT to translate or organize German regulation PDFs while keeping original links.",
+      "label": "Data (anecdotal self-report)",
+      "sourceDate": "Approximately May 2026 and September 2025 posts; accessed 2026-10-25",
+      "confidence": "Low for prevalence or effort; Medium that this workflow is represented in public accounts",
+      "sources": [
+        {
+          "title": "How I Researched and Applied for German Universities",
+          "url": "https://www.reddit.com/r/studying_in_germany/comments/1t7ug8f/how_i_researched_and_applied_for_german/",
+          "publisher": "Reddit firsthand self-report",
+          "date": "Approximately May 2026; page displays 5 months ago as of 2026-10-25",
+          "tier": 3
+        },
+        {
+          "title": "Sharing this in case it helps someone on a similar path",
+          "url": "https://www.reddit.com/r/studying_in_germany/comments/1ncf5zm/sharing_this_in_case_it_helps_someone_on_a/",
+          "publisher": "Reddit firsthand self-report",
+          "date": "Approximately September 2025; accessed 2026-10-25",
+          "tier": 3
+        }
+      ],
+      "limitations": "Two self-selected public anecdotes, not a representative survey. Their asserted admissions outcomes, time spent and advice were not verified and must not be promoted to admissions rules. No sensitive profile details or identifiers were copied into the findings.",
+      "implication": "Copyable links and a simple shortlist can already be sufficient for motivated applicants. Offer exportable results and compare the navigator against a good DIY checklist, not against an artificially weak unsupported chatbot."
+    },
+    {
+      "id": "B2-05",
+      "claim": "Students can also obtain human orientation without buying a commercial counseling package. DAAD India advertises regular free information sessions and office/online guidance; a March 2026 Bengaluru event explicitly offered free participation. Separately, uni-assist says agency-submitted applications receive no priority and that it does not cooperate with commercial agencies.",
+      "label": "Data",
+      "sourceDate": "Current guidance page and event dated 2026-03-13; accessed 2026-10-25",
+      "confidence": "High for these stated services and uni-assist policy; no inference about agency quality generally",
+      "sources": [
+        {
+          "title": "Master Studies",
+          "url": "https://www.daad.in/en/study-research-in-germany/studying-in-germany/master-studies/",
+          "publisher": "DAAD India",
+          "date": "Undated; accessed 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "Bengaluru: Study in Germany Day — Masters and PhD in Focus",
+          "url": "https://www.daad.in/en/event/bengaluru-study-in-germany-day-masters-and-phd-in-focus-2/",
+          "publisher": "DAAD India",
+          "date": "Event 2026-03-13; accessed 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "FAQs: Get information",
+          "url": "https://www.uni-assist.de/en/faqs/get-information/",
+          "publisher": "uni-assist e.V.",
+          "date": "Undated; accessed 2026-10-25",
+          "tier": 1
+        }
+      ],
+      "limitations": "The cited event is past, not an upcoming booking. Appointment availability, service depth, and waiting time were not measured. Paid counselors may offer execution or reassurance beyond discovery; their full profiles and pricing belong to direct-competitor research.",
+      "implication": "The comparison is not simply free AI versus expensive counseling. A pilot should determine which questions remain unresolved after available official guidance and whether students want a decision aid, task execution, or personal reassurance."
+    },
+    {
+      "id": "B2-06",
+      "claim": "Initial switching costs for a short profile, chat and shortlist are likely low because a student can retain links and notes in portable documents and consult multiple services at once. A saved profile may improve convenience, but this alone does not establish retention or a moat.",
+      "label": "Opinion / inference",
+      "sourceDate": "Assessment as of 2026-10-25",
+      "confidence": "Low until observed in pilot behavior",
+      "sources": [
+        {
+          "title": "How I Researched and Applied for German Universities",
+          "url": "https://www.reddit.com/r/studying_in_germany/comments/1t7ug8f/how_i_researched_and_applied_for_german/",
+          "publisher": "Reddit firsthand self-report",
+          "date": "Approximately May 2026; page displays 5 months ago as of 2026-10-25",
+          "tier": 3
+        },
+        {
+          "title": "Sharing this in case it helps someone on a similar path",
+          "url": "https://www.reddit.com/r/studying_in_germany/comments/1ncf5zm/sharing_this_in_case_it_helps_someone_on_a/",
+          "publisher": "Reddit firsthand self-report",
+          "date": "Approximately September 2025; accessed 2026-10-25",
+          "tier": 3
+        },
+        {
+          "title": "Study Guide — your path to studying in Germany starts here",
+          "url": "https://www.study-guide.com/en/",
+          "publisher": "DAAD / Study Guide Germany",
+          "date": "Undated; accessed 2026-10-25",
+          "tier": 1
+        }
+      ],
+      "limitations": "No measured migration time, multi-homing rate or churn data for this product. High emotional importance of study decisions should not be mistaken for high software switching costs.",
+      "implication": "Allow export and correction, and measure return behavior tied to a concrete new decision or changed requirement. Avoid locking up student context merely to create artificial switching friction."
+    },
+    {
+      "id": "B2-07",
+      "claim": "Platform absorption risk is already partly realized: DAAD’s official product includes profile-oriented Germany guidance, while general-AI platforms offer search and source primitives. The reviewed sources do not establish when another platform will add this founder’s complete proposed workflow.",
+      "label": "Opinion / inference grounded in documented current features",
+      "sourceDate": "Assessment as of 2026-10-25",
+      "confidence": "Medium for functional overlap; Low for any future roadmap or timeline",
+      "sources": [
+        {
+          "title": "Study Guide — your path to studying in Germany starts here",
+          "url": "https://www.study-guide.com/en/",
+          "publisher": "DAAD / Study Guide Germany",
+          "date": "Undated; accessed 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "My GUIDE Campus",
+          "url": "https://www.daad.de/en/the-daad/intersecting-dimensions-topics/digitalisation/myguidecampus/",
+          "publisher": "DAAD",
+          "date": "Undated; accessed 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "Web search",
+          "url": "https://learn.chatgpt.com/docs/web-search",
+          "publisher": "Official OpenAI documentation",
+          "date": "Undated; accessed 2026-10-25",
+          "tier": 2
+        },
+        {
+          "title": "Web search tool",
+          "url": "https://developers.openai.com/api/docs/guides/tools-web-search",
+          "publisher": "Official OpenAI documentation",
+          "date": "Undated; accessed 2026-10-25",
+          "tier": 2
+        }
+      ],
+      "limitations": "No exclusive window, announced copycat date, acquisition scenario or probability is established. DAAD’s project description uses a working title, and was not treated as a verified future launch schedule.",
+      "implication": "Compete on demonstrated decision usefulness in a defined cohort: source verification, coverage boundaries, missing-input handling, financial assumptions, correction and follow-through. Validate these against official guidance plus generic AI before building a broad crawler or a paid plan."
+    }
+  ],
+  "gaps": [
+    {
+      "gap": "No comparative benchmark of the prototype against DAAD Study Guide, a well-structured official-source checklist, and a student’s own search/AI workflow.",
+      "howToFill": "Use the same real anonymized student scenarios for each baseline. Compare correctness of material claims, traceability, missing-information handling, progress on a next action and student effort."
+    },
+    {
+      "gap": "No representative measurement of how often Indian applicants use DIY sheets, peer groups, counselors, or general AI together.",
+      "howToFill": "During pilot recruitment, ask students to walk through a recent real shortlisting task rather than select tools from a leading survey list."
+    },
+    {
+      "gap": "No verified evidence that students would pay for the incremental value over official free tools.",
+      "howToFill": "Respect the free-launch decision; first observe usefulness and return behavior. A later payment test needs a concrete differentiated deliverable and a clear billing unit."
+    },
+    {
+      "gap": "Study Guide’s live matching quality, account workflow and India-specific budget depth were not audited.",
+      "howToFill": "Run a small manual product evaluation with transparent synthetic profiles and official source checks before claiming a gap."
+    },
+    {
+      "gap": "Future platform roadmaps and absorption timing are unknown.",
+      "howToFill": "Monitor announced releases and reevaluate functional overlap; do not manufacture a 6–18 month execution window."
+    }
+  ],
+  "redFlags": [
+    "The proposed free personalized navigator overlaps materially with a free official DAAD service.",
+    "Source links and conversational input are already available primitives; they do not alone demonstrate superior decision quality.",
+    "A general orientation checker cannot be represented as a binding programme-specific admission decision."
+  ],
+  "yellowFlags": [
+    "DIY workflows and low switching costs are plausible but based on limited observations, not representative measurement.",
+    "Student communities can reveal questions but their admissions and financial advice must be rechecked against authoritative sources.",
+    "A broad aggregation product increases maintenance burden while official sources and general AI remain accessible alternatives."
+  ],
+  "summary": "The strongest substitute is an official-source workflow, often combined with portable notes, peer advice and general AI. DAAD now publicly offers a free profile-based Study Guide with substantial conceptual overlap. The product needs a measured improvement in trustworthy, actionable decisions for a specific student cohort; neither a chatbot nor free access establishes differentiation."
+}

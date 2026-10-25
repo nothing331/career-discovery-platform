@@ -1,0 +1,1626 @@
+{
+  "asOf": "2026-10-25",
+  "title": "A real corridor. A crowded starting point.",
+  "subtitle": "Research for the Germany-first student product: a bounded free learning pilot is plausible, while demand, differentiation and economics remain unproven.",
+  "claims": [
+    {
+      "id": "MARKET-01",
+      "shortTitle": "Two different audience measures",
+      "claim": "The report records 69,076 Indian international enrolments in winter 2025/26, and 26,185 Indian uni-assist applicants in study year 2025.",
+      "label": "Data",
+      "confidence": "High",
+      "confidenceDetail": "High for the defined statistic; not a product TAM",
+      "sourceDate": "Report 2026-10-14; 2025 / 2025–26 reference periods",
+      "sources": [
+        {
+          "title": "Germany student statistics",
+          "url": "https://www.wissenschaft-weltoffen.de/content/uploads/2026/10/WWO_2026_web.pdf",
+          "publisher": "DAAD/DZHW",
+          "date": "2026-10-14",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "An enrolled stock and a partial applicant flow are different populations. Neither is a reachable paid market.",
+      "limitations": "Bildungsausländer enrolment definition; uni-assist is only one application channel. Do not add them.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/market-size.json",
+      "relatedRawClaims": [
+        "A1-01",
+        "A1-02"
+      ],
+      "rawLabel": "Data"
+    },
+    {
+      "id": "A1-04",
+      "shortTitle": "Proof of funds is not total cost",
+      "claim": "The published visa checklist uses €11,904 first-year livelihood proof and a €992 monthly withdrawal limit.",
+      "label": "Data",
+      "confidence": "High",
+      "confidenceDetail": "High for current published mission guidance",
+      "sourceDate": "2026-02-16; checked 2026-10-25",
+      "sources": [
+        {
+          "title": "Published study-visa guidance",
+          "url": "https://india.diplo.de/in-en/service/2756350-2756350",
+          "publisher": "German Missions in India / Federal Foreign Office",
+          "date": "2026-02-16",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "DAAD research or guidance",
+          "url": "https://www.daad.de/en/studying-in-germany/living-in-germany/finances/",
+          "publisher": "DAAD",
+          "date": "Undated live page; proof section explicitly says 2025; checked 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Separate visa proof from tuition, insurance, setup, travel, and the full study budget.",
+      "limitations": "Current published guidance; other forms of proof and case-specific requirements exist.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/market-size.json",
+      "rawLabel": "Data"
+    },
+    {
+      "id": "A1-05",
+      "shortTitle": "Costs depend on programme and place",
+      "claim": "DAAD publishes broad living-cost and semester-contribution ranges and identifies tuition exceptions.",
+      "label": "Data",
+      "confidence": "Medium",
+      "confidenceDetail": "Medium as general planning ranges; exact local costs require fresh sources",
+      "sourceDate": "Undated live guidance checked 2026-10-25; do not use its older 2023 survey averages as current costs",
+      "sources": [
+        {
+          "title": "DAAD research or guidance",
+          "url": "https://www.daad.de/en/studying-in-germany/living-in-germany/finances/",
+          "publisher": "DAAD",
+          "date": "Undated live page; proof section explicitly says 2025; checked 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Use current programme and city sources; do not sell a universally free Germany plan.",
+      "limitations": "General ranges are planning aids, not an individual affordability decision.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/market-size.json",
+      "rawLabel": "Data"
+    },
+    {
+      "id": "A1-07",
+      "shortTitle": "Free launch is founder intent",
+      "claim": "Launch is free and founder-funded; later student or parent payment is only a hypothesis.",
+      "label": "Assumption",
+      "confidence": "High",
+      "confidenceDetail": "High as a record of intent; Low as a business viability or willingness-to-pay claim",
+      "sourceDate": "2026-10-25 founder brief",
+      "sources": [
+        {
+          "title": "Completed founder brief",
+          "url": "../00-intake/founder-brief-2026-10-25.json",
+          "publisher": "Founder",
+          "date": "2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Budget the pilot as a learning investment. Initial paid revenue is zero by design.",
+      "limitations": "The ₹500 month-or-plan field is not a validated price or billing unit.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/market-size.json",
+      "rawLabel": "Assumption"
+    },
+    {
+      "id": "A1-08",
+      "shortTitle": "Economics remain unmeasured",
+      "claim": "Reachable audience, acquisition cost, retention, lifetime value, and paid willingness to pay are unmeasured.",
+      "label": "Opinion",
+      "confidence": "High",
+      "confidenceDetail": "High that these inputs remain unmeasured; no numerical forecast supplied",
+      "sourceDate": "2026-10-25 analysis",
+      "sources": [
+        {
+          "title": "Completed founder brief",
+          "url": "../../../00-intake/founder-brief-2026-10-25.json",
+          "publisher": "Founder",
+          "date": "2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Track recruitment → useful result → next action → return, plus compute and human costs.",
+      "limitations": "Scenario inputs must be labeled assumptions rather than industry benchmarks.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/market-size.json",
+      "rawLabel": "Opinion"
+    },
+    {
+      "id": "A2-01",
+      "shortTitle": "Degree coverage is asymmetric",
+      "claim": "DAAD’s summer-2025 snapshot counted about 420 English-language bachelor’s programmes and 1,930 master’s.",
+      "label": "Data",
+      "confidence": "Medium",
+      "confidenceDetail": "Medium",
+      "sourceDate": "Summer 2025 catalogue; release 2025-11-26",
+      "sources": [
+        {
+          "title": "DAAD research or guidance",
+          "url": "https://www.daad.de/en/press-releases/erneut-hohe-zahl-an-internationalen-studierenden-in-deutschland/",
+          "publisher": "DAAD / DZHW",
+          "date": "2025-11-26",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "DAAD research or guidance",
+          "url": "https://www.daad.de/en/studying-in-germany/requirements/overview/",
+          "publisher": "DAAD",
+          "date": "Undated; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Keep separate degree paths and coverage labels. Missing catalogue coverage is not student ineligibility.",
+      "limitations": "Dated 2025 catalogue, not a live 2026 count or India-specific demand split.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/trends.json",
+      "rawLabel": "Data"
+    },
+    {
+      "id": "REG-01",
+      "shortTitle": "Privacy duties are phased",
+      "claim": "Core DPDP duties are phased eighteen months after publication, in May 2027; exact-day descriptions differ.",
+      "label": "Data",
+      "confidence": "Medium",
+      "confidenceDetail": "High for relative phases; Medium for the exact operative calendar day",
+      "sourceDate": "2025-11 / 2025-12; current assessment 2026-10-25",
+      "sources": [
+        {
+          "title": "Official DPDP publication",
+          "url": "https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf",
+          "publisher": "MeitY / Gazette of India",
+          "date": "Notification and printed Gazette 2025-11-13; electronic identifier 2025-11-14",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "Official DPDP publication",
+          "url": "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf",
+          "publisher": "MeitY / Gazette of India",
+          "date": "2025-11-13 notification; publication listing 2025-11-14",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "Official DPDP publication",
+          "url": "https://www.meity.gov.in/static/uploads/2025/12/3c7ebbae0e5456f493f486e6845df86b.pdf",
+          "publisher": "MeitY / Gazette of India",
+          "date": "Notification 2025-12-10; printed Gazette 2025-12-11",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "Government notifies DPDP Rules to empower citizens and protect privacy",
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2190014",
+          "publisher": "Press Information Bureau / MeitY",
+          "date": "2025-11-14",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Use current official commencement sources and a launch-specific review. Avoid a fabricated forced-buy deadline.",
+      "limitations": "Current transitional duties still require assessment; this is not an all-obligations exemption.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/regulatory.json",
+      "rawLabel": "Data"
+    },
+    {
+      "id": "REG-04",
+      "shortTitle": "Age handling needs a decision",
+      "claim": "The enacted DPDP framework defines children as under eighteen and establishes specific child-data protections.",
+      "label": "Data",
+      "confidence": "High",
+      "confidenceDetail": "High for age and general rule; Medium for any specific exception claim",
+      "sourceDate": "2023-08-11 Act; 2025-11 Rules / commencement",
+      "sources": [
+        {
+          "title": "Official DPDP publication",
+          "url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf",
+          "publisher": "MeitY / Government of India",
+          "date": "2023-08-11; foundational law older than 18 months; read with 2025 commencement n",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "Official DPDP publication",
+          "url": "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf",
+          "publisher": "MeitY / Gazette of India",
+          "date": "2025-11-13 notification; publication listing 2025-11-14",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "Official DPDP publication",
+          "url": "https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf",
+          "publisher": "MeitY / Gazette of India",
+          "date": "Notification and printed Gazette 2025-11-13; electronic identifier 2025-11-14",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Choose a deliberate pilot age/consent path. A bachelor’s interest does not establish adulthood.",
+      "limitations": "Relevant duties are phased; exceptions and the actual service need scoped review.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/regulatory.json",
+      "rawLabel": "Data"
+    },
+    {
+      "id": "REG-08",
+      "shortTitle": "Public data is not automatically reusable",
+      "claim": "Hochschulkompass restricts its free university-list downloads to personal use; other uses require approval.",
+      "label": "Data",
+      "confidence": "High",
+      "confidenceDetail": "High for the download restriction; not a legal conclusion about every fact on the site",
+      "sourceDate": "Live source terms accessed 2026-10-25",
+      "sources": [
+        {
+          "title": "HRK source information and terms",
+          "url": "https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html",
+          "publisher": "Hochschulrektorenkonferenz / Hochschulkompass",
+          "date": "Undated live terms; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Check source rights before implementing the old proposed institution spine.",
+      "limitations": "This finding concerns the published download terms, not every fact on the website.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/regulatory.json",
+      "rawLabel": "Data"
+    },
+    {
+      "id": "SUP-01",
+      "shortTitle": "Rules need intake-specific freshness",
+      "claim": "APS’s October-2026 dMAT notice describes selected master’s groups, intake conditions, and transitional exceptions.",
+      "label": "Data",
+      "confidence": "High",
+      "confidenceDetail": "High for the current published notice; exact affected-field mapping unresolved",
+      "sourceDate": "Notice updated 2026-10-15; pages checked 2026-10-25",
+      "sources": [
+        {
+          "title": "Current APS dMAT notice",
+          "url": "https://aps-india.de/dmat/",
+          "publisher": "Academic Evaluation Centre India (APS)",
+          "date": "2026-10-15",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "APS procedure boundaries",
+          "url": "https://aps-india.de/faqs/",
+          "publisher": "APS India",
+          "date": "Checked 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Store source dates, applicant scope, exemptions, and unresolved rules before using a hard filter.",
+      "limitations": "Affected-field mapping remained pending; APS, admission and visa decisions are distinct.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/policy-freshness.json",
+      "rawLabel": "Data"
+    },
+    {
+      "id": "B2-01",
+      "shortTitle": "Free official personalised baseline",
+      "claim": "DAAD Study Guide advertises a free personalised Germany roadmap, matching, funding orientation and counseling links.",
+      "label": "Data",
+      "confidence": "High",
+      "confidenceDetail": "High for public service identity and advertised overlap; not assessed for recommendation quality",
+      "sourceDate": "Live public pages checked 2026-10-25; launch date not established",
+      "sources": [
+        {
+          "title": "DAAD’s personalised study service",
+          "url": "https://www.study-guide.com/en/",
+          "publisher": "DAAD / Study Guide Germany",
+          "date": "Undated; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "DAAD digital guidance project",
+          "url": "https://www.daad.de/en/the-daad/intersecting-dimensions-topics/digitalisation/myguidecampus/",
+          "publisher": "DAAD",
+          "date": "Undated; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Benchmark the intended first useful result against this service. A profile is not a unique wedge.",
+      "limitations": "Public service description; matching quality and India-specific budget depth were not tested.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/indirect-competitors.json",
+      "rawLabel": "Data"
+    },
+    {
+      "id": "B2-03",
+      "shortTitle": "AI with sources already exists",
+      "claim": "Official OpenAI documentation describes web search with citations and reviewable sources in ChatGPT.",
+      "label": "Data",
+      "confidence": "High",
+      "confidenceDetail": "High for documented availability of these features; no accuracy evaluation performed",
+      "sourceDate": "Official OpenAI documentation accessed 2026-10-25",
+      "sources": [
+        {
+          "title": "Official OpenAI search documentation",
+          "url": "https://learn.chatgpt.com/docs/web-search",
+          "publisher": "Official OpenAI documentation",
+          "date": "Undated; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "Official OpenAI tool documentation",
+          "url": "https://developers.openai.com/api/docs/guides/tools-web-search",
+          "publisher": "Official OpenAI documentation",
+          "date": "Undated; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Compare against the student’s actual AI/search workflow; chat plus links is a weak novelty claim.",
+      "limitations": "Feature availability depends on context; no comparative accuracy test was conducted.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/indirect-competitors.json",
+      "rawLabel": "Data"
+    },
+    {
+      "id": "B1-02",
+      "shortTitle": "Near-direct India–Germany product",
+      "claim": "Univoo advertises India-to-Germany master’s matching and gap reports, with a ₹499 one-time founding plan.",
+      "label": "Data",
+      "confidence": "Medium",
+      "confidenceDetail": "Medium; public-offer inconsistencies noted in profile",
+      "sourceDate": "Live pages checked 2026-10-25",
+      "sources": [
+        {
+          "title": "Univoo’s published offer",
+          "url": "https://univoo.in/",
+          "publisher": "Univoo",
+          "date": "Undated live page; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "Univoo’s published offer",
+          "url": "https://univoo.in/pricing",
+          "publisher": "Univoo",
+          "date": "Undated live page; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "A near-₹500 offer does not validate our price or establish sales; test concrete incremental value.",
+      "limitations": "Vendor offer; posted limits and launch banners conflict; performance and paid delivery untested.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/direct-competitors.json",
+      "rawLabel": "Data"
+    },
+    {
+      "id": "B1-03",
+      "shortTitle": "Conversation and evidence also overlap",
+      "claim": "Raplika advertises bachelor’s exploration, preferences, an optional AI interview and an evidence-linked report.",
+      "label": "Data",
+      "confidence": "Medium",
+      "confidenceDetail": "Medium for advertised offer; untested result quality",
+      "sourceDate": "Live/indexed provider pages checked 2026-10-25",
+      "sources": [
+        {
+          "title": "Raplika’s published offer",
+          "url": "https://raplika.com/pricing",
+          "publisher": "Raplika",
+          "date": "Undated live page; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "Raplika’s published offer",
+          "url": "https://raplika.com/how-it-works",
+          "publisher": "Raplika",
+          "date": "Undated live page; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Test whether our result helps a specific cohort more; do not claim that explained conversational matching is new.",
+      "limitations": "India-specific support and matching quality were not established.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/direct-competitors.json",
+      "rawLabel": "Data"
+    },
+    {
+      "id": "B1-05",
+      "shortTitle": "Partner AI is not open student AI",
+      "claim": "ApplyBoard’s inspected Abbie FAQ specifies recruitment-partner access.",
+      "label": "Data",
+      "confidence": "High",
+      "confidenceDetail": "High for this boundary; broader access may change",
+      "sourceDate": "Inspected access descriptions as of 2026-10-25",
+      "sources": [
+        {
+          "title": "ApplyBoard access and product information",
+          "url": "https://www.applyboard.com/services/abbie",
+          "publisher": "ApplyBoard",
+          "date": "Undated live page; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "ApplyBoard access and product information",
+          "url": "https://assist.applyboard.com/hc/en-us/articles/29074610147853-How-ApplyBoard-Works-for-Recruitment-Partners",
+          "publisher": "ApplyBoard",
+          "date": "2026-09-22; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Include bundling risk without treating a separate student support widget as an identical self-serve product.",
+      "limitations": "Current public access boundary; Germany-specific coverage and student AI access were not audited.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/direct-competitors.json",
+      "rawLabel": "Opinion"
+    },
+    {
+      "id": "GTM-02",
+      "shortTitle": "Incentives can differ",
+      "claim": "MyGermanUniversity discloses university-funded profiles, promotional ordering and some paid contact/webinar activity.",
+      "label": "Data",
+      "confidence": "High",
+      "confidenceDetail": "High for the company disclosure; revenue mix and recommendation effects unverified",
+      "sourceDate": "Disclaimer last-updated notice 2025-10-15; accessed 2026-10-25",
+      "sources": [
+        {
+          "title": "MyGermanUniversity’s own disclosure",
+          "url": "https://www.mygermanuniversity.com/en/disclaimer",
+          "publisher": "MyGermanUniversity",
+          "date": "Last-updated notice 2025-10-15; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Explain our incentives and distinguish sponsored coverage from verified fit.",
+      "limitations": "A company disclosure does not prove bias in a particular result or its revenue share.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/competitor-gtm.json",
+      "rawLabel": "Data"
+    },
+    {
+      "id": "GTM-04",
+      "shortTitle": "Free counseling has scope limits",
+      "claim": "LeapScholar attributes free core counseling to commissions, while a city page says full support may carry fees.",
+      "label": "Data",
+      "confidence": "Medium",
+      "confidenceDetail": "High for published claims and inconsistency; actual offer/pricing not independently confirmed",
+      "sourceDate": "FAQ updated 2026-09-21; city page accessed 2026-10-25",
+      "sources": [
+        {
+          "title": "LeapScholar’s stated service scope",
+          "url": "https://leapscholar.com/blog/leap-scholar-commonly-asked-questions/",
+          "publisher": "LeapScholar",
+          "date": "2026-09-21 last-updated notice; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "LeapScholar’s stated service scope",
+          "url": "https://leapscholar.com/study-abroad-consultant/ghaziabad",
+          "publisher": "LeapScholar",
+          "date": "Undated live page; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Keep product and service scopes separate when comparing free and paid alternatives.",
+      "limitations": "Published descriptions conflict; actual service terms were not independently confirmed.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/competitor-gtm.json",
+      "rawLabel": "Data"
+    },
+    {
+      "id": "A2-02",
+      "shortTitle": "AI familiarity is not our demand",
+      "claim": "Surveys in other student populations show AI familiarity, not India→Germany admissions adoption.",
+      "label": "Data",
+      "confidence": "Medium",
+      "sourceDate": "HEPI March 2026 / fieldwork December 2025; CHE June 2025 / fieldwork winter 2024/25",
+      "sources": [
+        {
+          "title": "UK student AI survey",
+          "url": "https://www.hepi.ac.uk/reports/student-generative-ai-survey-2026/",
+          "publisher": "HEPI; Savanta fieldwork; sponsored by Kortext",
+          "date": "2026-03-12; fieldwork December 2025",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "German/Austrian student AI survey",
+          "url": "https://www.che.de/en/2025/a-quarter-of-students-in-germany-use-artificial-intelligence-on-a-daily-basis/",
+          "publisher": "CHE Centre for Higher Education",
+          "date": "2025-06-12; fieldwork winter 2024/25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Use real student workflows as the baseline; do not invent a local AI-use percentage.",
+      "limitations": "UK/German/Austrian samples do not represent this product’s prospective Indian users.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/trends.json",
+      "rawLabel": "Data"
+    },
+    {
+      "id": "A2-05",
+      "shortTitle": "The competitive window is not empty",
+      "claim": "ApplyBoard publicly launched AI advising and Germany expansion before this product; access and coverage vary.",
+      "label": "Data",
+      "confidence": "Medium",
+      "sourceDate": "June 2024 and January–April 2025; pages checked 2026-10-25",
+      "sources": [
+        {
+          "title": "ApplyBoard access and product information",
+          "url": "https://www.applyboard.com/info/applyboard-launches-abbie",
+          "publisher": "ApplyBoard",
+          "date": "June 2024 launch; page accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "ApplyBoard access and product information",
+          "url": "https://www.applyboard.com/blog/germany-applyboard-destination",
+          "publisher": "ApplyBoard",
+          "date": "2025-01-22; staged rollout through April 2025",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "ApplyBoard access and product information",
+          "url": "https://www.applyboard.com/our-story",
+          "publisher": "ApplyBoard",
+          "date": "Undated current page; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Study actual specialist and official workflows rather than predicting an uncontested launch window.",
+      "limitations": "Abbie partner access is narrower than unrestricted student AI; quality was not audited.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/trends.json",
+      "rawLabel": "Data"
+    },
+    {
+      "id": "A2-06",
+      "shortTitle": "Adjacent investment is only a signal",
+      "claim": "ESAI reported $3 million cumulative funding in May 2026 for adjacent college/career guidance.",
+      "label": "Data",
+      "confidence": "Medium",
+      "sourceDate": "2026-05-21",
+      "sources": [
+        {
+          "title": "Adjacent company financing announcement",
+          "url": "https://www.esai.ai/press/esai-raises-3-million-in-funding-to-build-the-identity-layer-for-college-and-career",
+          "publisher": "ESAI",
+          "date": "2026-05-21",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Treat this as adjacent product investment, not evidence of our niche’s fundability or paid demand.",
+      "limitations": "Cumulative financing, not a verified new $3 million round; different market.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/trends.json",
+      "rawLabel": "Data"
+    },
+    {
+      "id": "C1-01",
+      "shortTitle": "Concrete shortlist uncertainty",
+      "claim": "Selected public student accounts describe module or ECTS uncertainty and checking programme fit.",
+      "label": "Opinion",
+      "confidence": "Low",
+      "sourceDate": "2025-11-18, 2026-01-12, 2026-08-31",
+      "sources": [
+        {
+          "title": "Public student or moderation account",
+          "url": "https://www.reddit.com/r/studyinGermany/comments/1w3hoy8/rejected_due_to_ectsmodule_requirements_how/",
+          "publisher": "Reddit user-generated discussion",
+          "date": "2026-08-31",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "Public student or moderation account",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1p0hkmq/i_applied_for_germanys_winter_intake_completely/",
+          "publisher": "Reddit user-generated discussion",
+          "date": "2025-11-18",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "Public student or moderation account",
+          "url": "https://www.reddit.com/r/studying_in_germany/comments/1qayteq/please_save_your_money_and_time/",
+          "publisher": "Reddit user-generated discussion",
+          "date": "2026-01-12",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Test a concrete shortlist-checking job before assuming broad life-direction guidance is the main need.",
+      "limitations": "Self-selected, unverified anecdotes; no prevalence or measured time-saving claim.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/customer-voice.json",
+      "rawLabel": "Opinion"
+    },
+    {
+      "id": "C1-02",
+      "shortTitle": "Exploration can be a pathway choice",
+      "claim": "Some public accounts weigh starting a German bachelor’s against completing an Indian degree before a master’s.",
+      "label": "Opinion",
+      "confidence": "Low",
+      "sourceDate": "2025-05-22, 2026-07-29, 2026-08-29",
+      "sources": [
+        {
+          "title": "Public student or moderation account",
+          "url": "https://www.reddit.com/r/studying_in_germany/comments/1v9qpgf/suggestion_for_bachelors_in_germany/",
+          "publisher": "Reddit user-generated discussion",
+          "date": "2026-07-29",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "Public student or moderation account",
+          "url": "https://www.reddit.com/r/developersIndia/comments/1w1kpiz/i_planned_my_entire_career_around_germany_now_ive/",
+          "publisher": "Reddit user-generated discussion",
+          "date": "2026-08-29",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "Public student or moderation account",
+          "url": "https://www.reddit.com/r/studying_in_germany/comments/1ksth2n/need_advice_im_really_confused/",
+          "publisher": "Reddit user-generated discussion",
+          "date": "2025-05-22",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Keep degree and decision-stage branches; an explorer may need a pathway question answered first.",
+      "limitations": "Individual circumstances and feasible routes were not independently verified.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/customer-voice.json",
+      "rawLabel": "Opinion"
+    },
+    {
+      "id": "C1-03",
+      "shortTitle": "Budget uncertainty is more than tuition",
+      "claim": "Selected accounts reconsider a study plan because of funding and financial-risk concerns.",
+      "label": "Opinion",
+      "confidence": "Low",
+      "sourceDate": "2026-05-06, 2026-08-29",
+      "sources": [
+        {
+          "title": "Public student or moderation account",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1t534lm/ysk_weakening_rupee_screwed_up_my_plan_for/",
+          "publisher": "Reddit user-generated discussion",
+          "date": "2026-05-06",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "Public student or moderation account",
+          "url": "https://www.reddit.com/r/developersIndia/comments/1w1kpiz/i_planned_my_entire_career_around_germany_now_ive/",
+          "publisher": "Reddit user-generated discussion",
+          "date": "2026-08-29",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Ask which concrete cost uncertainty blocks the decision; verify amounts from official sources.",
+      "limitations": "Posts are sentiment evidence, not reliable exchange rates, costs or job forecasts.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/customer-voice.json",
+      "rawLabel": "Opinion"
+    },
+    {
+      "id": "C2-02",
+      "shortTitle": "Search attention is not measured demand",
+      "claim": "No reproducible India→Germany keyword-volume or regional-demand series was established.",
+      "label": "Opinion",
+      "confidence": "Low",
+      "sourceDate": "Google documentation checked 2026-10-25",
+      "sources": [
+        {
+          "title": "Google’s measurement documentation",
+          "url": "https://support.google.com/trends/answer/4365533",
+          "publisher": "Google",
+          "date": "Undated live page; checked 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Do not invent search growth, SEO opportunity size, or regional conversion from search snippets.",
+      "limitations": "Google Trends is relative; no usable series was verified here.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/demand-signals.json",
+      "rawLabel": "Data for the documented measurement definition; research limitation for the missing series"
+    },
+    {
+      "id": "C2-07",
+      "shortTitle": "A useful free pilot needs behavior",
+      "claim": "Free sign-ups and positive comments do not establish commercial validation.",
+      "label": "Opinion",
+      "confidence": "Medium",
+      "sourceDate": "2026-10-25 planning recommendation",
+      "sources": [],
+      "implication": "Measure source-verified usefulness, evidence opened, next action, return/revision, and cost per result.",
+      "limitations": "A proposed measurement model, not an observed conversion benchmark.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/demand-signals.json",
+      "rawLabel": "Opinion / proposed measurement design"
+    },
+    {
+      "id": "C2-08",
+      "shortTitle": "Payment intent remains unknown",
+      "claim": "Published offers and public discussions do not establish willingness to pay for this founder’s product.",
+      "label": "Opinion",
+      "confidence": "Medium",
+      "sourceDate": "2026-10-25",
+      "sources": [
+        {
+          "title": "DAAD’s personalised study service",
+          "url": "https://www.study-guide.com/en/",
+          "publisher": "DAAD",
+          "date": "Undated live page; checked 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "Univoo’s published offer",
+          "url": "https://univoo.in/pricing",
+          "publisher": "Univoo",
+          "date": "Undated live page; checked 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "YourWeg’s published offer",
+          "url": "https://www.yourweg.com/",
+          "publisher": "YourWeg",
+          "date": "Undated live page; checked 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "Raplika’s published offer",
+          "url": "https://raplika.com/pricing",
+          "publisher": "Raplika",
+          "date": "Undated live page; checked 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Respect the free launch. Test a concrete paid value proposition later, after usefulness is demonstrated.",
+      "limitations": "Unknown WTP is not proof nobody will pay; units and services differ.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/demand-signals.json",
+      "rawLabel": "Opinion / synthesis"
+    },
+    {
+      "id": "AUD-01",
+      "shortTitle": "Programme rules determine the route",
+      "claim": "Official guidance distinguishes bachelor-entry qualifications from master’s prior-degree and programme requirements.",
+      "label": "Data",
+      "confidence": "High",
+      "sourceDate": "Live uni-assist guidance accessed 2026-10-25",
+      "sources": [
+        {
+          "title": "uni-assist application guidance",
+          "url": "https://www.uni-assist.de/en/how-to-apply/get-information/bachelor-staatsexamen/",
+          "publisher": "uni-assist",
+          "date": "Live guidance accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "uni-assist application guidance",
+          "url": "https://www.uni-assist.de/en/how-to-apply/get-information/master/",
+          "publisher": "uni-assist",
+          "date": "Live guidance accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Ask relevant follow-ups by qualification, language, intake, and programme; avoid a universal eligibility score.",
+      "limitations": "An Indian college-student label alone is insufficient for a case-specific decision.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/target-audience.json",
+      "rawLabel": "Data"
+    },
+    {
+      "id": "AUD-03",
+      "shortTitle": "Four interview cells are a hypothesis",
+      "claim": "Cross study level (bachelor/master) with decision stage (explore/check) for an initial interview structure.",
+      "label": "Assumption",
+      "confidence": "Low",
+      "sourceDate": "Founder brief 2026-10-25 plus current official process references",
+      "sources": [
+        {
+          "title": "uni-assist application guidance",
+          "url": "https://www.uni-assist.de/en/how-to-apply/get-information/bachelor-staatsexamen/",
+          "publisher": "uni-assist",
+          "date": "Live guidance accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "uni-assist application guidance",
+          "url": "https://www.uni-assist.de/en/how-to-apply/get-information/master/",
+          "publisher": "uni-assist",
+          "date": "Live guidance accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Recruit across the four cells, preserving both study levels while learning which job is strongest.",
+      "limitations": "Planning synthesis, not a measured segmentation or fictional demographic persona.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/target-audience.json",
+      "rawLabel": "Assumption"
+    },
+    {
+      "id": "AUD-04",
+      "shortTitle": "Family influence is contextual",
+      "claim": "Broader publisher-run India surveys describe student agency alongside continuing family influence.",
+      "label": "Data",
+      "confidence": "Medium",
+      "sourceDate": "Oxford International 2026-08-07; Acumen 2026-08",
+      "sources": [
+        {
+          "title": "Publisher-run India student survey",
+          "url": "https://www.oxfordinternationaleducationgroup.com/news-and-insights/learning-independence-and-opportunity-what-indian-students-want-from-overseas-education/",
+          "publisher": "Oxford International Education Group",
+          "date": "2026-08-07",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "Acumen student-pulse methodology",
+          "url": "https://embed-rech-01.dialog.cm/sannam_s4/docs/acumen_10k_indian_voices_report_2026",
+          "publisher": "Acumen / Sannam S4 (publisher-hosted report)",
+          "date": "2026-08",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Offer an optional, student-controlled way to discuss funding assumptions; do not assume parents will buy.",
+      "limitations": "Non-target or non-probability samples; no app-specific payer conversion evidence.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/target-audience.json",
+      "rawLabel": "Data"
+    },
+    {
+      "id": "AUD-06",
+      "shortTitle": "Optional context needs a purpose",
+      "claim": "Academic eligibility should follow relevant qualifications and rules; personal context should not become an ability stereotype.",
+      "label": "Opinion",
+      "confidence": "Medium",
+      "sourceDate": "Planning judgment based on the founder brief and purpose-limited data design; 2026-10-25",
+      "sources": [
+        {
+          "title": "Official DPDP publication",
+          "url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf",
+          "publisher": "MeitY / Government of India",
+          "date": "2023-08-11; foundational law older than 18 months; read with current phased comm",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "uni-assist application guidance",
+          "url": "https://www.uni-assist.de/en/how-to-apply/get-information/bachelor-staatsexamen/",
+          "publisher": "uni-assist",
+          "date": "Live guidance accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "uni-assist application guidance",
+          "url": "https://www.uni-assist.de/en/how-to-apply/get-information/master/",
+          "publisher": "uni-assist",
+          "date": "Live guidance accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Use budget and preferences to explain constraints, and let students correct saved conversational inferences.",
+      "limitations": "Product-design judgment; it does not validate demand for family or hobby questions.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/target-audience.json",
+      "rawLabel": "Opinion"
+    },
+    {
+      "id": "D1-02",
+      "shortTitle": "Campus access needs a gatekeeper",
+      "claim": "Campus international offices publish study-abroad opportunities, but no recruitment access has been granted.",
+      "label": "Data",
+      "confidence": "High",
+      "sourceDate": "Checked 2026-10-25",
+      "sources": [
+        {
+          "title": "Other Opportunities, student outbound",
+          "url": "https://ge.iitm.ac.in/programs/student-outbound/other-opportunities/opportunities",
+          "publisher": "IIT Madras Office of Global Engagement",
+          "date": "Checked 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "International Relations / Global Engagement",
+          "url": "https://www.iitm.ac.in/hi/the-institute/global-engagement",
+          "publisher": "IIT Madras",
+          "date": "Checked 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Start with an actually reachable person and an opt-in invitation, subject to their permission.",
+      "limitations": "A public university page is a channel surface, not a partnership or an audience guarantee.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/channels.json",
+      "rawLabel": "Data"
+    },
+    {
+      "id": "D1-03",
+      "shortTitle": "Public sessions are learning venues",
+      "claim": "DAAD India lists online master’s and bachelor’s sessions for 3 and 12 November 2026 respectively.",
+      "label": "Data",
+      "confidence": "High",
+      "sourceDate": "Checked 2026-10-25",
+      "sources": [
+        {
+          "title": "DAAD India guidance or event",
+          "url": "https://www.daad.in/en/event/masters-in-germany-pathways-to-a-global-career/",
+          "publisher": "DAAD India",
+          "date": "2026-11-03",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "DAAD India guidance or event",
+          "url": "https://www.daad.in/en/event/germany-after-school-bachelors-opportunities-explained-2/",
+          "publisher": "DAAD India",
+          "date": "2026-11-12",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Use the public guidance to understand questions and alternatives; attendance is not permission to recruit others.",
+      "limitations": "Listed events as of 25 October; registration and event details may change.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/channels.json",
+      "rawLabel": "Data"
+    },
+    {
+      "id": "D1-04",
+      "shortTitle": "Community promotion is conditional",
+      "claim": "Reddit guidance requires checking community rules; inspected moderation language restricts promotion and surveys.",
+      "label": "Data",
+      "confidence": "High",
+      "sourceDate": "Checked 2026-10-25",
+      "sources": [
+        {
+          "title": "Public student or moderation account",
+          "url": "https://www.business.reddit.com/learning-hub/articles/find-subreddits-for-your-business",
+          "publisher": "Reddit",
+          "date": "Checked 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "Public student or moderation account",
+          "url": "https://www.business.reddit.com/learning-hub/articles/how-to-work-with-moderators-on-reddit",
+          "publisher": "Reddit",
+          "date": "Checked 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "Public student or moderation account",
+          "url": "https://www.reddit.com/r/germany/comments/1xd44r0/removed_by_moderator/",
+          "publisher": "r/germany moderation team",
+          "date": "2026-10-23",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Get current, community-specific permission before posting a pilot invitation. Do not harvest members or send unsolicited messages.",
+      "limitations": "Permission in the target subreddits was not established by this research.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/channels.json",
+      "rawLabel": "Data"
+    },
+    {
+      "id": "D2-01",
+      "shortTitle": "A cohort is a stronger beachhead",
+      "claim": "Define the learning cohort by degree intention, qualification route, named intake and source coverage.",
+      "label": "Opinion",
+      "confidence": "Medium",
+      "sourceDate": "2026-10-25 assessment",
+      "sources": [
+        {
+          "title": "DAAD India guidance or event",
+          "url": "https://www.daad.in/en/study-research-in-germany/studying-in-germany/bachelor-studies/",
+          "publisher": "DAAD India",
+          "date": "Undated live page; checked 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "DAAD India guidance or event",
+          "url": "https://www.daad.in/en/study-research-in-germany/studying-in-germany/master-studies/",
+          "publisher": "DAAD India",
+          "date": "Undated live page; checked 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "uni-assist application guidance",
+          "url": "https://www.uni-assist.de/en/how-to-apply/get-information/master/",
+          "publisher": "uni-assist e.V.",
+          "date": "Undated live page; checked 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Use the founder’s actual accessible network to recruit across degree and decision-stage cells.",
+      "limitations": "Recommendation, not measured city density, acquisition cost or founder access.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/geographic.json",
+      "rawLabel": "Opinion / recommendation"
+    },
+    {
+      "id": "D2-02",
+      "shortTitle": "Two programmes show different rule paths",
+      "claim": "Inspected Passau bachelor’s AI and Potsdam master’s CS guidance demonstrate different qualification, subject and language conditions.",
+      "label": "Data",
+      "confidence": "High",
+      "sourceDate": "Live official university pages checked 2026-10-25",
+      "sources": [
+        {
+          "title": "Passau programme-specific guidance",
+          "url": "https://www.uni-passau.de/en/bsc-artificial-intelligence/faq",
+          "publisher": "University of Passau",
+          "date": "Undated live page; checked 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "Potsdam programme-specific guidance",
+          "url": "https://www.uni-potsdam.de/en/studium/what-to-study/master/computer-science",
+          "publisher": "University of Potsdam",
+          "date": "Undated live page; checked 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Use separate routes and programme-specific evidence rather than one universal profile score.",
+      "limitations": "Two illustrative programmes are not a representative coverage audit or a personal eligibility decision.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/geographic.json",
+      "rawLabel": "Data (illustrative programme examples)"
+    },
+    {
+      "id": "D2-06",
+      "shortTitle": "Country expansion needs fresh evidence",
+      "claim": "Official Austrian and Australian guidance uses different institutional responsibilities and provider-registration frameworks.",
+      "label": "Data",
+      "confidence": "High",
+      "sourceDate": "Current official pages checked 2026-10-25",
+      "sources": [
+        {
+          "title": "Application and admission",
+          "url": "https://studyinaustria.at/en/plan-your-studies/application-and-admission",
+          "publisher": "OeAD / Study in Austria",
+          "date": "Undated live page; checked 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "Australian provider guidance",
+          "url": "https://www.studyaustralia.gov.au/en/Agent-Hub/education-governance-and-delivery",
+          "publisher": "Australian Government / Study Australia",
+          "date": "Undated live page; checked 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "implication": "Expand one country at a time after source-rights, qualification, cost and quality checks.",
+      "limitations": "The roadmap countries are not launch-ready comparison coverage.",
+      "scopeNote": "See full scope and limits.",
+      "rawFile": "01-discovery/student-pivot/raw/geographic.json",
+      "rawLabel": "Data with a product-scope inference"
+    }
+  ],
+  "competitors": [
+    {
+      "name": "Study Guide Germany (DAAD)",
+      "url": "https://www.study-guide.com/en/",
+      "product": "Profile-based Germany roadmap; bachelor’s/master’s discovery.",
+      "pricing": "Free, per the service.",
+      "strength": "Official free personalised baseline.",
+      "limitation": "India-specific depth and matching quality were not tested.",
+      "sources": [
+        {
+          "title": "DAAD’s personalised study service",
+          "url": "https://www.study-guide.com/en/",
+          "publisher": "DAAD",
+          "date": "Undated live page; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "DAAD digital guidance project",
+          "url": "https://www.daad.de/en/the-daad/intersecting-dimensions-topics/digitalisation/myguidecampus/",
+          "publisher": "DAAD",
+          "date": "Undated live page; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "independentPerformanceAudit": false
+    },
+    {
+      "name": "MyGermanUniversity",
+      "url": "https://www.mygermanuniversity.com/",
+      "product": "Programme search, filters, information and webinars.",
+      "pricing": "Free student discovery; disclosed university marketing.",
+      "strength": "Germany-specific discovery surface.",
+      "limitation": "Accuracy and a personal dialogue flow were not tested.",
+      "sources": [
+        {
+          "title": "MyGermanUniversity’s own disclosure",
+          "url": "https://www.mygermanuniversity.com/facts/mygermanuniversity",
+          "publisher": "MyGU GmbH",
+          "date": "Last reviewed 2026-09-29; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "independentPerformanceAudit": false
+    },
+    {
+      "name": "Univoo",
+      "url": "https://univoo.in/pricing",
+      "product": "India→Germany master’s matching and academic-gap reports.",
+      "pricing": "₹499 one-time founding AI plan; ₹999 advertised later.",
+      "strength": "Close overlap in profile and academic-gap framing.",
+      "limitation": "Offer inconsistencies; no verified purchases or result quality.",
+      "sources": [
+        {
+          "title": "Univoo’s published offer",
+          "url": "https://univoo.in/",
+          "publisher": "Univoo",
+          "date": "Undated live page; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "Univoo’s published offer",
+          "url": "https://univoo.in/pricing",
+          "publisher": "Univoo",
+          "date": "Undated live page; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "Univoo’s published offer",
+          "url": "https://univoo.in/terms-of-service",
+          "publisher": "Univoo",
+          "date": "Undated live page; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "independentPerformanceAudit": false
+    },
+    {
+      "name": "YourWeg",
+      "url": "https://www.yourweg.com/",
+      "product": "Profile matcher and application workspace.",
+      "pricing": "Free 5 matches; ₹1,999 + GST for a four-month season.",
+      "strength": "Profile and next-step organisation.",
+      "limitation": "Likelihood claims and actual delivery were not evaluated.",
+      "sources": [
+        {
+          "title": "YourWeg’s published offer",
+          "url": "https://www.yourweg.com/",
+          "publisher": "YourWeg",
+          "date": "Undated live page; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "independentPerformanceAudit": false
+    },
+    {
+      "name": "Nikshala AI",
+      "url": "https://nikshala.com/pricing",
+      "product": "Free master’s discovery and bachelor’s pathway guidance.",
+      "pricing": "Free tools; ₹6,000 human shortlisting advertised separately.",
+      "strength": "Germany guidance with service extensions.",
+      "limitation": "Payment-finalisation note; no verified sales or matching quality.",
+      "sources": [
+        {
+          "title": "Nikshala’s published offer",
+          "url": "https://nikshala.com/pricing",
+          "publisher": "Nikshala AI",
+          "date": "Undated live page; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "Nikshala’s published offer",
+          "url": "https://nikshala.com/partners",
+          "publisher": "Nikshala AI",
+          "date": "Undated live page; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "independentPerformanceAudit": false
+    },
+    {
+      "name": "FindCourse",
+      "url": "https://findcourse.io/faq",
+      "product": "India-oriented multi-country questionnaire and matching.",
+      "pricing": "Core matching and guides described as free.",
+      "strength": "Financial and academic-context shortlist framing.",
+      "limitation": "Germany depth, incentives and delivery untested.",
+      "sources": [
+        {
+          "title": "FindCourse’s published offer",
+          "url": "https://findcourse.io/faq",
+          "publisher": "FindCourse / SEAES",
+          "date": "Undated live page; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "independentPerformanceAudit": false
+    },
+    {
+      "name": "Raplika",
+      "url": "https://raplika.com/pricing",
+      "product": "Bachelor’s exploration; optional interview and explained report.",
+      "pricing": "Free initial results; €8 one-time beta report.",
+      "strength": "Interest, conversation and evidence overlap.",
+      "limitation": "India-specific support and product accuracy unverified.",
+      "sources": [
+        {
+          "title": "Raplika’s published offer",
+          "url": "https://raplika.com/pricing",
+          "publisher": "Raplika",
+          "date": "Undated live page; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "Raplika’s published offer",
+          "url": "https://raplika.com/how-it-works",
+          "publisher": "Raplika",
+          "date": "Undated live page; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "Raplika’s published offer",
+          "url": "https://raplika.com/about",
+          "publisher": "Raplika",
+          "date": "Undated live page; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "independentPerformanceAudit": false
+    },
+    {
+      "name": "ApplyBoard / Abbie",
+      "url": "https://www.applyboard.com/services/abbie",
+      "product": "Recruitment platform; documented Abbie access for partners.",
+      "pricing": "No standalone student Abbie price verified.",
+      "strength": "Adjacent integrated matching/application workflow.",
+      "limitation": "Partner AI and a student support widget are distinct.",
+      "sources": [
+        {
+          "title": "ApplyBoard access and product information",
+          "url": "https://www.applyboard.com/services/abbie",
+          "publisher": "ApplyBoard",
+          "date": "Undated live page; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        },
+        {
+          "title": "ApplyBoard access and product information",
+          "url": "https://assist.applyboard.com/hc/en-us/articles/29074610147853-How-ApplyBoard-Works-for-Recruitment-Partners",
+          "publisher": "ApplyBoard",
+          "date": "2026-09-22; accessed 2026-10-25",
+          "authority": "Scope and evidence limits apply."
+        }
+      ],
+      "independentPerformanceAudit": false
+    }
+  ],
+  "sections": [
+    {
+      "id": "market",
+      "navTitle": "Market & feasibility",
+      "kicker": "Phase 3 / Market analysis",
+      "title": "A corridor, not yet a market for us.",
+      "intro": "Official populations and practical constraints establish context. Reachable users, product usefulness and paid economics still need direct measurement.",
+      "confidence": "High for defined official data and published rules; low for commercial viability.",
+      "claimIds": [
+        "MARKET-01",
+        "A1-04",
+        "A1-05",
+        "A1-07",
+        "A1-08",
+        "REG-01",
+        "REG-04",
+        "REG-08",
+        "AUD-01",
+        "D2-02"
+      ],
+      "implications": [
+        "Keep enrolled stock, applicants and product users separate. Paid TAM/SAM and Year-1 revenue forecasts are not established.",
+        "A free pilot needs an explicit cash and human-review envelope. Track cost per verified useful result.",
+        "Use university-level requirements and programme/city costs, with source rights, applicant scope and update dates."
+      ],
+      "gaps": [
+        "Reachable initial audience and useful-result conversion.",
+        "Actual per-case compute, data curation, review and support cost.",
+        "Production data permissions and a launch-specific privacy/vendor/age assessment."
+      ],
+      "connections": [
+        "C1-03",
+        "B2-01",
+        "SUP-01"
+      ],
+      "redFlags": "No measured product demand or unit economics; rights to the proposed dataset are not cleared.",
+      "yellowFlags": "Cost guidance is general; requirements differ by route; DPDP phases and current transitional duties need scoped review."
+    },
+    {
+      "id": "alternatives",
+      "navTitle": "Alternatives",
+      "kicker": "Phase 3 / Competitive landscape",
+      "title": "The free baseline is already capable.",
+      "intro": "Observed offers overturn the empty-category assumption. Published features and prices do not prove accuracy, adoption, satisfied customers or willingness to pay.",
+      "confidence": "High for observed public offers; unassessed performance, reach and commercial traction.",
+      "claimIds": [
+        "B2-01",
+        "B2-03",
+        "B1-02",
+        "B1-03",
+        "B1-05",
+        "GTM-02",
+        "GTM-04"
+      ],
+      "implications": [
+        "Benchmark against DAAD Study Guide plus official sources and the student’s own workflow; include a relevant specialist where available.",
+        "Investigate an incremental advantage in a concrete decision, source quality, uncertainty handling or effort—not the mere presence of chat or personalisation.",
+        "Disclose the product’s own incentives. Do not infer independence or bias solely from a free price."
+      ],
+      "gaps": [
+        "Hands-on comparison of equivalent student cases.",
+        "Verified competitor accuracy, usage, revenue and service delivery.",
+        "Actual student switching behavior and an offer they value more."
+      ],
+      "connections": [
+        "C1-01",
+        "C2-08",
+        "D2-01"
+      ],
+      "redFlags": "No demonstrated improvement over existing free alternatives.",
+      "yellowFlags": "Early specialist price pages contain inconsistencies; access terms and product quality are untested; no market-share or competitor-copying timeline is established."
+    },
+    {
+      "id": "students",
+      "navTitle": "Students & trust",
+      "kicker": "Phase 3 / Target audience and demand",
+      "title": "Test a real decision, not enthusiasm.",
+      "intro": "Public voices suggest concrete uncertainty. They are self-selected accounts; no founder interviews or pilot outcomes were conducted for this report.",
+      "confidence": "Low for prevalence and demand; medium for a bounded interview hypothesis.",
+      "claimIds": [
+        "C1-01",
+        "C1-02",
+        "C1-03",
+        "AUD-03",
+        "AUD-04",
+        "AUD-06",
+        "C2-08"
+      ],
+      "implications": [
+        "Compare explorers and existing-plan checkers across both intended study levels. Keep demographics, income and willingness to pay unassigned.",
+        "A shortlist/feasibility check is a sharper initial hypothesis than broad life-direction advice; it must still be tested.",
+        "Ask for context only when its purpose is clear. A budget range may be useful before detailed family narratives, hobbies or documents."
+      ],
+      "gaps": [
+        "Whether source-backed results change the next action.",
+        "Whether students prefer profile, conversation or both in actual use.",
+        "Whether optional depth improves results enough to justify the burden.",
+        "Trust, return behavior and student/parent payment for this specific product."
+      ],
+      "connections": [
+        "A1-04",
+        "B2-01",
+        "D1-02"
+      ],
+      "redFlags": "Anecdotes do not validate the product or a ranked pain hierarchy.",
+      "yellowFlags": "User identities, reported outcomes and time spent are unverified; no preference for family/hobby disclosure is established."
+    },
+    {
+      "id": "trends",
+      "navTitle": "Timing & trends",
+      "kicker": "Phase 3 / Industry trends",
+      "title": "Useful timing. No protected window.",
+      "intro": "Programme supply, general AI familiarity and policy changes influence the design. None establishes that this product has a competitive advantage.",
+      "confidence": "Medium for directional implications; source-specific limits are explicit.",
+      "claimIds": [
+        "A2-01",
+        "A2-02",
+        "A2-05",
+        "A2-06",
+        "SUP-01"
+      ],
+      "implications": [
+        "Preserve both study levels, but make the actual language/degree/field coverage visible.",
+        "Validate against current AI and official-source workflows, without inventing local adoption rates.",
+        "Source freshness is an operational requirement: rules can change by applicant group and intake."
+      ],
+      "gaps": [
+        "A live, verified programme inventory by level, language and first subject.",
+        "India→Germany admissions-specific AI behavior.",
+        "Exact-niche financing/market growth totals and future platform roadmaps."
+      ],
+      "connections": [
+        "AUD-01",
+        "B2-03",
+        "C2-07"
+      ],
+      "redFlags": "No evidenced uncontested execution window; intake-dependent rules cannot be guessed.",
+      "yellowFlags": "English-programme counts are a dated 2025 snapshot; broader surveys are not representative of the launch audience; adjacent investment is not niche validation."
+    },
+    {
+      "id": "distribution",
+      "navTitle": "Distribution",
+      "kicker": "Phase 3 / Channels and market entry",
+      "title": "Reach a small cohort with permission.",
+      "intro": "The first channel is a learning experiment. No audience, partnership, community access, conversion rate or paid acquisition cost is assumed.",
+      "confidence": "High for cited public surfaces; low for channel effectiveness or recruitability.",
+      "claimIds": [
+        "D1-02",
+        "D1-03",
+        "D1-04",
+        "D2-01",
+        "D2-06",
+        "C2-02",
+        "C2-07"
+      ],
+      "implications": [
+        "Start with voluntary founder introductions and an actually accessible campus gatekeeper. Check specific community rules before any invitation.",
+        "Use a degree × decision-stage learning sample, then choose subject and intake coverage based on actual needs and source auditability.",
+        "Grow only after results are useful, permission-based recruitment repeats, and verification effort is affordable."
+      ],
+      "gaps": [
+        "Current founder access and capacity.",
+        "Observed recruitment source, activation, follow-through and return behavior.",
+        "A credible cost per qualified useful result; no verified keyword/CPC forecast."
+      ],
+      "connections": [
+        "GTM-02",
+        "AUD-03",
+        "C2-08"
+      ],
+      "redFlags": "No secured recruitment channel or measured useful-result funnel.",
+      "yellowFlags": "Public events and office pages do not grant access; subreddit permission remains unverified; roadmap countries are not comparable launch coverage."
+    }
+  ],
+  "studentQuotes": [
+    {
+      "quote": "I spent days comparing my modules with theirs just to make sure everything aligned.",
+      "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1p0hkmq/i_applied_for_germanys_winter_intake_completely/",
+      "date": "2025-11-18",
+      "context": "A public self-reported student account",
+      "limitations": "Identity and circumstances are unverified; this illustrates a question, not a measured time-saving or feasibility result."
+    },
+    {
+      "quote": "Should I complete my bachelor in india and then pursue masters there or target for bachelor in germany?",
+      "url": "https://www.reddit.com/r/studying_in_germany/comments/1v9qpgf/suggestion_for_bachelors_in_germany/",
+      "date": "2026-07-29",
+      "context": "A public self-reported student account",
+      "limitations": "Identity and circumstances are unverified; this illustrates a question, not a measured time-saving or feasibility result."
+    }
+  ],
+  "metrics": [
+    {
+      "value": "69,076",
+      "label": "Indian international enrolment stock",
+      "scope": "Winter 2025/26; defined report category",
+      "claimIds": [
+        "MARKET-01"
+      ]
+    },
+    {
+      "value": "26,185",
+      "label": "Indian uni-assist applicants",
+      "scope": "Study year 2025; one application channel",
+      "claimIds": [
+        "MARKET-01"
+      ]
+    },
+    {
+      "value": "₹0",
+      "label": "Launch price by founder intent",
+      "scope": "Later payment is a separate hypothesis",
+      "claimIds": [
+        "A1-07"
+      ]
+    }
+  ],
+  "summary": [
+    {
+      "label": "Market context / High for the defined data",
+      "title": "A substantial corridor does not calculate our market.",
+      "text": "Keep stocks, partial flows and prospective product users separate. Reachable audience and paid market size remain unmeasured.",
+      "claimIds": [
+        "MARKET-01",
+        "A1-08"
+      ]
+    },
+    {
+      "label": "Competition / Observed offers",
+      "title": "Free, personalised Germany guidance already exists.",
+      "text": "The relevant question is whether a specific result improves on official and specialist alternatives. Published offers were inspected; their recommendation quality was not tested.",
+      "claimIds": [
+        "B2-01",
+        "B1-02",
+        "B1-03"
+      ]
+    },
+    {
+      "label": "Students / Anecdotal signal",
+      "title": "A concrete feasibility question is a useful first test.",
+      "text": "Public accounts describe requirements, costs and pathway trade-offs. They support interview hypotheses, not demand validation or permission to infer personal facts.",
+      "claimIds": [
+        "C1-01",
+        "C1-02",
+        "C1-03",
+        "AUD-06"
+      ]
+    },
+    {
+      "label": "Delivery / Evidence-bound design",
+      "title": "Source coverage is part of the product.",
+      "text": "Define degree and intake boundaries, separate missing information from eligibility, and resolve source rights before building a reusable dataset.",
+      "claimIds": [
+        "AUD-01",
+        "REG-08",
+        "SUP-01"
+      ]
+    },
+    {
+      "label": "Business / Free launch confirmed",
+      "title": "Usefulness comes before a paid forecast.",
+      "text": "Track a verified useful result, a real next action and delivery cost. Payment and retention are still unknown.",
+      "claimIds": [
+        "A1-07",
+        "C2-07",
+        "C2-08"
+      ]
+    }
+  ],
+  "criticalUnknowns": [
+    "A repeated student decision where this result adds value over current free tools.",
+    "Actual first-use accuracy, evidence coverage and uncertainty handling for both degree routes.",
+    "Permission-based recruitability and real student behavior, rather than sign-ups or compliments.",
+    "Compute, data review and support effort inside a founder-set spending/time cap.",
+    "Production source rights, processor flows, age/consent path, retention and current legal duties.",
+    "A later paid deliverable and billing unit; no payment or retention evidence exists."
+  ],
+  "verification": {
+    "status": "self-reviewed; independent pass incomplete",
+    "summary": "Self-review found no unresolved critical consistency issue. The independent reviewer hit an account usage limit, so this is not an independently audited report.",
+    "notes": [
+      "36 unique claim IDs; section assignments and references checked.",
+      "Primary-source spot checks covered the free official baseline, visa guidance, source terms, privacy phases and APS freshness.",
+      "The WWO headline extraction retains researcher provenance; the root repeat PDF fetch was unavailable.",
+      "Student interviews, live product accuracy, production permissions and paid demand remain untested."
+    ]
+  },
+  "gate": {
+    "status": "Yellow — conditional continue",
+    "intro": "The evidence supports a focused learning investment. It does not yet establish a differentiated, viable student product.",
+    "heading": "Continue into a bounded free pilot plan.",
+    "recommendation": "Proceed to strategy for a small, manually verified free pilot. Make a broader build commitment after the pilot demonstrates useful decisions, an incremental advantage over free alternatives and affordable verification effort.",
+    "for": [
+      "Official data establishes a real India→Germany study corridor.",
+      "The founder’s trust/clarity goal is consistent with concrete questions in public student accounts.",
+      "Both degree levels can be preserved through separate learning cells and explicit coverage boundaries.",
+      "A manually assisted pilot can test useful results without building a full acquisition and automation stack."
+    ],
+    "against": [
+      "Official free personalised guidance and near-direct specialist offers already overlap the concept.",
+      "No founder-specific student interviews, pilot outcomes, paid demand or retention have been measured.",
+      "Matching quality, source permissions, update work and unit costs are not yet established.",
+      "Broad country ranking cannot be supported by Germany-only coverage."
+    ],
+    "conditions": [
+      {
+        "title": "Observe a concrete recent decision",
+        "test": "Proposed learning target: 12 voluntary problem interviews, aiming for three in each degree × explore/check cell. These are convenience-sample targets, not prevalence or statistical validation. Ask about the recent real task before demonstrating a solution."
+      },
+      {
+        "title": "Compare the first useful result",
+        "test": "Proposed pilot: up to eight manually verified cases, with both study levels represented where recruitment permits. Compare the same task with DAAD Study Guide plus official sources and the student’s current workflow. Log false claims, missing information, student effort and the actual next action."
+      },
+      {
+        "title": "Define a safe, affordable coverage envelope",
+        "test": "Agree a cash cap and human-review capacity. Choose source-cleared programme examples by qualification route and named intake. Decide the age/consent and saved-profile behavior before identifiable testing; do not guess unresolved requirements."
+      },
+      {
+        "title": "Look for behavior and replication",
+        "test": "Observe whether students inspect evidence, correct a plan, take a named next step, and voluntarily return or revise. A proposed 90-day learning target is 24 qualified pilot cases, not a reach/conversion forecast. Record missing follow-up as missing."
+      },
+      {
+        "title": "Set a decision rule before adding scope",
+        "test": "Continue when the result adds useful clarity over the baseline with manageable verification effort. Rework or narrow the concept if that advantage is absent. Keep launch free; evaluate paid value and more countries after those questions are clearer."
+      }
+    ],
+    "choices": [
+      "Review the working strategy and confirm or refine its positioning before Brand.",
+      "Narrow the pilot around a more specific student decision if the incremental advantage remains unclear.",
+      "Pause the approach if the evidence and required effort do not justify another bounded test."
+    ],
+    "skillCheckpoint": "The research gate remains Yellow. The founder instructed the agent to continue planning after findings were shared. Phase 4 is drafted under the bounded free-pilot recommendation. Review strategy before Brand; no product validation is implied.",
+    "claimIds": [
+      "B2-01",
+      "C1-01",
+      "C2-08",
+      "REG-08",
+      "D2-01"
+    ],
+    "flags": [
+      "Red: no demonstrated product-specific usefulness or incremental advantage.",
+      "Red: production data rights and reliable matching are not yet established.",
+      "Yellow: self-selected anecdotes, unaudited vendor offers and survey population limits.",
+      "Yellow: free usage cannot validate payment, and the founder-funded cost cap remains open.",
+      "Yellow: current programme and policy coverage must be versioned; country expansion remains a roadmap."
+    ]
+  },
+  "rawResearchDirectory": "../01-discovery/student-pivot/raw/",
+  "researchDepth": "Standard",
+  "workstreams": 11,
+  "supplementalCheck": "APS source freshness",
+  "primaryInterviewsConducted": 0,
+  "outreachSent": false,
+  "sourceNotes": "The same underlying report or vendor statement repeated across pages is not independent corroboration."
+}

@@ -1,0 +1,277 @@
+{
+  "title": "Germany-first student discovery: audience sizing and economics",
+  "asOf": "2026-10-25",
+  "queries": [
+    {
+      "round": 1,
+      "query": "site.daad.de Indian students Germany 2025 2026 59000 first semester"
+    },
+    {
+      "round": 1,
+      "query": "site:wissenschaft-weltoffen.de India students Germany 2025 2026 59000"
+    },
+    {
+      "round": 2,
+      "query": "site:daad.de 2026 Wissenschaft weltoffen 69.000 2026"
+    },
+    {
+      "round": 2,
+      "query": "site:wissenschaft-weltoffen.de 2026 69000 Indien 2025 2026"
+    },
+    {
+      "round": 2,
+      "query": "site:india.diplo.de studying Germany blocked account 2026 11904 992"
+    },
+    {
+      "round": 3,
+      "query": "site:daad.de \"69.000\" \"2026\""
+    },
+    {
+      "round": 3,
+      "query": "site:uni-assist.de handling fees 75 30 application"
+    },
+    {
+      "round": 4,
+      "query": "site:destatis.de \"Wintersemester 2025/2026\" \"Indien\" \"69\""
+    },
+    {
+      "round": 4,
+      "query": "site:daad.de \"Indian\" \"59,419\" \"58,833\""
+    },
+    {
+      "round": 4,
+      "query": "site:uni-assist.de \"2025\" \"Indien\" \"26\" Bewerber"
+    }
+  ],
+  "findings": [
+    {
+      "id": "A1-01",
+      "claim": "Indian international enrolment (Bildungsausländer) was 69,076 in winter 2025/26, versus 58,833 in 2024/25. These are stocks, not annual new entrants.",
+      "label": "Data",
+      "sourceDate": "Released 2026-10-14; reference semesters 2025/26 and 2024/25",
+      "confidence": "High for the defined statistic; not a product TAM",
+      "sources": [
+        {
+          "title": "Wissenschaft weltoffen 2026",
+          "url": "https://www.wissenschaft-weltoffen.de/content/uploads/2026/10/WWO_2026_web.pdf",
+          "publisher": "DAAD and DZHW; underlying Destatis and uni-assist statistics",
+          "date": "2026-10-14",
+          "tier": 1,
+          "lineage": "DAAD/DZHW WWO2026; repeated press coverage is not independent corroboration",
+          "locator": "Chart Z2; PDF page 9 / zero-based pageno 8"
+        },
+        {
+          "title": "DAAD announcement of Wissenschaft weltoffen 2026",
+          "url": "https://www.presseportal.de/pm/59097/6370850",
+          "publisher": "DAAD press office, distributed through Presseportal",
+          "date": "2026-10-14",
+          "tier": 2,
+          "lineage": "Same WWO2026 report; cross-check of publication, not independent dataset"
+        }
+      ],
+      "implication": "A substantial existing corridor warrants investigation. Do not count enrolled students as fresh yearly prospects, add stock to applicant flow, or multiply the count by a hypothetical price."
+    },
+    {
+      "id": "A1-02",
+      "claim": "uni-assist recorded 26,185 Indian applicants in study year 2025, versus 24,018 in 2024. The 2025 year combines summer 2025 and winter 2025/26.",
+      "label": "Data",
+      "sourceDate": "Released 2026-10-14; applications in study year 2025",
+      "confidence": "High for this partial application channel",
+      "sources": [
+        {
+          "title": "Wissenschaft weltoffen 2026",
+          "url": "https://www.wissenschaft-weltoffen.de/content/uploads/2026/10/WWO_2026_web.pdf",
+          "publisher": "DAAD and DZHW; underlying Destatis and uni-assist statistics",
+          "date": "2026-10-14",
+          "tier": 1,
+          "lineage": "DAAD/DZHW WWO2026; repeated press coverage is not independent corroboration",
+          "locator": "Table B2.15 and footnote 1, printed page 50 / PDF page 52"
+        }
+      ],
+      "implication": "This annual channel measure is more relevant than enrolled stock for recruitment research, but excludes other application routes and unconverted aspirants. It is neither the complete prospective market nor a measured reachable SAM."
+    },
+    {
+      "id": "A1-03",
+      "claim": "In winter 2024/25, 49.9% of international degree-seeking students were in master’s programmes and 36.8% in bachelor’s programmes. These shares cover all origins, not India specifically.",
+      "label": "Data",
+      "sourceDate": "Released 2026-10-14; winter 2024/25",
+      "confidence": "High for the broad population; Low for an India-specific mix",
+      "sources": [
+        {
+          "title": "Wissenschaft weltoffen 2026",
+          "url": "https://www.wissenschaft-weltoffen.de/content/uploads/2026/10/WWO_2026_web.pdf",
+          "publisher": "DAAD and DZHW; underlying Destatis and uni-assist statistics",
+          "date": "2026-10-14",
+          "tier": 1,
+          "lineage": "DAAD/DZHW WWO2026; repeated press coverage is not independent corroboration",
+          "locator": "Section B2.1 and chart B2.1, printed pages 42–43"
+        }
+      ],
+      "implication": "There is evidence for substantial activity at both levels. Keep separate matching paths; test a focused initial cohort without claiming these shares describe Indian users."
+    },
+    {
+      "id": "A1-04",
+      "claim": "The Indian mission’s February 2026 study-visa page lists €11,904 first-year blocked-account funds and a €992 monthly withdrawal limit; accepted alternative proof exists.",
+      "label": "Data",
+      "sourceDate": "2026-02-16; checked 2026-10-25",
+      "confidence": "High for current published mission guidance",
+      "sources": [
+        {
+          "title": "Studies, including preparatory college and language courses for intended studies",
+          "url": "https://india.diplo.de/in-en/service/2756350-2756350",
+          "publisher": "German Missions in India / Federal Foreign Office",
+          "date": "2026-02-16",
+          "tier": 1
+        },
+        {
+          "title": "Costs of education and living",
+          "url": "https://www.daad.de/en/studying-in-germany/living-in-germany/finances/",
+          "publisher": "DAAD",
+          "date": "Undated live page; proof section explicitly says 2025; checked 2026-10-25",
+          "tier": 1
+        }
+      ],
+      "implication": "Financial proof is not an all-inclusive degree budget. The founder’s ₹10 lakh example cannot by itself establish affordability; avoid INR comparisons without a dated exchange rate and programme/city/duration-specific costs."
+    },
+    {
+      "id": "A1-05",
+      "claim": "DAAD’s current guidance indicates €900–€1,200 monthly living costs and €70–€430 semester contributions. It identifies tuition exceptions, including non-EU charges in Baden-Württemberg and institution-specific Bavarian fees.",
+      "label": "Data",
+      "sourceDate": "Undated live guidance checked 2026-10-25; do not use its older 2023 survey averages as current costs",
+      "confidence": "Medium as general planning ranges; exact local costs require fresh sources",
+      "sources": [
+        {
+          "title": "Costs of education and living",
+          "url": "https://www.daad.de/en/studying-in-germany/living-in-germany/finances/",
+          "publisher": "DAAD",
+          "date": "Undated live page; proof section explicitly says 2025; checked 2026-10-25",
+          "tier": 1
+        }
+      ],
+      "implication": "Separate tuition, semester contributions, living costs, travel/setup, insurance, and contingency. Do not market Germany as universally free or use part-time work as guaranteed funding."
+    },
+    {
+      "id": "A1-06",
+      "claim": "uni-assist handling fees are €75 for the first chosen course and €30 for each additional course in the same semester, including standard and VPD procedures.",
+      "label": "Data",
+      "sourceDate": "Live page checked 2026-10-25",
+      "confidence": "High for published fee system",
+      "sources": [
+        {
+          "title": "Pay and submit — handling fees",
+          "url": "https://www.uni-assist.de/en/how-to-apply/apply-online/pay-submit/",
+          "publisher": "uni-assist e.V.",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 1
+        }
+      ],
+      "implication": "A shortlist can create real application expenditure. Show applicable costs without suggesting an advisory charge replaces official fees; some institution-specific exceptions must be checked."
+    },
+    {
+      "id": "A1-07",
+      "claim": "The founder has chosen a free launch and will fund initial costs. Student/parent payment around ₹500 per month or plan is a later, unvalidated hypothesis; no billing period is locked.",
+      "label": "Assumption",
+      "sourceDate": "2026-10-25 founder brief",
+      "confidence": "High as a record of intent; Low as a business viability or willingness-to-pay claim",
+      "sources": [
+        {
+          "title": "Completed founder brief",
+          "url": "../../../00-intake/founder-brief-2026-10-25.json",
+          "publisher": "Founder",
+          "date": "2026-10-25",
+          "tier": null,
+          "note": "Primary for founder intent, not independent market demand"
+        }
+      ],
+      "implication": "Launch paid revenue is ₹0 by design. Do not reuse agency subscriptions, compute paid TAM from aspirants, or present early free use as paid demand."
+    },
+    {
+      "id": "A1-08",
+      "claim": "A paid TAM/SAM, realistic Year-1 obtainable audience, CAC, churn, and LTV cannot yet be estimated defensibly from the available evidence.",
+      "label": "Opinion",
+      "sourceDate": "2026-10-25 analysis",
+      "confidence": "High that these inputs remain unmeasured; no numerical forecast supplied",
+      "sources": [
+        {
+          "title": "Completed founder brief",
+          "url": "../../../00-intake/founder-brief-2026-10-25.json",
+          "publisher": "Founder",
+          "date": "2026-10-25",
+          "tier": null,
+          "note": "Primary for founder intent, not independent market demand"
+        }
+      ],
+      "implication": "Use a scenario model with explicit inputs: reachable students × intake activation × useful-result completion. Measure returning users and cost per verified useful result, including model, data, review, and support costs. Do not treat chosen funnel inputs as benchmarks."
+    }
+  ],
+  "audienceSizing": {
+    "broadCorridorProxy": {
+      "value": 69076,
+      "unit": "enrolled Indian international students",
+      "period": "winter 2025/26",
+      "not": "annual aspirants or paid TAM"
+    },
+    "annualChannelProxy": {
+      "value": 26185,
+      "unit": "Indian applicants through uni-assist",
+      "period": "study year 2025",
+      "not": "all applicants, all aspiring students, admissions, or measured reachable SAM"
+    },
+    "serviceableAudience": "Unknown until initial subject, intake, outreach access, and data coverage are chosen.",
+    "SOM": "No forecast. Scenario formula only: reachable students × activation rate × useful-result completion rate. Each factor must be measured in a pilot.",
+    "launchRevenueINR": 0,
+    "launchRevenueLabel": "Founder-confirmed free-launch intent, not a market forecast",
+    "futurePaidMarket": "Not sized before evidence on willingness to pay and a defined billable outcome."
+  },
+  "contradictions": [
+    {
+      "topic": "Older DAAD counts differ",
+      "detail": "DAAD India’s 22 September 2025 page reports 59,419 students; WWO2026 reports 58,833 Bildungsausländer for winter 2024/25. These publications do not provide a directly reconciled classification on the accessed pages. Prefer the newer report’s explicit category and do not silently merge them.",
+      "source": "https://www.daad.in/en/2025/09/22/indian-students-in-germany-at-an-all-time-high/"
+    }
+  ],
+  "gaps": [
+    {
+      "gap": "Complete annual Indian Germany aspirant population, by intended degree and field",
+      "why": "Neither enrolled stock nor one processing channel counts all prospective users.",
+      "nextStep": "Use official applicant breakdowns where available and primary recruitment measurement; do not invent an aspirant multiplier."
+    },
+    {
+      "gap": "Reachable initial cohort and conversion into useful results",
+      "why": "No student pilot metrics are recorded.",
+      "nextStep": "Measure an actual recruitment and use funnel before a Year-1 SOM forecast."
+    },
+    {
+      "gap": "India-specific bachelor/master applicant split",
+      "why": "Broad international shares cannot be transferred to India.",
+      "nextStep": "Request disaggregated official data or recruit separate cohorts; report sample limits."
+    },
+    {
+      "gap": "Paid willingness-to-pay, repeat usage, paid CAC/LTV/churn",
+      "why": "Free-launch founder intent supplies none of these.",
+      "nextStep": "Keep pricing scenarios labeled assumptions and run a later real payment test only after useful outcomes are demonstrated."
+    },
+    {
+      "gap": "Free-pilot unit cost and a spending cap",
+      "why": "Actual model usage, data curation, verification time, support, and current founder capacity are unmeasured.",
+      "nextStep": "Set a founder-funded cap and track cost per verified useful result; keep human work visible."
+    },
+    {
+      "gap": "Student-specific affordability",
+      "why": "Official financial proof and general cost ranges do not establish full-degree affordability.",
+      "nextStep": "Gather actual institution/city costs, duration, funding, and a dated exchange rate; show uncertainty."
+    }
+  ],
+  "redFlags": [
+    "Do not claim the 69,076 enrolled stock or 26,185 uni-assist applicants are paid TAM, reachable users, or a reliable Year-1 forecast.",
+    "A free launch produces no paid-revenue validation; no evidence presently supports a paid market-size estimate.",
+    "Insufficient financial input cannot justify a best-country or affordability conclusion."
+  ],
+  "yellowFlags": [
+    "Growth in the corridor is not evidence students will use or trust this particular product.",
+    "Official general cost guidance must be replaced by programme/city-specific evidence for personalised results.",
+    "The newest statistical release mixes reference periods; each number must retain its own period and population definition.",
+    "Press coverage and the source report share one data lineage; do not count them as independent datasets."
+  ],
+  "summary": "The Germany corridor is measurable and active, and a current annual processing-channel proxy is available. The product’s reachable audience and economics remain unvalidated. Lead the free pilot with useful-result, return-use, and cost metrics; avoid a revenue TAM constructed from enrolments."
+}

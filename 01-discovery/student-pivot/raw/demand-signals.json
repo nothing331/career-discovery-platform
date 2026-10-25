@@ -1,0 +1,349 @@
+{
+  "title": "Demand signals, later willingness to pay, and free-pilot measurement",
+  "asOf": "2026-10-25",
+  "queries": [
+    "Google Trends study in Germany India 2026 student search demand",
+    "Indian students Germany university shortlist tool paid report pricing",
+    "site:reddit.com/r/Indians_StudyAbroad Germany consultant paid fees worth",
+    "study in Germany India Google Trends 2026",
+    "Germany masters India keyword search volume",
+    "site:producthunt.com Germany study university shortlist AI",
+    "site:indiehackers.com Germany university finder revenue",
+    "Germany university shortlist AI paid report review",
+    "Univoo paid review 499 Germany",
+    "Germany study planning app willingness to pay survey students",
+    "site:support.google.com/trends 0 to 100 normalized",
+    "site:producthunt.com Univoo",
+    "site:producthunt.com YourWeg",
+    "Germany university shortlist paid review"
+  ],
+  "findings": [
+    {
+      "id": "C2-01",
+      "claim": "The completed A1 research establishes a real application corridor: uni-assist counted 26,185 Indian applicants in study year 2025, up from 24,018 in 2024. This is a partial application channel, not software demand, enrolled stock, or a complete market.",
+      "label": "Data",
+      "sourceDate": "Released 2026-10-14; applications in study year 2025",
+      "confidence": "High for the defined A1 statistic; not a willingness-to-pay signal",
+      "sources": [
+        {
+          "title": "Wissenschaft weltoffen 2026",
+          "url": "https://www.wissenschaft-weltoffen.de/content/uploads/2026/10/WWO_2026_web.pdf",
+          "publisher": "DAAD and DZHW; underlying Destatis and uni-assist statistics",
+          "date": "2026-10-14",
+          "tier": 1,
+          "lineage": "DAAD/DZHW WWO2026; repeated press coverage is not independent corroboration",
+          "locator": "Table B2.15 and footnote 1, printed page 50 / PDF page 52"
+        }
+      ],
+      "limitations": "Carried forward from A1-02 rather than counted as independent corroboration. A repeat attempt to open the PDF through the web tool in this block failed; the A1 extraction and locator remain the evidence trail. Applicants through other routes and unconverted aspirants are excluded.",
+      "implication": "There are real decisions to help with, but the founder still needs evidence that the proposed navigator produces a useful result beyond available alternatives."
+    },
+    {
+      "id": "C2-02",
+      "claim": "No reproducible India→Germany search-volume series, keyword-level growth rate, seasonality pattern or regional hotspot was established in this research. Google explains that Trends uses sampled searches normalized to time and place and scaled from 0 to 100, rather than absolute counts.",
+      "label": "Data for the documented measurement definition; research limitation for the missing series",
+      "sourceDate": "Google documentation checked 2026-10-25",
+      "confidence": "High for the measurement distinction; search-demand direction not assessed",
+      "sources": [
+        {
+          "title": "FAQ about Google Trends data",
+          "url": "https://support.google.com/trends/answer/4365533",
+          "publisher": "Google",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 1
+        }
+      ],
+      "limitations": "Queries found marketing interpretations and unrelated domestic-international-campus search reports, not a verified comparable India→Germany series. Do not substitute search snippets, a single peak, or a different query group for demand evidence.",
+      "implication": "Keep search demand marked unknown. If measured later, preserve query/topic choice, country, time window, retrieval date and exported series. Search interest still would not establish intention to use or pay."
+    },
+    {
+      "id": "C2-03",
+      "claim": "Low-ticket paid offers exist near the founder’s later price hypothesis, but the inspected units are not comparable: Univoo advertises ₹499 one-time founding access with ₹999 later, YourWeg ₹1,999 plus GST for a four-month season, and Raplika €8 for a one-time full report.",
+      "label": "Data (published offers)",
+      "sourceDate": "Provider pages inspected 2026-10-25",
+      "confidence": "Medium for posted offers; no sales or checkout verification",
+      "sources": [
+        {
+          "title": "Pricing",
+          "url": "https://univoo.in/pricing",
+          "publisher": "Univoo",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 2
+        },
+        {
+          "title": "Product and pricing",
+          "url": "https://www.yourweg.com/",
+          "publisher": "YourWeg",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 2
+        },
+        {
+          "title": "Pricing",
+          "url": "https://raplika.com/pricing",
+          "publisher": "Raplika",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 2
+        }
+      ],
+      "limitations": "Delivery quality, completed purchases and customer counts were not verified. Univoo has conflicting launch/capacity wording across current/indexed copies. No currency conversion, median monthly price, or market-clearing price is inferred.",
+      "implication": "The founder’s “₹500 per month/plan” must be separated into a concrete billing unit and deliverable before a later payment experiment. Launch remains free."
+    },
+    {
+      "id": "C2-04",
+      "claim": "The price of discovery is also zero in substantial alternatives. DAAD Study Guide advertises free personalized guidance; YourWeg advertises five free programme matches and limited saved programmes. Paid offers are therefore competing with a functional free baseline, not with an absence of guidance.",
+      "label": "Data (published offers)",
+      "sourceDate": "Live pages checked 2026-10-25",
+      "confidence": "High for stated free offers; quality not audited",
+      "sources": [
+        {
+          "title": "Study Guide Germany",
+          "url": "https://www.study-guide.com/en/",
+          "publisher": "DAAD",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "Product and pricing",
+          "url": "https://www.yourweg.com/",
+          "publisher": "YourWeg",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 2
+        }
+      ],
+      "limitations": "No claim that the free results are complete or accurate, or that users will never pay for greater value. Official and commercial services have different incentives and business models.",
+      "implication": "The free pilot is compatible with the founder’s intent but cannot validate a future price. Test whether the proposed result is meaningfully better than the official service and an ordinary DIY workflow."
+    },
+    {
+      "id": "C2-05",
+      "claim": "Public student discussions show both reported spending and resistance to paying for bundled help. One May 2026 poster says they paid “2k” to a consultant and were dissatisfied; a May 2025 poster describes a ₹50,000 proposal for university applications plus visa/loan/insurance support and asks whether it is worth it.",
+      "label": "Data (unverified anecdotal claims)",
+      "sourceDate": "May 2026 and 2025-05-30",
+      "confidence": "Low; no receipts or independent verification",
+      "sources": [
+        {
+          "title": "How study abroad consultants stole my money...",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1thg5n0/how_study_abroad_consultants_stole_my_money/",
+          "publisher": "Reddit first-person self-report",
+          "date": "May 2026 thread; checked 2026-10-25",
+          "tier": 3
+        },
+        {
+          "title": "Paying 50k to consultancy. Does it worth it...",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1kz0a4p",
+          "publisher": "Reddit first-person self-report",
+          "date": "2025-05-30; checked 2026-10-25",
+          "tier": 3
+        }
+      ],
+      "limitations": "A claimed payment is stronger than a compliment but remains self-report. Currency of the first post’s “2k” is not explicit. The ₹50,000 case is a quote, not a confirmed transaction. Bundled human execution is not comparable to a digital discovery report. Neither anecdote establishes prevalence, fair prices, or general agency quality.",
+      "implication": "Ask pilot participants about actual recent purchases and what they bought. Keep quotes, payment claims, verified receipts, and repeat purchases as different evidence levels; do not borrow counseling budgets as software willingness to pay."
+    },
+    {
+      "id": "C2-06",
+      "claim": "Launch language, prices and capacity counters do not establish traction. Univoo’s inspected material contains inconsistent launch/remaining-slot wording, while Nikshala’s pricing page includes “Payments are being finalised” alongside certain paid services. No independently verified sales or conversion evidence for these low-ticket matching offers was found.",
+      "label": "Data for observed page wording; limitation for unverified traction",
+      "sourceDate": "Pages inspected 2026-10-25",
+      "confidence": "Medium for the public observations; commercial traction not established",
+      "sources": [
+        {
+          "title": "Pricing",
+          "url": "https://univoo.in/pricing",
+          "publisher": "Univoo",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 2
+        },
+        {
+          "title": "Products and pricing",
+          "url": "https://nikshala.com/pricing",
+          "publisher": "Nikshala AI",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 2
+        }
+      ],
+      "limitations": "Some indexed content differs from live responses; it may be stale or changing. This is not evidence of fraud or of zero customers. No payment was attempted. Product Hunt/Indie Hackers searches did not yield a reliable close-comparator paid-demand metric; one direct Indie Hackers access attempt was blocked.",
+      "implication": "Treat competitor existence as evidence of supply and product hypotheses. Do not convert an offer, a founding counter, testimonials, launch votes or a listed price into product-market fit."
+    },
+    {
+      "id": "C2-07",
+      "claim": "A free pilot should measure verified decision usefulness and behavior, rather than treating sign-ups or positive feedback as commercial validation.",
+      "label": "Opinion / proposed measurement design",
+      "sourceDate": "2026-10-25 planning recommendation",
+      "confidence": "Provisional; not a reported result",
+      "sources": [],
+      "limitations": "Targets, budget and review criteria must be set before the pilot. No success rates, sample results, or recommended price are inferred from this design. Natural use may be episodic, so daily engagement is not automatically a useful retention measure.",
+      "implication": "Track invited eligible students and acquisition source; completion of a first useful result; source verification and comprehension; a concrete next action; return to revise or compare; human minutes and compute/data costs per useful result. Benchmark the same scenarios against free official guidance and the student’s existing workflow."
+    },
+    {
+      "id": "C2-08",
+      "claim": "The current evidence supports problem-category attention and a supply of free/paid offers, but willingness to pay for this founder’s specific product is not established. This is an unknown, not proof that students will not pay.",
+      "label": "Opinion / synthesis",
+      "sourceDate": "2026-10-25",
+      "confidence": "High that founder-specific willingness to pay remains unproven; Low for any proposed commercial forecast",
+      "sources": [
+        {
+          "title": "Study Guide Germany",
+          "url": "https://www.study-guide.com/en/",
+          "publisher": "DAAD",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "Pricing",
+          "url": "https://univoo.in/pricing",
+          "publisher": "Univoo",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 2
+        },
+        {
+          "title": "Product and pricing",
+          "url": "https://www.yourweg.com/",
+          "publisher": "YourWeg",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 2
+        },
+        {
+          "title": "Pricing",
+          "url": "https://raplika.com/pricing",
+          "publisher": "Raplika",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 2
+        }
+      ],
+      "limitations": "The founder has chosen a free launch. No customer interviews, payment experiments, independently verified purchases, conversion funnels, CAC, LTV or repeat paid use were collected for this product.",
+      "implication": "Keep launch revenue at zero and avoid paid ARR projections presented as forecasts. A later, clearly scoped payment test needs one explicit unit (for example a reviewed report or an application-season package) and real observed commitment; it should not be inferred from free usage."
+    }
+  ],
+  "pricingComparators": [
+    {
+      "name": "DAAD Study Guide",
+      "freeOffer": "Personalized study guidance and roadmap",
+      "paidOffer": "No student paid tier shown on inspected page",
+      "unit": "Free service",
+      "currency": null,
+      "source": {
+        "title": "Study Guide Germany",
+        "url": "https://www.study-guide.com/en/",
+        "publisher": "DAAD",
+        "date": "Undated live page; checked 2026-10-25",
+        "tier": 1
+      },
+      "evidence": "Provider offer only; not audited outcome quality"
+    },
+    {
+      "name": "Univoo",
+      "freeOffer": "Top-three programme results advertised",
+      "paidOffer": "₹499 founding price; ₹999 afterward",
+      "unit": "One-time; posted founding/lifetime-access language",
+      "currency": "INR",
+      "source": {
+        "title": "Pricing",
+        "url": "https://univoo.in/pricing",
+        "publisher": "Univoo",
+        "date": "Undated live page; checked 2026-10-25",
+        "tier": 2
+      },
+      "evidence": "Posted offer; launch/counter inconsistency; no verified sale"
+    },
+    {
+      "name": "YourWeg",
+      "freeOffer": "Five matches and limited saved programmes advertised",
+      "paidOffer": "₹1,999 + GST",
+      "unit": "Four-month application season",
+      "currency": "INR",
+      "source": {
+        "title": "Product and pricing",
+        "url": "https://www.yourweg.com/",
+        "publisher": "YourWeg",
+        "date": "Undated live page; checked 2026-10-25",
+        "tier": 2
+      },
+      "evidence": "Posted offer; no verified sale"
+    },
+    {
+      "name": "Raplika",
+      "freeOffer": "Test and first three matches",
+      "paidOffer": "€8 full report",
+      "unit": "One-time report",
+      "currency": "EUR",
+      "source": {
+        "title": "Pricing",
+        "url": "https://raplika.com/pricing",
+        "publisher": "Raplika",
+        "date": "Undated live page; checked 2026-10-25",
+        "tier": 2
+      },
+      "evidence": "Posted offer; no verified sale"
+    },
+    {
+      "name": "Nikshala",
+      "freeOffer": "Discovery/search tools",
+      "paidOffer": "₹2,000 credit evaluation report; ₹6,000 human-researched shortlist",
+      "unit": "Per report / one-time human service",
+      "currency": "INR",
+      "source": {
+        "title": "Products and pricing",
+        "url": "https://nikshala.com/pricing",
+        "publisher": "Nikshala AI",
+        "date": "Undated live page; checked 2026-10-25",
+        "tier": 2
+      },
+      "evidence": "Different service units; payments-finalization note; no verified sale"
+    },
+    {
+      "name": "Studyssey",
+      "freeOffer": "Free report advertises matched universities",
+      "paidOffer": "€15 programme shortlist",
+      "unit": "Standalone focused service; site also bundles managed applications",
+      "currency": "EUR",
+      "source": {
+        "title": "Master application pricing",
+        "url": "https://www.studyssey.com/pricing",
+        "publisher": "Studyssey",
+        "date": "Undated live page; checked 2026-10-25",
+        "tier": 2
+      },
+      "evidence": "Adjacent Pakistan-oriented offer; no verified sale; not an Indian-user price benchmark"
+    }
+  ],
+  "assessment": {
+    "problemCategoryDemand": "Real application activity; founder-specific need not validated",
+    "searchDemand": "Not established; no reproducible series retrieved",
+    "competitiveActivity": "Multiple offers observed; not proof of sales",
+    "willingnessToPay": "Unknown for this product",
+    "launchRevenue": "Zero by founder choice",
+    "recommendedPrice": "No evidence-backed price recommendation; retain founder hypothesis as unvalidated"
+  },
+  "gaps": [
+    {
+      "gap": "Reproducible India→Germany query volumes/trends and seasonality remain unknown after multiple distinct queries.",
+      "howToFill": "Export a defined Google Trends comparison and, if absolute volumes matter, obtain an appropriate keyword-planning dataset. Preserve query, geography, period, retrieval date and denominator."
+    },
+    {
+      "gap": "No receipts, independently verified sales, paid-conversion denominators or repeat purchase data for close low-ticket matching products.",
+      "howToFill": "Use permission-based customer interviews and transparent supplier evidence; separately label provider claims. Do not infer sales from posted prices."
+    },
+    {
+      "gap": "No direct paid-demand evidence for this founder’s product; no validated billing unit.",
+      "howToFill": "First run the free pilot. Later test one specified deliverable and price with actual commitments, rather than asking a leading hypothetical price question."
+    },
+    {
+      "gap": "No credible Product Hunt or Indie Hackers close-comparator revenue/retention benchmark found; one direct access attempt was blocked.",
+      "howToFill": "Treat launch pages and votes as attention only, and request real cohort evidence if using a launch as a benchmark."
+    },
+    {
+      "gap": "No current founder cost ceiling or measured human/compute cost per useful result.",
+      "howToFill": "Set a bounded pilot budget and instrument actual effort and spend before scaling free acquisition."
+    }
+  ],
+  "redFlags": [
+    "Free usage is not willingness to pay; launch revenue is intentionally zero.",
+    "Public posted prices and vendor traction counters do not demonstrate realized paid demand.",
+    "No basis exists for a median monthly price across one-time reports, lifetime offers, four-month seasons and human services."
+  ],
+  "yellowFlags": [
+    "Search interest, applicant activity, product sign-ups, useful results and payments have different denominators and must not be collapsed into a single market-validation score.",
+    "Forum spending accounts are self-selected and unverified; do not generalize them to the whole target audience.",
+    "Some live/indexed competitor copies disagree, and certain checkout/payment status is unclear."
+  ],
+  "summary": "There is a real Germany application corridor and visible supply of competing free and low-ticket paid offers. The desk evidence does not prove demand or willingness to pay for this product. Respect the free founder-funded launch, measure concrete useful decisions and follow-through against free baselines, and keep later price/unit assumptions explicitly unvalidated."
+}

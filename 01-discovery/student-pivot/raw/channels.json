@@ -1,0 +1,485 @@
+{
+  "title": "D1 — Distribution channels for the free Germany-first student pivot",
+  "asOf": "2026-10-25",
+  "scope": "Channel access evidence and proposed learning sequence; no outreach, community posts, registration, messages, campaigns or partnership requests were performed.",
+  "queries": [
+    {
+      "round": 1,
+      "query": "site:reddit.com/r/Indians_StudyAbroad rules promotion research survey"
+    },
+    {
+      "round": 1,
+      "query": "site:reddit.com/r/studying_in_germany rules promotion survey"
+    },
+    {
+      "round": 1,
+      "query": "site:daad.in events India Germany study webinars 2026"
+    },
+    {
+      "round": 2,
+      "query": "site:reddit.com/r/Indians_StudyAbroad rules promotion surveys"
+    },
+    {
+      "round": 2,
+      "query": "site:daad.in events study Germany India online seminars 2026"
+    },
+    {
+      "round": 2,
+      "query": "site:reddit.com/r/Indians_StudyAbroad \"self-promotion\""
+    },
+    {
+      "round": 2,
+      "query": "site:reddit.com/r/studying_in_germany \"rules\" \"promotion\""
+    },
+    {
+      "round": 2,
+      "query": "site:iitm.ac.in international relations student club study abroad event"
+    },
+    {
+      "round": 3,
+      "query": "site:reddit.com/r/Indians_StudyAbroad \"survey\" \"moderators\""
+    },
+    {
+      "round": 3,
+      "query": "site:reddit.com/r/studying_in_germany \"self promotion\""
+    },
+    {
+      "round": 3,
+      "query": "site:reddit.com/r/Indians_StudyAbroad \"promotion\" \"Rule\""
+    },
+    {
+      "round": 4,
+      "query": "site:uni-assist.de master requirements credits course content university admission"
+    },
+    {
+      "round": 4,
+      "query": "site:support.google.com/google-ads keyword planner search volume forecasts depend bids budget"
+    }
+  ],
+  "methodology": {
+    "searchCount": 13,
+    "rounds": 4,
+    "sourceHandling": "Opened official DAAD event pages, IIT Madras institutional surfaces, Reddit rule endpoints and moderation text, uni-assist and Google Ads primary documentation. Repeated query variants are retained honestly. Unknown publication dates remain null; scheduled event dates are marked as such. Internal prior-wave evidence is identified rather than presented as a new independent source.",
+    "rankingBasis": "Expected learning value and permission feasibility for a small free pilot, as analyst judgment; no expected-ROI ranking can be supported.",
+    "metricsPolicy": "No invented audience size, reach, search volume, difficulty, CPC, CPL, ROI or CAC. Pilot targets are proposed counts, not estimates of reachable demand."
+  },
+  "findings": [
+    {
+      "id": "D1-01",
+      "claim": "The founder intends direct outreach to college students, but has not specified an accessible institution, student group, existing audience size or first cohort. The product launches free and founder-funded.",
+      "label": "Data",
+      "sourceDate": "2026-10-25",
+      "confidence": "High for stated intent; access unknown",
+      "sources": [
+        {
+          "title": "Founder brief, captured through workspace",
+          "url": "00-intake/founder-brief-2026-10-25.json",
+          "publisher": "Founder",
+          "date": "2026-10-25",
+          "tier": "Founder primary input"
+        }
+      ],
+      "implication": "Start by auditing real warm connections. Do not assume that a founder network exists at useful scale, or that free usage implies zero acquisition cost."
+    },
+    {
+      "id": "D1-02",
+      "claim": "Campus international offices distribute study-abroad and mobility information. IIT Madras has a live outbound-opportunities surface and an office covering exchanges, study abroad and international collaboration. This demonstrates a gatekeeper type, not a secured distribution channel.",
+      "label": "Data",
+      "sourceDate": null,
+      "confidence": "High for institutional function; low for startup access",
+      "sources": [
+        {
+          "title": "Other Opportunities, student outbound",
+          "url": "https://ge.iitm.ac.in/programs/student-outbound/other-opportunities/opportunities",
+          "publisher": "IIT Madras Office of Global Engagement",
+          "date": null,
+          "tier": 1,
+          "note": "Live public institutional information surface, not a startup recruitment partner."
+        },
+        {
+          "title": "International Relations / Global Engagement",
+          "url": "https://www.iitm.ac.in/hi/the-institute/global-engagement",
+          "publisher": "IIT Madras",
+          "date": null,
+          "tier": 1
+        }
+      ],
+      "implication": "Propose a small source-reading / shortlist-check workshop to a college gatekeeper the founder can actually reach. Obtain institution or club approval and student opt-in before a pilot. Do not equate exchange-programme interest with full-degree Germany demand."
+    },
+    {
+      "id": "D1-03",
+      "claim": "DAAD India currently lists public online degree-specific sessions: master’s on 3 November 2026 and bachelor’s on 12 November 2026, both 16:00–17:00 IST with registration links.",
+      "label": "Data",
+      "sourceDate": null,
+      "confidence": "High for current listing; schedules can change",
+      "sources": [
+        {
+          "title": "Masters in Germany: Pathways to a Global Career",
+          "url": "https://www.daad.in/en/event/masters-in-germany-pathways-to-a-global-career/",
+          "publisher": "DAAD India",
+          "date": "2026-11-03",
+          "tier": 1,
+          "note": "Scheduled event date, future as of research date; not publication date."
+        },
+        {
+          "title": "Germany After School: Bachelor’s Opportunities Explained",
+          "url": "https://www.daad.in/en/event/germany-after-school-bachelors-opportunities-explained-2/",
+          "publisher": "DAAD India",
+          "date": "2026-11-12",
+          "tier": 1,
+          "note": "Scheduled event date, future as of research date; not publication date."
+        }
+      ],
+      "implication": "These are timely learning venues for understanding authoritative explanations and the questions students ask. Recheck dates before attending. Public attendance does not grant attendee-list access, promotional speaking time, endorsement or permission to recruit."
+    },
+    {
+      "id": "D1-04",
+      "claim": "Reddit’s own guidance requires checking each community’s rules and self-promotion restrictions. An opened r/germany moderation message says self-promotion and surveys are generally not allowed and exceptions require modmail before posting or linking.",
+      "label": "Data",
+      "sourceDate": null,
+      "confidence": "High for platform guidance; medium for specific moderation text",
+      "sources": [
+        {
+          "title": "How to find the right subreddits for your business",
+          "url": "https://www.business.reddit.com/learning-hub/articles/find-subreddits-for-your-business",
+          "publisher": "Reddit",
+          "date": null,
+          "tier": 2,
+          "note": "Platform primary guidance; not permission from any specific community."
+        },
+        {
+          "title": "How to Work with Moderators on Reddit",
+          "url": "https://www.business.reddit.com/learning-hub/articles/how-to-work-with-moderators-on-reddit",
+          "publisher": "Reddit",
+          "date": null,
+          "tier": 2
+        },
+        {
+          "title": "Moderator removal explanation on r/germany",
+          "url": "https://www.reddit.com/r/germany/comments/1xd44r0/removed_by_moderator/",
+          "publisher": "r/germany moderation team",
+          "date": "2026-10-23",
+          "tier": 3,
+          "note": "Date inferred from two days ago on 2026-10-25; moderation message is evidence for this community only."
+        }
+      ],
+      "implication": "Treat Reddit as listening first. A free tool or research invitation can still be promotion. Future moderator permission must be obtained where required; do not transfer one subreddit’s permission to another."
+    },
+    {
+      "id": "D1-05",
+      "claim": "The r/Indians_StudyAbroad and r/studying_in_germany rule endpoints were opened but returned empty rule tables; old.reddit alternatives failed. Targeted searches did not establish current explicit permission for commercial pilot recruitment in either community.",
+      "label": "Data",
+      "sourceDate": null,
+      "confidence": "High for research access limitation; permission unknown",
+      "sources": [
+        {
+          "title": "r/Indians_StudyAbroad rule surface",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/about/rules/",
+          "publisher": "Reddit",
+          "date": null,
+          "tier": 3
+        },
+        {
+          "title": "r/studying_in_germany rule surface",
+          "url": "https://www.reddit.com/r/studying_in_germany/about/rules/",
+          "publisher": "Reddit",
+          "date": null,
+          "tier": 3
+        }
+      ],
+      "implication": "Neither community is an approved posting channel in this plan. Recheck live rules manually and ask moderators through the community-approved route before any future invitation. Observed study-abroad discussion alone does not authorize recruitment."
+    },
+    {
+      "id": "D1-06",
+      "claim": "Prior customer threads describe uncertainty about module/ECTS fit, total affordability, competing shortlist criteria and bachelor-versus-master pathways. uni-assist separately confirms that individual universities set additional master’s criteria and directs applicants to those universities.",
+      "label": "Data",
+      "sourceDate": null,
+      "confidence": "Medium for anecdotal relevance; high for official criteria ownership",
+      "sources": [
+        {
+          "title": "Wave 3 customer voice evidence",
+          "url": "01-discovery/student-pivot/raw/customer-voice.json",
+          "publisher": "This research",
+          "date": "2026-10-25",
+          "tier": "Internal synthesis",
+          "note": "Contains eight opened first-person public threads; self-selected and unverified."
+        },
+        {
+          "title": "Master's admission criteria",
+          "url": "https://www.uni-assist.de/en/how-to-apply/get-information/master/",
+          "publisher": "uni-assist",
+          "date": null,
+          "tier": 1
+        }
+      ],
+      "implication": "Publish one useful worked example per pain, with official programme links, input limits, date and unresolved questions. These are content hypotheses grounded in observed questions, not proven SEO gaps or search-volume estimates. The primary value test is a useful next action, not pageviews."
+    },
+    {
+      "id": "D1-07",
+      "claim": "Google states that keyword and traffic estimates depend on settings including location, bids, budget and seasonality. No India/Germany-student keyword forecast, CPC dataset, conversion data or search ranking baseline was accessed for this product.",
+      "label": "Data",
+      "sourceDate": null,
+      "confidence": "High for forecast conditions; product benchmarks unknown",
+      "sources": [
+        {
+          "title": "About Keyword Planner forecasts",
+          "url": "https://support.google.com/google-ads/answer/3022575?hl=en",
+          "publisher": "Google Ads Help",
+          "date": null,
+          "tier": 2,
+          "note": "Primary platform documentation; no account-level forecast was accessed."
+        }
+      ],
+      "implication": "Do not import broad education-industry CPC/CPL averages or publish invented keyword volumes, difficulty scores, ROI or CAC. Search phrases below are interview/content hypotheses. Paid acquisition remains a later experiment, not a first-90-day dependency."
+    },
+    {
+      "id": "D1-08",
+      "claim": "Official free personalised discovery and several specialist products already overlap the offer. uni-assist explicitly disclaims cooperation with commercial agencies that place applicants at German universities.",
+      "label": "Data",
+      "sourceDate": null,
+      "confidence": "High for published provider statements; comparative performance untested",
+      "sources": [
+        {
+          "title": "Wave 2 direct competitors evidence",
+          "url": "01-discovery/student-pivot/raw/direct-competitors.json",
+          "publisher": "This research",
+          "date": "2026-10-25",
+          "tier": "Internal synthesis"
+        },
+        {
+          "title": "Master's admission criteria",
+          "url": "https://www.uni-assist.de/en/how-to-apply/get-information/master/",
+          "publisher": "uni-assist",
+          "date": null,
+          "tier": 1
+        }
+      ],
+      "implication": "Distribution must demonstrate a specific useful result against available alternatives. An official link is evidence, not an affiliation. Do not propose a uni-assist agency/referral partnership or imply DAAD/university endorsement."
+    }
+  ],
+  "channels": [
+    {
+      "id": "warm-network",
+      "priority": 1,
+      "status": "Proposed; network inventory not yet known",
+      "channel": "Founder’s existing student, alumni and faculty connections",
+      "firstAction": "List only genuinely reachable people or connectors; ask for opt-in introductions to students with a real Germany decision. Record connection type and avoid relying only on close friends.",
+      "offer": "A free 20–30 minute decision session and a dated, source-backed next-step sheet; attendance and profile depth optional.",
+      "accessConstraint": "Personal connections do not authorize use of college rosters or group member lists. Any outreach is a future founder action, not performed by this research.",
+      "learningValue": "Fastest plausible way to observe real decisions and compare explore/check modes. Convenience and politeness bias must be recorded.",
+      "reach": null,
+      "cashCAC": null,
+      "founderTime": "Track actual preparation, invitation, interview and verification minutes; no zero-CAC claim.",
+      "evidence": [
+        "D1-01"
+      ]
+    },
+    {
+      "id": "campus-gatekeepers",
+      "priority": 2,
+      "status": "Proposed; no agreement or intro confirmed",
+      "channel": "International office, faculty adviser, academic society or authorised student club",
+      "firstAction": "After initial individual sessions, approach one or two actually reachable gatekeepers with a one-page workshop outline and anonymised example. Ask whether a student opt-in invitation can be shared through their normal channel.",
+      "offer": "A practical session on checking a German programme requirement and separating livelihood proof from full budget; independently useful even without signup.",
+      "accessConstraint": "Institution/club permission and student consent are required. Do not use official branding or claim partnership without agreement. IIT Madras is an existence example, not a recommended accessible first account.",
+      "learningValue": "Test whether a trusted connector yields qualified participants beyond friends and whether both degree levels can be reached.",
+      "reach": null,
+      "cashCAC": null,
+      "evidence": [
+        "D1-02"
+      ]
+    },
+    {
+      "id": "student-communities",
+      "priority": 3,
+      "status": "Listen first; posting conditional on specific community rules/permission",
+      "channel": "r/Indians_StudyAbroad and r/studying_in_germany; founder-known WhatsApp/Telegram/Discord student groups only if admins permit",
+      "firstAction": "Observe public questions and rules without collecting user identities. If a future permitted test is authorised, disclose founder affiliation and invite explicit opt-in using the approved format.",
+      "offer": "One source-backed answer or checklist; a separate optional pilot invitation only when allowed.",
+      "accessConstraint": "No unsolicited DMs, member scraping, mass cross-posting or disguised promotion. Current posting permission in the two relevant subreddits is unknown. Private-group existence/access is unverified. r/germany generally disallows promotion and surveys.",
+      "learningValue": "Questions may help refine language; respondents will be self-selected and do not establish population demand.",
+      "reach": null,
+      "cashCAC": null,
+      "evidence": [
+        "D1-04",
+        "D1-05"
+      ]
+    },
+    {
+      "id": "daad-learning",
+      "priority": "Supporting learning venue; not acquisition target",
+      "status": "Public registration surfaces verified; no partnership",
+      "channel": "DAAD India public information sessions",
+      "firstAction": "Founder may register under each event’s own terms and listen to official explanations, including 3 November master’s and 12 November bachelor’s sessions if still scheduled.",
+      "offer": "No product pitch proposed. Use learning to improve accuracy and identify questions that need official clarification.",
+      "accessConstraint": "No attendee harvesting, unsolicited invitations in chat, copied participant details or implied endorsement. Any co-hosting opportunity would require a separate explicit agreement.",
+      "learningValue": "Understand differences between degree levels and improve source-backed content; does not validate product demand.",
+      "reach": null,
+      "cashCAC": null,
+      "evidence": [
+        "D1-03"
+      ]
+    },
+    {
+      "id": "useful-proof-content",
+      "priority": 2,
+      "status": "Proposed; demand and discoverability unmeasured",
+      "channel": "A small public HTML proof library and opt-in peer sharing",
+      "firstAction": "Create two short worked examples only after real-session learning: module-fit/shortlist check and budget/pathway tradeoff. Give each a source date, assumptions, uncertainty and a low-detail start option.",
+      "offer": "A concrete next step the reader can verify on an official page; no admission probability or guaranteed outcome.",
+      "accessConstraint": "Use composite or explicitly consented anonymised cases; avoid publishing student transcripts, identities or financial details. Link to official sources without implying affiliation.",
+      "learningValue": "Test whether readers find a specific result useful enough to start their own case or voluntarily share it. Distribution location must be recorded; publication alone is not reach.",
+      "reach": null,
+      "cashCAC": null,
+      "evidence": [
+        "D1-06",
+        "D1-08"
+      ]
+    },
+    {
+      "id": "paid-and-broad-seo",
+      "priority": "Defer",
+      "status": "Not recommended yet; judgment, not evidence of permanent failure",
+      "channel": "Paid search/social, influencer sponsorships, broad generic SEO and affiliate/referral commissions",
+      "firstAction": "Do not depend on these in the initial free pilot. Revisit only after task usefulness, qualified activation and delivery cost are observable, with an explicit bounded spend decision.",
+      "reason": "No measured channel conversion, WTP, retention or sustainable unit cost; generic discovery competes with established official and specialist products. Paid reach can scale an unproven result and commissions could compromise perceived neutrality.",
+      "accessConstraint": "No billing accounts, campaigns, creator deals, referral contracts or outreach created by this research.",
+      "reach": null,
+      "cashCAC": null,
+      "evidence": [
+        "D1-07",
+        "D1-08"
+      ]
+    }
+  ],
+  "contentHypotheses": [
+    {
+      "phrase": "How to check German master’s ECTS and module requirements",
+      "format": "A programme-specific worked checklist with exact official requirement and unresolved equivalence questions."
+    },
+    {
+      "phrase": "Germany study budget beyond the blocked account",
+      "format": "A dated worksheet distinguishing livelihood proof, tuition exceptions, semester fees, one-off costs and user budget."
+    },
+    {
+      "phrase": "Bachelor in Germany now or master’s after an Indian degree",
+      "format": "A sourced pathway comparison with admission/language uncertainties and a concrete official check."
+    },
+    {
+      "phrase": "Check an existing German university shortlist",
+      "format": "A compact requirement and preference matrix that marks missing evidence instead of promising eligibility."
+    }
+  ],
+  "contentCaution": "These are question/content hypotheses supported by prior anecdotes and official requirement structure. Search volumes, organic ranking difficulty, a content gap versus incumbents and SEO results are unknown. Start with two examples, then use observed questions; do not launch a large generic article factory.",
+  "proposedPlan": [
+    {
+      "period": "Days 1–30",
+      "label": "Assumption",
+      "objective": "Discover whether a useful, verifiable result can be delivered and identify reachable participants.",
+      "proposedActions": [
+        "Audit actual warm connections and two plausible campus gatekeepers; no assumed audience size.",
+        "Seek 12 voluntary problem interviews, aspirationally three in each degree-level × explore/check cell. Ask about the most recent real decision before demonstrating the product.",
+        "Run up to eight free, manually verified pilot cases among consenting interested students. Offer profile or conversation entry without requiring family or hobby information.",
+        "Record which fields were needed, what could not be concluded, source-verification effort, baseline alternative and one concrete next step."
+      ],
+      "countTargets": {
+        "problemInterviews": 12,
+        "cumulativePilotCases": 8
+      },
+      "targetCaution": "Planning targets, not promised recruitment or statistically sufficient validation. A hard-to-recruit cell is a finding, not permission to relabel participants.",
+      "review": "Inspect every first result against the cited official sources. Correct material errors before additional recruitment; capture usefulness separately from founder effort."
+    },
+    {
+      "period": "Days 31–60",
+      "label": "Assumption",
+      "objective": "Test one permission-based channel beyond close friends.",
+      "proposedActions": [
+        "If a reachable campus gatekeeper agrees, run one small opt-in session using a useful checklist and independent source example. Otherwise continue individual interviews and document the access failure.",
+        "Aim for eight additional qualified pilot cases, with a source tag per participant and explicit accounting of friends versus external recruits.",
+        "Publish two anonymised HTML worked examples, with publication date, official evidence and remaining uncertainty.",
+        "For willing users, observe the same task with an existing free alternative such as DAAD Study Guide plus official programme pages; use the comparison to test incremental usefulness, not to claim broad superiority."
+      ],
+      "countTargets": {
+        "additionalPilotCases": 8,
+        "cumulativePilotCases": 16,
+        "workedExamples": 2
+      },
+      "targetCaution": "No reach or conversion promise. The gatekeeper may decline and a comparison may expose no incremental value.",
+      "review": "Choose between founder introductions and the approved campus route based on qualified cases, useful results, errors, student burden and founder minutes per useful result; raw signups alone do not select a winner."
+    },
+    {
+      "period": "Days 61–90",
+      "label": "Assumption",
+      "objective": "Check replication, follow-through and whether a channel merits another bounded test.",
+      "proposedActions": [
+        "Aim for eight more free pilot cases through the better evidenced accessible route; cumulative target 24, aspirationally six per degree-level × explore/check cell. Recruit another cell deliberately rather than inferring fit from master’s-only use.",
+        "Invite optional 7-day and 30-day follow-up: did the student complete the named next step, change the shortlist, resolve a source conflict, or abandon the plan? Record no response separately.",
+        "Test voluntary sharing of a useful result without rewards or pressure; count a referral only when another qualified student independently opts in.",
+        "Review value against free alternatives and delivery effort before expanding to more campuses, countries or paid acquisition."
+      ],
+      "countTargets": {
+        "additionalPilotCases": 8,
+        "cumulativePilotCases": 24,
+        "aspirationalCasesPerCell": 6
+      },
+      "targetCaution": "All targets are experimental planning assumptions. Twenty-four cases cannot estimate population conversion, retention, CAC, admission outcomes or willingness to pay.",
+      "review": "Continue only with evidence of useful decisions and manageable verification cost. Rework the offer if users cannot explain a better next action than their baseline; narrow the cohort if one cell repeatedly needs unsupported advice."
+    }
+  ],
+  "measurement": {
+    "qualifiedPilot": "A consenting Indian college student actively exploring or checking a real Germany bachelor’s/master’s path, assigned by intended next study level and current decision mode. Residence, marks, budget or family details need not be disclosed beyond the task’s minimum requirements. Log uncertainty; do not infer qualification from an email signup.",
+    "primaryUsefulResult": "After viewing sources, the student can identify one relevant feasible next action or a clearly evidenced reason a current option needs revision. Record student judgment and an independent source check separately.",
+    "measures": [
+      "Invitation source, number invited where knowable, eligible opt-ins, completed sessions and completed results; missing denominators remain unknown.",
+      "Useful-result count / completed-case count, with degree-level and explore/check cell; report counts as well as fractions.",
+      "Official-source correctness, material error count, unsupported claims, unresolved uncertainty and whether the student could find/interpret the cited evidence.",
+      "Minimum input needed, skipped fields, time and abandonment point; distinguish optional nonresponse from user failure.",
+      "Founder verification/support minutes and cash spent per completed case and per useful result; cash-only cost is not total acquisition or delivery cost.",
+      "At 7 and 30 days, next-action completion among those due for follow-up, contacted, responding and all original cases; no response is not assumed success or failure.",
+      "Voluntary referrals yielding new qualified opt-ins; compliments, link shares and pageviews alone are not demand validation."
+    ],
+    "benchmark": "Within consenting cases compare the same task against the student’s existing method or a suitable free alternative. Order and familiarity effects limit causal inference; this is qualitative learning, not a superiority trial.",
+    "economics": "Launch revenue is ₹0 by founder intent. Paid CAC, LTV, payback, churn and WTP are unknown. A free-user acquisition cost can later be measured from actual tracked cash and time, but is not paid-customer CAC.",
+    "scaleDecision": "Proposed qualitative gate: repeatable useful results beyond close friends, no unresolved material advice errors, an accessible channel and founder workload within a deliberately chosen budget. No numerical success threshold is validated by this research."
+  },
+  "gaps": [
+    {
+      "gap": "Founder’s real network, college access and reachable qualified-student count are unknown.",
+      "nextStep": "Inventory genuine warm contacts and obtain permission from one reachable gatekeeper; do not cold-spam a directory."
+    },
+    {
+      "gap": "Current recruitment/promotion rules in the two most relevant subreddits could not be read.",
+      "nextStep": "Manual current-rule review and, where required, moderator approval before posting; no outreach is authorized/performed by this artifact."
+    },
+    {
+      "gap": "No consented interviews, channel funnel, trial analytics or retained-user cohort yet.",
+      "nextStep": "Run the small opt-in pilot and capture source-tagged counts and useful decisions."
+    },
+    {
+      "gap": "No product-specific India keyword data, CPC/CPL, organic ranking baseline or channel conversion benchmark.",
+      "nextStep": "After usefulness and a spend hypothesis exist, obtain location/date-specific account forecasts or instrument actual traffic; distinguish forecasts from observed results."
+    },
+    {
+      "gap": "No validated campus/DAAD partnership or student-club willingness to host.",
+      "nextStep": "Treat examples as gatekeeper types and learning venues. A future explicit agreement is necessary for co-hosting or recruitment."
+    },
+    {
+      "gap": "Founder-led free pilot may overstate future product usefulness and understate support cost.",
+      "nextStep": "Separate manual help and verification time from automated behavior; test less-assisted use only after correctness is reliable."
+    }
+  ],
+  "redFlags": [
+    "Public membership, event listings and institutional directories are not reachable leads or permission to contact students.",
+    "Do not advertise official affiliations, guaranteed eligibility/admission, or personalised correctness based only on linked official sources.",
+    "No outreach or messages were sent. Any future externally sent invitation must be explicitly authorised and comply with the relevant host/community terms.",
+    "An organic/free acquisition route can consume substantial founder time; zero launch revenue cannot support an invented paid CAC/LTV model."
+  ],
+  "yellowFlags": [
+    "Warm-network politeness bias and self-selected online responses limit generalisation.",
+    "Campus exchanges and international-office audiences may differ from the intended full-degree Germany cohort.",
+    "Public DAAD events compete for attention and offer useful authoritative support; they are not a captive startup audience.",
+    "Both next-degree levels need separate evidence; master’s reach does not validate bachelor demand.",
+    "Search ranking, virality and repeat use remain unknown; a student may receive value from a one-time decision without monthly retention."
+  ],
+  "summary": "Start with a small, opt-in founder-led pilot, then test one accessible campus gatekeeper and two concrete source-backed HTML examples. Aim for 24 qualified cases across the degree-level × explore/check cells over 90 days as a learning target only. Use Reddit for listening unless live rules and permissions support participation, and DAAD public events for learning. Select channels by useful verified results and founder effort, with all reach, conversion, paid economics and partner access still unvalidated."
+}
