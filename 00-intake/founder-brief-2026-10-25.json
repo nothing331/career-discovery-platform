@@ -1,0 +1,20 @@
+{
+  "captured_at": "2026-10-25T07:13:36.838288+00:00",
+  "source": "User-completed browser draft, exported through the workspace UI with user authorization to continue planning.",
+  "source_file": "index (1).html",
+  "brief": {
+    "promise": "I want this place to be a first place for students to come and know that based on their family background, their finances, their degree, their marks, what can be the best country and place for the future studies they want to do.",
+    "problem": "I want to keep this as simple for students as possible. I just want them to give me some brief detail about themselves, like their financial condition, the interest they're pursuing in the countries they want to go, the hobbies they have, the projects they have and the future they envision of themselves.",
+    "outcome": "The student who is coming to this website will be having either a very vague decision or a proper plan with them. So I just want them to have a more confined opinion on their plan on their decision. If they are already confused, I want them to look forward a path that we have recommended something that is more ground leveling, something they can trust on, something they are like okay, this makes sense, this has this proof, I can see this on other sites as well and I am assured that this is somewhere which is viable to go to.",
+    "cohort": "This can be for both a students pursuing bachelors or a student going for masters. Masters is mainly because masters people are more who go outside for studies.",
+    "geography": "The first one I think will start with Germany and then we'll expand to Austria, Australia and USA, Canada.",
+    "intake": "Both a profile and a conversation",
+    "depth": "For example, if a student is okay, I have like ten lakh rupees. I want the co I want the country to outside India to go to because I was not able to do IT, so then we can just show that okay Germany might be more fit for you, but we require more data from your side to actually tell what is the best for you.",
+    "payer": "I think the payment will be done by either students or parents. The payment won't be as big as we initially thought maybe five hundred rupees or one thousand, but initially I want it to be totally free. We just want to grow the user base to something. We know that this is a product which has market relevance. People are using it. It is creating impact. Then I can think about pricing until then. I will be bearing all costs for it.",
+    "pricing": "500 rs per month/plan",
+    "reach": "Founder outreach to college students. Exact channel and first cohort are still open."
+  },
+  "experimentNotes": "",
+  "decisionNotes": "",
+  "sourceRevision": "2026-10-25-student-pivot-v1"
+}

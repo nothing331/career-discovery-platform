@@ -1,0 +1,297 @@
+{
+  "title": "Observed competitor go-to-market surfaces — Germany-first student navigator",
+  "asOf": "2026-10-25",
+  "researchMode": "Live web searches and opened first-party pages; no signups, messages or paid-traffic tools used",
+  "queries": [
+    "site:mygermanuniversity.com webinars counseling funding universities commission",
+    "site:yocket.com study abroad community events germany premium counselling",
+    "site:leapscholar.com germany webinars counselling free study abroad",
+    "site:daad.in events online information sessions study Germany counselling",
+    "site:bharatingermany.com free webinar course study Germany",
+    "site:mygermanuniversity.com university marketing partnership StudyFinder funding",
+    "site:yocket.com/events Germany study abroad webinar",
+    "site:bharatingermany.com study Germany YouTube apply webinar"
+  ],
+  "findings": [
+    {
+      "id": "GTM-01",
+      "claim": "MyGermanUniversity publicly combines a searchable programme/university surface, location-specific pages and free live webinars with registration. Webinar topics include admissions, funding and degree-level guidance; the registration form visibly requests a name and email.",
+      "label": "Data",
+      "sourceDate": "Live pages accessed 2026-10-25",
+      "confidence": "High for observed surfaces; channel contribution unknown",
+      "sources": [
+        {
+          "title": "Study in Germany: StudyFinder and city/university pages",
+          "url": "https://www.mygermanuniversity.com/",
+          "publisher": "MyGermanUniversity",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2
+        },
+        {
+          "title": "Study in Germany: free weekly live webinars",
+          "url": "https://www.mygermanuniversity.com/webinars",
+          "publisher": "MyGermanUniversity",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2
+        }
+      ],
+      "implication": "Searchable content and event-led capture are existing approaches in the Germany niche. They are research comparators, not proof that SEO or webinars are the dominant or profitable acquisition channels."
+    },
+    {
+      "id": "GTM-02",
+      "claim": "MyGermanUniversity discloses paid university marketing profiles, preferential ad ordering, fees for some information-package contacts, and paid marketing participation for some university webinars. Its disclaimer also says the editorial selection is not an endorsement of a degree.",
+      "label": "Data",
+      "sourceDate": "Disclaimer last-updated notice 2025-10-15; accessed 2026-10-25",
+      "confidence": "High for the company disclosure; revenue mix and recommendation effects unverified",
+      "sources": [
+        {
+          "title": "Disclaimer: advertising, info packages and webinars",
+          "url": "https://www.mygermanuniversity.com/en/disclaimer",
+          "publisher": "MyGermanUniversity",
+          "date": "Last-updated notice 2025-10-15; accessed 2026-10-25",
+          "tier": 2
+        }
+      ],
+      "implication": "Visible incentives and source/coverage disclosures belong in competitor comparison. An independent ranking proposition may be worth investigating, but these disclosures do not prove manipulation, poor quality or an unmet market."
+    },
+    {
+      "id": "GTM-03",
+      "claim": "Yocket publicly presents a community, discovery tools, articles and event listings alongside Premium counselling. Its Premium page offers a free consultation before purchase; the events surface includes open guidance sessions and some Premium-labelled sessions. A Germany-specific masterclass landing page also exists.",
+      "label": "Data",
+      "sourceDate": "Live pages accessed 2026-10-25; event listings include October 2026",
+      "confidence": "High for observed funnel structure; conversion and paid outcomes unverified",
+      "sources": [
+        {
+          "title": "Yocket login: tools, community, articles, events and Premium",
+          "url": "https://yocket.com/login",
+          "publisher": "Yocket",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2
+        },
+        {
+          "title": "Yocket study-abroad events",
+          "url": "https://yocket.com/events",
+          "publisher": "Yocket",
+          "date": "Live page listing October 2026 events; accessed 2026-10-25",
+          "tier": 2
+        },
+        {
+          "title": "Yocket Premium: free consultation and paid support",
+          "url": "https://yocket.com/premium",
+          "publisher": "Yocket",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2
+        },
+        {
+          "title": "Germany Masters webinar landing page",
+          "url": "https://consultation.yocket.com/webinar-meta",
+          "publisher": "Yocket",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2
+        }
+      ],
+      "implication": "This is an observed self-serve/community plus sales-assisted motion. Free advice and personalized shortlisting cannot be assumed to be unique differentiators. Do not reuse Yocket’s advertised audience/admission multipliers as independently measured reach or performance."
+    },
+    {
+      "id": "GTM-04",
+      "claim": "LeapScholar publishes destination/city pages leading to free counselling and profile-evaluation calls. Its September 2026 FAQ explicitly attributes free core counselling to partner-university commissions. Its Ghaziabad page, however, says a service fee may apply to full application support, creating an unresolved scope/pricing inconsistency.",
+      "label": "Data",
+      "sourceDate": "FAQ updated 2026-09-21; city page accessed 2026-10-25",
+      "confidence": "High for published claims and inconsistency; actual offer/pricing not independently confirmed",
+      "sources": [
+        {
+          "title": "LeapScholar Commonly Asked Questions: pricing and commissions",
+          "url": "https://leapscholar.com/blog/leap-scholar-commonly-asked-questions/",
+          "publisher": "LeapScholar",
+          "date": "2026-09-21 last-updated notice; accessed 2026-10-25",
+          "tier": 2
+        },
+        {
+          "title": "Study-abroad consultant in Ghaziabad",
+          "url": "https://leapscholar.com/study-abroad-consultant/ghaziabad",
+          "publisher": "LeapScholar",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2
+        }
+      ],
+      "implication": "Free launch does not by itself distinguish the founder’s offer. Comparing the output, coverage and commercial incentives is more informative. Verify the exact service scope before publishing an all-counselling-is-free comparison; a landing page is not proof of city-channel ROI."
+    },
+    {
+      "id": "GTM-05",
+      "claim": "DAAD India offers individual appointments and recurring free information sessions, with a dated bachelor webinar and Q&A as a concrete example. Its master-study page also promotes My GUIDE as a personalized programme finder using academic background/interests, entrance-qualification checks and university contact.",
+      "label": "Data",
+      "sourceDate": "Live DAAD pages accessed 2026-10-25; bachelor event dated 2026-03-12",
+      "confidence": "High for DAAD’s published guidance and product description; referred app behavior not fully inspected in this task",
+      "sources": [
+        {
+          "title": "Master Studies: guidance and My GUIDE",
+          "url": "https://www.daad.in/en/study-research-in-germany/studying-in-germany/master-studies/",
+          "publisher": "DAAD India",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "Web Session: Bachelors in Germany",
+          "url": "https://www.daad.in/en/event/web-session-bachelors-in-germany/",
+          "publisher": "DAAD Regional Office New Delhi",
+          "date": "Event date 2026-03-12; accessed 2026-10-25",
+          "tier": 1
+        }
+      ],
+      "implication": "Official guidance is an active free service ecosystem, not merely static source pages. The founder’s pilot must test whether it adds useful India-context reasoning or an easier evidence trail beyond this baseline. Being publicly listed by DAAD does not grant a partnership or endorsement."
+    },
+    {
+      "id": "GTM-06",
+      "claim": "The DAAD Young Ambassadors programme describes students/young professionals with Germany study or research experience answering questions, organizing information events and participating in fairs. The page offers a public route to contact ambassadors for insight into the German university landscape.",
+      "label": "Data",
+      "sourceDate": "Live DAAD network page accessed 2026-10-25; mixed 2025 network and 2026/2027 recruitment references",
+      "confidence": "High for existence and stated activities; access and recruitment effectiveness unknown",
+      "sources": [
+        {
+          "title": "DAAD Young Ambassadors",
+          "url": "https://www.daad.in/en/about-us/daad-network/daad-young-ambassadors/",
+          "publisher": "DAAD India",
+          "date": "Page contains 2025 network and 2026/2027 recruitment material; accessed 2026-10-25",
+          "tier": 1
+        }
+      ],
+      "implication": "Peer experience and institutional trust are already present in student outreach. The existence of this network is not evidence that it will distribute a startup or that contact permission/affiliation has been granted. Any future approach requires a transparent request, not implied DAAD backing."
+    },
+    {
+      "id": "GTM-07",
+      "claim": "BiG Academy publicly offers free Germany-arrival learning content and a separate INR 999 expert profile-evaluation offer with a recorded personalized result. The evaluation page asks about academics, language, experience, preferences and budget, and states that bachelor and other degree profiles are considered.",
+      "label": "Data",
+      "sourceDate": "Live offer pages accessed 2026-10-25",
+      "confidence": "High for the displayed offer and form topics; purchases, satisfaction and channel attribution unknown",
+      "sources": [
+        {
+          "title": "Germany Arrival Essentials: free course",
+          "url": "https://academy.bharatingermany.com/p/germany-arrival-essentials",
+          "publisher": "BiG Academy / Bharat in Germany",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2
+        },
+        {
+          "title": "Study in Germany: expert profile evaluation",
+          "url": "https://academy.bharatingermany.com/p/study-in-germany-expert-profile-evaluation",
+          "publisher": "BiG Academy / Bharat in Germany",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2
+        }
+      ],
+      "implication": "A concrete personalized output with a low-priced offer is an observed comparator near the founder’s later pricing intuition. It is not evidence that students will pay INR 500 for an automated navigator, nor proof that free courses convert buyers. Do not inherit the provider’s admissions-performance claims."
+    },
+    {
+      "id": "GTM-08",
+      "claim": "The observed set spans free official guidance/matching, free content and webinars, self-serve communities, free consultations leading to paid services, and disclosed university-funded marketing/counselling. This task found no verified comparable CAC, conversion, traffic mix or channel ROI for the founder’s precise free Germany-first product.",
+      "label": "Opinion",
+      "sourceDate": "Synthesis of public surfaces inspected 2026-10-25",
+      "confidence": "Medium for strategic interpretation; Low for any effectiveness prediction",
+      "sources": [
+        {
+          "title": "Master Studies: guidance and My GUIDE",
+          "url": "https://www.daad.in/en/study-research-in-germany/studying-in-germany/master-studies/",
+          "publisher": "DAAD India",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "Study in Germany: free weekly live webinars",
+          "url": "https://www.mygermanuniversity.com/webinars",
+          "publisher": "MyGermanUniversity",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2
+        },
+        {
+          "title": "Yocket Premium: free consultation and paid support",
+          "url": "https://yocket.com/premium",
+          "publisher": "Yocket",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2
+        },
+        {
+          "title": "LeapScholar Commonly Asked Questions: pricing and commissions",
+          "url": "https://leapscholar.com/blog/leap-scholar-commonly-asked-questions/",
+          "publisher": "LeapScholar",
+          "date": "2026-09-21 last-updated notice; accessed 2026-10-25",
+          "tier": 2
+        },
+        {
+          "title": "Study in Germany: expert profile evaluation",
+          "url": "https://academy.bharatingermany.com/p/study-in-germany-expert-profile-evaluation",
+          "publisher": "BiG Academy / Bharat in Germany",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2
+        }
+      ],
+      "implication": "For the first founder-led pilot, compete on a demonstrably useful, inspectable result rather than a claim of being the first/free/personalized option. Founder outreach is a proposed starting method from the brief, not a channel proven by competitor pages. Distribution experiments should establish their own denominators and costs."
+    }
+  ],
+  "channelObservations": [
+    {
+      "channel": "Search-addressable guides, country/city/programme pages",
+      "observedIn": [
+        "MyGermanUniversity",
+        "Yocket",
+        "LeapScholar",
+        "DAAD India"
+      ],
+      "claimBoundary": "Pages were observed; ranking, organic share and channel dominance were not measured.",
+      "verifiedCAC": null
+    },
+    {
+      "channel": "Events/webinars and questions",
+      "observedIn": [
+        "MyGermanUniversity",
+        "Yocket",
+        "DAAD India"
+      ],
+      "claimBoundary": "Public registration and guidance surfaces were observed; attendance-to-activation conversion is unknown.",
+      "verifiedCAC": null
+    },
+    {
+      "channel": "Self-serve account/community plus paid consultation",
+      "observedIn": [
+        "Yocket"
+      ],
+      "claimBoundary": "Offer structure is published; active community size and paid uptake were not verified.",
+      "verifiedCAC": null
+    },
+    {
+      "channel": "University marketing / commissions",
+      "observedIn": [
+        "MyGermanUniversity",
+        "LeapScholar"
+      ],
+      "claimBoundary": "Disclosed commercial mechanisms, not inferred revenue shares; exact service scope can vary.",
+      "verifiedCAC": null
+    },
+    {
+      "channel": "Founder/expert educational content and a defined evaluation product",
+      "observedIn": [
+        "BiG Academy"
+      ],
+      "claimBoundary": "Free content and paid evaluation are publicly offered; their causal funnel/ROI was not established.",
+      "verifiedCAC": null
+    }
+  ],
+  "gaps": [
+    "No verified channel-level traffic mix, ad spend, CAC, conversion, referral share or retention for these competitors; no paid benchmarking estimates were substituted.",
+    "No evidence that competitor-promoted social channels are their primary acquisition source; posting frequency and effective engagement were not systematically measured.",
+    "LeapScholar’s own service-fee descriptions conflict across pages; confirm country, office, product and support scope before quoting a uniform price.",
+    "The study-guide.com direct page could not be fetched by this tool; DAAD’s My GUIDE description was read directly, and B1/B2 are examining the referred product. Do not classify official matching as absent.",
+    "No prospective partnership, access to DAAD ambassadors, campus clubs, or competitor communities is granted by a public listing.",
+    "Competitor sales-cycle duration and founder-channel effectiveness need direct measurement; none can be inferred from a public form or offer price."
+  ],
+  "redFlags": [
+    "Free entry, personalization and Germany content are already publicly offered; they do not establish differentiation or validate a later paid plan.",
+    "Advertised admission multipliers, audience size, ratings and testimonials are seller claims, not independent evidence for channel ROI or product success.",
+    "A paid personalized evaluator at INR 999 is an offer-price comparator, not observed willingness to pay for this product."
+  ],
+  "yellowFlags": [
+    "MyGermanUniversity discloses ad ordering and lead/enrollment-related fees; any claim of our neutrality needs an explicit future monetization policy, not an attack on competitors.",
+    "Free competitor services may have different commercial incentives; compare scope and disclosure carefully.",
+    "Broad SEO/event strategies are visibly in use, but saturation, opportunity size and efficient CAC remain unmeasured."
+  ],
+  "summary": "Observed competitors combine substantive free guidance with self-service, events, communities and sales/partner mechanisms. The useful opening is a testable quality-and-evidence proposition, not unproven claims of free or personalized whitespace. First-pilot distribution must generate its own measured evidence."
+}

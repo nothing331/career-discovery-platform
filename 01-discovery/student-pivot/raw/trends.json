@@ -1,0 +1,242 @@
+{
+  "title": "Industry trends and timing — India→Germany student study-path guidance",
+  "asOf": "2026-10-25",
+  "queries": [
+    "site.daad.de international degree programmes English Germany 2025 2026 study programmes",
+    "site.hepi.ac.uk student generative AI survey 2025 2026 methodology",
+    "study abroad student AI research survey 2025 2026 primary report",
+    "site:daad.de 2025 English taught degree programmes 2400 2026",
+    "site:qs.com international student survey 2025 AI choosing university trust report",
+    "site:applyboard.com AI launch student advisor 2025 2026",
+    "site:daad.de English 2025 2,400",
+    "site:daad.de English-language 2025 programmes",
+    "site:applyboard.com 2025 Germany launch",
+    "site:leapfinance.com 2025 funding 100 million",
+    "site:applyboard.com 100 million RBCx",
+    "study abroad AI company funding 2026 official announcement",
+    "site:leapscholar.com 2025 funding 100",
+    "site:terradotta.com AI Advisor August 2026",
+    "site:terradotta.com Study Abroad AI Advisor Agent",
+    "India Germany prospective students AI study abroad survey methodology 2026",
+    "Indian students study abroad AI survey 2025 methodology sample",
+    "Germany applicants Indian students ChatGPT university selection survey 2026"
+  ],
+  "findings": [
+    {
+      "id": "A2-01",
+      "claim": "DAAD reports that in summer 2025 state-recognised German institutions offered almost 2,400 English-language degree programmes: around 420 bachelor’s and 1,930 master’s. English-language offerings represented about 4% of bachelor’s and 18% of master’s courses. These are dated catalogue figures, not the live 2026 inventory.",
+      "label": "Data",
+      "sourceDate": "Summer 2025 catalogue; release 2025-11-26",
+      "confidence": "Medium",
+      "sources": [
+        {
+          "title": "High number of international students in Germany again – dropout rates lower than previously assumed",
+          "url": "https://www.daad.de/en/press-releases/erneut-hohe-zahl-an-internationalen-studierenden-in-deutschland/",
+          "publisher": "DAAD / DZHW",
+          "date": "2025-11-26",
+          "tier": 1
+        },
+        {
+          "title": "Requirements overview",
+          "url": "https://www.daad.de/en/studying-in-germany/requirements/overview/",
+          "publisher": "DAAD",
+          "date": "Undated; accessed 2026-10-25",
+          "tier": 1
+        }
+      ],
+      "methodology": "Official DAAD/DZHW reporting; requirements page independently contextualizes language rules but does not independently corroborate the counts.",
+      "implication": "Keep both levels in the product, but create separate coverage and entry paths. An English-only initial inventory will be substantially more master’s-heavy; never treat missing bachelor’s options as academic ineligibility."
+    },
+    {
+      "id": "A2-02",
+      "claim": "General student familiarity with AI is well established in other populations. HEPI’s 2026 survey reports 95% using AI in at least one way among 1,054 full-time UK undergraduates. CHE reports 25% daily and a further 40% at least weekly use in its winter-2024/25 German/Austrian undergraduate sample.",
+      "label": "Data",
+      "sourceDate": "HEPI March 2026 / fieldwork December 2025; CHE June 2025 / fieldwork winter 2024/25",
+      "confidence": "Medium",
+      "sources": [
+        {
+          "title": "Student Generative Artificial Intelligence Survey 2026",
+          "url": "https://www.hepi.ac.uk/reports/student-generative-ai-survey-2026/",
+          "publisher": "HEPI; Savanta fieldwork; sponsored by Kortext",
+          "date": "2026-03-12; fieldwork December 2025",
+          "tier": 1
+        },
+        {
+          "title": "A quarter of students in Germany use artificial intelligence on a daily basis",
+          "url": "https://www.che.de/en/2025/a-quarter-of-students-in-germany-use-artificial-intelligence-on-a-daily-basis/",
+          "publisher": "CHE Centre for Higher Education",
+          "date": "2025-06-12; fieldwork winter 2024/25",
+          "tier": 1
+        }
+      ],
+      "methodology": "HEPI: Savanta survey, Kortext-sponsored, UK undergraduates. CHE: 23,288 respondents from third semester onward at 171 German/Austrian institutions, with a rotating subset of subjects rather than all subjects. Different samples and question wordings; percentages cannot be averaged. Neither measures Indian Germany-bound applicants or willingness to use this product.",
+      "implication": "Assume generic AI chat is a plausible substitute to test against, not a differentiator in itself. Compare the proposed navigator with the student’s actual AI/search workflow; do not claim an Indian admissions AI-adoption percentage from these studies."
+    },
+    {
+      "id": "A2-03",
+      "claim": "In QS’s 2025 global prospective-international-student survey, 67% cited living-cost concerns, nearly half cited getting a job, and 62% considered a university money-advice service very or extremely important.",
+      "label": "Data",
+      "sourceDate": "2025 fieldwork; report July 2025",
+      "confidence": "Medium",
+      "sources": [
+        {
+          "title": "Global Student Flows 2025 — International Student Survey",
+          "url": "https://insights.qs.com/hubfs/Reports/Global%20Student%20Flows%20Report%202025.pdf",
+          "publisher": "QS (commercial higher-education research provider)",
+          "date": "July 2025; fieldwork 6 January–7 April 2025",
+          "tier": 2
+        }
+      ],
+      "methodology": "Over 70,000 respondents in 191 locations, recruited through 146 partner universities, online fieldwork 6 January–7 April 2025. Not a random sample of Indian applicants to Germany. Financial concerns do not prove demand for a paid independent planning tool.",
+      "implication": "Budget clarity and honest assumptions are credible topics for student interviews. Show costs and outcomes as distinct evidence-backed components; do not equate cost concern with the ability or intention to pay for advice."
+    },
+    {
+      "id": "A2-04",
+      "claim": "QS’s September 2026 analysis reports that 48% of its Indian prospective-student respondents selected a destination’s good study reputation, 47% selected well-ranked universities, and 57% selected high-quality teaching as important country-choice factors.",
+      "label": "Data",
+      "sourceDate": "2026 ISS data discussed 2026-09-15",
+      "confidence": "Low–Medium",
+      "sources": [
+        {
+          "title": "Why reputation still matters to prospective international students",
+          "url": "https://www.qs.com/insights/why-reputation-still-matters-to-prospective-international-students",
+          "publisher": "QS (commercial higher-education research provider)",
+          "date": "2026-09-15",
+          "tier": 2
+        }
+      ],
+      "methodology": "Primary publication from the survey owner, but the article does not expose the Indian subgroup sample size or the relevant 2026 question-level fieldwork details. Single commercial-source claim, not an independent estimate for all Indian students.",
+      "implication": "The founder’s trust goal should be tested as explainable trade-offs and inspectable evidence. A course match may still need to explain institution quality and career relevance; rankings alone are not a fit score."
+    },
+    {
+      "id": "A2-05",
+      "claim": "A substantial incumbent already combined AI-advising and Germany expansion: ApplyBoard’s own history dates Abbie to June 2024; its January 2025 announcement described a Germany rollout first to recruitment professionals and wider access in April. Its current website still lists Germany. Launch history does not establish current answer quality or complete Germany coverage.",
+      "label": "Data",
+      "sourceDate": "June 2024 and January–April 2025; pages checked 2026-10-25",
+      "confidence": "Medium",
+      "sources": [
+        {
+          "title": "ApplyBoard Launches Abbie, the AI Advisor for Studying Abroad",
+          "url": "https://www.applyboard.com/info/applyboard-launches-abbie",
+          "publisher": "ApplyBoard",
+          "date": "June 2024 launch; page accessed 2026-10-25",
+          "tier": 2
+        },
+        {
+          "title": "Announcing Germany as ApplyBoard’s Next Destination",
+          "url": "https://www.applyboard.com/blog/germany-applyboard-destination",
+          "publisher": "ApplyBoard",
+          "date": "2025-01-22; staged rollout through April 2025",
+          "tier": 2
+        },
+        {
+          "title": "Our Story",
+          "url": "https://www.applyboard.com/our-story",
+          "publisher": "ApplyBoard",
+          "date": "Undated current page; accessed 2026-10-25",
+          "tier": 2
+        }
+      ],
+      "methodology": "Company announcements and current site navigation. The launch events are older than 18 months as of research date and are explicitly historical context, not new market momentum or independently verified product performance.",
+      "implication": "No evidence supports an uncontested 12–18 month competitive window. Research the actual available workflow and catalogue; differentiation must be demonstrated through trustworthy coverage, uncertainty handling, and a useful student result rather than the mere presence of AI chat."
+    },
+    {
+      "id": "A2-06",
+      "claim": "In an adjacent college/career category, ESAI announced on 21 May 2026 that it had reached $3 million in total funding and described expanding its context-driven student platform and voice-first coach. The announcement describes cumulative funding, not necessarily a new $3 million round.",
+      "label": "Data",
+      "sourceDate": "2026-05-21",
+      "confidence": "Medium",
+      "sources": [
+        {
+          "title": "ESAI Raises $3 Million in Funding to Build the Identity Layer for College and Career",
+          "url": "https://www.esai.ai/press/esai-raises-3-million-in-funding-to-build-the-identity-layer-for-college-and-career",
+          "publisher": "ESAI",
+          "date": "2026-05-21",
+          "tier": 2
+        }
+      ],
+      "methodology": "Single company press release. Adjacent US-oriented college/career category; reported traction and category-creation claims were not independently verified or used as market evidence.",
+      "implication": "Contextual student guidance is attracting product development and investment, but this is not proof of a fundable India→Germany advisory market, a local acquisition channel, or willingness to pay. Do not aggregate it into a study-abroad funding total."
+    },
+    {
+      "id": "A2-07",
+      "claim": "Timing supports a narrow learning pilot, not a claim that a generic AI guidance category is new or that a Germany-first business is commercially validated.",
+      "label": "Opinion",
+      "sourceDate": "Synthesis as of 2026-10-25",
+      "confidence": "Medium for the directional assessment; Low for commercial opportunity",
+      "sources": [
+        {
+          "title": "High number of international students in Germany again – dropout rates lower than previously assumed",
+          "url": "https://www.daad.de/en/press-releases/erneut-hohe-zahl-an-internationalen-studierenden-in-deutschland/",
+          "publisher": "DAAD / DZHW",
+          "date": "2025-11-26",
+          "tier": 1
+        },
+        {
+          "title": "Student Generative Artificial Intelligence Survey 2026",
+          "url": "https://www.hepi.ac.uk/reports/student-generative-ai-survey-2026/",
+          "publisher": "HEPI; Savanta fieldwork; sponsored by Kortext",
+          "date": "2026-03-12; fieldwork December 2025",
+          "tier": 1
+        },
+        {
+          "title": "A quarter of students in Germany use artificial intelligence on a daily basis",
+          "url": "https://www.che.de/en/2025/a-quarter-of-students-in-germany-use-artificial-intelligence-on-a-daily-basis/",
+          "publisher": "CHE Centre for Higher Education",
+          "date": "2025-06-12; fieldwork winter 2024/25",
+          "tier": 1
+        },
+        {
+          "title": "Announcing Germany as ApplyBoard’s Next Destination",
+          "url": "https://www.applyboard.com/blog/germany-applyboard-destination",
+          "publisher": "ApplyBoard",
+          "date": "2025-01-22; staged rollout through April 2025",
+          "tier": 2
+        },
+        {
+          "title": "Global Student Flows 2025 — International Student Survey",
+          "url": "https://insights.qs.com/hubfs/Reports/Global%20Student%20Flows%20Report%202025.pdf",
+          "publisher": "QS (commercial higher-education research provider)",
+          "date": "July 2025; fieldwork 6 January–7 April 2025",
+          "tier": 2
+        }
+      ],
+      "methodology": "Inference from dated programme supply, independent proxy AI-use surveys, a prior incumbent launch, and broad cost concerns. No conversion, retention, pay intent, or founder-specific acquisition evidence was collected.",
+      "implication": "Start free as requested, but measure a source-verified useful decision and a next action. Use a manually assisted pilot to learn whether evidence and progressive context improve outcomes over generic search/chat. Set cost and data-quality limits before scaling."
+    }
+  ],
+  "gaps": [
+    {
+      "gap": "No independently representative estimate of AI use specifically for Indian Germany-bound student decisions was found.",
+      "howToFill": "Ask the first students about a recent real decision, which tools they used, and retain screenshots or walkthroughs with consent; separately label any convenience survey."
+    },
+    {
+      "gap": "No reliable willingness-to-pay, conversion, retention, CAC, or unit-cost evidence for this founder’s proposed free navigator.",
+      "howToFill": "Run a bounded free pilot and track acquisition source, source-verified useful result, next action, return behavior, and manual/compute cost. Test a paid offer only later."
+    },
+    {
+      "gap": "Current 2026 bachelor/master programme counts and usable source coverage are not established by the dated 2025 DAAD snapshot.",
+      "howToFill": "Audit a small live inventory with official programme pages and record coverage by level, language, subject, applicant class, and intake."
+    },
+    {
+      "gap": "No complete last-12-month funding or M&A total for this exact niche could be established.",
+      "howToFill": "Keep individual verified financing events separate from adjacent edtech and do not infer a market-growth rate from a handful of announcements."
+    },
+    {
+      "gap": "Leap Scholar’s widely repeated 75% AI-use figure and H1-2026 Germany growth/offer figures were located in secondary reports, but a primary report with denominator-specific methodology was not verified in this research.",
+      "howToFill": "Obtain the original report and exact question/base definitions. Do not count multiple news stories as independent corroboration or call a mixed application/inquiry-funnel offer share a university acceptance rate."
+    }
+  ],
+  "redFlags": [
+    "Founder intent and broad student trends do not establish demand for this product or willingness to pay later.",
+    "A generic AI adviser is already an incumbent product pattern; there is no verified exclusive competitive window.",
+    "A Germany-only catalogue cannot justify a best-country recommendation across unsupported destinations."
+  ],
+  "yellowFlags": [
+    "English-language bachelor’s and master’s supply differs sharply in the dated official snapshot; coverage and eligibility need separate pathways.",
+    "General-AI surveys are mostly non-target-country or non-admissions proxies; never present their percentages as Indian applicant adoption.",
+    "Commercial student surveys have recruitment and sponsorship limitations; they inform interview topics rather than validate the product.",
+    "Historical incumbent launch dates are older than 18 months and do not prove current quality, traction, or full catalogue coverage."
+  ],
+  "summary": "The strongest timing evidence is established English-language study supply, widespread AI familiarity in proxy student samples, and international students’ cost/outcome concerns. These support testing a trustworthy, budget-aware Germany navigator. They do not validate a business or a paid market. Existing AI advisers make explainable source-backed coverage and uncertainty handling more important than the chatbot format itself."
+}

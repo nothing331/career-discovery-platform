@@ -1,0 +1,41 @@
+{
+  "title": "Supplemental source-freshness check",
+  "asOf": "2026-10-25",
+  "queries": [
+    "site:aps-india.de dMAT Summer 2027 Master Test October 2026"
+  ],
+  "findings": [
+    {
+      "id": "SUP-01",
+      "claim": "APS India’s current dMAT notice applies a staged additional test requirement to selected master’s applicant groups from summer 2027 onward, with transitional exemptions. Its October 2026 page says the updated affected-field list will be announced; bachelor applicants are excluded from this dMAT procedure.",
+      "label": "Data",
+      "sourceDate": "Notice updated 2026-10-15; pages checked 2026-10-25",
+      "confidence": "High for the current published notice; exact affected-field mapping unresolved",
+      "sources": [
+        {
+          "title": "Digital Master Test (dMAT) notice and transition rules",
+          "url": "https://aps-india.de/dmat/",
+          "publisher": "Academic Evaluation Centre India (APS)",
+          "date": "2026-10-15",
+          "tier": 1
+        },
+        {
+          "title": "APS India FAQs — dMAT does not replace other decisions",
+          "url": "https://aps-india.de/faqs/",
+          "publisher": "APS India",
+          "date": "Checked 2026-10-25",
+          "tier": 1
+        }
+      ],
+      "implication": "Store applicant group, intake, source date, exceptions, and an explicit unresolved state. Do not hardcode an older field list or treat APS, university admission, and visa decisions as interchangeable. This is a freshness example, not a case-specific eligibility assessment."
+    }
+  ],
+  "gaps": [
+    "Updated affected-field list and an applicant-specific transition assessment are not resolved by this research."
+  ],
+  "redFlags": [],
+  "yellowFlags": [
+    "Regional summaries may lag the APS procedure; verify rule-setting source before a hard filter."
+  ],
+  "summary": "The exact requirement is intake- and applicant-group-dependent; uncertainty must survive into the product."
+}

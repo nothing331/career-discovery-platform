@@ -1,0 +1,72 @@
+{
+  "asOf": "2026-10-25",
+  "method": "Root-agent self-review fallback using the skill verification checklist; independent V1 could not run because the account usage limit was reached.",
+  "summary": "No unresolved critical consistency issue found in the self-review. Independent verification remains incomplete.",
+  "criticalIssues": [],
+  "warnings": [
+    {
+      "id": "V-W01",
+      "problem": "Independent V1 failed at startup due to an account usage limit.",
+      "resolution": "Self-review fallback performed; do not claim an independent audit passed."
+    },
+    {
+      "id": "V-W02",
+      "problem": "No primary student interviews or product benchmark was conducted.",
+      "resolution": "All user anecdotes and experimental counts remain explicitly limited; gate remains conditional."
+    },
+    {
+      "id": "V-W03",
+      "problem": "Some live offers conflict and implementation-specific rights, privacy and intake mapping remain unresolved.",
+      "resolution": "Preserve source-specific caveats and require scoped source/production review."
+    },
+    {
+      "id": "V-W04",
+      "problem": "Root repeat fetch of the WWO PDF was unavailable through the web tool.",
+      "resolution": "Retained the first researcher’s opened-primary-report extraction and page provenance; no claim of an additional independent source check."
+    }
+  ],
+  "info": [
+    {
+      "id": "V-I01",
+      "note": "All 36 curated claim IDs are unique, assigned once to report sections, and all referenced targets resolve."
+    },
+    {
+      "id": "V-I02",
+      "note": "The 69,076 stock and 26,185 partial applicant flow remain separate; free-launch revenue is zero by intent, not measured paid conversion."
+    },
+    {
+      "id": "V-I03",
+      "note": "Research UI: 20 route, layout, anchor, source-link and disclosure checks passed at 390px. Strategy: six routes and mobile layout passed."
+    },
+    {
+      "id": "V-I04",
+      "note": "All static local links resolve; main workbook scripts/embedded JSON parse; exact founder answers and the added offline reader are preserved."
+    },
+    {
+      "id": "V-I05",
+      "note": "Fixed long evidence-tag mobile overflow and normalized missing publication dates to explicit checked-date labels."
+    }
+  ],
+  "sourceSpotChecks": [
+    "https://www.study-guide.com/en/",
+    "https://india.diplo.de/in-en/service/2756350-2756350",
+    "https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html",
+    "https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf",
+    "https://aps-india.de/dmat/"
+  ],
+  "checklist": {
+    "quantities_labeled": true,
+    "stock_flow_distinguished": true,
+    "source_lineage_caveated": true,
+    "vendor_offers_not_sales": true,
+    "anecdotes_not_interviews": true,
+    "free_launch_preserved": true,
+    "scope_and_data_gaps_present": true,
+    "red_yellow_flags_present": true,
+    "no_invented_paid_forecast": true,
+    "claim_ids_and_internal_targets_valid": true,
+    "independent_reviewer_completed": false
+  },
+  "readyForGate": true,
+  "independentAuditCompleted": false
+}

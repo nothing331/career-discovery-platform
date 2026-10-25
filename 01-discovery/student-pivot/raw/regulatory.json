@@ -1,0 +1,251 @@
+{
+  "title": "Regulatory, privacy and source-access research — Germany-first student product",
+  "asOf": "2026-10-25",
+  "researchMode": "Live web research; primary sources opened; planning analysis, not case-specific legal advice",
+  "queries": [
+    "site.meity.gov.in Digital Personal Data Protection Rules 2025 commencement 18 months November 2025 notification",
+    "site:egazette.gov.in Digital Personal Data Protection Act 2023 commencement 2025 November 13",
+    "site:hochschulkompass.de downloads commercial use approval Foundation Promotion HRK",
+    "site:india.diplo.de student visa proof financial 11904 admission university 2026",
+    "site:meity.gov.in \"Digital Personal Data Protection Act\" \"843\"",
+    "site:edpb.europa.eu guidelines 3 2018 territorial scope GDPR offering goods services EU",
+    "site:meity.gov.in \"section 43A\" \"eighteen months\"",
+    "site:indiacode.nic.in \"Digital Personal Data Protection\" \"eighteen\" \"child\""
+  ],
+  "findings": [
+    {
+      "id": "REG-01",
+      "claim": "DPDP commencement is phased. Machinery provisions started on publication; Consent Manager provisions follow after one year, and most core fiduciary duties and rights after eighteen months, in May 2027. As of 25 October 2026, those core duties have not all commenced. Printed 13 November dates and official 14 November publication descriptions differ.",
+      "label": "Data",
+      "sourceDate": "2025-11 / 2025-12; current assessment 2026-10-25",
+      "confidence": "High for relative phases; Medium for the exact operative calendar day",
+      "sources": [
+        {
+          "title": "G.S.R. 843(E): phased commencement of DPDP Act",
+          "url": "https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf",
+          "publisher": "MeitY / Gazette of India",
+          "date": "Notification and printed Gazette 2025-11-13; electronic identifier 2025-11-14",
+          "tier": 1
+        },
+        {
+          "title": "Digital Personal Data Protection Rules, 2025, G.S.R.846(E)",
+          "url": "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf",
+          "publisher": "MeitY / Gazette of India",
+          "date": "2025-11-13 notification; publication listing 2025-11-14",
+          "tier": 1
+        },
+        {
+          "title": "G.S.R.892(E): corrigenda to DPDP Rules",
+          "url": "https://www.meity.gov.in/static/uploads/2025/12/3c7ebbae0e5456f493f486e6845df86b.pdf",
+          "publisher": "MeitY / Gazette of India",
+          "date": "Notification 2025-12-10; printed Gazette 2025-12-11",
+          "tier": 1
+        },
+        {
+          "title": "Government notifies DPDP Rules to empower citizens and protect privacy",
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2190014",
+          "publisher": "Press Information Bureau / MeitY",
+          "date": "2025-11-14",
+          "tier": 1
+        }
+      ],
+      "implication": "Do not present the old repo’s May 13, 2027 as an independently settled day or use an agency forced-buy narrative. Track the statutory relative schedule and confirm the operative day before a legal deadline claim. Transitional timing is not a finding that current Indian privacy/IT obligations disappear."
+    },
+    {
+      "id": "REG-02",
+      "claim": "On commencement, DPDP consent-based processing requires an informed, specific affirmative choice and purpose-limited necessary data. Withdrawal must be comparably easy. Identifiable student profiles and saved chats fall within the digital-personal-data design problem; a free launch does not establish an exemption.",
+      "label": "Data",
+      "sourceDate": "Act 2023-08-11, commencement notification 2025-11",
+      "confidence": "High for statute; product applicability requires implementation review",
+      "sources": [
+        {
+          "title": "Digital Personal Data Protection Act, 2023 (official Gazette print)",
+          "url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf",
+          "publisher": "MeitY / Government of India",
+          "date": "2023-08-11; foundational law older than 18 months; read with 2025 commencement notification",
+          "tier": 1
+        },
+        {
+          "title": "G.S.R. 843(E): phased commencement of DPDP Act",
+          "url": "https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf",
+          "publisher": "MeitY / Gazette of India",
+          "date": "Notification and printed Gazette 2025-11-13; electronic identifier 2025-11-14",
+          "tier": 1
+        }
+      ],
+      "implication": "Planning judgment: explain what each optional field does, separate conversational exploration from saved profile facts, allow corrections and withdrawal, and avoid collecting parent identities, bank documents, or unrestricted family narratives when a budget range would serve the task."
+    },
+    {
+      "id": "REG-03",
+      "claim": "The enacted framework makes a fiduciary responsible for processors, requires a valid processor contract, provides correction/erasure rights, and requires security safeguards. The Rules specify security controls and breach notification. These substantive provisions share the deferred commencement schedule.",
+      "label": "Data",
+      "sourceDate": "2023-08-11 Act; 2025-11 Rules and commencement",
+      "confidence": "High for enacted requirements; implementation details not assessed",
+      "sources": [
+        {
+          "title": "Digital Personal Data Protection Act, 2023 (official Gazette print)",
+          "url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf",
+          "publisher": "MeitY / Government of India",
+          "date": "2023-08-11; foundational law older than 18 months; read with 2025 commencement notification",
+          "tier": 1
+        },
+        {
+          "title": "Digital Personal Data Protection Rules, 2025, G.S.R.846(E)",
+          "url": "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf",
+          "publisher": "MeitY / Gazette of India",
+          "date": "2025-11-13 notification; publication listing 2025-11-14",
+          "tier": 1
+        },
+        {
+          "title": "G.S.R. 843(E): phased commencement of DPDP Act",
+          "url": "https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf",
+          "publisher": "MeitY / Gazette of India",
+          "date": "Notification and printed Gazette 2025-11-13; electronic identifier 2025-11-14",
+          "tier": 1
+        }
+      ],
+      "implication": "Planning judgment: inventory model, hosting, analytics, and email vendors; design deletion across chats, profiles, derived records, and processors; establish access controls and an incident contact. Reconcile retention/security-log duties rather than promise unconditional instant deletion of every record. No rupee compliance budget was evidenced."
+    },
+    {
+      "id": "REG-04",
+      "claim": "DPDP defines a child as under eighteen. Once the relevant provisions commence, child processing generally requires verifiable parental consent and restricts tracking, behavioural monitoring and targeted advertising, subject to prescribed exceptions. The Rules describe parental verification and narrow educational-institution exceptions.",
+      "label": "Data",
+      "sourceDate": "2023-08-11 Act; 2025-11 Rules / commencement",
+      "confidence": "High for age and general rule; Medium for any specific exception claim",
+      "sources": [
+        {
+          "title": "Digital Personal Data Protection Act, 2023 (official Gazette print)",
+          "url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf",
+          "publisher": "MeitY / Government of India",
+          "date": "2023-08-11; foundational law older than 18 months; read with 2025 commencement notification",
+          "tier": 1
+        },
+        {
+          "title": "Digital Personal Data Protection Rules, 2025, G.S.R.846(E)",
+          "url": "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf",
+          "publisher": "MeitY / Gazette of India",
+          "date": "2025-11-13 notification; publication listing 2025-11-14",
+          "tier": 1
+        },
+        {
+          "title": "G.S.R. 843(E): phased commencement of DPDP Act",
+          "url": "https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf",
+          "publisher": "MeitY / Gazette of India",
+          "date": "Notification and printed Gazette 2025-11-13; electronic identifier 2025-11-14",
+          "tier": 1
+        }
+      ],
+      "implication": "Bachelor-level interest does not imply adulthood. Decide whether the first research/pilot cohort is adults only or includes a proper minor/guardian path; do not assume the startup is an educational institution entitled to that exception. An adult-only pilot is a proposal to consider, not a confirmed product constraint."
+    },
+    {
+      "id": "REG-05",
+      "claim": "DPDP section 16 permits government restrictions on foreign transfers, and Rule 15 adds requirements that may be specified by government order for availability to foreign states or related entities. A destination-country recommendation does not reveal where the student’s data is processed.",
+      "label": "Data",
+      "sourceDate": "2023-08-11 Act; 2025-11 Rules",
+      "confidence": "High for legal mechanism; Low for the as-built transfer map because no vendors are selected",
+      "sources": [
+        {
+          "title": "Digital Personal Data Protection Act, 2023 (official Gazette print)",
+          "url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf",
+          "publisher": "MeitY / Government of India",
+          "date": "2023-08-11; foundational law older than 18 months; read with 2025 commencement notification",
+          "tier": 1
+        },
+        {
+          "title": "Digital Personal Data Protection Rules, 2025, G.S.R.846(E)",
+          "url": "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf",
+          "publisher": "MeitY / Gazette of India",
+          "date": "2025-11-13 notification; publication listing 2025-11-14",
+          "tier": 1
+        }
+      ],
+      "implication": "Planning judgment: abandon the old assumption that India users imply India-to-India data flows. Document actual model/vendor locations, retention, training use and subprocessors before sending identifiable context. Check then-current government orders and any other applicable transfer law; this research did not establish an unrestricted-transfer clearance."
+    },
+    {
+      "id": "REG-06",
+      "claim": "EDPB guidance ties GDPR territorial scope to an EEA establishment, targeting people in the EEA with goods/services, or monitoring their behaviour there. Offering a free service can still qualify. A student’s interest in studying in Germany alone is not one of those tests.",
+      "label": "Data",
+      "sourceDate": "Current EDPB basics page accessed 2026-10-25; scope guidelines 2019/2020",
+      "confidence": "High for general territorial tests; applicability depends on real operations",
+      "sources": [
+        {
+          "title": "Data protection basics: does the GDPR apply to your organisation?",
+          "url": "https://www.edpb.europa.eu/sme/learn-the-basics/data-protection-basics_en",
+          "publisher": "European Data Protection Board",
+          "date": "Undated live guidance; accessed 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "Guidelines 3/2018 on territorial scope of the GDPR, version 2.1",
+          "url": "https://www.edpb.europa.eu/sites/default/files/files/file1/edpb_guidelines_3_2018_territorial_scope_after_public_consultation_en_1.pdf",
+          "publisher": "European Data Protection Board",
+          "date": "2019-11-12 (2020-01-07 formatting revision); foundational guidance older than 18 months, corroborated against current EDPB basics page",
+          "tier": 1
+        }
+      ],
+      "implication": "Planning judgment: assess establishment, actual user location, targeting and processing activities before expanding to students already in Europe. Do not claim either automatic GDPR applicability or a categorical exemption merely from the India-first/Germany-destination description."
+    },
+    {
+      "id": "REG-07",
+      "claim": "The German Missions’ live study-visa checklist currently states EUR 11,904 livelihood funds and EUR 992 monthly blocked-account withdrawals, lists alternative financial evidence, and separately requests tuition-fee and insurance evidence. It distinguishes bachelor/preparatory and master documents, describes APS exceptions, and explicitly says complete documents do not guarantee a visa.",
+      "label": "Data",
+      "sourceDate": "Live checklist accessed 2026-10-25; EUR amount also in 2024-07-24 notice",
+      "confidence": "High for the current checklist; case-specific outcomes not predictable",
+      "sources": [
+        {
+          "title": "Studies, including preparatory college and language courses for intended studies",
+          "url": "https://india.diplo.de/in-en/service/2756350-2756350",
+          "publisher": "German Missions in India / Federal Foreign Office",
+          "date": "Live checklist, exact publication date not displayed in retrieved page; accessed 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "National Visa: students’ increased living cost requirement",
+          "url": "https://india.diplo.de/in-en/ueber-uns/mumbai/visa-services-2668450",
+          "publisher": "German Consulate Mumbai / Federal Foreign Office",
+          "date": "2024-07-24; older than 18 months, amount corroborated against live checklist",
+          "tier": 1
+        }
+      ],
+      "implication": "A budget alone, including the founder’s illustrative INR 10 lakh, cannot establish total affordability, admission or a visa. Separate programme requirements, visa rules, living-cost evidence, tuition and the student’s facts; show checked dates and unresolved items. Do not convert amounts into rupees without a dated exchange-rate assumption."
+    },
+    {
+      "id": "REG-08",
+      "claim": "Hochschulkompass’s university-list downloads are free for personal use only; its page requires approval for all other uses, especially commercial use, including parts. Public visibility and zero price do not establish a reusable production-data licence.",
+      "label": "Data",
+      "sourceDate": "Live source terms accessed 2026-10-25",
+      "confidence": "High for the download restriction; not a legal conclusion about every fact on the site",
+      "sources": [
+        {
+          "title": "Download university lists",
+          "url": "https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html",
+          "publisher": "Hochschulrektorenkonferenz / Hochschulkompass",
+          "date": "Undated live terms; accessed 2026-10-25",
+          "tier": 1
+        }
+      ],
+      "implication": "Before adopting the old proposed institution spine, obtain permission or use data sources with explicit suitable rights and university-authoritative records. Keep source permissions alongside provenance. A free startup beta is not necessarily personal use; this finding does not settle every website/database/copyright issue."
+    }
+  ],
+  "gaps": [
+    "Exact operative calendar day for the May 2027 core DPDP commencement requires resolution of printed-notification versus official publication descriptions; use the statutory eighteen-month schedule pending advice.",
+    "Current IT Act/SPDI and other pre-DPDP duties were not exhaustively mapped; do not infer a legal vacuum before core DPDP commencement.",
+    "No processor/model stack, company structure, actual retention practices, age mix or EU targeting has been chosen, so an as-built legal applicability/transfer assessment cannot yet be completed.",
+    "No current government transfer-restriction orders or production data licences were exhaustively cleared; perform a launch-specific check.",
+    "No source-backed rupee compliance cost, DPO staffing requirement for this startup, mandated certification, or general study-adviser licence finding was established. Obtain a scoped professional review rather than fabricate estimates.",
+    "No eligibility/visa prediction accuracy can be established from a government checklist; product-specific source coverage and quality evaluation remain necessary."
+  ],
+  "redFlags": [
+    "Family/financial context and chat may contain unnecessary identifiable data; optional UI alone does not establish informed consent or lawful processing.",
+    "Under-18 students can enter the bachelor audience; an adult-professional-only premise from the old agency brief is no longer valid.",
+    "The proposed HRK download-based institution spine is not production-cleared by being free or publicly accessible.",
+    "No admission, visa or affordability guarantee can be supported by a generic profile or the INR 10 lakh illustration."
+  ],
+  "yellowFlags": [
+    "DPDP dates in government summaries and printed Gazette differ by one day; avoid repeating a single hard deadline without qualification.",
+    "Foreign model/hosting processing cannot be assumed to remain inside India.",
+    "GDPR depends on real establishment/targeting/monitoring, not on destination alone.",
+    "Visa and university rules need separately versioned, current official evidence; source permissions and legal analysis are still required for real deployment."
+  ],
+  "summary": "The free, student-facing pivot materially changes data and age assumptions. Design privacy and source rights before production; plan against the phased DPDP rules without turning them into a sales deadline. German official checklists give verifiable constraints, not a prediction of personal outcomes."
+}

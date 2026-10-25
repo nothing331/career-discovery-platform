@@ -1,0 +1,422 @@
+{
+  "title": "Customer voice — student decisions about study in Germany",
+  "asOf": "2026-10-25",
+  "methodology": {
+    "approach": "Targeted keyword search, then opening original public threads and relevant replies; eight short first-person excerpts selected from eight distinct threads.",
+    "sample": "English-language, self-selected Reddit discussions in Indian- or Germany-study communities; largely technically oriented and application-stage users. Some authors’ country of origin is unknown.",
+    "not": "Not primary interviews, a representative survey, a verified applicant panel, measured time saving, willingness-to-pay evidence, or a population pain ranking.",
+    "duplicates": "Automoderator copies and repeated budget posts by the same author were not counted as independent voices. Removed original posts were not used as primary quotes.",
+    "authenticity": "Identities, qualifications, finances, acceptance/rejection outcomes, and human versus AI authorship cannot be verified from these posts.",
+    "dates": "Absolute dates are recorded from retrieved search timestamps. Two were checked against public JSON creation timestamps because rendered relative ages were inconsistent. Other dates remain index-reported.",
+    "votes": "No vote-based prevalence, priority, or agreement calculation. Counts fluctuate and are not representative sampling.",
+    "privacy": "No usernames, contact details, or student documents are retained; selected quote text avoids unnecessary detailed profiles and financial disclosures."
+  },
+  "queries": [
+    {
+      "round": 1,
+      "query": "site:reddit.com/r/Indians_StudyAbroad Germany budget 10 lakhs masters confused"
+    },
+    {
+      "round": 1,
+      "query": "site:reddit.com/r/Indians_StudyAbroad Germany ECTS eligibility shortlist university confused"
+    },
+    {
+      "round": 1,
+      "query": "site:reddit.com/r/Indians_StudyAbroad Germany bachelors masters roadmap information confused"
+    },
+    {
+      "round": 2,
+      "query": "site:reddit.com/r/Indians_StudyAbroad Germany confused where to start 2026 bachelor"
+    },
+    {
+      "round": 2,
+      "query": "site:reddit.com/r/studyinGermany Germany shortlist sources requirements conflicting 2026"
+    },
+    {
+      "round": 2,
+      "query": "site:reddit.com/r/Indians_StudyAbroad MyGermanUniversity DAAD outdated requirements"
+    },
+    {
+      "round": 2,
+      "query": "Germany study international student forum conflicting university requirements budget 2026"
+    },
+    {
+      "round": 3,
+      "query": "site:reddit.com Germany university website DAAD different admission requirements 2025 2026"
+    },
+    {
+      "round": 3,
+      "query": "site:reddit.com MyGermanUniversity accurate reliable information eligibility"
+    },
+    {
+      "round": 3,
+      "query": "Germany study abroad student forum confused budget ECTS admission requirements reviews"
+    }
+  ],
+  "findings": [
+    {
+      "id": "C1-01",
+      "claim": "Concrete programme-fit and shortlist-checking uncertainty appears in several selected accounts, including a self-reported rejection case.",
+      "label": "Opinion",
+      "sourceDate": "2025-11-18, 2026-01-12, 2026-08-31",
+      "confidence": "Medium that this concern occurs in the selected sample; Low for prevalence, priority, or outcome validity",
+      "sources": [
+        {
+          "title": "C1-Q02 public discussion",
+          "url": "https://www.reddit.com/r/studyinGermany/comments/1w3hoy8/rejected_due_to_ectsmodule_requirements_how/",
+          "publisher": "Reddit user-generated discussion",
+          "date": "2026-08-31",
+          "tier": 3,
+          "note": "Anecdotal self-report, not a verified interview or official requirement."
+        },
+        {
+          "title": "C1-Q03 public discussion",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1p0hkmq/i_applied_for_germanys_winter_intake_completely/",
+          "publisher": "Reddit user-generated discussion",
+          "date": "2025-11-18",
+          "tier": 3,
+          "note": "Anecdotal self-report, not a verified interview or official requirement."
+        },
+        {
+          "title": "C1-Q07 public discussion",
+          "url": "https://www.reddit.com/r/studying_in_germany/comments/1qayteq/please_save_your_money_and_time/",
+          "publisher": "Reddit user-generated discussion",
+          "date": "2026-01-12",
+          "tier": 3,
+          "note": "Anecdotal self-report, not a verified interview or official requirement."
+        }
+      ],
+      "implication": "A requirements-evidence view and a clear unknown/needs-review state are worth testing. Hobbies, projects, and broader profile strength must not silently replace explicit programme rules."
+    },
+    {
+      "id": "C1-02",
+      "claim": "Some students are choosing between degree pathways or revisiting a plan rather than simply requesting a ranked university list.",
+      "label": "Opinion",
+      "sourceDate": "2025-05-22, 2026-07-29, 2026-08-29",
+      "confidence": "Medium that this concern occurs in the selected sample; Low for prevalence, priority, or outcome validity",
+      "sources": [
+        {
+          "title": "C1-Q04 public discussion",
+          "url": "https://www.reddit.com/r/studying_in_germany/comments/1v9qpgf/suggestion_for_bachelors_in_germany/",
+          "publisher": "Reddit user-generated discussion",
+          "date": "2026-07-29",
+          "tier": 3,
+          "note": "Anecdotal self-report, not a verified interview or official requirement."
+        },
+        {
+          "title": "C1-Q05 public discussion",
+          "url": "https://www.reddit.com/r/developersIndia/comments/1w1kpiz/i_planned_my_entire_career_around_germany_now_ive/",
+          "publisher": "Reddit user-generated discussion",
+          "date": "2026-08-29",
+          "tier": 3,
+          "note": "Anecdotal self-report, not a verified interview or official requirement."
+        },
+        {
+          "title": "C1-Q06 public discussion",
+          "url": "https://www.reddit.com/r/studying_in_germany/comments/1ksth2n/need_advice_im_really_confused/",
+          "publisher": "Reddit user-generated discussion",
+          "date": "2025-05-22",
+          "tier": 3,
+          "note": "Anecdotal self-report, not a verified interview or official requirement."
+        }
+      ],
+      "implication": "Support exploration and checking an existing plan as two entry modes. Ask what decision they are making before assuming a master’s or a particular career outcome."
+    },
+    {
+      "id": "C1-03",
+      "claim": "Financial uncertainty can cause a plan to be reconsidered; the concern extends beyond advertised tuition.",
+      "label": "Opinion",
+      "sourceDate": "2026-05-06, 2026-08-29",
+      "confidence": "Medium that this concern occurs in the selected sample; Low for prevalence, priority, or outcome validity",
+      "sources": [
+        {
+          "title": "C1-Q01 public discussion",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1t534lm/ysk_weakening_rupee_screwed_up_my_plan_for/",
+          "publisher": "Reddit user-generated discussion",
+          "date": "2026-05-06",
+          "tier": 3,
+          "note": "Anecdotal self-report, not a verified interview or official requirement."
+        },
+        {
+          "title": "C1-Q05 public discussion",
+          "url": "https://www.reddit.com/r/developersIndia/comments/1w1kpiz/i_planned_my_entire_career_around_germany_now_ive/",
+          "publisher": "Reddit user-generated discussion",
+          "date": "2026-08-29",
+          "tier": 3,
+          "note": "Anecdotal self-report, not a verified interview or official requirement."
+        }
+      ],
+      "implication": "Show duration, cost assumptions, currency date, funding gaps, and downside scenarios. Do not repeat community financial or job claims as verified facts."
+    },
+    {
+      "id": "C1-04",
+      "claim": "An existing workaround combines official programme pages, manual module comparison, community questions, and sometimes general AI.",
+      "label": "Opinion",
+      "sourceDate": "2025-05-22, 2025-11-18, 2026-01-12",
+      "confidence": "Medium that this concern occurs in the selected sample; Low for prevalence, priority, or outcome validity",
+      "sources": [
+        {
+          "title": "C1-Q03 public discussion",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1p0hkmq/i_applied_for_germanys_winter_intake_completely/",
+          "publisher": "Reddit user-generated discussion",
+          "date": "2025-11-18",
+          "tier": 3,
+          "note": "Anecdotal self-report, not a verified interview or official requirement."
+        },
+        {
+          "title": "C1-Q06 public discussion",
+          "url": "https://www.reddit.com/r/studying_in_germany/comments/1ksth2n/need_advice_im_really_confused/",
+          "publisher": "Reddit user-generated discussion",
+          "date": "2025-05-22",
+          "tier": 3,
+          "note": "Anecdotal self-report, not a verified interview or official requirement."
+        },
+        {
+          "title": "C1-Q07 public discussion",
+          "url": "https://www.reddit.com/r/studying_in_germany/comments/1qayteq/please_save_your_money_and_time/",
+          "publisher": "Reddit user-generated discussion",
+          "date": "2026-01-12",
+          "tier": 3,
+          "note": "Anecdotal self-report, not a verified interview or official requirement."
+        }
+      ],
+      "implication": "The pilot must improve a real decision relative to this baseline. A source-linked interface may help, but these anecdotes do not prove students will use or pay for that feature."
+    },
+    {
+      "id": "C1-05",
+      "claim": "A prepared applicant can still need help prioritizing incompatible preferences rather than collecting more generic recommendations.",
+      "label": "Opinion",
+      "sourceDate": "2026-10-08",
+      "confidence": "Medium that this concern occurs in the selected sample; Low for prevalence, priority, or outcome validity",
+      "sources": [
+        {
+          "title": "C1-Q08 public discussion",
+          "url": "https://www.reddit.com/r/studying_in_germany/comments/1x0jcq5/confused_about_choosing_a_university_for_masters/",
+          "publisher": "Reddit user-generated discussion",
+          "date": "2026-10-08",
+          "tier": 3,
+          "note": "Anecdotal self-report, not a verified interview or official requirement."
+        }
+      ],
+      "implication": "Treat fit as a tradeoff explanation with uncertainty, not a universal best-university verdict. This particular post has extra authenticity limitations, so validate the pattern in interviews."
+    }
+  ],
+  "quotes": [
+    {
+      "id": "C1-Q01",
+      "quote": "This has made me concerned and I'm rethinking my decision of whether to go to Germany or not.",
+      "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1t534lm/ysk_weakening_rupee_screwed_up_my_plan_for/",
+      "date": "2026-05-06",
+      "context": "Original poster describes planning a German master’s while working in IT and saving in rupees; the concern is funding and currency exposure.",
+      "limitations": "Self-reported finances and projections are unverified. Do not reuse the post’s exchange rates, projected blocked-account amounts, or comment job earnings as financial facts. The same poster appeared in other budget threads; this is one voice, not multiple independent respondents.",
+      "painCategory": "Budget feasibility and downside uncertainty",
+      "sourceType": "First-person original post",
+      "dateVerification": "Absolute date reported by search; public JSON exposes creation timestamp 1778043454, consistent with 2026-05-06.",
+      "mode": "Existing plan being reconsidered"
+    },
+    {
+      "id": "C1-Q02",
+      "quote": "The rejections were mainly due to specific ECTS/module requirements not being fulfilled in some cases.",
+      "url": "https://www.reddit.com/r/studyinGermany/comments/1w3hoy8/rejected_due_to_ectsmodule_requirements_how/",
+      "date": "2026-08-31",
+      "context": "A self-described B.Tech applicant who already has language results and APS reports rejections and is building a more careful next-intake shortlist.",
+      "limitations": "Rejection reasons and documents are not independently verified. Nationality is not explicitly established by the excerpt. Do not turn one case into a universal admissions rule.",
+      "painCategory": "Programme prerequisites and shortlist verification",
+      "sourceType": "First-person original post",
+      "dateVerification": "Absolute thread date in search result; rendered relative age was ignored.",
+      "mode": "Prepared shortlist checker"
+    },
+    {
+      "id": "C1-Q03",
+      "quote": "I spent days comparing my modules with theirs just to make sure everything aligned.",
+      "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1p0hkmq/i_applied_for_germanys_winter_intake_completely/",
+      "date": "2025-11-18",
+      "context": "An applicant describes a self-managed German winter-intake process, programme search, documents, loan work, and module comparison.",
+      "limitations": "Retrospective self-report; author identity, admits, and time spent are unverified. The post offers help, so self-presentation or promotion cannot be ruled out. This is not a measured time-saving baseline.",
+      "painCategory": "Manual evidence comparison and process burden",
+      "sourceType": "First-person original post",
+      "dateVerification": "Absolute thread date in search result; rendered relative age was ignored.",
+      "mode": "DIY applicant reflecting on process"
+    },
+    {
+      "id": "C1-Q04",
+      "quote": "Should I complete my bachelor in india and then pursue masters there or target for bachelor in germany?",
+      "url": "https://www.reddit.com/r/studying_in_germany/comments/1v9qpgf/suggestion_for_bachelors_in_germany/",
+      "date": "2026-07-29",
+      "context": "A student says they started a bachelor’s in India, expects delayed results, and is weighing a German bachelor’s route against finishing in India and pursuing a master’s.",
+      "limitations": "Individual timeline and qualifications are unverified; requirements and deadlines in the post are not current authoritative guidance. This shows a choice between pathways, not that either route is feasible.",
+      "painCategory": "Degree-level pathway choice and timing",
+      "sourceType": "First-person original post",
+      "dateVerification": "Absolute thread date in search result; rendered relative age was ignored.",
+      "mode": "Uncertain pathway explorer"
+    },
+    {
+      "id": "C1-Q05",
+      "quote": "However, after looking into it much more seriously and considering all the possible outcomes, I now feel the risk is simply too high for me.",
+      "url": "https://www.reddit.com/r/developersIndia/comments/1w1kpiz/i_planned_my_entire_career_around_germany_now_ive/",
+      "date": "2026-08-29",
+      "context": "A self-described engineering graduate says they researched a German master’s plan, then reconsidered it after weighing career and financial risks.",
+      "limitations": "Self-selected account of personal risk tolerance; not representative of the job market, visa outcomes, or all Indian applicants. No outcome or finances independently verified.",
+      "painCategory": "Risk tradeoffs and decision confidence",
+      "sourceType": "First-person original post",
+      "dateVerification": "Absolute thread date in search result; rendered relative age was ignored.",
+      "mode": "Existing plan being reconsidered"
+    },
+    {
+      "id": "C1-Q06",
+      "quote": "Any advice would really help. I’m stuck between these options and don’t want to waste more time. Thanks in advance!",
+      "url": "https://www.reddit.com/r/studying_in_germany/comments/1ksth2n/need_advice_im_really_confused/",
+      "date": "2025-05-22",
+      "context": "A student enrolled in India describes delayed first-year results and a choice between restarting a bachelor’s in Germany and finishing in India before a later master’s.",
+      "limitations": "Still within eighteen months at this research date, but application-cycle details are dated and not reusable as rules. The original poster’s replies include unverified assumptions and commenters correct or misunderstand each other.",
+      "painCategory": "Pathway choice, conflicting advice, and next action",
+      "sourceType": "First-person original post; replies read for context",
+      "dateVerification": "Absolute thread date in search result; rendered relative age was ignored.",
+      "mode": "Uncertain pathway explorer"
+    },
+    {
+      "id": "C1-Q07",
+      "quote": "It took me about 10 whole days, but was worth it.",
+      "url": "https://www.reddit.com/r/studying_in_germany/comments/1qayteq/please_save_your_money_and_time/",
+      "date": "2026-01-12",
+      "context": "An incoming non-IT master’s student says checking programme-specific requirements narrowed a cross-country list from about fifteen options to five; they used university pages and ChatGPT to interpret them.",
+      "limitations": "Origin is not established as India. The reported effort is an unmeasured individual case involving a potential subject change, not a typical duration or product saving. Strong opinions in the thread are not admissions expertise.",
+      "painCategory": "Checking a shortlist against actual requirements",
+      "sourceType": "First-person original post",
+      "dateVerification": "Absolute thread date in search result; rendered relative age was ignored.",
+      "mode": "Prepared shortlist checker"
+    },
+    {
+      "id": "C1-Q08",
+      "quote": "The problem is that I’m struggling to find a university/city that satisfies all of these criteria together.",
+      "url": "https://www.reddit.com/r/studying_in_germany/comments/1x0jcq5/confused_about_choosing_a_university_for_masters/",
+      "date": "2026-10-08",
+      "context": "A self-described B.Tech graduate with APS and language testing already completed asks how to prioritize tuition, city cost, part-time work, later jobs, and course demands.",
+      "limitations": "Origin not conclusively established. A commenter alleges AI-written wording; authorship is unverified. Treat this as low-confidence language/context evidence, not confirmation of personal circumstances or achievable jobs.",
+      "painCategory": "Tradeoffs among competing preferences",
+      "sourceType": "First-person original post, possibly AI-assisted",
+      "dateVerification": "Public JSON creation timestamp 1791439704 corresponds to 2026-10-08; do not rely on conflicting rendered relative age.",
+      "mode": "Prepared shortlist checker"
+    }
+  ],
+  "painCategories": [
+    {
+      "name": "Programme prerequisites and evidence comparison",
+      "quoteIds": [
+        "C1-Q02",
+        "C1-Q03",
+        "C1-Q07"
+      ],
+      "sampleInterpretation": "Repeated within this deliberately selected sample; not a representative frequency or priority score.",
+      "firstTest": "Can a student understand a programme requirement, the evidence from their profile, and what remains unresolved?"
+    },
+    {
+      "name": "Pathway and timing choice",
+      "quoteIds": [
+        "C1-Q04",
+        "C1-Q06"
+      ],
+      "sampleInterpretation": "Two separate posts show bachelor’s/master’s route uncertainty. They do not establish the size of this segment.",
+      "firstTest": "Compare a short decision map against a conventional programme list; ask which next step becomes clearer."
+    },
+    {
+      "name": "Budget and downside uncertainty",
+      "quoteIds": [
+        "C1-Q01",
+        "C1-Q05"
+      ],
+      "sampleInterpretation": "Personal concern appears, but neither specific cost estimates nor future jobs are validated.",
+      "firstTest": "Separate known costs, assumptions, funding sources, and missing information; observe whether the plan changes."
+    },
+    {
+      "name": "Tradeoffs and self-directed agency",
+      "quoteIds": [
+        "C1-Q06",
+        "C1-Q08"
+      ],
+      "sampleInterpretation": "Exploratory evidence; one account may be AI-assisted.",
+      "firstTest": "Let students change priorities and explain the tradeoffs without claiming a universal best option."
+    }
+  ],
+  "jobsToBeDone": {
+    "functional": [
+      "Check whether a proposed study path survives actual requirements and financial constraints.",
+      "Compare plausible routes and identify the next missing fact or action.",
+      "Reduce repetitive source comparison while keeping the evidence inspectable."
+    ],
+    "emotional": [
+      "Reduce uncertainty without false reassurance.",
+      "Retain ownership of a consequential decision rather than outsource it blindly."
+    ],
+    "social": "Family reassurance and social identity may matter, but this selected evidence does not establish their priority or purchasing role.",
+    "label": "Interpretations from anecdotes, to test in primary interviews."
+  },
+  "languageMap": [
+    {
+      "phrase": "I’m stuck between these options",
+      "sourceQuoteId": "C1-Q06",
+      "use": "Exploration-mode interview prompt; do not imply measured prevalence."
+    },
+    {
+      "phrase": "comparing my modules",
+      "sourceQuoteId": "C1-Q03",
+      "use": "Academic evidence and requirements interview language."
+    },
+    {
+      "phrase": "rethinking my decision",
+      "sourceQuoteId": "C1-Q01",
+      "use": "Budget/risk review interview language."
+    },
+    {
+      "phrase": "satisfies all of these criteria together",
+      "sourceQuoteId": "C1-Q08",
+      "use": "Tradeoff discussion; this source has extra authenticity limits."
+    }
+  ],
+  "founderFramingAssessment": {
+    "supportedDirection": "The brief’s desire for clearer, credible paths is consistent with observed uncertainty, requirements-checking work, and pathway dilemmas.",
+    "strongerInitialHypothesis": "Prepared students checking a plausible route or shortlist may provide a more concrete first test than a blank-slate life-direction promise. This is a research recommendation, not founder scope approval or proven segment superiority.",
+    "notEstablished": [
+      "That students want to supply family background, hobbies, and projects before receiving value.",
+      "That a highly optional first profile can produce reliable personalised eligibility.",
+      "That conversation is preferred over a simple explanation/checklist.",
+      "That source links increase trust, action, or retention.",
+      "That the users represented here will pay ₹500 or any other price.",
+      "That these concerns indicate a missing product rather than shortcomings in awareness, use, or fit of existing alternatives."
+    ]
+  },
+  "gaps": [
+    {
+      "gap": "Direct student interviews and observed behavior",
+      "nextStep": "Recruit a small consented cohort separately for bachelor’s and master’s intentions; watch actual current research and compare a sample result with existing alternatives."
+    },
+    {
+      "gap": "Representation and segment prevalence",
+      "nextStep": "Include non-technical degrees, women, different budgets and language levels, less-online students, and parents where relevant. Do not infer population size from this Reddit sample."
+    },
+    {
+      "gap": "Source-conflict incidence and desired trust mechanisms",
+      "nextStep": "Ask students to show the exact pages they disagree about. Test source links, dates, and unknown-state explanations instead of assuming they cause trust."
+    },
+    {
+      "gap": "Input willingness, privacy expectations, and skipped-field utility",
+      "nextStep": "Compare a minimal intake with optional additions; observe which details students decline and which materially improve the result."
+    },
+    {
+      "gap": "Competitor user experience and paid willingness",
+      "nextStep": "Run head-to-head usefulness tests and later a real payment experiment. This workstream has no independent product-review or purchase evidence."
+    }
+  ],
+  "redFlags": [
+    "Do not describe this desk scan as customer validation, verified interviews, or representative pain prevalence.",
+    "Do not reuse quoted financial, admissions, job, or visa claims as current authoritative guidance.",
+    "Do not turn a self-reported days-long research story into a measured time-saving promise."
+  ],
+  "yellowFlags": [
+    "The sample is predominantly application-stage, English-language Reddit discussion, with technical degrees overrepresented.",
+    "Post dates and rendered relative ages can conflict; absolute indexed dates were retained with their limits.",
+    "One selected post is alleged by a commenter to be AI-written; it is explicitly treated as low-confidence language evidence.",
+    "Existing products already overlap the proposed features; unmet questions are not evidence of empty market space."
+  ],
+  "summary": "Observed anecdotes favor a concrete feasibility and shortlist-checking problem, with a second pathway-exploration mode. The founder’s clarity/trust goal fits the language, but optional input preferences, source-driven trust, repeat use, and payment require direct tests."
+}

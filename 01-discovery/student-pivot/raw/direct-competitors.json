@@ -1,0 +1,582 @@
+{
+  "title": "Direct and near-direct competitors — Germany-first student study-path guidance",
+  "asOf": "2026-10-25",
+  "methodology": "Desk research of live provider pages, pricing, terms, and official platform descriptions. No account creation, payment, student-data submission, or end-to-end matching test. Vendor statements describe offers, not audited accuracy, adoption, or outcomes.",
+  "queries": [
+    {
+      "round": 1,
+      "query": "MyGermanUniversity free university finder study finder pricing"
+    },
+    {
+      "round": 1,
+      "query": "Yocket university finder AI college shortlist Germany pricing"
+    },
+    {
+      "round": 1,
+      "query": "Germany study university AI matching platform India bachelor master free"
+    },
+    {
+      "round": 2,
+      "query": "Univoo Germany AI shortlist pricing free India"
+    },
+    {
+      "round": 2,
+      "query": "site:applyboard.com Abbie students Germany AI free"
+    },
+    {
+      "round": 2,
+      "query": "site:yocket.com premium pricing Germany 2026 shortlist"
+    },
+    {
+      "round": 2,
+      "query": "site:univermatch.eu terms fees partner universities commission"
+    },
+    {
+      "round": 3,
+      "query": "site:applyboard.com Abbie AI advisor students"
+    },
+    {
+      "round": 3,
+      "query": "site:applyboard.com Germany 2025"
+    },
+    {
+      "round": 3,
+      "query": "site:yourweg.com pricing Germany"
+    },
+    {
+      "round": 3,
+      "query": "site:nikshala.com Germany free AI pricing university"
+    },
+    {
+      "round": 4,
+      "query": "site:daad.de MyGUIDE campus study guide 2026"
+    },
+    {
+      "round": 4,
+      "query": "site:study-guide.com about DAAD MyGUIDE free"
+    },
+    {
+      "round": 4,
+      "query": "site:findcourse.io pricing free Germany AI matching"
+    },
+    {
+      "round": 4,
+      "query": "site:raplika.com pricing €8 report official evidence"
+    }
+  ],
+  "findings": [
+    {
+      "id": "B1-01",
+      "claim": "Free Germany discovery and personalised roadmaps already exist, including DAAD Study Guide and specialist commercial tools.",
+      "label": "Data",
+      "sourceDate": "Live pages checked 2026-10-25",
+      "confidence": "High for published offers; delivery quality not assessed",
+      "sources": [
+        {
+          "title": "Study Guide Germany",
+          "url": "https://www.study-guide.com/en/",
+          "publisher": "DAAD",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 1,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        },
+        {
+          "title": "MyGermanUniversity facts and company data",
+          "url": "https://www.mygermanuniversity.com/facts/mygermanuniversity",
+          "publisher": "MyGU GmbH",
+          "date": "Last reviewed 2026-09-29; accessed 2026-10-25",
+          "tier": 2,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        },
+        {
+          "title": "Nikshala products and pricing",
+          "url": "https://nikshala.com/pricing",
+          "publisher": "Nikshala AI",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        }
+      ],
+      "implication": "Neither Germany-first nor free-to-start establishes differentiation. Compare the first useful result against these baselines."
+    },
+    {
+      "id": "B1-02",
+      "claim": "India-specific German master’s profile matching and academic-gap reports are advertised by Univoo; its posted one-time founding price is near the founder’s later ₹500 hypothesis.",
+      "label": "Data",
+      "sourceDate": "Live pages checked 2026-10-25",
+      "confidence": "Medium; public-offer inconsistencies noted in profile",
+      "sources": [
+        {
+          "title": "Univoo product",
+          "url": "https://univoo.in/",
+          "publisher": "Univoo",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        },
+        {
+          "title": "Univoo pricing",
+          "url": "https://univoo.in/pricing",
+          "publisher": "Univoo",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        }
+      ],
+      "implication": "Similar pricing and feature language are not evidence this product will sell. A paid, accurate, independently useful experience still needs validation."
+    },
+    {
+      "id": "B1-03",
+      "claim": "Raplika publicly combines personal interests/preferences, an optional AI interview, and an official-evidence report for bachelor’s exploration.",
+      "label": "Data",
+      "sourceDate": "Live/indexed provider pages checked 2026-10-25",
+      "confidence": "Medium for advertised offer; untested result quality",
+      "sources": [
+        {
+          "title": "Raplika pricing",
+          "url": "https://raplika.com/pricing",
+          "publisher": "Raplika",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        },
+        {
+          "title": "How Raplika works",
+          "url": "https://raplika.com/how-it-works",
+          "publisher": "Raplika",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        }
+      ],
+      "implication": "Do not claim that conversation plus explained/source-linked study options is uncontested whitespace."
+    },
+    {
+      "id": "B1-04",
+      "claim": "Some free discovery products disclose university promotion or affiliate/referral revenue, while others charge students for reports or seasonal access.",
+      "label": "Data",
+      "sourceDate": "Live provider pages checked 2026-10-25",
+      "confidence": "High for the specific disclosed models, not a general industry prevalence estimate",
+      "sources": [
+        {
+          "title": "MyGermanUniversity facts and company data",
+          "url": "https://www.mygermanuniversity.com/facts/mygermanuniversity",
+          "publisher": "MyGU GmbH",
+          "date": "Last reviewed 2026-09-29; accessed 2026-10-25",
+          "tier": 2,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        },
+        {
+          "title": "Nikshala partners",
+          "url": "https://nikshala.com/partners",
+          "publisher": "Nikshala AI",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        },
+        {
+          "title": "YourWeg product and pricing",
+          "url": "https://www.yourweg.com/",
+          "publisher": "YourWeg",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        },
+        {
+          "title": "Raplika pricing",
+          "url": "https://raplika.com/pricing",
+          "publisher": "Raplika",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        }
+      ],
+      "implication": "Make the new product’s own incentives explicit. Commission-free intent alone is not proven differentiation, because at least one near-direct product already advertises it."
+    },
+    {
+      "id": "B1-05",
+      "claim": "Documented Abbie recruitment-partner access and a student live-chat widget are different things. Neither proves an unrestricted student-facing AI conversation.",
+      "label": "Opinion",
+      "sourceDate": "Inspected access descriptions as of 2026-10-25",
+      "confidence": "High for this boundary; broader access may change",
+      "sources": [
+        {
+          "title": "Abbie product and access FAQ",
+          "url": "https://www.applyboard.com/services/abbie",
+          "publisher": "ApplyBoard",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        },
+        {
+          "title": "How ApplyBoard works for recruitment partners",
+          "url": "https://assist.applyboard.com/hc/en-us/articles/29074610147853-How-ApplyBoard-Works-for-Recruitment-Partners",
+          "publisher": "ApplyBoard",
+          "date": "2026-09-22; accessed 2026-10-25",
+          "tier": 2,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        }
+      ],
+      "implication": "Keep platform risk in the landscape without misclassifying a partner tool as the exact same self-serve product."
+    },
+    {
+      "id": "B1-06",
+      "claim": "No defensible market-share, concentration, winner, or feature-absence conclusion follows from this eight-profile desk scan.",
+      "label": "Opinion",
+      "sourceDate": "2026-10-25 analysis",
+      "confidence": "High that the scan cannot establish these claims",
+      "sources": [],
+      "implication": "The credible hypothesis is better usefulness, uncertainty handling, cost transparency, and source quality for a specific cohort—not a verified empty category. Test it head-to-head."
+    }
+  ],
+  "competitors": [
+    {
+      "name": "Study Guide Germany (DAAD / former My GUIDE route)",
+      "url": "https://www.study-guide.com/en/",
+      "classification": "Near-direct, official personalised study-orientation platform",
+      "target": "International students considering German higher education",
+      "product": "A background-, qualification-, and interest-tailored study roadmap, programme exploration, requirements and next-step guidance, preparation and DAAD counseling connections.",
+      "features": [
+        "Personal profile and checklist",
+        "Programme discovery",
+        "Funding and preparation guidance",
+        "DAAD counseling connection"
+      ],
+      "pricing": "Free for students, according to the live landing page.",
+      "monetization": "Provided by DAAD and funded by BMFTR, as identified on its live page; no student subscription shown.",
+      "strength": "Material overlap with the proposed personalised, credible Germany path; an official provider is a strong trust baseline. [Opinion]",
+      "limitation": "This research did not test individual matches, India-specific budget treatment, conversation behavior, or completeness. Missing public detail is not proof of an absent feature.",
+      "traction": "Landing page advertises more than 22,000 programmes; not an audited active-user count.",
+      "funding": "BMFTR-funded project is explicit; budget and current usage not established.",
+      "threatLevel": "High [Opinion] for the generic free-personalised-Germany-roadmap proposition.",
+      "confidence": "High for the published offer; unassessed product quality.",
+      "sources": [
+        {
+          "title": "Study Guide Germany",
+          "url": "https://www.study-guide.com/en/",
+          "publisher": "DAAD",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 1,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        },
+        {
+          "title": "My GUIDE Campus",
+          "url": "https://www.daad.de/en/the-daad/intersecting-dimensions-topics/digitalisation/myguidecampus/",
+          "publisher": "DAAD",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 1,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        }
+      ],
+      "notes": [
+        "Opening https://www.myguide.de/en/ redirected to the Study Guide URL on 2026-10-25.",
+        "DAAD’s Campus page includes planned/integration work. Do not assume every future project feature is already live."
+      ]
+    },
+    {
+      "name": "MyGermanUniversity",
+      "url": "https://www.mygermanuniversity.com/",
+      "classification": "Near-direct, Germany programme discovery and information platform",
+      "target": "International and German-speaking students searching German bachelor’s or master’s study",
+      "product": "StudyFinder and university profiles, filtering on admissions-related details, and free live webinars.",
+      "features": [
+        "Programme and university search",
+        "Deadline and language-requirement filters",
+        "Webinars",
+        "Editorial guidance"
+      ],
+      "pricing": "Student use is free. Some personalised functions require registration; no student paid subscription is published on the inspected offer.",
+      "monetization": "Premium university profiles and affiliate partnerships are explicitly disclosed.",
+      "strength": "An established Germany-specific discovery and explanation surface with substantial advertised catalogue breadth. [Opinion]",
+      "limitation": "Do not accept its comparative claims about rival directories as independent evidence. Accuracy, personal matching, and a full dialogue flow were not tested.",
+      "traction": "Vendor reports over 24,000 programmes and 500 institutions, reviewed September 2026. These are catalogue claims, not verified user or outcome metrics.",
+      "funding": "Vendor history mentions EXIST and InnoRampUp support; no current funding total independently established.",
+      "threatLevel": "High [Opinion] as the free directory/filtering/content baseline.",
+      "confidence": "High for its published free offer and disclosed incentives; Medium for vendor-reported coverage.",
+      "sources": [
+        {
+          "title": "MyGermanUniversity facts and company data",
+          "url": "https://www.mygermanuniversity.com/facts/mygermanuniversity",
+          "publisher": "MyGU GmbH",
+          "date": "Last reviewed 2026-09-29; accessed 2026-10-25",
+          "tier": 2,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        }
+      ]
+    },
+    {
+      "name": "Univoo",
+      "url": "https://univoo.in/",
+      "classification": "Direct, India-to-Germany master’s admissions intelligence",
+      "target": "Indian students applying for German master’s programmes",
+      "product": "Profile-based programme shortlisting, GPA conversion, ECTS gap analysis, requirements reports, and document narrative guidance.",
+      "features": [
+        "Academic profile matching",
+        "GPA conversion",
+        "ECTS gaps",
+        "Programme reports",
+        "Separate human consultancy"
+      ],
+      "pricing": "Advertised free limited profile results; ₹499 one-time founding AI plan, ₹999 afterward. Custom reports list ₹299/₹999/₹1,499 tiers. These are posted offers, not evidence of purchases.",
+      "monetization": "Direct report/plan fees and a separate multi-phase human consultancy are explicit. University commissions were not established.",
+      "strength": "Very close overlap with India-specific, profile-based German programme matching and explainable academic gaps. [Opinion]",
+      "limitation": "Public pages give conflicting free-result limits (three on product/pricing versus up to five in terms) and inconsistent founding-slot displays. Launch wording persists. Actual paid availability, data quality, and accuracy were not tested.",
+      "traction": "No independently validated paid adoption or outcome metric. Catalogue numbers and slot banners are vendor claims, not audited traction.",
+      "funding": "Unknown; do not infer bootstrapped or funded status.",
+      "threatLevel": "High [Opinion] for the master’s matching/report portion.",
+      "confidence": "Medium: offer is public, but contradictions and untested delivery limit confidence.",
+      "sources": [
+        {
+          "title": "Univoo product",
+          "url": "https://univoo.in/",
+          "publisher": "Univoo",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        },
+        {
+          "title": "Univoo pricing",
+          "url": "https://univoo.in/pricing",
+          "publisher": "Univoo",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        },
+        {
+          "title": "Univoo terms of service",
+          "url": "https://univoo.in/terms-of-service",
+          "publisher": "Univoo",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        }
+      ]
+    },
+    {
+      "name": "YourWeg",
+      "url": "https://www.yourweg.com/",
+      "classification": "Direct or near-direct Germany profile matcher and application workspace",
+      "target": "International Germany applicants; interface exposes master’s, bachelor’s, and PhD choices",
+      "product": "Profile matching, reasons and readiness categories, application tracking, deadlines, document storage, scholarships, and guided steps.",
+      "features": [
+        "Profile matcher",
+        "Application tracker",
+        "Document vault",
+        "Deadline guidance",
+        "Scholarships"
+      ],
+      "pricing": "Free tier advertises five matches. Pro is advertised at ₹1,999 plus GST, a one-time season purchase with four months’ access.",
+      "monetization": "Student-paid seasonal upgrade is explicit; other commercial incentives were not established.",
+      "strength": "Combines profile-based Germany options and next-step organization, including multiple study levels. [Opinion]",
+      "limitation": "Admission-likelihood categories and testimonials are vendor claims; calibration and true catalogue coverage were not tested. ECTS/SOP/CV tools are labeled coming soon and must not be counted as delivered.",
+      "traction": "No independently audited user, revenue, or admission-outcome data established.",
+      "funding": "Unknown.",
+      "threatLevel": "High [Opinion] for profile-plus-path execution.",
+      "confidence": "Medium for advertised features; High for the observed posted price, subject to change.",
+      "sources": [
+        {
+          "title": "YourWeg product and pricing",
+          "url": "https://www.yourweg.com/",
+          "publisher": "YourWeg",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        }
+      ]
+    },
+    {
+      "name": "Nikshala AI",
+      "url": "https://nikshala.com/",
+      "classification": "Direct/near-direct Germany discovery with paid service extensions",
+      "target": "Germany applicants from India and elsewhere; separate master’s discovery and bachelor’s pathway",
+      "product": "Free master’s search, bachelor’s/Studienkolleg guidance, calculators, and optional researched or human-assisted services.",
+      "features": [
+        "Free master’s discovery",
+        "Bachelor’s pathway",
+        "Calculators",
+        "Human shortlisting",
+        "Application-related services"
+      ],
+      "pricing": "Free search/path tools are advertised. Human university shortlisting lists ₹6,000 one-time; other paid services are separately priced. Payment finalisation wording appears, so transaction availability was not assumed.",
+      "monetization": "Paid student services and referral links are both disclosed.",
+      "strength": "Already packages Germany-specific discovery and practical next steps; overlaps the proposed optional-depth experience. [Opinion]",
+      "limitation": "Actual matching correctness, result sources, supported bachelor’s programme depth, and service delivery were not tested. A pathway guide is not equivalent to verified bachelor’s programme matching.",
+      "traction": "No independently audited usage or admission outcomes established.",
+      "funding": "Unknown.",
+      "threatLevel": "High [Opinion] for a generic free Germany guidance proposition.",
+      "confidence": "Medium for advertised delivery; posted offer and disclosed referral model observed.",
+      "sources": [
+        {
+          "title": "Nikshala products and pricing",
+          "url": "https://nikshala.com/pricing",
+          "publisher": "Nikshala AI",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        },
+        {
+          "title": "Nikshala partners",
+          "url": "https://nikshala.com/partners",
+          "publisher": "Nikshala AI",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        }
+      ]
+    },
+    {
+      "name": "FindCourse",
+      "url": "https://findcourse.io/",
+      "classification": "Direct/near-direct, India-oriented multi-country AI discovery",
+      "target": "Indian undergraduate, postgraduate, and doctoral study-abroad prospects",
+      "product": "A questionnaire on academics, countries, budget, and goals leading to a personalised shortlist; optional counselor connections.",
+      "features": [
+        "Profile questionnaire",
+        "AI shortlist",
+        "Budget breakdown claims",
+        "Study guides",
+        "Counselor connection"
+      ],
+      "pricing": "FAQ says core matching and guides are free, with premium counselor services a possible future offer.",
+      "monetization": "Current funding and counselor/university commercial terms are not established by the inspected FAQ. Do not assume commission-free independence.",
+      "strength": "A public offer already combines optional financial/academic context and recommendations for India-origin prospects including Germany. [Opinion]",
+      "limitation": "Advertised admission chances, cost accuracy, actual Germany depth, and operational matching were not tested; broad country coverage is a vendor claim.",
+      "traction": "No independently verified active-user, paid-user, or outcome numbers established.",
+      "funding": "Unknown.",
+      "threatLevel": "Medium–High [Opinion], conditional on real coverage and delivery.",
+      "confidence": "Medium for published scope and free offer; Low for performance.",
+      "sources": [
+        {
+          "title": "FindCourse FAQ",
+          "url": "https://findcourse.io/faq",
+          "publisher": "FindCourse / SEAES",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        }
+      ]
+    },
+    {
+      "name": "Raplika",
+      "url": "https://raplika.com/",
+      "classification": "Near-direct, bachelor’s interest/profile explorer with optional AI interview and evidence-backed report",
+      "target": "Students choosing bachelor’s programmes in Germany, Netherlands, Spain, and UK; India-specific services not established",
+      "product": "Interest assessment and study preferences, a shortlist, and optional deeper interviewing/reporting with stated official-evidence links.",
+      "features": [
+        "Interest assessment",
+        "Profile/preferences",
+        "Free initial results",
+        "Optional AI interview",
+        "Explained programme report"
+      ],
+      "pricing": "Free initial test/results; optional full report advertised at €8 one-time beta price, not a subscription.",
+      "monetization": "Student report fee; its About page states it takes no university promotion commissions. This is a provider statement, not audited neutrality.",
+      "strength": "Overlaps more than a generic chatbot: interests, personal context, conversation, explained options, and evidence are all publicly advertised. [Opinion]",
+      "limitation": "Bachelor’s-only coverage limits the direct master’s overlap. Retrieved pages expose minimal static text, so richer indexed claims and all product outcomes remain untested.",
+      "traction": "Catalogue breadth is advertised; no audited student usage or outcome metric established.",
+      "funding": "Unknown.",
+      "threatLevel": "Medium–High [Opinion] for the bachelor’s exploration and trustworthy-report proposition.",
+      "confidence": "Medium for published pricing/scope; performance unassessed.",
+      "sources": [
+        {
+          "title": "Raplika pricing",
+          "url": "https://raplika.com/pricing",
+          "publisher": "Raplika",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        },
+        {
+          "title": "How Raplika works",
+          "url": "https://raplika.com/how-it-works",
+          "publisher": "Raplika",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        },
+        {
+          "title": "About Raplika",
+          "url": "https://raplika.com/about",
+          "publisher": "Raplika",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        }
+      ]
+    },
+    {
+      "name": "ApplyBoard / Abbie",
+      "url": "https://www.applyboard.com/",
+      "classification": "Adjacent student-mobility platform and recruitment-partner AI workflow; not an exact public self-serve chatbot substitute",
+      "target": "Students and recruitment partners across destinations including Germany; Abbie’s inspected FAQ specifies recruitment partners",
+      "product": "Partner-institution search, eligibility filters, profiles, application handling, and AI assistance within the recruitment workflow.",
+      "features": [
+        "Programme search and comparison",
+        "Eligibility filters",
+        "Student profiles",
+        "Applications",
+        "Abbie profile-aware guidance"
+      ],
+      "pricing": "No standalone student Abbie price verified. Access terms must not be inferred from the presence of a student live-chat widget.",
+      "monetization": "Commercial recruitment platform; specific commission and Abbie fee terms not established here.",
+      "strength": "An integrated profile/application platform with institutional relationships can bundle matching and assistance. [Opinion]",
+      "limitation": "Inspected Abbie FAQ specifies recruitment-partner access. The separate student support widget does not prove open student AI advice. Partner inventory should not be equated with all German public programmes.",
+      "traction": "Vendor-scale claims exist but no Germany-specific active-use or independent accuracy metric was checked in this workstream.",
+      "funding": "No current funding valuation independently reverified; do not recycle historical debt facilities as equity funding.",
+      "threatLevel": "High [Opinion] as adjacent platform/bundling risk; narrower direct overlap than student-first specialists.",
+      "confidence": "High for documented partner access and workflow; Low for untested student AI access/coverage.",
+      "sources": [
+        {
+          "title": "Abbie product and access FAQ",
+          "url": "https://www.applyboard.com/services/abbie",
+          "publisher": "ApplyBoard",
+          "date": "Undated live page; accessed 2026-10-25",
+          "tier": 2,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        },
+        {
+          "title": "How ApplyBoard works for recruitment partners",
+          "url": "https://assist.applyboard.com/hc/en-us/articles/29074610147853-How-ApplyBoard-Works-for-Recruitment-Partners",
+          "publisher": "ApplyBoard",
+          "date": "2026-09-22; accessed 2026-10-25",
+          "tier": 2,
+          "note": "Primary for the provider’s published offer; product performance is not independently verified."
+        }
+      ]
+    }
+  ],
+  "gaps": [
+    {
+      "gap": "Independent accuracy, coverage, and first-use quality",
+      "nextStep": "Use a small consented or synthetic profile benchmark across official and specialist alternatives, verify results against university rules, and record unknowns. Do not submit personal student documents without consent."
+    },
+    {
+      "gap": "Verified competitor adoption, revenue, funding totals and outcomes",
+      "nextStep": "Seek dated primary filings or independently reported metrics if decision-relevant. No paid demand inferred from price pages, testimonials, catalogue counts, or founding slots."
+    },
+    {
+      "gap": "Full student AI access and institutional inventory on larger platforms",
+      "nextStep": "Check account-specific access terms and programme coverage; keep partner versus student workflows distinct."
+    },
+    {
+      "gap": "Optional-input behavior and financial feasibility treatment",
+      "nextStep": "Compare skip behavior, source visibility, degree-specific requirements, and budget handling in real first-use sessions."
+    },
+    {
+      "gap": "Current payment availability for early specialist sites",
+      "nextStep": "Confirm published terms and delivery directly before treating the advertised package as a mature operating benchmark."
+    }
+  ],
+  "redFlags": [
+    "The new product is entering a visibly overlapping category; do not claim no competitors, no free personalised roadmap, or an uncontested execution window.",
+    "Official DAAD Study Guide is a substantive personalised alternative, not merely a static information directory.",
+    "A published low price is not evidence that buyers pay or that the service is accurate."
+  ],
+  "yellowFlags": [
+    "Offers and prices can change; these are snapshots checked 2026-10-25.",
+    "Most performance and catalogue claims are vendor assertions and were not independently audited.",
+    "Incomplete public detail is not evidence that a feature is absent.",
+    "Univoo’s free-tier/slot displays conflict; Raplika static retrieval is minimal; some Nikshala payment wording suggests finalisation. Do not infer non-operation or mature operation from these alone."
+  ],
+  "summary": "The core promise overlaps official personalised guidance and several specialist India/Germany matching products. A Germany-first, free, profile-plus-AI offer is insufficient on its own. The next defensible test is whether a narrow cohort gets a more useful, verifiable and honestly qualified result than existing alternatives."
+}

@@ -1,0 +1,637 @@
+{
+  "id": "student-problems",
+  "title": "Student problems, agencies and existing alternatives",
+  "asOf": "2026-10-25",
+  "summary": "The best first hypothesis is a transparent feasibility and shortlist checker, with separate bachelor’s pathway guidance and master’s prerequisite checks. Reddit exposes risks around advice quality, incentives, service scope and document collection, but cannot establish agency misconduct or market prevalence. Official tools already overlap discovery; prove clearer decisions and reliable next actions through observed student sessions.",
+  "sections": [
+    {
+      "title": "What changed with the student-facing brief",
+      "body": "This research evaluates help for Indian students making a Germany study decision, rather than software bought by agencies. Both bachelor’s and master’s routes remain in scope. The free founder-funded launch and flexible profile plus conversation are confirmed intentions; demand, trust, retention and later payment are still hypotheses.",
+      "bullets": [
+        "Working problem: help a student verify whether a proposed path survives real programme rules, timing and financial constraints, and identify the next missing fact.",
+        "Two entry modes deserve testing: explore an unclear route, or check an existing shortlist. A ranked list alone cannot resolve either reliably.",
+        "Confidence: medium that the selected problems occur; low for population prevalence or commercial opportunity. No direct interviews or product-use experiments were conducted."
+      ],
+      "sources": [
+        {
+          "title": "DIY Germany application: module comparison and administrative load",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1p0hkmq/i_applied_for_germanys_winter_intake_completely/",
+          "note": "Author reports self-managed applications and admits; outcome, effort and identity unverified. Offers help, so self-promotion possible."
+        },
+        {
+          "title": "Bachelor now or master later? Results and deadline uncertainty",
+          "url": "https://www.reddit.com/r/studying_in_germany/comments/1ksth2n/need_advice_im_really_confused/",
+          "note": "Shows a pathway decision and timing anxiety. Individual eligibility assumptions are not authoritative rules."
+        },
+        {
+          "title": "Rejections attributed to ECTS and module requirements",
+          "url": "https://www.reddit.com/r/studyinGermany/comments/1w3hoy8/rejected_due_to_ectsmodule_requirements_how/",
+          "note": "Self-reported rejection reasons not independently checked; rendered relative ages varied across retrievals."
+        }
+      ]
+    },
+    {
+      "title": "How the evidence was collected",
+      "body": "Targeted web searches covered Germany application problems, named-agency complaints, positive service experiences, DIY routes, and official warnings/terms. Eleven original Reddit threads were opened; ten official institutional or vendor pages returned text. Two additional service pages are explicitly search-index-only because original access failed or returned empty text.",
+      "bullets": [
+        "Complaints were deliberately searched, so this is a risk-discovery sample, not a satisfaction survey or agency ranking. English-language Reddit overrepresents online, technically oriented applicants.",
+        "Automoderator backups and repeated text are not independent accounts. Cross-posts are not counted twice. Votes and repeated comments are not prevalence estimates.",
+        "No identities, invoices, contracts, admission records, or alleged commission amounts were independently authenticated. No agency was contacted for a case-specific response.",
+        "Individual post dates are index-reported where marked; some relative page ages conflict. The as-of date records this research revision, not guaranteed source freshness."
+      ],
+      "sources": []
+    },
+    {
+      "title": "The decision journey: where a useful product could help",
+      "body": "The selected accounts reveal different kinds of work: deciding a degree route, translating a profile into programme prerequisites, comparing costs, and orchestrating applications. The interpretation below is a product hypothesis, not a measured ranking of student pain.",
+      "bullets": [
+        "Explore: clarify study level, intended subject, language readiness, target intake and constraints before recommending programmes. Avoid deriving life direction from hobbies alone.",
+        "Check: place each official requirement beside the relevant profile evidence and show satisfied, not satisfied, or unknown. A degree title and overall CGPA do not settle subject-credit fit.",
+        "Plan: separate document preparation, university/uni-assist/VPD deadlines, APS requirements and later visa/enrolment steps. Show the source and cycle for every deadline.",
+        "Compare: let students change cost and academic priorities and see why a result changes. Keep eligibility distinct from preferences and from admission competition.",
+        "Act: give one next action such as requesting a module handbook or asking admissions a precise question. Avoid false certainty when documents are missing."
+      ],
+      "sources": [
+        {
+          "title": "Bachelor applicant: consultant, VPD and deadline complaint",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1thg5n0/how_study_abroad_consultants_stole_my_money/",
+          "note": "Agency unnamed. Post also mentions coding a dashboard; possible promotional motive cannot be excluded. No prevalence inference."
+        },
+        {
+          "title": "DIY Germany application: module comparison and administrative load",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1p0hkmq/i_applied_for_germanys_winter_intake_completely/",
+          "note": "Author reports self-managed applications and admits; outcome, effort and identity unverified. Offers help, so self-promotion possible."
+        },
+        {
+          "title": "Rejections attributed to ECTS and module requirements",
+          "url": "https://www.reddit.com/r/studyinGermany/comments/1w3hoy8/rejected_due_to_ectsmodule_requirements_how/",
+          "note": "Self-reported rejection reasons not independently checked; rendered relative ages varied across retrievals."
+        }
+      ]
+    },
+    {
+      "title": "Bachelor’s: pathway and timing must come before matching",
+      "body": "A bachelor applicant in the sample weighs restarting in Germany against finishing in India and applying for a master’s later because academic results may arrive after deadlines. A separate school-leaver account describes confusion over VPD and programme restrictions. These are pathway and process problems, not evidence that either applicant is eligible.",
+      "bullets": [
+        "Ask for school qualification/board, subjects, completed higher-education study, language level, target degree and intake. Distinguish direct-entry assessment from preparatory routes.",
+        "DAAD’s orientation describes multiple pathways and emphasizes university-specific criteria. Do not encode a single class-12 percentage, foundation-year route or language level as universally sufficient.",
+        "If prior-year results or a transcript are unavailable, show timing risk and request institution-specific confirmation instead of inventing a workaround.",
+        "Preserve bachelor’s coverage in the pilot, but test it as a separate journey. Do not silently reuse a master’s-only matching model."
+      ],
+      "sources": [
+        {
+          "title": "Bachelor applicant: consultant, VPD and deadline complaint",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1thg5n0/how_study_abroad_consultants_stole_my_money/",
+          "note": "Agency unnamed. Post also mentions coding a dashboard; possible promotional motive cannot be excluded. No prevalence inference."
+        },
+        {
+          "title": "Bachelor now or master later? Results and deadline uncertainty",
+          "url": "https://www.reddit.com/r/studying_in_germany/comments/1ksth2n/need_advice_im_really_confused/",
+          "note": "Shows a pathway decision and timing anxiety. Individual eligibility assumptions are not authoritative rules."
+        },
+        {
+          "title": "Bachelor Studies",
+          "url": "https://www.daad.in/en/study-research-in-germany/studying-in-germany/bachelor-studies/",
+          "note": "Use for pathway structure, not an automatic current eligibility decision. Page contains broad and potentially dated examples; verify target-cycle requirements with APS and institution."
+        },
+        {
+          "title": "Academic Evaluation Center India",
+          "url": "https://aps-india.de/",
+          "note": "APS verifies Indian academic qualifications. Current homepage also carries a selected-fields dMAT update; consult live requirements rather than copy a forum checklist."
+        }
+      ]
+    },
+    {
+      "title": "Master’s: course evidence is more useful than an admit score",
+      "body": "A repeat applicant attributes some rejections to module/ECTS mismatch and others to competition. A DIY applicant describes time spent comparing coursework. These self-reports support testing transparent requirement checking; they do not establish rejection causes or the predictive value of our system.",
+      "bullets": [
+        "Ask for prior degree, awarding institution, transcript/module detail when needed, language evidence and programme-specific prerequisites.",
+        "Keep academic eligibility, document completeness and competitive selection separate. A plausible match is not an admission guarantee.",
+        "Ask a student to review a programme explanation: can they identify the rule, evidence, missing information and next action without trusting a black-box score?",
+        "APS documentation and any field-specific tests need their own dated official checks. A forum checklist can become stale across intakes."
+      ],
+      "sources": [
+        {
+          "title": "DIY Germany application: module comparison and administrative load",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1p0hkmq/i_applied_for_germanys_winter_intake_completely/",
+          "note": "Author reports self-managed applications and admits; outcome, effort and identity unverified. Offers help, so self-promotion possible."
+        },
+        {
+          "title": "Rejections attributed to ECTS and module requirements",
+          "url": "https://www.reddit.com/r/studyinGermany/comments/1w3hoy8/rejected_due_to_ectsmodule_requirements_how/",
+          "note": "Self-reported rejection reasons not independently checked; rendered relative ages varied across retrievals."
+        },
+        {
+          "title": "Master Studies",
+          "url": "https://www.daad.in/en/study-research-in-germany/studying-in-germany/master-studies/",
+          "note": "Programme-level criteria, timing and application channels require checks with each university; broad orientation is not an admit predictor."
+        },
+        {
+          "title": "Academic Evaluation Center India",
+          "url": "https://aps-india.de/",
+          "note": "APS verifies Indian academic qualifications. Current homepage also carries a selected-fields dMAT update; consult live requirements rather than copy a forum checklist."
+        },
+        {
+          "title": "APS frequently asked questions",
+          "url": "https://aps-india.de/faqs/",
+          "note": "Official reference for APS process and applicable exceptions; not an admissions authority for every programme."
+        }
+      ]
+    },
+    {
+      "title": "Agency evidence: YES Germany",
+      "body": "A Reddit author says a consultation discouraged public-university prospects and proposed a mixed private/public list and a subject change. Another thread alleges misleading comparisons and loss of a registration payment. These are unverified accounts. They do not establish the applicants’ actual eligibility, fraud, or how the agency behaves across branches.",
+      "bullets": [
+        "Counterevidence in the second thread: a commenter says the agency supported public-university applications and test preparation without pressuring them to accept private offers. Authenticity is equally unverified.",
+        "Official terms distinguish non-guaranteed public applications, mixed packages and public-only refund conditions. One “Public Category” clause nevertheless refers to listed universities including private institutions; obtain a written clarification rather than infer intent.",
+        "Terms also say an agency refund does not itself cancel a separate EMI/loan obligation. A student should compare total commitments and conditions, not only a headline guarantee.",
+        "Product safeguard to test: programme type, source-based fit, total cost and any commercial relationship visible next to every recommendation; no forced institution or subject substitution."
+      ],
+      "sources": [
+        {
+          "title": "YES Germany: alleged steering toward private universities",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1u3q52y/yes_germany_tried_to_almost_scam_me_into_private/",
+          "note": "Author describes a February 2025 consultation. No contract, independent qualification assessment, or agency response verified. Automoderator repetition excluded."
+        },
+        {
+          "title": "YES Germany: refund criticism and positive counterexample",
+          "url": "https://www.reddit.com/r/studying_in_germany/comments/1vzrvu7/beware_of_yes_germany/",
+          "note": "Critical original post and positive reply both retrieved. Positive commenter says private offers were not pushed and public applications/test preparation were supported."
+        },
+        {
+          "title": "YES Germany company policy",
+          "url": "https://www.yesgermany.com/about/company-policy/",
+          "note": "Original policy retrieved. Multiple package categories and refund conditions; contract applicability and text ambiguity need provider clarification. No customer-specific adjudication."
+        }
+      ]
+    },
+    {
+      "title": "Agency evidence: Yocket",
+      "body": "A Germany-focused Reddit post alleges poorly matched shortlists and generic document help, leaving the applicant to recheck requirements. The author account is deleted, although original text is retrievable. The claims and purchase were not independently verified.",
+      "bullets": [
+        "Yocket’s official Premium page markets counselling and application support, lists Germany among destinations, and advertises an admission-offer guarantee. These are vendor claims; no audited uplift or guarantee enforceability was established.",
+        "A Germany landing page separately positions shortlist, scholarship, visa and pre-departure help, but this tool retrieved only search-index text for that page.",
+        "A positive Yocket reply in another thread describes useful editing, timelines and visa preparation; other commenters question its authenticity. Neither praise nor alleged review manipulation is proven.",
+        "Product safeguard to test: show the actual programme requirement behind a shortlist item, preserve student ownership of the list, and publish what support is included and excluded."
+      ],
+      "sources": [
+        {
+          "title": "Yocket: Germany shortlist and document-support complaint",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1vj7hbq/my_honest_experience_with_yocket_dont_waste_your/",
+          "note": "Original text remains visible but author is displayed as deleted. No transaction or admissions documents verified."
+        },
+        {
+          "title": "Mixed views on paid counselling, including a positive Yocket reply",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1hse1z0/an_advice_from_my_experience_indian_study_abroad/",
+          "note": "Positive reply describes tailored editing and process support; others challenge its authenticity. Neither praise nor manipulation allegation independently verified. Original author later identifies Swiss visa context; not Germany outcome evidence."
+        },
+        {
+          "title": "Yocket Premium service page",
+          "url": "https://yocket.com/premium",
+          "note": "Offers counselling, shortlist/application support and an admission-offer guarantee. Marketing outcomes and testimonials have not been independently audited. No Germany-specific guarantee assumed."
+        },
+        {
+          "title": "Yocket Germany public-university landing page",
+          "url": "https://consultation.yocket.com/public-universities-germany",
+          "note": "Search-index text describes Germany shortlist, document, visa and pre-departure support. Direct open returned zero text lines. Use only for observed positioning, not verified outcomes."
+        }
+      ]
+    },
+    {
+      "title": "Agency evidence: LeapScholar",
+      "body": "A Germany review alleges pressure to enrol quickly, mismatch between promised and delivered support, application errors and disputed fee inclusions. A separate non-Germany-specific MBA enquiry raises concern about early document requests over WhatsApp. Neither account establishes contractual breach, a data breach, or systematic conduct.",
+      "bullets": [
+        "The vendor’s September 2026 FAQ explicitly says partner-university commissions fund free core counselling, with other products priced separately. This establishes a disclosed incentive, not that any recommendation was improper.",
+        "Its June 2026 cost answer describes paid end-to-end application support. The two pages may refer to different periods, products or destinations; the exact Germany/public-university scope and current terms need written confirmation.",
+        "The later FAQ acknowledges responsiveness and expectation concerns and advises verified official channels for documents. Its explanation is useful countercontext, not independent resolution of the Reddit cases.",
+        "Product safeguard to test: separate free guidance, optional paid services, third-party fees and referral relationships before asking for documents or contact consent."
+      ],
+      "sources": [
+        {
+          "title": "LeapScholar Germany review: service scope and payment dispute",
+          "url": "https://www.reddit.com/r/studyAbroad/comments/1mynxm0/leapscholar_study_abroad_germany_review/",
+          "note": "Includes critical and less critical replies. Reported quoted fee is a historical individual account, not a current price."
+        },
+        {
+          "title": "LeapScholar enquiry: concern about document requests over WhatsApp",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1o74126/experience_or_reviews_on_leap_scholar_im_finding/",
+          "note": "MBA enquiry from medical background; destination not established as Germany. Evidence of perceived privacy friction, not a proven breach."
+        },
+        {
+          "title": "LeapScholar commonly asked questions",
+          "url": "https://leapscholar.com/blog/leap-scholar-commonly-asked-questions/",
+          "note": "Official FAQ discloses university commissions and separately paid products. This is a self-description, not independent service-quality or compliance evidence."
+        },
+        {
+          "title": "LeapScholar counselling service cost answer",
+          "url": "https://leapscholar.com/questions/how-much-do-i-have-to-pay-for-the-counseling-and-services-you-provide",
+          "note": "Earlier official answer describes paid end-to-end application packages; compare with later free-core-counselling FAQ. May reflect timing, product or destination differences."
+        }
+      ]
+    },
+    {
+      "title": "What is a red flag, and what this research actually establishes",
+      "body": "Independent official warnings support checking representation claims. DAAD warns that some agencies misuse institutional names or branding; uni-assist says it does not cooperate with commercial placement agencies and identifies its official payment channel. Neither source identifies the three agencies discussed here as offenders.",
+      "bullets": [
+        "Established here: a disclosed commission-funded counselling model at LeapScholar; conditional package/refund language at YES Germany; institutional warnings against false affiliations.",
+        "Alleged here: private-university steering, generic or inaccurate shortlists, payment pressure, weak follow-up and uncomfortable document collection. These are topics for diligence and interviews, not findings of guilt.",
+        "Not established: actual commission rates, deliberate sabotage, fabricated reviews, comparative scam rates, illegal conduct, or that all private institutions or consultants are poor choices.",
+        "Practical checks: verify institutional representation directly; pay application fees through official channels; request itemised written scope and refund terms; retain access to your accounts and application records."
+      ],
+      "sources": [
+        {
+          "title": "Beware of Misleading Agencies",
+          "url": "https://www.daad.in/en/study-research-in-germany/studying-in-germany/beware-of-misleading-agencies/",
+          "note": "DAAD warns about false representation and misuse of institutional branding. It does not identify the named agencies in this report as offenders."
+        },
+        {
+          "title": "uni-assist contact and commercial-agency warning",
+          "url": "https://www.uni-assist.de/en/contact/",
+          "note": "States it does not cooperate with placement agencies; payment requests are issued by uni-assist via its portal. This is not a blanket prohibition on buying independent help."
+        },
+        {
+          "title": "YES Germany company policy",
+          "url": "https://www.yesgermany.com/about/company-policy/",
+          "note": "Original policy retrieved. Multiple package categories and refund conditions; contract applicability and text ambiguity need provider clarification. No customer-specific adjudication."
+        },
+        {
+          "title": "LeapScholar commonly asked questions",
+          "url": "https://leapscholar.com/blog/leap-scholar-commonly-asked-questions/",
+          "note": "Official FAQ discloses university commissions and separately paid products. This is a self-description, not independent service-quality or compliance evidence."
+        }
+      ]
+    },
+    {
+      "title": "Counterevidence: some students are buying time and accountability",
+      "body": "A working applicant describes a heavy work schedule, APS and IELTS already completed, and interest in paying msingermany for public-university applications. That is a real alternative job to be done: saving attention and coordinating work. It is prospective consideration, not a verified purchase or successful service.",
+      "bullets": [
+        "Publicly available instructions do not remove every student’s need for help. Avoid dismissing time-poor or first-generation applicants as incapable.",
+        "Positive counselling accounts describe tailored editing, reminders and preparation; their authenticity remains uncertain. Negative threads cannot establish universal service quality.",
+        "Test a manually assisted pilot with clear task ownership and progress visibility. Compare against DIY plus a checklist, not only against paid-agency claims.",
+        "The founder’s free launch may reduce payment friction, but does not prove quality, neutrality, retention or willingness to pay later."
+      ],
+      "sources": [
+        {
+          "title": "Busy working applicant considers paying for public-university applications",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1kz0a4p/paying_50k_to_consultancy_does_it_worth_it_for/",
+          "note": "Author identifies msingermany, describes limited time and a public-only promise. This is consideration, not a purchase, successful service, or verified willingness to pay."
+        },
+        {
+          "title": "Mixed views on paid counselling, including a positive Yocket reply",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1hse1z0/an_advice_from_my_experience_indian_study_abroad/",
+          "note": "Positive reply describes tailored editing and process support; others challenge its authenticity. Neither praise nor manipulation allegation independently verified. Original author later identifies Swiss visa context; not Germany outcome evidence."
+        },
+        {
+          "title": "YES Germany: refund criticism and positive counterexample",
+          "url": "https://www.reddit.com/r/studying_in_germany/comments/1vzrvu7/beware_of_yes_germany/",
+          "note": "Critical original post and positive reply both retrieved. Positive commenter says private offers were not pushed and public applications/test preparation were supported."
+        }
+      ]
+    },
+    {
+      "title": "Existing alternatives and the competitive bar",
+      "body": "Students can combine university programme pages, DAAD guidance, uni-assist tools, APS instructions, spreadsheets and peer support without buying a full-service package. My GUIDE already describes profile-based programme discovery and preliminary qualification checking; its full about page could not be retrieved in this run, so that observation is explicitly limited to indexed official text.",
+      "bullets": [
+        "University admissions offices: strongest destination for unresolved programme rules. The product should formulate a precise question and preserve their response, not overrule it.",
+        "DAAD / My GUIDE: authoritative orientation and overlapping discovery. Benchmark useful explanations and preliminary checks before claiming a new category.",
+        "uni-assist / APS: process-specific sources and checklists. They serve different functions and cannot be collapsed into a generic “application done” state.",
+        "Peers and forums: lived experience and reassurance, with unverifiable qualifications and outdated advice. Keep their accounts visibly separate from official requirements.",
+        "Paid agencies and student mentors: potential convenience and execution help, with service quality and incentives to examine. A free navigator must demonstrate reduced decision effort or better checking, not simply another list."
+      ],
+      "sources": [
+        {
+          "title": "uni-assist contact and commercial-agency warning",
+          "url": "https://www.uni-assist.de/en/contact/",
+          "note": "States it does not cooperate with placement agencies; payment requests are issued by uni-assist via its portal. This is not a blanket prohibition on buying independent help."
+        },
+        {
+          "title": "Bachelor Studies",
+          "url": "https://www.daad.in/en/study-research-in-germany/studying-in-germany/bachelor-studies/",
+          "note": "Use for pathway structure, not an automatic current eligibility decision. Page contains broad and potentially dated examples; verify target-cycle requirements with APS and institution."
+        },
+        {
+          "title": "Master Studies",
+          "url": "https://www.daad.in/en/study-research-in-germany/studying-in-germany/master-studies/",
+          "note": "Programme-level criteria, timing and application channels require checks with each university; broad orientation is not an admit predictor."
+        },
+        {
+          "title": "Academic Evaluation Center India",
+          "url": "https://aps-india.de/",
+          "note": "APS verifies Indian academic qualifications. Current homepage also carries a selected-fields dMAT update; consult live requirements rather than copy a forum checklist."
+        },
+        {
+          "title": "About My GUIDE",
+          "url": "https://www.myguide.de/en/about-my-guide/",
+          "note": "Search-index text describes free programme search and preliminary qualification checks. Direct open redirected to study-guide.com and failed; full original access not verified."
+        },
+        {
+          "title": "DIY Germany application: module comparison and administrative load",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1p0hkmq/i_applied_for_germanys_winter_intake_completely/",
+          "note": "Author reports self-managed applications and admits; outcome, effort and identity unverified. Offers help, so self-promotion possible."
+        },
+        {
+          "title": "Busy working applicant considers paying for public-university applications",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1kz0a4p/paying_50k_to_consultancy_does_it_worth_it_for/",
+          "note": "Author identifies msingermany, describes limited time and a public-only promise. This is consideration, not a purchase, successful service, or verified willingness to pay."
+        }
+      ]
+    },
+    {
+      "title": "Trust safeguards to test in the first product",
+      "body": "The following are design recommendations inferred from the evidence, not validated conversion or trust improvements. They fit the founder’s promise of cross-checkable viable paths and optional-depth input.",
+      "bullets": [
+        "Use a result explanation with programme/cycle, official source, checked date, matching requirement, profile evidence, missing facts and a concrete next action.",
+        "Allow a useful first exploration with a small profile, then explain why each additional question changes the result. Do not collect family financial documents just to show initial options.",
+        "Let students inspect and change assumptions, exclude private or high-cost options if they choose, and see all tradeoffs. Do not imply private automatically means illegitimate.",
+        "Keep student-controlled application accounts, explicit consent for contact or referrals, and visible disclosure of any later university, loan, insurance or accommodation relationship.",
+        "Publish a correction route and uncertainty state. Avoid admission, visa, scholarship, salary or job guarantees and uncalibrated percentage chances."
+      ],
+      "sources": [
+        {
+          "title": "Yocket: Germany shortlist and document-support complaint",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1vj7hbq/my_honest_experience_with_yocket_dont_waste_your/",
+          "note": "Original text remains visible but author is displayed as deleted. No transaction or admissions documents verified."
+        },
+        {
+          "title": "LeapScholar Germany review: service scope and payment dispute",
+          "url": "https://www.reddit.com/r/studyAbroad/comments/1mynxm0/leapscholar_study_abroad_germany_review/",
+          "note": "Includes critical and less critical replies. Reported quoted fee is a historical individual account, not a current price."
+        },
+        {
+          "title": "LeapScholar enquiry: concern about document requests over WhatsApp",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1o74126/experience_or_reviews_on_leap_scholar_im_finding/",
+          "note": "MBA enquiry from medical background; destination not established as Germany. Evidence of perceived privacy friction, not a proven breach."
+        },
+        {
+          "title": "Rejections attributed to ECTS and module requirements",
+          "url": "https://www.reddit.com/r/studyinGermany/comments/1w3hoy8/rejected_due_to_ectsmodule_requirements_how/",
+          "note": "Self-reported rejection reasons not independently checked; rendered relative ages varied across retrievals."
+        },
+        {
+          "title": "uni-assist contact and commercial-agency warning",
+          "url": "https://www.uni-assist.de/en/contact/",
+          "note": "States it does not cooperate with placement agencies; payment requests are issued by uni-assist via its portal. This is not a blanket prohibition on buying independent help."
+        }
+      ]
+    },
+    {
+      "title": "A concrete discovery plan",
+      "body": "Recruit separate bachelor’s and master’s participants, including both unsure explorers and students with a shortlist. A practical first round is six to eight observed sessions across those groups; it is a learning target, not a statistically representative sample or proof of demand.",
+      "bullets": [
+        "Ask: Show the last programme you considered. Which exact rule or cost made you uncertain, and what did you do next? Observe the original pages and workflow.",
+        "Ask: What did a consultant or mentor promise, what was written, what did you pay, and what work remained yours? Request only voluntary, redacted evidence and avoid leading with “scam”.",
+        "Ask: Why did you choose paid help or DIY? What would have saved meaningful time? Include satisfied customers and students who changed their mind.",
+        "Test the same decision using current alternatives and a manually prepared evidence-backed result. Observe comprehension of eligibility/unknowns, time to a next action, corrections and voluntary follow-up.",
+        "Ask which profile fields they would skip and why; compare minimal intake against optional detail. Test whether cited sources actually change understanding or action.",
+        "Later, test real payment only after useful repeat behaviour emerges. Do not use agency quotes or Reddit purchase interest to validate ₹500 per month/plan."
+      ],
+      "sources": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "SP-R01",
+      "title": "YES Germany: alleged steering toward private universities",
+      "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1u3q52y/yes_germany_tried_to_almost_scam_me_into_private/",
+      "publisher": "Reddit / r/Indians_StudyAbroad",
+      "date": "2026-06-12 (search-index date; relative page age inconsistent)",
+      "access": "Opened original page; text retrieved",
+      "kind": "Unverified first-person allegation",
+      "notes": "Author describes a February 2025 consultation. No contract, independent qualification assessment, or agency response verified. Automoderator repetition excluded."
+    },
+    {
+      "id": "SP-R02",
+      "title": "Yocket: Germany shortlist and document-support complaint",
+      "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1vj7hbq/my_honest_experience_with_yocket_dont_waste_your/",
+      "publisher": "Reddit / r/Indians_StudyAbroad",
+      "date": "2026-08-08 (search-index date)",
+      "access": "Opened original page; text retrieved",
+      "kind": "Unverified first-person allegation",
+      "notes": "Original text remains visible but author is displayed as deleted. No transaction or admissions documents verified."
+    },
+    {
+      "id": "SP-R03",
+      "title": "LeapScholar Germany review: service scope and payment dispute",
+      "url": "https://www.reddit.com/r/studyAbroad/comments/1mynxm0/leapscholar_study_abroad_germany_review/",
+      "publisher": "Reddit / r/studyAbroad",
+      "date": "2025-08-24 (search-index date)",
+      "access": "Opened original page; text retrieved",
+      "kind": "Unverified first-person allegation",
+      "notes": "Includes critical and less critical replies. Reported quoted fee is a historical individual account, not a current price."
+    },
+    {
+      "id": "SP-R04",
+      "title": "Bachelor applicant: consultant, VPD and deadline complaint",
+      "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1thg5n0/how_study_abroad_consultants_stole_my_money/",
+      "publisher": "Reddit / r/Indians_StudyAbroad",
+      "date": "2026-05-19 (search-index date)",
+      "access": "Opened original page; text retrieved",
+      "kind": "Unverified first-person allegation",
+      "notes": "Agency unnamed. Post also mentions coding a dashboard; possible promotional motive cannot be excluded. No prevalence inference."
+    },
+    {
+      "id": "SP-R05",
+      "title": "Mixed views on paid counselling, including a positive Yocket reply",
+      "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1hse1z0/an_advice_from_my_experience_indian_study_abroad/",
+      "publisher": "Reddit / r/Indians_StudyAbroad",
+      "date": "2025-01-03 original post (search-index date); replies later",
+      "access": "Opened original page; text retrieved",
+      "kind": "Mixed unverified user accounts",
+      "notes": "Positive reply describes tailored editing and process support; others challenge its authenticity. Neither praise nor manipulation allegation independently verified. Original author later identifies Swiss visa context; not Germany outcome evidence."
+    },
+    {
+      "id": "SP-R06",
+      "title": "LeapScholar enquiry: concern about document requests over WhatsApp",
+      "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1o74126/experience_or_reviews_on_leap_scholar_im_finding/",
+      "publisher": "Reddit / r/Indians_StudyAbroad",
+      "date": "2025-10-15 (search-index date)",
+      "access": "Opened original page; text retrieved",
+      "kind": "Unverified first-person account",
+      "notes": "MBA enquiry from medical background; destination not established as Germany. Evidence of perceived privacy friction, not a proven breach."
+    },
+    {
+      "id": "SP-R07",
+      "title": "DIY Germany application: module comparison and administrative load",
+      "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1p0hkmq/i_applied_for_germanys_winter_intake_completely/",
+      "publisher": "Reddit / r/Indians_StudyAbroad",
+      "date": "2025-11-18 (prior index record; relative ages inconsistent)",
+      "access": "Opened original page; text retrieved",
+      "kind": "Unverified retrospective self-report",
+      "notes": "Author reports self-managed applications and admits; outcome, effort and identity unverified. Offers help, so self-promotion possible."
+    },
+    {
+      "id": "SP-R08",
+      "title": "Bachelor now or master later? Results and deadline uncertainty",
+      "url": "https://www.reddit.com/r/studying_in_germany/comments/1ksth2n/need_advice_im_really_confused/",
+      "publisher": "Reddit / r/studying_in_germany",
+      "date": "2025-05-22 (prior index record)",
+      "access": "Opened original page; text retrieved",
+      "kind": "Unverified first-person question",
+      "notes": "Shows a pathway decision and timing anxiety. Individual eligibility assumptions are not authoritative rules."
+    },
+    {
+      "id": "SP-R09",
+      "title": "Rejections attributed to ECTS and module requirements",
+      "url": "https://www.reddit.com/r/studyinGermany/comments/1w3hoy8/rejected_due_to_ectsmodule_requirements_how/",
+      "publisher": "Reddit / r/studyinGermany",
+      "date": "Date not independently verified; targets Summer 2027",
+      "access": "Opened original page; text retrieved",
+      "kind": "Unverified first-person question",
+      "notes": "Self-reported rejection reasons not independently checked; rendered relative ages varied across retrievals."
+    },
+    {
+      "id": "SP-R10",
+      "title": "YES Germany: refund criticism and positive counterexample",
+      "url": "https://www.reddit.com/r/studying_in_germany/comments/1vzrvu7/beware_of_yes_germany/",
+      "publisher": "Reddit / r/studying_in_germany",
+      "date": "2026-08-27 original; positive reply 2026-09-12 (search-index dates)",
+      "access": "Opened original page; text retrieved",
+      "kind": "Mixed unverified user accounts",
+      "notes": "Critical original post and positive reply both retrieved. Positive commenter says private offers were not pushed and public applications/test preparation were supported."
+    },
+    {
+      "id": "SP-R11",
+      "title": "Busy working applicant considers paying for public-university applications",
+      "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1kz0a4p/paying_50k_to_consultancy_does_it_worth_it_for/",
+      "publisher": "Reddit / r/Indians_StudyAbroad",
+      "date": "2025 intake discussed; exact post date not verified",
+      "access": "Opened original page; text retrieved",
+      "kind": "Unverified prospective purchase consideration",
+      "notes": "Author identifies msingermany, describes limited time and a public-only promise. This is consideration, not a purchase, successful service, or verified willingness to pay."
+    },
+    {
+      "id": "SP-O01",
+      "title": "Beware of Misleading Agencies",
+      "url": "https://www.daad.in/en/study-research-in-germany/studying-in-germany/beware-of-misleading-agencies/",
+      "publisher": "DAAD India",
+      "date": "Not displayed; checked 2026-10-25",
+      "access": "Opened original page; text retrieved",
+      "kind": "Authoritative institutional warning",
+      "notes": "DAAD warns about false representation and misuse of institutional branding. It does not identify the named agencies in this report as offenders."
+    },
+    {
+      "id": "SP-O02",
+      "title": "uni-assist contact and commercial-agency warning",
+      "url": "https://www.uni-assist.de/en/contact/",
+      "publisher": "uni-assist",
+      "date": "Not displayed; checked 2026-10-25",
+      "access": "Opened original page; text retrieved",
+      "kind": "Authoritative application-process guidance",
+      "notes": "States it does not cooperate with placement agencies; payment requests are issued by uni-assist via its portal. This is not a blanket prohibition on buying independent help."
+    },
+    {
+      "id": "SP-O03",
+      "title": "Bachelor Studies",
+      "url": "https://www.daad.in/en/study-research-in-germany/studying-in-germany/bachelor-studies/",
+      "publisher": "DAAD India",
+      "date": "Not displayed; checked 2026-10-25",
+      "access": "Opened original page; text retrieved",
+      "kind": "Authoritative orientation",
+      "notes": "Use for pathway structure, not an automatic current eligibility decision. Page contains broad and potentially dated examples; verify target-cycle requirements with APS and institution."
+    },
+    {
+      "id": "SP-O04",
+      "title": "Master Studies",
+      "url": "https://www.daad.in/en/study-research-in-germany/studying-in-germany/master-studies/",
+      "publisher": "DAAD India",
+      "date": "Not displayed; checked 2026-10-25",
+      "access": "Opened original page; text retrieved",
+      "kind": "Authoritative orientation",
+      "notes": "Programme-level criteria, timing and application channels require checks with each university; broad orientation is not an admit predictor."
+    },
+    {
+      "id": "SP-O05",
+      "title": "Academic Evaluation Center India",
+      "url": "https://aps-india.de/",
+      "publisher": "APS India / German Embassy New Delhi",
+      "date": "Not displayed; checked 2026-10-25",
+      "access": "Opened original page; text retrieved",
+      "kind": "Authoritative verification-process guidance",
+      "notes": "APS verifies Indian academic qualifications. Current homepage also carries a selected-fields dMAT update; consult live requirements rather than copy a forum checklist."
+    },
+    {
+      "id": "SP-O06",
+      "title": "APS frequently asked questions",
+      "url": "https://aps-india.de/faqs/",
+      "publisher": "APS India",
+      "date": "Not displayed; checked 2026-10-25",
+      "access": "Opened original page; text retrieved",
+      "kind": "Authoritative verification-process guidance",
+      "notes": "Official reference for APS process and applicable exceptions; not an admissions authority for every programme."
+    },
+    {
+      "id": "SP-A01",
+      "title": "YES Germany company policy",
+      "url": "https://www.yesgermany.com/about/company-policy/",
+      "publisher": "YES Germany",
+      "date": "Not displayed; checked 2026-10-25",
+      "access": "Opened original page; text retrieved",
+      "kind": "Vendor terms",
+      "notes": "Original policy retrieved. Multiple package categories and refund conditions; contract applicability and text ambiguity need provider clarification. No customer-specific adjudication."
+    },
+    {
+      "id": "SP-A02",
+      "title": "LeapScholar commonly asked questions",
+      "url": "https://leapscholar.com/blog/leap-scholar-commonly-asked-questions/",
+      "publisher": "LeapScholar",
+      "date": "Updated 2026-09-21 as displayed",
+      "access": "Opened original page; text retrieved",
+      "kind": "Vendor disclosure",
+      "notes": "Official FAQ discloses university commissions and separately paid products. This is a self-description, not independent service-quality or compliance evidence."
+    },
+    {
+      "id": "SP-A03",
+      "title": "LeapScholar counselling service cost answer",
+      "url": "https://leapscholar.com/questions/how-much-do-i-have-to-pay-for-the-counseling-and-services-you-provide",
+      "publisher": "LeapScholar",
+      "date": "2026-06-23 as displayed",
+      "access": "Opened original page; text retrieved",
+      "kind": "Vendor disclosure",
+      "notes": "Earlier official answer describes paid end-to-end application packages; compare with later free-core-counselling FAQ. May reflect timing, product or destination differences."
+    },
+    {
+      "id": "SP-A04",
+      "title": "Yocket Premium service page",
+      "url": "https://yocket.com/premium",
+      "publisher": "Yocket",
+      "date": "Not displayed; checked 2026-10-25",
+      "access": "Opened original page; text retrieved",
+      "kind": "Vendor marketing",
+      "notes": "Offers counselling, shortlist/application support and an admission-offer guarantee. Marketing outcomes and testimonials have not been independently audited. No Germany-specific guarantee assumed."
+    },
+    {
+      "id": "SP-A05",
+      "title": "Yocket Germany public-university landing page",
+      "url": "https://consultation.yocket.com/public-universities-germany",
+      "publisher": "Yocket",
+      "date": "Not displayed; checked 2026-10-25",
+      "access": "Search-index text only; original open returned empty content",
+      "kind": "Vendor marketing",
+      "notes": "Search-index text describes Germany shortlist, document, visa and pre-departure support. Direct open returned zero text lines. Use only for observed positioning, not verified outcomes."
+    },
+    {
+      "id": "SP-O07",
+      "title": "About My GUIDE",
+      "url": "https://www.myguide.de/en/about-my-guide/",
+      "publisher": "DAAD / My GUIDE",
+      "date": "Not displayed; checked 2026-10-25",
+      "access": "Search-index text only; original redirected and fetch failed",
+      "kind": "Official service description with access limitation",
+      "notes": "Search-index text describes free programme search and preliminary qualification checks. Direct open redirected to study-guide.com and failed; full original access not verified."
+    }
+  ],
+  "limitations": [
+    "This is desk research using a deliberately complaint-enriched, self-selected public sample. It is not customer validation, legal findings, a representative survey, or an agency league table.",
+    "Named Reddit complaints and positive replies are unverified. Agencies were not contacted for case-specific responses; contracts, payments, admissions and reviewer identities were not authenticated.",
+    "No username, contact details, student documents or unnecessary personal profile details were retained. No direct quotation is needed to understand the findings.",
+    "Some indexed dates and rendered relative ages conflict. Two service pages could not be fully retrieved and are explicitly marked search-index-only; no inaccessible page is presented as inspected in full.",
+    "Official guidance and provider terms change. Current programme, APS, fee, deadline and contractual decisions must be rechecked for the intended intake. No live user accounts or application workflows were tested.",
+    "Budget feasibility, family influence, language readiness, non-technical subjects, less-online students, repeat usage and willingness to pay require direct research. No claim of a universal best path is supported."
+  ],
+  "recommendations": [
+    "Keep both degree levels but validate separate journeys; begin with a manually checked student shortlist or pathway decision rather than promise automated admissions certainty.",
+    "Compare every explanation with an official source and expose uncertainty; benchmark against university pages, DAAD/My GUIDE, spreadsheets and human help.",
+    "Build trust through transparent scope, optional input, correction handling and commercial disclosures; test whether those mechanisms actually improve decisions.",
+    "Interview satisfied as well as dissatisfied agency customers and time-poor applicants; measure observed work and next actions, not forum sentiment or headline review scores."
+  ]
+}

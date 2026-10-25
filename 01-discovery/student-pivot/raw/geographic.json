@@ -1,0 +1,315 @@
+{
+  "title": "Geographic entry, cohort beachhead and coverage expansion — Germany-first student product",
+  "asOf": "2026-10-25",
+  "queries": [
+    "site:daad.in master studies Germany Indian students requirements subjects programme university",
+    "site:daad.in bachelor studies Germany Indian students requirements German language",
+    "site:hochschulkompass.de downloads commercial use permission",
+    "site:aps-india.de dMAT 2027 subjects engineering commerce",
+    "site:uni-potsdam.de computer science master admission 2027 mathematics credits English",
+    "site:uni-passau.de bachelor artificial intelligence international admission language requirements",
+    "site:uni-assist.de application deadlines universities master bachelor winter summer",
+    "site:uni-potsdam.de English translations regulations German legally binding",
+    "site:studyinaustria.at admission requirements international students university",
+    "site:studyaustralia.gov.au courses CRICOS registered international students"
+  ],
+  "findings": [
+    {
+      "id": "D2-01",
+      "claim": "The defensible learning beachhead is an India→Germany decision cohort defined by intended degree, qualification route, named intake and source coverage, rather than a supposedly dense Indian city.",
+      "label": "Opinion / recommendation",
+      "sourceDate": "2026-10-25 assessment",
+      "confidence": "Medium for a practical learning design; not established acquisition advantage",
+      "sources": [
+        {
+          "title": "Bachelor Studies",
+          "url": "https://www.daad.in/en/study-research-in-germany/studying-in-germany/bachelor-studies/",
+          "publisher": "DAAD India",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "Master Studies",
+          "url": "https://www.daad.in/en/study-research-in-germany/studying-in-germany/master-studies/",
+          "publisher": "DAAD India",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "Master’s: criteria and deadlines",
+          "url": "https://www.uni-assist.de/en/how-to-apply/get-information/master/",
+          "publisher": "uni-assist e.V.",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 1
+        }
+      ],
+      "limitations": "No city-level prospect density, founder network, channel access or acquisition cost was established. Official office locations are not evidence that founders can recruit locally. Both bachelor’s and master’s remain product scope.",
+      "implication": "Start where actual recruitment permission and students are available, retain both degree levels in discovery, and narrow the manually audited data only after identifying participants’ concrete questions and intended intake."
+    },
+    {
+      "id": "D2-02",
+      "claim": "Degree level and qualification route materially change the matching task. The inspected Passau bachelor’s AI page distinguishes certificate origin and aptitude/language conditions, while Potsdam’s computer-science master’s page requires a relevant first degree, subject-specific knowledge and English proof, with regulations linked for details.",
+      "label": "Data (illustrative programme examples)",
+      "sourceDate": "Live official university pages checked 2026-10-25",
+      "confidence": "High that these inspected programme contexts differ; not an eligibility assessment",
+      "sources": [
+        {
+          "title": "B.Sc. Artificial Intelligence FAQ for international applicants",
+          "url": "https://www.uni-passau.de/en/bsc-artificial-intelligence/faq",
+          "publisher": "University of Passau",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "Computer Science | Master",
+          "url": "https://www.uni-potsdam.de/en/studium/what-to-study/master/computer-science",
+          "publisher": "University of Potsdam",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 1
+        }
+      ],
+      "limitations": "Two examples do not represent all German programmes. No applicant was evaluated, and these programmes are not recommendations or confirmed available seats. A field such as CS/Data is a candidate audit slice, not a proven best segment.",
+      "implication": "Use separate bachelor’s-entry and master’s-prerequisite models, and record applicant category, field and intake. A common chat interface can sit above different rule paths; one GPA score or generic qualification rule cannot replace both."
+    },
+    {
+      "id": "D2-03",
+      "claim": "Matching must be intake- and revision-aware. uni-assist says master’s deadlines may depend on course, nationality and certificate country. APS’s 15 October 2026 dMAT page says the updated affected-field list will be announced, while applying the additional documentation requirement to specified applicants for summer 2027 and later, subject to transition conditions.",
+      "label": "Data",
+      "sourceDate": "uni-assist page checked 2026-10-25; APS update 2026-10-15",
+      "confidence": "High for the published uncertainty and conditional nature; no automated field classification justified",
+      "sources": [
+        {
+          "title": "Master’s: criteria and deadlines",
+          "url": "https://www.uni-assist.de/en/how-to-apply/get-information/master/",
+          "publisher": "uni-assist e.V.",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "Digital Master Test for selected Master’s applicants in India",
+          "url": "https://aps-india.de/dmat/",
+          "publisher": "APS India",
+          "date": "Published and updated 2026-10-15; checked 2026-10-25",
+          "tier": 1
+        }
+      ],
+      "limitations": "The APS page does not establish the updated complete field list in the inspected text. Do not fill that gap from older summaries, general degree names, or a language model. One canonical uni-assist deadline URL returned 404; the linked master’s information page provides the retained evidence.",
+      "implication": "A pilot must name the target intake and recheck current authority pages at the decision point. Flag unresolved dMAT applicability for human/source confirmation rather than issuing a definitive eligibility path."
+    },
+    {
+      "id": "D2-04",
+      "claim": "A credible source hierarchy is necessary: universities decide admission, and some university English regulations explicitly identify the German version as binding. Potsdam’s published English translation is one such example.",
+      "label": "Data (defined official roles and an illustrative language warning)",
+      "sourceDate": "Current uni-assist page; Potsdam English consolidation dated 2024-09-18",
+      "confidence": "High for the stated boundaries; current individual rule validity needs verification",
+      "sources": [
+        {
+          "title": "FAQs: Get information",
+          "url": "https://www.uni-assist.de/en/faqs/get-information/",
+          "publisher": "uni-assist e.V.",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "General entrance and admission regulations — English information translation",
+          "url": "https://www.uni-potsdam.de/fileadmin/projects/studium/docs/03_studium_konkret/07_rechtsgrundlagen/studienordnungen/ZulO_EN.pdf",
+          "publisher": "University of Potsdam",
+          "date": "Consolidated version 2024-09-18; checked 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "Admission Regulations & Selection Statutes",
+          "url": "https://www.uni-potsdam.de/en/studium/studying/legalfoundations/zulassungsordnungen-fuer-master.html",
+          "publisher": "University of Potsdam",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 1
+        }
+      ],
+      "limitations": "The cited translation is older than 18 months and is used only to illustrate source/language authority, not as current admission or deadline guidance. Document versions and subject-specific provisions can change. Do not assume every English page is wrong or that one university’s hierarchy applies identically elsewhere.",
+      "implication": "For every material match, store the exact source, original-language passage, translation if used, relevant intake, checked date and rule version. Resolve source conflicts or label them unknown; source citation alone is not verification."
+    },
+    {
+      "id": "D2-05",
+      "claim": "HRK’s university-list download page states that the offered downloads are free for personal use only and that other uses, particularly commercial use including individual parts, require approval.",
+      "label": "Data (specific published usage terms)",
+      "sourceDate": "Live page checked 2026-10-25",
+      "confidence": "High for these download terms; not a legal opinion on all collection",
+      "sources": [
+        {
+          "title": "Download university lists",
+          "url": "https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html",
+          "publisher": "German Rectors’ Conference (HRK)",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 1
+        }
+      ],
+      "limitations": "This is specific to the downloads on the cited page, not a blanket declaration about every university fact or website. A product being free to students does not by itself establish that its data use is personal use. No licence was obtained or collection performed.",
+      "implication": "Before building a reusable dataset, create a source-rights register and obtain permission where required. Prefer approved feeds or separately verified official university facts; do not treat public access as a blanket ingestion or republication licence."
+    },
+    {
+      "id": "D2-06",
+      "claim": "Expansion requires new authority and data models rather than copying Germany rules. OeAD says Austrian institutions handle their own admissions and give specific requirements; Study Australia identifies CRICOS as the register for providers delivering education to international students on student visas.",
+      "label": "Data with a product-scope inference",
+      "sourceDate": "Current official pages checked 2026-10-25",
+      "confidence": "High for these jurisdiction-specific source roles; expansion feasibility not assessed",
+      "sources": [
+        {
+          "title": "Application and admission",
+          "url": "https://studyinaustria.at/en/plan-your-studies/application-and-admission",
+          "publisher": "OeAD / Study in Austria",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "Education governance and delivery",
+          "url": "https://www.studyaustralia.gov.au/en/Agent-Hub/education-governance-and-delivery",
+          "publisher": "Australian Government / Study Australia",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 1
+        }
+      ],
+      "limitations": "This is not a full Austrian or Australian market, visa, cost or admission analysis. USA and Canada were not researched in this block. No destination affordability, work, migration or comparative-quality verdict follows.",
+      "implication": "Keep the founder’s countries as a roadmap. Add each only after verifying local sources, rights, recognition routes, language, admissions, complete cost definitions and update ownership. Do not label Germany the best country when other relevant countries are outside audited coverage."
+    },
+    {
+      "id": "D2-07",
+      "claim": "The first pilot should establish whether an evidence-backed result helps real students make a more informed next decision under explicit coverage limits; it should not aim to prove nationwide distribution or market leadership.",
+      "label": "Opinion / proposed entry sequence",
+      "sourceDate": "2026-10-25 planning recommendation",
+      "confidence": "Provisional; no pilot results",
+      "sources": [
+        {
+          "title": "B.Sc. Artificial Intelligence FAQ for international applicants",
+          "url": "https://www.uni-passau.de/en/bsc-artificial-intelligence/faq",
+          "publisher": "University of Passau",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "Computer Science | Master",
+          "url": "https://www.uni-potsdam.de/en/studium/what-to-study/master/computer-science",
+          "publisher": "University of Potsdam",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "FAQs: Get information",
+          "url": "https://www.uni-assist.de/en/faqs/get-information/",
+          "publisher": "uni-assist e.V.",
+          "date": "Undated live page; checked 2026-10-25",
+          "tier": 1
+        }
+      ],
+      "limitations": "No capacity, spending limit, recruitability or expert-review resource has been confirmed. Proposed stages are a learning sequence, not an enrolment, conversion or delivery forecast.",
+      "implication": "Recruit across both degree levels and explore/check modes; audit a small set of relevant programmes; deliver results manually; compare them against free official/DIY baselines; record material errors, useful next actions, user effort and cost before expanding coverage."
+    }
+  ],
+  "entryPlan": {
+    "recommendation": "A mixed-level, Germany-intending learning cohort with explicit qualification and intake context; source-audited programme slices chosen after recruitment.",
+    "geographicScope": "India-based students considering Germany. No city priority claimed.",
+    "productScope": "Both bachelor’s and master’s, with profile and conversation. A temporary audit slice is not permanent exclusion of other routes.",
+    "interviewCells": [
+      "Bachelor’s / exploring",
+      "Bachelor’s / checking an existing plan",
+      "Master’s / exploring",
+      "Master’s / checking an existing plan"
+    ],
+    "sliceOptions": [
+      {
+        "name": "Mixed-level learning pilot",
+        "recommendation": "Default learning sequence",
+        "scope": "Recruit from all four cells and use a small, manually reviewed set of programme examples relevant to their real goals.",
+        "proves": "Whether the two modes, input-depth choices and evidence presentation help actual next decisions.",
+        "doesNotProve": "Countrywide reach, willingness to pay or automated eligibility accuracy."
+      },
+      {
+        "name": "Master’s programme-cluster data audit",
+        "recommendation": "Conditional first technical audit",
+        "scope": "One subject/intake cluster chosen from recruited students and retrievable, permission-compatible official evidence. English-taught CS/Data is an example candidate, not a locked first field.",
+        "proves": "Whether programme requirements can be represented faithfully and reviewed with available capacity.",
+        "risk": "Subject-credit mapping and evolving dMAT documentation may need human resolution; do not imply a three/four-year degree or grade alone settles admission."
+      },
+      {
+        "name": "Bachelor’s qualification-route audit",
+        "recommendation": "Parallel coverage check to preserve both levels",
+        "scope": "One precisely described school/college qualification route, with language/test and preparatory-study conditions explicitly represented.",
+        "proves": "Whether the product can distinguish orientation from a verified route and ask for the information that matters.",
+        "risk": "A generic country/GPA rule could produce false matches; do not reuse master’s assumptions."
+      }
+    ],
+    "sequence": [
+      {
+        "stage": "Define boundaries",
+        "work": "Name the study goal and intended intake; establish a reviewer, the founder-funded spend/time cap, and a clear statement of catalogue coverage."
+      },
+      {
+        "stage": "Recruit and observe",
+        "work": "Confirm access/permission to a real student cohort and cover both degree levels × explore/check modes. Observe a recent actual shortlisting task."
+      },
+      {
+        "stage": "Audit the data",
+        "work": "For the small relevant programme set, check qualification route, subject requirements, language, fees, intake, deadline, source authority/version, usage rights and unresolved conflicts."
+      },
+      {
+        "stage": "Deliver and compare",
+        "work": "Produce a manually verified result and compare the same case against official Study Guide/DIY guidance. Record what changed in the student’s understanding and next action."
+      },
+      {
+        "stage": "Expand within Germany",
+        "work": "Add only one coverage dimension at a time after auditing errors and update capacity; keep unsupported results visibly out of scope."
+      },
+      {
+        "stage": "Consider another country",
+        "work": "Research one roadmap country under the same evidence standard and compare equivalent costs, qualification routes and unknowns before enabling cross-country recommendations."
+      }
+    ],
+    "expansionConditions": [
+      "Verified usefulness against existing free alternatives for the first cohort, not merely sign-ups or compliments.",
+      "Material claim checks and a correction process work across both included degree paths.",
+      "The team has a measured cost per useful result and an agreed spend/update budget.",
+      "Destination-specific authoritative sources, reuse permissions, recognition and admission models are documented.",
+      "Tuition, living costs, financial-proof amounts, fees, currency/date, study duration and funding assumptions are separately defined for comparable profiles.",
+      "Known coverage gaps and conflicting sources are shown; no unsupported best-country, admission, visa, work or migration guarantee.",
+      "Source changes have an owner and a review cadence; important unresolved policy changes can block a personalized verdict."
+    ]
+  },
+  "gaps": [
+    {
+      "gap": "No verified city-level prospect density, founder access or channel cost.",
+      "howToFill": "Choose recruitment sites only after direct access/permission is confirmed; record recruitment source and observed eligibility rather than using office locations or national student counts as a local density proxy."
+    },
+    {
+      "gap": "No current founder-funded time/spend cap or confirmed review capacity.",
+      "howToFill": "Agree a bounded pilot envelope and log actual data review, support and compute effort per useful result."
+    },
+    {
+      "gap": "First subject and intake remain a learning choice, not a verified best market.",
+      "howToFill": "Use recruited students’ goals and source auditability to choose the first cluster while maintaining both degree levels in the discovery sample."
+    },
+    {
+      "gap": "Updated dMAT affected-field coverage remains unresolved in the inspected APS announcement.",
+      "howToFill": "Check APS and g.a.s.t. updates and obtain direct confirmation where needed before a personalized rule outcome; do not infer the list from historical summaries."
+    },
+    {
+      "gap": "No rights audit or permissions have been obtained for the proposed dataset.",
+      "howToFill": "Record per-source access/reuse terms, permission status and allowed uses before ingestion or publication."
+    },
+    {
+      "gap": "Austria, Australia, USA and Canada are not launch-ready coverage in this research.",
+      "howToFill": "Research one jurisdiction at a time and run comparable source/quality tests before cross-country ranking."
+    }
+  ],
+  "redFlags": [
+    "A broad all-programmes promise exceeds the verified coverage and review capacity currently established.",
+    "Unresolved qualification-route, intake or policy conditions can invalidate personalized eligibility conclusions.",
+    "Public source availability does not automatically confer data ingestion/republication rights.",
+    "Germany-first coverage cannot justify a best-country claim across unaudited destinations."
+  ],
+  "yellowFlags": [
+    "A master’s-heavy technical slice must not quietly become permanent exclusion of bachelor’s users.",
+    "Translated summaries can diverge from binding/current regulations; document authority and version matter.",
+    "Search, directory, university and policy pages can have different update cycles; retrieval date alone does not establish freshness.",
+    "A city-based GTM recommendation, migration outcome forecast or personal affordability verdict is not supported by this evidence."
+  ],
+  "summary": "Enter through a real, recruitable India→Germany learning cohort, organized by degree/qualification route and named intake. Preserve both levels, audit a small relevant data set, and compare manually delivered decisions against official/free baselines. Expand programme and country coverage only when authority, rights, freshness, quality and cost can be maintained."
+}

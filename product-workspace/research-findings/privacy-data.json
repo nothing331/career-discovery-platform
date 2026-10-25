@@ -1,0 +1,453 @@
+{
+  "id": "privacy-data",
+  "title": "Privacy & student data",
+  "asOf": "2026-10-25",
+  "summary": "The direct student product needs a deliberate data boundary: useful exploration with little identifying information, clear choices before saving or outreach, and student control of accounts. Official law is phased; Reddit flags trust risks but cannot prove a leak or misconduct. The strongest practical recommendation is to decide the age and data flow of the first pilot before collecting detailed profiles. These are research-backed planning proposals, not implemented controls or a legal clearance.",
+  "sections": [
+    {
+      "title": "1. What changed with a direct student product",
+      "body": "Research conclusion: the new product handles a student’s own circumstances rather than a counsellor-operated agency workflow. The research supports treating privacy as part of trust and input design. It does not establish that students will choose the product because of privacy.",
+      "bullets": [
+        "Confirmed scope: India → Germany, bachelor’s and master’s, optional profile plus conversation, free founder-funded launch. Neither free access nor optional fields establish a legal exemption.",
+        "Planning proposal: distinguish an anonymous exploration session, an explicitly saved profile, a founder-assisted review, and a separately requested referral. Explain who receives information at each step.",
+        "Planning proposal: return useful initial guidance before requesting a phone number, exact family income, bank proof or identity documents. Ask students which fields they would skip and why."
+      ],
+      "sources": [
+        {
+          "title": "PD01 · Digital Personal Data Protection Act, 2023",
+          "url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf"
+        },
+        {
+          "title": "PD09 · Yocket privacy policy",
+          "url": "https://yocket.com/privacy-policy"
+        },
+        {
+          "title": "PD12 · Student account: consultancy spam in university groups",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1ve63vw/how_consultancies_have_no_tact_spam_unis/"
+        }
+      ]
+    },
+    {
+      "title": "2. DPDP timing: enacted duties and operational dates are different",
+      "body": "G.S.R. 843(E) starts machinery provisions on publication, Consent Manager provisions after one year, and most substantive duties and rights after eighteen months. As of 25 October 2026, the core phase has not all commenced. The corresponding Rules also phase commencement. Printed 13 November dates and official descriptions of publication on 14 November differ; this report uses the statutory relative schedule, placing the core phase in May 2027, without claiming a settled operative day.",
+      "bullets": [
+        "Use the final November 2025 Rules with December corrigenda, rather than January 2025 draft text.",
+        "Planning proposal: maintain a dated legal-change register and resolve the operative day before making a deadline commitment. Do not turn a press release’s full-operationalisation wording into a claim that every duty is already live.",
+        "Transitional timing does not mean that existing Indian privacy or cyber-security obligations disappear."
+      ],
+      "sources": [
+        {
+          "title": "PD02 · G.S.R. 843(E): phased commencement",
+          "url": "https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf"
+        },
+        {
+          "title": "PD03 · Final DPDP Rules, 2025: G.S.R. 846(E)",
+          "url": "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf"
+        },
+        {
+          "title": "PD04 · G.S.R. 892(E): English corrigenda",
+          "url": "https://www.meity.gov.in/static/uploads/2025/12/3c7ebbae0e5456f493f486e6845df86b.pdf"
+        },
+        {
+          "title": "PD05 · Government notifies DPDP Rules",
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2190014"
+        }
+      ]
+    },
+    {
+      "title": "3. Existing IT/SPDI duties still need a launch-specific assessment",
+      "body": "DPDP section 44(2), including the omission of IT Act section 43A, is itself in the eighteen-month phase. The existing SPDI Rules therefore remain relevant to review during the transition. They identify passwords, financial and other specified information, prescribe a published privacy policy, necessary collection, consent, retention and security measures. The 2011 government clarification distinguishes direct user services from certain processor arrangements.",
+      "bullets": [
+        "Planning proposal: ask for an approximate available budget and funding preference, not bank/card details or a parent’s statement. Do not assume every financial conversation has the same statutory classification.",
+        "Confirm the operating entity, contractual relationships and actual fields before deciding which provisions apply. A free startup or sole-founder setup should not be treated as automatically outside the framework.",
+        "Access boundary: the Gazette SPDI copy was downloaded and locally extracted after web open timed out. A separate India Code IT Act PDF timed out and is not relied on as a fully reviewed consolidation."
+      ],
+      "sources": [
+        {
+          "title": "PD01 · Digital Personal Data Protection Act, 2023",
+          "url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf"
+        },
+        {
+          "title": "PD02 · G.S.R. 843(E): phased commencement",
+          "url": "https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf"
+        },
+        {
+          "title": "PD06 · SPDI Rules, 2011: G.S.R. 313(E)",
+          "url": "https://emb.mes.gov.in/Common/help/gsr3_10511.pdf"
+        },
+        {
+          "title": "PD07 · Clarification on SPDI Rules",
+          "url": "https://www.pib.gov.in/newsite/erelcontent.aspx?lang=2&reg=48&relid=74990"
+        }
+      ]
+    },
+    {
+      "title": "4. Consent and age should change the interaction",
+      "body": "The DPDP Act’s consent model, once operative, requires a specific informed affirmative choice limited to necessary data, with comparably easy withdrawal. The Act defines a child as under eighteen; child processing generally needs verifiable parental consent and restricts tracking, behavioural monitoring and targeted advertising, subject to exceptions. Bachelor’s interest does not prove adulthood.",
+      "bullets": [
+        "Planning proposal: test an adult-only first pilot while retaining bachelor’s and master’s product scope. This is an operational option for founder decision, not a new confirmed restriction.",
+        "If minors are included, design and review a guardian flow before collecting their profiles. An education-advice startup cannot simply assume it qualifies for an educational-institution exception.",
+        "Planning proposal: separate permission to save a profile, contact the student, share with a named adviser, and use anonymised feedback. Avoid one bundled checkbox for unrelated purposes."
+      ],
+      "sources": [
+        {
+          "title": "PD01 · Digital Personal Data Protection Act, 2023",
+          "url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf"
+        },
+        {
+          "title": "PD03 · Final DPDP Rules, 2025: G.S.R. 846(E)",
+          "url": "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf"
+        }
+      ]
+    },
+    {
+      "title": "5. Agency comparison: what Yocket actually discloses",
+      "body": "Vendor observation: Yocket’s privacy page describes profile and chat data, session recordings, sharing contactable information with business partners such as banks/private lenders, and marketing communications. It also states security protections and limits on some partner uses. Its terms describe DPDP consent commitments, and a signup/login/OTP-triggered clause for calls, SMS, WhatsApp and email for two years after last login/signup, with revocation.",
+      "bullets": [
+        "The privacy page mentions under-13 marketing restrictions while the terms invoke the DPDP framework. These are differently worded pages, not proof that the company lawfully or unlawfully processes a particular child’s data.",
+        "The broad marketing clause and consent commitments deserve written clarification at the actual signup step. This research did not create an account, inspect a consent receipt, test withdrawal or assess enforceability of its DND wording.",
+        "Planning proposal: differentiate by making outreach optional, naming recipients at referral time, and keeping profile access independent from marketing consent. Do not claim “we never share” if hosting or model vendors receive data."
+      ],
+      "sources": [
+        {
+          "title": "PD09 · Yocket privacy policy",
+          "url": "https://yocket.com/privacy-policy"
+        },
+        {
+          "title": "PD10 · Yocket terms: sections 6.2–6.5",
+          "url": "https://yocket.com/terms-and-conditions"
+        }
+      ]
+    },
+    {
+      "title": "6. A policy URL can describe a different product",
+      "body": "Vendor observation: LeapScholar’s current /privacy-policy page explicitly applies only to its read-only ChatGPT university-search app. It says query parameters may be logged up to thirty days and no persistent app profiles are created; its claims about no advertiser/data-broker sharing concern that app. They cannot establish the privacy of counselling calls, application uploads or loan referrals.",
+      "bullets": [
+        "Positive counterpoint: a narrowly defined read-only search surface can publish a specific small data footprint. This illustrates a feasible product boundary; it is a vendor statement, not an independent technical audit.",
+        "IDP’s policy was located but direct access returned 403 in the parent’s checks. Its heading is not enough for a substantive comparison; no negative conclusion follows from that fetch failure.",
+        "Planning proposal: publish separate, consistent explanations for anonymous search, saved chat, human review and any later application service. Link users to the policy for the exact service they are entering."
+      ],
+      "sources": [
+        {
+          "title": "PD11 · LeapScholar ChatGPT App privacy policy",
+          "url": "https://leapscholar.com/privacy-policy"
+        },
+        {
+          "title": "PD18 · IDP privacy policy — access limitation",
+          "url": "https://www.idp.com/privacy-policy/"
+        }
+      ]
+    },
+    {
+      "title": "7. Reddit signal: unwanted contact is a trust problem, attribution remains unproved",
+      "body": "In a directly opened r/Indians_StudyAbroad post, a master’s student describes consultancy spam in university WhatsApp/Facebook groups and unsolicited calls after applying for a loan. The author suspects misuse of contact details. The post neither identifies a verified leak source nor establishes unlawful sharing by a named agency. It is a qualitative problem signal, not prevalence evidence.",
+      "bullets": [
+        "Planning proposal: let students use a neutral alias in research and avoid adding them to groups without permission. Keep outreach lists separate from profile data.",
+        "Interview question: “After requesting counselling or a loan, what contacts did you receive, which were expected, and how did you try to stop them?” Ask for redacted timelines, not public phone numbers.",
+        "Test whether explicit no-marketing exploration increases profile completion or confidence. Treat this as a hypothesis until observed."
+      ],
+      "sources": [
+        {
+          "title": "PD12 · Student account: consultancy spam in university groups",
+          "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1ve63vw/how_consultancies_have_no_tact_spam_unis/"
+        }
+      ]
+    },
+    {
+      "title": "8. Reddit signal: students need control of application accounts",
+      "body": "A directly opened r/studyAbroad post describes an unnamed Indian consultancy applying to German colleges while refusing to provide the uni-assist credentials it created. The author asks if this is normal. The contract, agency response and outcome are unavailable. uni-assist’s own FAQ describes account recovery, email/password changes and applicant self-editing, and warns that it does not cooperate with commercial placement agencies.",
+      "bullets": [
+        "Planning proposal: keep the student in control of their own application email and recovery method. A matching navigator has no need to collect uni-assist, email or bank passwords.",
+        "If assisted execution is introduced later, design scoped authorisation and visible action logs rather than sharing a master credential. Do not submit anything merely because a profile has been completed.",
+        "For research, request redacted screenshots only when needed; never collect credentials to verify a complaint. Reposts of the same complaint are one account, not separate corroboration."
+      ],
+      "sources": [
+        {
+          "title": "PD13 · Student account: consultant withholding application credentials",
+          "url": "https://www.reddit.com/r/studyAbroad/comments/1ryt8uq/consultant_not_sharing_credentials_for/"
+        },
+        {
+          "title": "PD14 · uni-assist FAQs: My assist account and applying online",
+          "url": "https://www.uni-assist.de/en/faqs/apply-online/"
+        }
+      ]
+    },
+    {
+      "title": "9. Retention, deletion and incidents need a single operational plan",
+      "body": "Future DPDP Rules 6–8 specify safeguards, breach notices and retention. Rule 8(3) covers personal data, traffic data and processing logs for a minimum year for Seventh Schedule purposes, not only security logs; Rule 6 also addresses security-log retention. Deletion promises must reconcile these with applicable law. Rule 7 requires prompt initial intimation and further Board details within seventy-two hours, subject to its extension provision. These are deferred rules.",
+      "bullets": [
+        "Separately, existing CERT-In directions cover specified entities, require reporting listed cyber incidents within six hours of noticing/being notified, a contact point, and secure rolling 180-day ICT logs maintained within Indian jurisdiction. Confirm scope and current FAQ interpretations for the actual service.",
+        "Planning proposal: maintain a retention matrix for profiles, chats, support tickets, consent records, backups and required logs. Stop active personalisation on deletion while separately explaining any legally retained restricted records.",
+        "Planning proposal: create an incident owner and vendor escalation path before pilot data collection. Do not assume a hosting provider makes every report on the startup’s behalf, or that future DPDP reporting replaces CERT-In."
+      ],
+      "sources": [
+        {
+          "title": "PD03 · Final DPDP Rules, 2025: G.S.R. 846(E)",
+          "url": "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf"
+        },
+        {
+          "title": "PD04 · G.S.R. 892(E): English corrigenda",
+          "url": "https://www.meity.gov.in/static/uploads/2025/12/3c7ebbae0e5456f493f486e6845df86b.pdf"
+        },
+        {
+          "title": "PD15 · CERT-In cyber security directions under section 70B(6)",
+          "url": "https://www.cert-in.org.in/PDF/CERT-In_Directions_70B_28.04.2022.pdf"
+        },
+        {
+          "title": "PD16 · CERT-In official directions and FAQ publication hub",
+          "url": "https://www.cert-in.org.in/Directions70B.jsp"
+        }
+      ]
+    },
+    {
+      "title": "10. Keep the model and vendors from becoming an invisible data path",
+      "body": "The actual model, host, analytics and messaging stack is undecided. No provider-specific training, retention, region or deletion claim can be substantiated for this product yet. The DPDP framework makes fiduciaries responsible for processing on their behalf and contemplates processor contracts; cross-border restrictions require current checking.",
+      "bullets": [
+        "Planning proposal: list each recipient, purpose, location/subprocessors, default retention, training setting, deletion method, incident contact and contract. Verify settings on the chosen product tier, not a general marketing page.",
+        "Planning proposal: send only fields needed for a matching step; strip contact details, identifying document metadata and unrelated family narratives. Do not place full transcripts into analytics, logs or public issue trackers.",
+        "Planning proposal: show proposed profile facts back to the student before saving conversational inferences. Treat missing information as unknown; do not infer income, caste, health or family permission from unrelated clues.",
+        "Before an assisted review, show what the founder will read and how long it remains. The local planning workspace’s storage behavior does not establish the privacy of a future deployed application."
+      ],
+      "sources": [
+        {
+          "title": "PD01 · Digital Personal Data Protection Act, 2023",
+          "url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf"
+        },
+        {
+          "title": "PD03 · Final DPDP Rules, 2025: G.S.R. 846(E)",
+          "url": "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf"
+        }
+      ]
+    },
+    {
+      "title": "11. Germany interest does not automatically trigger or exclude GDPR",
+      "body": "The EDPB describes scope through EEA establishment or, for organisations outside it, offering goods/services to people in the EEA or monitoring their behaviour there. Payment is not necessary. A student’s Indian citizenship or interest in Germany alone does not settle these tests.",
+      "bullets": [
+        "Planning proposal: distinguish the destination field from actual user location and targeting. Reassess if the product recruits students already in Germany, establishes an EEA operation, or monitors people there.",
+        "If GDPR applies, obtain a separate assessment of legal basis, rights, processors, transfers and any additional profiling implications. Do not use this report as a blanket exemption or a compliance certification."
+      ],
+      "sources": [
+        {
+          "title": "PD08 · Data protection basics: GDPR scope",
+          "url": "https://www.edpb.europa.eu/sme/learn-the-basics/data-protection-basics_en"
+        }
+      ]
+    },
+    {
+      "title": "12. Source access rights and launch decisions remain open",
+      "body": "Official source availability is separate from permission to reuse a dataset. Hochschulkompass’s university-list downloads are free for personal use; other uses, including commercial use of parts, require approval. A free startup pilot is not necessarily personal use. This is a specific download condition, not a conclusion about ownership of every publicly stated university fact.",
+      "bullets": [
+        "Planning proposal: preserve provenance and access/permission records alongside programme facts; link to authoritative university requirements and record checked dates.",
+        "Before launch, decide age path, minimum inputs, storage mode, recipients, outreach permissions and retention. Review an actual data-flow diagram and actual signup screens rather than declaring compliance from a policy draft.",
+        "Student validation remains open: interview bachelor’s and master’s prospects about skipped questions, acceptable saving, contact preferences, account control and willingness to return. None of this public-source research measures demand or willingness to pay."
+      ],
+      "sources": [
+        {
+          "title": "PD17 · Hochschulkompass download permissions",
+          "url": "https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "PD01",
+      "title": "Digital Personal Data Protection Act, 2023",
+      "url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf",
+      "publisher": "Government of India / MeitY",
+      "date": "2023-08-11",
+      "kind": "Official statute",
+      "access": "Opened directly with web tool; relevant text inspected.",
+      "notes": "Read with the separate commencement notification; foundational text is older than 18 months."
+    },
+    {
+      "id": "PD02",
+      "title": "G.S.R. 843(E): phased commencement",
+      "url": "https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf",
+      "publisher": "Gazette of India / MeitY",
+      "date": "2025-11-13 notification; electronic identifier 2025-11-14",
+      "kind": "Official notification",
+      "access": "Opened directly with web tool; relevant text inspected.",
+      "notes": "English PDF page 2 sets relative publication, one-year and eighteen-month phases."
+    },
+    {
+      "id": "PD03",
+      "title": "Final DPDP Rules, 2025: G.S.R. 846(E)",
+      "url": "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf",
+      "publisher": "Gazette of India / MeitY",
+      "date": "2025-11-13 notification; official publication described as 2025-11-14",
+      "kind": "Official rules",
+      "access": "Opened directly with web tool; relevant text inspected.",
+      "notes": "English PDF pages 24–28: Rules 1, 3, 6–10; Rule 8(3) is broader than security logs alone. Most substantive rules have deferred commencement."
+    },
+    {
+      "id": "PD04",
+      "title": "G.S.R. 892(E): English corrigenda",
+      "url": "https://www.meity.gov.in/static/uploads/2025/12/3c7ebbae0e5456f493f486e6845df86b.pdf",
+      "publisher": "Gazette of India / MeitY",
+      "date": "2025-12-10 notification; printed Gazette 2025-12-11",
+      "kind": "Official corrigenda",
+      "access": "Opened directly with web tool; relevant text inspected.",
+      "notes": "Changes commencement wording to publication in the Official Gazette and makes other textual corrections."
+    },
+    {
+      "id": "PD05",
+      "title": "Government notifies DPDP Rules",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2190014",
+      "publisher": "Press Information Bureau / MeitY",
+      "date": "2025-11-14",
+      "kind": "Official explanation",
+      "access": "Opened directly with web tool; relevant text inspected.",
+      "notes": "Describes notification and an eighteen-month phased timeline. Summary language about full operationalisation must not override statutory commencement."
+    },
+    {
+      "id": "PD06",
+      "title": "SPDI Rules, 2011: G.S.R. 313(E)",
+      "url": "https://emb.mes.gov.in/Common/help/gsr3_10511.pdf",
+      "publisher": "Government of India Gazette, government-hosted copy",
+      "date": "2011-04-11 notification",
+      "kind": "Official rules",
+      "access": "Web open timed out. Direct HTTPS download succeeded (262,751 bytes); PDF text inspected locally with pypdf.",
+      "notes": "Foundational older rules; applicability and transition require entity/data-specific assessment."
+    },
+    {
+      "id": "PD07",
+      "title": "Clarification on SPDI Rules",
+      "url": "https://www.pib.gov.in/newsite/erelcontent.aspx?lang=2&reg=48&relid=74990",
+      "publisher": "Press Information Bureau / Department of Information Technology",
+      "date": "2011-08-24",
+      "kind": "Official clarification",
+      "access": "Opened directly with web tool; relevant text inspected.",
+      "notes": "Distinguishes direct service-to-person arrangements from certain contractual processing; electronic consent is contemplated."
+    },
+    {
+      "id": "PD08",
+      "title": "Data protection basics: GDPR scope",
+      "url": "https://www.edpb.europa.eu/sme/learn-the-basics/data-protection-basics_en",
+      "publisher": "European Data Protection Board",
+      "date": "Undated current guidance; accessed 2026-10-25",
+      "kind": "Official regulator guidance",
+      "access": "Opened directly with web tool; relevant text inspected.",
+      "notes": "Scope depends on EEA establishment, offering to people there, or monitoring there. Destination interest and citizenship are not the test."
+    },
+    {
+      "id": "PD09",
+      "title": "Yocket privacy policy",
+      "url": "https://yocket.com/privacy-policy",
+      "publisher": "Avocation Educational Services / Yocket",
+      "date": "Update date not displayed; accessed 2026-10-25",
+      "kind": "Vendor policy",
+      "access": "Opened directly with web tool; relevant text inspected.",
+      "notes": "Describes profile/chat collection, partner contact sharing, marketing and safeguards; stated policy is not an audit of actual practice."
+    },
+    {
+      "id": "PD10",
+      "title": "Yocket terms: sections 6.2–6.5",
+      "url": "https://yocket.com/terms-and-conditions",
+      "publisher": "Avocation Educational Services / Yocket",
+      "date": "Update date not established; accessed 2026-10-25",
+      "kind": "Vendor terms",
+      "access": "Opened directly with web tool; relevant text inspected.",
+      "notes": "Login/signup/OTP clause describes marketing contact for two years after last login/signup, with revocation. No finding about enforceability or actual consent flow."
+    },
+    {
+      "id": "PD11",
+      "title": "LeapScholar ChatGPT App privacy policy",
+      "url": "https://leapscholar.com/privacy-policy",
+      "publisher": "Outleap Technologies / LeapScholar",
+      "date": "Effective and last updated 2026-03-30",
+      "kind": "Vendor policy with narrow scope",
+      "access": "Opened directly with web tool; relevant text inspected.",
+      "notes": "Explicitly limited to its read-only ChatGPT search app; cannot establish wider counselling, loan or website data practices."
+    },
+    {
+      "id": "PD12",
+      "title": "Student account: consultancy spam in university groups",
+      "url": "https://www.reddit.com/r/Indians_StudyAbroad/comments/1ve63vw/how_consultancies_have_no_tact_spam_unis/",
+      "publisher": "Reddit / r/Indians_StudyAbroad",
+      "date": "Search index dates post 2026-08-03; live page shows relative age",
+      "kind": "Unverified community account",
+      "access": "Opened directly with web tool; relevant text inspected.",
+      "notes": "Author reports unsolicited calls after a loan process and suspects misuse. The source of contact details and any unlawful disclosure are unproved."
+    },
+    {
+      "id": "PD13",
+      "title": "Student account: consultant withholding application credentials",
+      "url": "https://www.reddit.com/r/studyAbroad/comments/1ryt8uq/consultant_not_sharing_credentials_for/",
+      "publisher": "Reddit / r/studyAbroad",
+      "date": "Search index dates post 2026-03-20; live page shows relative age",
+      "kind": "Unverified community account",
+      "access": "Opened directly with web tool; relevant text inspected.",
+      "notes": "Unnamed Indian consultancy; Germany applications. No contract, agency response or independent verification. Related crossposts are not independent incidents."
+    },
+    {
+      "id": "PD14",
+      "title": "uni-assist FAQs: My assist account and applying online",
+      "url": "https://www.uni-assist.de/en/faqs/apply-online/",
+      "publisher": "uni-assist e.V.",
+      "date": "Undated current guidance; accessed 2026-10-25",
+      "kind": "Official application guidance",
+      "access": "Opened directly with web tool; relevant text inspected.",
+      "notes": "Account email/password recovery and applicant information editing; notice says no cooperation with commercial placement agencies."
+    },
+    {
+      "id": "PD15",
+      "title": "CERT-In cyber security directions under section 70B(6)",
+      "url": "https://www.cert-in.org.in/PDF/CERT-In_Directions_70B_28.04.2022.pdf",
+      "publisher": "CERT-In / MeitY",
+      "date": "2022-04-28",
+      "kind": "Official directions",
+      "access": "Opened directly with web tool; relevant text inspected.",
+      "notes": "PDF pages 2–3: covered entities, listed incident reporting, point of contact, ICT logs. Annexure I includes data breaches/leaks. Sector-specific five-year subscriber rules must not be generalized to every student app."
+    },
+    {
+      "id": "PD16",
+      "title": "CERT-In official directions and FAQ publication hub",
+      "url": "https://www.cert-in.org.in/Directions70B.jsp",
+      "publisher": "CERT-In / MeitY",
+      "date": "Current hub; directions 2022",
+      "kind": "Official source hub",
+      "access": "Search-index text inspected; hub not opened. FAQ PDF open timed out; do not treat detailed FAQ interpretations as verified here.",
+      "notes": "Official search result lists directions, FAQ and 2022 MSME extension."
+    },
+    {
+      "id": "PD17",
+      "title": "Hochschulkompass download permissions",
+      "url": "https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html",
+      "publisher": "Hochschulrektorenkonferenz / Hochschulkompass",
+      "date": "Undated live terms; accessed 2026-10-25",
+      "kind": "Official source terms",
+      "access": "Opened directly with web tool; relevant text inspected.",
+      "notes": "Downloads are free for personal use; other uses including parts require HRK foundation approval. Narrow finding, not a full copyright assessment."
+    },
+    {
+      "id": "PD18",
+      "title": "IDP privacy policy — access limitation",
+      "url": "https://www.idp.com/privacy-policy/",
+      "publisher": "IDP Education",
+      "date": "Access attempted 2026-10-25",
+      "kind": "Unreviewed vendor policy",
+      "access": "Search-index heading located; direct open returned 403 in parent research. Full policy was not inspected.",
+      "notes": "Excluded from substantive comparison; a missing fetch proves nothing about its privacy quality."
+    }
+  ],
+  "limitations": [
+    "Legal analysis is general research for the stated concept, not a case-specific opinion or a compliance audit. The actual entity, user ages/locations, vendors and flows are still undecided.",
+    "Core DPDP commencement is eighteen months from official publication. Printed notification and official publication descriptions differ by a day; the exact operative calendar day needs resolution before a deadline commitment.",
+    "No exhaustive search of later government transfer orders, exemptions, court decisions or all sectoral duties was completed. Recheck official instruments against the launch date.",
+    "The CERT-In FAQ PDF timed out; detailed FAQ interpretations, including offshore-log copies, are not treated as fully reviewed. Directions were directly opened.",
+    "IDP full policy and the India Code IT Act consolidated PDF were inaccessible in attempted fetches. No substantive comparison or updated-consolidation assertion is based on those pages.",
+    "Reddit accounts are unverified, self-selected and non-representative. No student identity, contract, incident record, court finding, leak source or agency response was independently verified. Dates from search indexes are labelled.",
+    "Vendor policies establish stated practices and scope only. No account signup, consent withdrawal, deletion, security testing or processor audit was performed.",
+    "No data-processing implementation has been changed by this report. Public research cannot establish product trust, user demand or willingness to pay."
+  ],
+  "recommendations": [
+    "Propose an adult first pilot for founder decision while preserving both degree levels; design a reviewed guardian path before including minors.",
+    "Test an initial profile using degree/study level, academic background, interests and a budget range; avoid phone gates, identity uploads and parent banking documents at exploration.",
+    "Show what will be saved from chat and allow correction. Keep saving, human review, marketing and named referrals as separate meaningful choices.",
+    "Keep application accounts and recovery methods student-controlled; never request passwords for a matching service.",
+    "Complete an actual vendor/data-flow inventory, verify processor terms and regional/retention settings, and reconcile deletion wording with statutory retention.",
+    "Prepare an incident and access-control plan with named owners; assess current CERT-In duties alongside future DPDP obligations.",
+    "Use interviews to test whether these controls matter to students; track skipped-field reasons and useful-result completion before expanding collection."
+  ]
+}

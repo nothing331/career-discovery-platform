@@ -1,0 +1,404 @@
+{
+  "title": "Evidence-bounded target audience and initial learning cohort",
+  "asOf": "2026-10-25",
+  "researchMode": "Live public research; no direct interviews or outreach performed; persona cells are hypotheses",
+  "queries": [
+    "site:daad.in bachelor studies Germany India school leaving certificate language",
+    "site:daad.in master studies Germany admission requirements degree language",
+    "site:uni-assist.de India application documents language bachelor master",
+    "Indian students Germany study abroad destination decision parents funding survey research",
+    "site:reddit.com/r/Indians_StudyAbroad Germany shortlist confused parents funding",
+    "site:daad.de international students information sources survey study Germany",
+    "site:oxfordinternationaleducationgroup.com \"2026\" \"parents\" \"Student Global Mobility\"",
+    "site:acumen.education \"10K Indian Voices\" \"2026\""
+  ],
+  "findings": [
+    {
+      "id": "AUD-01",
+      "claim": "Official application guidance separates bachelor entry qualifications from master’s prior-degree/recognition requirements and states that additional criteria vary by university and programme. Being an Indian college student is not itself a sufficient eligibility profile.",
+      "label": "Data",
+      "sourceDate": "Live uni-assist guidance accessed 2026-10-25",
+      "confidence": "High for the documented process; no segment-size estimate inferred",
+      "sources": [
+        {
+          "title": "Bachelor & Staatsexamen: entrance qualifications and course-specific criteria",
+          "url": "https://www.uni-assist.de/en/how-to-apply/get-information/bachelor-staatsexamen/",
+          "publisher": "uni-assist",
+          "date": "Live guidance accessed 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "Master: related prior degree, recognition and course-specific criteria",
+          "url": "https://www.uni-assist.de/en/how-to-apply/get-information/master/",
+          "publisher": "uni-assist",
+          "date": "Live guidance accessed 2026-10-25",
+          "tier": 1
+        }
+      ],
+      "implication": "Segment the learning cohort by intended study level and actual qualification route. Keep both levels in product scope while asking different follow-up questions, instead of reusing a master-only questionnaire for everyone."
+    },
+    {
+      "id": "AUD-02",
+      "claim": "India-specific uni-assist notes request educational records and grading-system details. APS’s October 2026 notice makes the emerging dMAT procedure applicant-group and intake dependent, with transitions and an affected-field list still awaiting announcement; it is not a universal bachelor/master rule.",
+      "label": "Data",
+      "sourceDate": "APS updated 2026-10-15; uni-assist live page accessed 2026-10-25",
+      "confidence": "High for the published distinctions; the unresolved field mapping remains unknown",
+      "sources": [
+        {
+          "title": "India: country-specific document notes",
+          "url": "https://www.uni-assist.de/en/tools/info-country-by-country/details-country/country/in/",
+          "publisher": "uni-assist",
+          "date": "Live guidance accessed 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "Digital Master Test: staged applicant groups and transitional rules",
+          "url": "https://aps-india.de/dmat/",
+          "publisher": "APS India",
+          "date": "Published/updated 2026-10-15; accessed 2026-10-25",
+          "tier": 1
+        }
+      ],
+      "implication": "Record current qualification, intended degree, intake and what is known versus missing. A participant with no test score can still be interviewed or shown orientation; a specific eligibility conclusion must preserve unresolved rules rather than auto-reject or assume compliance."
+    },
+    {
+      "id": "AUD-03",
+      "claim": "A useful initial audience model is a two-by-two grid: bachelor versus master intent, crossed with open exploration versus an existing shortlist. This is a synthesis of the founder’s two starting states and the official distinction between degree routes, not an observed prevalence or validated persona taxonomy.",
+      "label": "Assumption",
+      "sourceDate": "Founder brief 2026-10-25 plus current official process references",
+      "confidence": "Medium as a research design; Low as an empirical description of the market",
+      "sources": [
+        {
+          "title": "Bachelor & Staatsexamen: entrance qualifications and course-specific criteria",
+          "url": "https://www.uni-assist.de/en/how-to-apply/get-information/bachelor-staatsexamen/",
+          "publisher": "uni-assist",
+          "date": "Live guidance accessed 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "Master: related prior degree, recognition and course-specific criteria",
+          "url": "https://www.uni-assist.de/en/how-to-apply/get-information/master/",
+          "publisher": "uni-assist",
+          "date": "Live guidance accessed 2026-10-25",
+          "tier": 1
+        }
+      ],
+      "implication": "Recruit across all four cells to discover whether their jobs and evidence needs actually differ. Do not attach fictional names, ages, salaries, budgets, family classes or representative quotes to the segments."
+    },
+    {
+      "id": "AUD-04",
+      "claim": "Two publisher-run 2026 India studies describe students as active decision-makers while retaining family influence. Oxford International reports two datasets totalling 20,341 respondents, with item-specific questions; Acumen’s pulse explicitly is not nationally representative. These are broader education populations, not a Germany-app buyer panel.",
+      "label": "Data",
+      "sourceDate": "Oxford International 2026-08-07; Acumen 2026-08",
+      "confidence": "Medium for directional context; Low for any India-to-Germany subgroup or payer estimate",
+      "sources": [
+        {
+          "title": "Learning, independence and opportunity: what Indian students want from overseas education",
+          "url": "https://www.oxfordinternationaleducationgroup.com/news-and-insights/learning-independence-and-opportunity-what-indian-students-want-from-overseas-education/",
+          "publisher": "Oxford International Education Group",
+          "date": "2026-08-07",
+          "tier": 2
+        },
+        {
+          "title": "10K Voices: International Education, Made in India — 2026 report",
+          "url": "https://embed-rech-01.dialog.cm/sannam_s4/docs/acumen_10k_indian_voices_report_2026",
+          "publisher": "Acumen / Sannam S4 (publisher-hosted report)",
+          "date": "2026-08",
+          "tier": 2
+        }
+      ],
+      "implication": "Treat the student as the user and ask who else participates in funding, risk and decisions. A parent may be an influencer or future payer, but do not assume control of an adult student’s account, disclose their profile automatically, or infer app willingness to pay from education funding."
+    },
+    {
+      "id": "AUD-05",
+      "claim": "DAAD India provides free information sessions, individual guidance and a peer ambassador network, and promotes personalized My GUIDE programme discovery. Acumen’s broader student pulse describes digital information and personal advice operating together; it does not establish one dominant channel for this Germany-first audience.",
+      "label": "Data",
+      "sourceDate": "DAAD live pages accessed 2026-10-25; Acumen report 2026-08",
+      "confidence": "High for the visible official alternatives; Medium for the broader behavior interpretation",
+      "sources": [
+        {
+          "title": "DAAD India Master Studies: guidance, institutions and My GUIDE",
+          "url": "https://www.daad.in/en/study-research-in-germany/studying-in-germany/master-studies/",
+          "publisher": "DAAD India",
+          "date": "Live guidance accessed 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "Web Session: Bachelors in Germany",
+          "url": "https://www.daad.in/en/event/web-session-bachelors-in-germany/",
+          "publisher": "DAAD Regional Office New Delhi",
+          "date": "Event 2026-03-12; accessed 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "DAAD Young Ambassadors: peer guidance and events",
+          "url": "https://www.daad.in/en/about-us/daad-network/daad-young-ambassadors/",
+          "publisher": "DAAD India",
+          "date": "Page mixes 2025 network and 2026/2027 programme material; accessed 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "10K Voices: International Education, Made in India — 2026 report",
+          "url": "https://embed-rech-01.dialog.cm/sannam_s4/docs/acumen_10k_indian_voices_report_2026",
+          "publisher": "Acumen / Sannam S4 (publisher-hosted report)",
+          "date": "2026-08",
+          "tier": 2
+        }
+      ],
+      "implication": "Interview students about the official sites, AI, peers and advisers they actually used and what each failed to resolve. Campus/alumni contacts and relevant public communities are recruitment candidates, not proven density, approved distribution partnerships or cheap CAC."
+    },
+    {
+      "id": "AUD-06",
+      "claim": "The proposed audience criteria should use the student’s study intention, qualification route, preferences and real information needs. Family context, hobbies or financial background should not become stereotypes that determine academic ability or eligibility; optional collection still needs a clear purpose and student control.",
+      "label": "Opinion",
+      "sourceDate": "Planning judgment based on the founder brief and purpose-limited data design; 2026-10-25",
+      "confidence": "Medium as a product principle; demand for the exact input design unvalidated",
+      "sources": [
+        {
+          "title": "DPDP Act, 2023: purpose-limited consent and necessary data",
+          "url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf",
+          "publisher": "MeitY / Government of India",
+          "date": "2023-08-11; foundational law older than 18 months; read with current phased commencement in regulatory.json",
+          "tier": 1
+        },
+        {
+          "title": "Bachelor & Staatsexamen: entrance qualifications and course-specific criteria",
+          "url": "https://www.uni-assist.de/en/how-to-apply/get-information/bachelor-staatsexamen/",
+          "publisher": "uni-assist",
+          "date": "Live guidance accessed 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "Master: related prior degree, recognition and course-specific criteria",
+          "url": "https://www.uni-assist.de/en/how-to-apply/get-information/master/",
+          "publisher": "uni-assist",
+          "date": "Live guidance accessed 2026-10-25",
+          "tier": 1
+        }
+      ],
+      "implication": "Test optional budget ranges and goals before collecting detailed parent or household records. Ask which detail changes the result, explain why it is requested, and let the student correct or omit it. Separate admission rules from preference-based matching."
+    },
+    {
+      "id": "AUD-07",
+      "claim": "Acumen’s 2026 report explicitly warns against national, regional or year-on-year inference from its student pulse; its search volumes indicate attention, not enrolment intention or willingness to pay. No reviewed source establishes this product’s city-level recruitability, typical app budget, paid decision cycle or conversion.",
+      "label": "Data",
+      "sourceDate": "Acumen research design 2026-08; assessment 2026-10-25",
+      "confidence": "High for the report’s stated limits; commercial metrics remain unknown",
+      "sources": [
+        {
+          "title": "10K Voices: International Education, Made in India — 2026 report",
+          "url": "https://embed-rech-01.dialog.cm/sannam_s4/docs/acumen_10k_indian_voices_report_2026",
+          "publisher": "Acumen / Sannam S4 (publisher-hosted report)",
+          "date": "2026-08",
+          "tier": 2
+        }
+      ],
+      "implication": "Use the first pilot to measure those quantities directly. Do not rank cities using these reports or convert enrolled stocks, applicant counts, educational borrowing or media interest into acquirable users or paid app demand."
+    }
+  ],
+  "segments": [
+    {
+      "id": "SEG-M-EXP",
+      "label": "Hypothesis — needs interviews",
+      "intendedStudyLevel": "Master’s",
+      "decisionStage": "Exploring without a settled shortlist",
+      "jobToInvestigate": "Find plausible study directions and what additional context is needed.",
+      "sourceBasis": [
+        "Founder brief: vague idea or existing plan",
+        "Official bachelor/master application distinctions"
+      ],
+      "interviewQuestions": [
+        "What degree/subjects have you studied or are you completing?",
+        "What study goals and language preferences matter?",
+        "Which decision are you trying to make now, and what have you already tried?"
+      ],
+      "representativeQuote": null,
+      "ageIncomeBudgetSalesCycle": "Not assigned; no evidence supports a fictional demographic or spending profile.",
+      "evidenceNeeded": "Recent concrete decision, current workaround, sources already used, voluntary explanation of constraints, and observed reaction to a prototype result."
+    },
+    {
+      "id": "SEG-M-CHECK",
+      "label": "Hypothesis — needs interviews",
+      "intendedStudyLevel": "Master’s",
+      "decisionStage": "Has a tentative programme shortlist or plan",
+      "jobToInvestigate": "Check stated options against programme-specific requirements, costs and unresolved assumptions.",
+      "sourceBasis": [
+        "Founder brief: vague idea or existing plan",
+        "Official bachelor/master application distinctions"
+      ],
+      "interviewQuestions": [
+        "Which actual programme and intake are you considering?",
+        "What source supports each claimed requirement?",
+        "What fact would change your current shortlist?"
+      ],
+      "representativeQuote": null,
+      "ageIncomeBudgetSalesCycle": "Not assigned; no evidence supports a fictional demographic or spending profile.",
+      "evidenceNeeded": "Recent concrete decision, current workaround, sources already used, voluntary explanation of constraints, and observed reaction to a prototype result."
+    },
+    {
+      "id": "SEG-B-EXP",
+      "label": "Hypothesis — needs interviews",
+      "intendedStudyLevel": "Bachelor’s",
+      "decisionStage": "Exploring a qualification route",
+      "jobToInvestigate": "Understand possible entrance/preparatory routes and language questions before building a shortlist.",
+      "sourceBasis": [
+        "Founder brief: vague idea or existing plan",
+        "Official bachelor/master application distinctions"
+      ],
+      "interviewQuestions": [
+        "What school and higher-education qualifications do you actually hold?",
+        "Which language and preparation routes are you considering?",
+        "What feels unclear about the next step?"
+      ],
+      "representativeQuote": null,
+      "ageIncomeBudgetSalesCycle": "Not assigned; no evidence supports a fictional demographic or spending profile.",
+      "evidenceNeeded": "Recent concrete decision, current workaround, sources already used, voluntary explanation of constraints, and observed reaction to a prototype result."
+    },
+    {
+      "id": "SEG-B-CHECK",
+      "label": "Hypothesis — needs interviews",
+      "intendedStudyLevel": "Bachelor’s",
+      "decisionStage": "Has a tentative programme or route",
+      "jobToInvestigate": "Check the planned entrance route, study language and programme-specific next steps.",
+      "sourceBasis": [
+        "Founder brief: vague idea or existing plan",
+        "Official bachelor/master application distinctions"
+      ],
+      "interviewQuestions": [
+        "What programme or preparatory route have you shortlisted?",
+        "Which entrance and language requirements have you checked?",
+        "Which unresolved question blocks your next action?"
+      ],
+      "representativeQuote": null,
+      "ageIncomeBudgetSalesCycle": "Not assigned; no evidence supports a fictional demographic or spending profile.",
+      "evidenceNeeded": "Recent concrete decision, current workaround, sources already used, voluntary explanation of constraints, and observed reaction to a prototype result."
+    }
+  ],
+  "proposedInitialLearningCohort": {
+    "label": "Research-design proposal, not founder-approved restriction or a statistically representative sample",
+    "definition": "Indian students reachable through actual founder contacts or explicitly permitted community access, currently considering Germany for a bachelor’s or master’s path and able to describe a recent real planning decision.",
+    "mix": "Cover all four degree-level × decision-stage cells. Give master’s questions appropriate attention because the founder emphasizes them, while retaining bachelor interviews; this is not a claim about their national proportions.",
+    "geography": "No city ranking. Start where the founder can actually recruit suitable participants; record access and response evidence.",
+    "agePolicy": "If no tested guardian flow exists, consider consenting adult volunteers for the first pilot. This requires a founder choice and does not remove bachelor support from the intended product.",
+    "requiredForResearch": [
+      "Self-reported intended study level",
+      "Current qualification route",
+      "A current Germany study-planning decision or shortlist",
+      "Preferred language and intended intake if known",
+      "What sources/workarounds they used and what remains unresolved"
+    ],
+    "notRequiredForFirstInterview": [
+      "Bank documents",
+      "Parent identities",
+      "Exact household income",
+      "Unredacted transcripts",
+      "Hobbies as an eligibility determinant"
+    ],
+    "samplingWarning": "Purposive discovery, not a basis for population, prevalence or conversion estimates."
+  },
+  "decisionCriteriaToTest": [
+    {
+      "criterion": "A fit explanation tied to current programme/route requirements",
+      "label": "Hypothesis, not a validated rank"
+    },
+    {
+      "criterion": "Understandable cost and funding assumptions with missing items visible",
+      "label": "Hypothesis, not a validated rank"
+    },
+    {
+      "criterion": "Study-language and qualification-route compatibility",
+      "label": "Hypothesis, not a validated rank"
+    },
+    {
+      "criterion": "A next action the student considers useful enough to take",
+      "label": "Hypothesis, not a validated rank"
+    },
+    {
+      "criterion": "Inspectability of sources, commercial incentives and personal-data handling",
+      "label": "Hypothesis, not a validated rank"
+    }
+  ],
+  "decisionRoles": {
+    "user": "Student (founder-confirmed)",
+    "possibleInfluencers": "Parents/family, peers, alumni or advisers; identify the actual role in each interview rather than assume it.",
+    "futurePayer": "Student or parent is the founder’s hypothesis. No paid conversion or billing frequency is validated.",
+    "launch": "Free and founder-funded; no purchase cycle can be inferred from the months-long education application process."
+  },
+  "recruitmentCandidates": [
+    {
+      "channel": "Founder’s real college/alumni contacts",
+      "access": "Not yet demonstrated in this research",
+      "density": "Unknown",
+      "cost": "Unmeasured",
+      "boundary": "Confirm the founder’s actual reach and recruit by decision need, not a fabricated city/income persona."
+    },
+    {
+      "channel": "Relevant DAAD guidance events and public peer networks",
+      "access": "Public surfaces observed; startup partnership or distribution rights not granted",
+      "density": "Unknown",
+      "cost": "No verified recruitment CAC",
+      "sources": [
+        {
+          "title": "Web Session: Bachelors in Germany",
+          "url": "https://www.daad.in/en/event/web-session-bachelors-in-germany/",
+          "publisher": "DAAD Regional Office New Delhi",
+          "date": "Event 2026-03-12; accessed 2026-10-25",
+          "tier": 1
+        },
+        {
+          "title": "DAAD Young Ambassadors: peer guidance and events",
+          "url": "https://www.daad.in/en/about-us/daad-network/daad-young-ambassadors/",
+          "publisher": "DAAD India",
+          "date": "Page mixes 2025 network and 2026/2027 programme material; accessed 2026-10-25",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "channel": "Student-run subject/Germany-planning communities",
+      "access": "Find and obtain moderator permission before any outreach",
+      "density": "Not measured; no membership count is treated as reachable demand",
+      "cost": "Unmeasured",
+      "boundary": "No outreach was performed. D1 will design channel tests."
+    }
+  ],
+  "outsideFirstPilotProposal": [
+    "People seeking guaranteed admission, a guaranteed visa, or immediate application execution rather than advisory study-path clarity.",
+    "Doctoral/medical-specialist routes not in the currently confirmed bachelor/master discovery scope.",
+    "Cases for which the team lacks a verified source/route; return a clear coverage boundary rather than an invented match."
+  ],
+  "reviewedButNotUsedAsCurrentSegmentRates": [
+    {
+      "source": "DAAD BintHo summary published April 2023, fieldwork winter 2020/21",
+      "url": "https://static.daad.de/media/daad_de/pdfs_nicht_barrierefrei/der-daad/analysen-studien/daad_2023_bintho-report_2020-21_summary.pdf",
+      "reason": "Older than 18 months and based on already-enrolled international students in Germany, not today’s prospective Indian app users; not used to rank their current channels."
+    },
+    {
+      "source": "HSBC Quality of Life India release, 2024-09-10",
+      "url": "https://www.about.hsbc.co.in/-/media/india/en/news-and-media/240911-indian-parents-priotirise-childs-overseas-education-over-retirement.pdf?sc_lang=en-GB",
+      "reason": "Older than 18 months and focused on affluent survey respondents, not the entire Indian Germany-bound population. Not used as an app-buyer, budget or parent-payer rate."
+    }
+  ],
+  "gaps": [
+    "No direct student interviews, observed prototype sessions, app-use habits, abandonment causes or willingness-to-pay evidence are established for this product.",
+    "No credible current distribution of the proposed four cells among Indian Germany prospects; enrolled stock and partial application figures do not establish it.",
+    "No validated typical age, income, budget, degree field, local city density, buyer influence order, sales cycle or app spend.",
+    "The founder’s actual campus/alumni access, current capacity and recruitment permission are still unknown.",
+    "Survey findings have distinct samples and questions; the Oxford page identifies two datasets and Acumen explicitly disclaims representativeness. Do not merge their percentages or treat them as Germany subgroup estimates.",
+    "The dMAT affected-field list and applicant-specific transition outcome remain unresolved; the supplemental APS freshness check must remain attached to any rule discussion.",
+    "The exact purpose and incremental value of optional family, hobby and project details must be learned rather than inferred from founder intent."
+  ],
+  "redFlags": [
+    "A vivid persona with invented income, budget, age, city, quote or purchase cycle would create false certainty.",
+    "Free initial use and parental education funding do not validate future app payment.",
+    "A budget or academic mark alone cannot determine a verified match across both study levels.",
+    "Official free personalized guidance already exists; the user’s unmet job must be demonstrated rather than assumed."
+  ],
+  "yellowFlags": [
+    "Both degree levels and both stages broaden the evaluation surface; keep the learning matrix explicit while narrowing the first verified data slice.",
+    "Family influence does not establish parental account access or consent to share an adult student’s data.",
+    "Regional official summaries may lag rule-setting sources. Intake-dependent APS changes must not be hardcoded from an older summary.",
+    "Public networks, event pages and digital search interest do not establish cheap or guaranteed recruitment."
+  ],
+  "summary": "Use decision stage and qualification route to organize discovery, not demographic stereotypes. Recruit a purposive mix of real Indian students considering Germany across both degree levels and explorer/checker modes. Treat family roles, trust criteria, optional data value and future payment as things to learn directly."
+}
