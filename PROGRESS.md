@@ -109,3 +109,11 @@ Document verification: checked at 320, 390, 768, 1280 and 1440px with no page-wi
 The editable workspace source is now `product-workspace/src/workspace.html`; rebuild the complete artifact with `python3 product-workspace/build-workspace.py` after source edits. This replaces the earlier individual-builder instruction for the main workspace. Source layout and sharing instructions are documented in `product-workspace/README.md`.
 
 Verification covered section routing, evidence links, browser Back, read-only archive controls, calculator persistence across navigation/reload, and export opened offline outside the repository with current form text and settings preserved. Layout checks passed at 320, 390, 768, 1280 and 1440px without page-width overflow or JavaScript errors. The collection pipeline remains a proposal; this change connects its documentation.
+
+## Required local extraction logs — 2026-10-27
+
+The founder requested local error capture so extraction failures can be investigated and used to improve the engine. Added `scraping/04-LOCAL-ERROR-LOGGING.md` and a dedicated Local error logs section in the POC plan. The proposed contract uses per-run JSONL events, sanitized diagnostics and an `ops_errors` SQLite index, with source/stage/version context, bounded retries, visible coverage gaps and saved-input replay. The review browser includes an Errors view; confirmed fixes become small sanitized regression fixtures.
+
+Logging, redaction, failure injection and interrupted-job recovery are now first-milestone acceptance requirements. Offline replay cannot call providers or reuse an incompatible model cache as a fresh result; paid-model replay requires an explicit budget. Actual runtime logs remain local and outside Git and the hosted planning site. This updates the implementation contract; the collection engine and logging runtime have not been built.
+
+Reserved root `data/` for local runtime files and excluded it from Git and both Markdown/JSON library scans, preventing diagnostic files from being bundled into exported or hosted HTML. Verified exclusion with synthetic local JSON/Markdown files, checked all 11 POC navigation anchors and embedded references, preserved founder state, validated example JSON and inline JavaScript syntax, and confirmed a deterministic rebuild.
