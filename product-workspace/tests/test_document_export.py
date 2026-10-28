@@ -28,6 +28,9 @@ class DocumentExportTests(unittest.TestCase):
             (logs / "diagnostic.md").write_text("# LOCAL_ONLY_SENTINEL\nPrivate traceback.")
             # Deliberately malformed: runtime data must be excluded before parsing.
             (logs / "run_summary.json").write_text("LOCAL_ONLY_SENTINEL, not JSON")
+            engine_logs = root / "data-engine" / "data" / "logs"
+            engine_logs.mkdir(parents=True)
+            (engine_logs / "diagnostic.json").write_text("LOCAL_ONLY_SENTINEL, not JSON")
 
             builder.ROOT, builder.HERE = root, workspace
             builder.build()
