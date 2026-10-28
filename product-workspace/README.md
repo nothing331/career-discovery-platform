@@ -16,6 +16,7 @@ The main HTML is a generated, portable artifact. Edit its sources and rebuild ra
 | `research-data.json`, `build-research.py` | Consolidated research report |
 | `strategy.html` | Strategy page |
 | `poc-plan.html` | POC proposal and cost calculator |
+| `../scraping/04-LOCAL-ERROR-LOGGING.md` | Required local event logs, error review and saved-input replay contract |
 | `research-findings/*.json` and repository Markdown/JSON | Embedded reference library |
 | `archive-before-planning-2026-10-25.html` | Preserved historical source; do not overwrite |
 
@@ -26,6 +27,14 @@ python3 -m pip install -r product-workspace/requirements-documents.txt
 python3 product-workspace/build-workspace.py
 ```
 
+Check that local runtime files cannot enter the shareable reference library:
+
+```sh
+python3 -m unittest discover -s product-workspace/tests
+```
+
 The builder refreshes the embedded reference library, rebuilds research, adds navigation back to the workspace on the standalone research/strategy/POC pages, then writes `index.html`. Running only the individual document/research builders does not refresh the complete workspace. No build dependency is required by the resulting HTML.
+
+The repository-root `data/` directory is reserved for local collection snapshots, logs, diagnostics, databases and exports. It is excluded from Git and from the embedded reference library. Keep runtime files there; move only deliberately sanitized regression fixtures into tracked test sources.
 
 An exported HTML copy contains browser edits; it does not automatically rewrite the source files. If incorporating those edits into a source rebuild, copy the exported workspace's `workspace-data` record into `src/workspace.html`, retaining its revision and updated timestamp. Preserve founder-confirmed answers and prior draft compatibility when changing defaults.

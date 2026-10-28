@@ -42,7 +42,7 @@ def build():
         'strategy': ('strategy.html', HERE / 'strategy.html', 'Strategy',
                      [('overview', 'Overview'), ('canvas', 'Lean Canvas'), ('positioning', 'Positioning'), ('model', 'Business model'), ('gtm', 'Go-to-market'), ('action', 'Learning plan')]),
         'poc': ('poc-plan.html', HERE / 'poc-plan.html', 'POC implementation',
-                [('overview', 'Proposal'), ('scope', 'Scope & output'), ('pipeline', 'Collection'), ('technical', 'Tools & API'), ('storage', 'Storage & refresh'), ('quality', 'Confidence'), ('budget', 'Pricing'), ('delivery', 'Build & acceptance'), ('expansion', 'Expansion'), ('sources', 'Sources')]),
+                [('overview', 'Proposal'), ('scope', 'Scope & output'), ('pipeline', 'Collection'), ('technical', 'Tools & API'), ('storage', 'Storage & refresh'), ('logging', 'Local error logs'), ('quality', 'Confidence'), ('budget', 'Pricing'), ('delivery', 'Build & acceptance'), ('expansion', 'Expansion'), ('sources', 'Sources')]),
         'archive': ('archive-before-planning-2026-10-25.html', HERE / 'archive-before-planning-2026-10-25.html', 'Archived workspace',
                     [('overview', 'Overview'), ('brief', 'Previous brief'), ('research', 'Previous research'), ('experiments', 'Previous experiments'), ('decisions', 'Previous decisions')]),
     }

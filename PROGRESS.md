@@ -1,9 +1,9 @@
 # PROGRESS — Student-facing discovery product
 
 **Project:** career-discovery-platform (directory name retained)
-**Updated:** 2026-10-25
+**Updated:** 2026-10-29
 **Active planning surface:** [Local HTML workspace](product-workspace/index.html)
-**Current stage:** Standard research complete; conditional recommendation carried into a Phase 4 strategy draft following the founder’s instruction to continue. Strategy review before Brand remains open. The formatted reader and its three additional studies are preserved.
+**Current stage:** Founder authorised the local data-engine POC. The separate `data-engine/` product now collects six official CS programme pages into local evidence/staging storage with error logs and replay. Live OpenRouter extraction and human review/publication remain pending; the student-facing product and demand validation are not complete. Earlier strategy/research records remain preserved.
 **Founder source:** `00-intake/founder-brief-2026-10-25.json` (verbatim browser export).
 **Working recommendation:** Free, manually reviewed Germany study-plan decision support, testing concrete requirements/cost/pathway questions against current free alternatives; not validated demand.
 **Research depth:** Standard selected by founder, 2026-10-25; four waves / 11 workstreams complete, plus an APS source-freshness check.
@@ -27,12 +27,12 @@
 
 ## Open decisions
 
-- Detailed student pain, first subject area, target intake, and year-of-study cohort.
+- Detailed student pain, target intake, and year-of-study cohort. Computer Science across bachelor’s/master’s is confirmed for the first collection slice.
 - Minimum useful profile, the result presentation, and how conversation should refine matches.
 - Data coverage and verification for the separate bachelor’s and master’s paths.
 - Retention and a later paid value proposition; whether payment is per month or per plan. Free launch is confirmed, not freemium or a paid subscription. Previous agency tiers do not carry over.
 - Current founder/team capacity, a free-pilot spend cap, and primary student evidence. Previous team details are historical context until refreshed.
-- The smallest useful Germany data slice. Existing knowledge-base and extraction specifications are relevant design inputs, with current facts and source access still needing verification.
+- Initial collection slice: Saarland, Passau and Freiburg, one CS bachelor’s and master’s programme each. Expansion beyond these six programmes, named-intake coverage and critical-fact verification remain open.
 
 ## Phase checklist for the current direction
 
@@ -43,7 +43,7 @@
 - [x] Phase 3.5: Research gate — Yellow / conditional continue. Founder said “you can continue now” after findings were shared; proceeded with a bounded strategy draft, not a claim of validated demand.
 - [x] Phase 4: Strategy drafted — Lean Canvas, positioning/value proposition, free-launch model, GTM and a proposed 30-day learning sequence. Review before Brand.
 - [ ] Phase 5: Brand — awaits the skill’s strategy-review checkpoint; no product brand selected.
-- [ ] Phase 6: Product
+- [ ] Phase 6: Product — local collection core implemented; live model verification, human publication review and student application remain incomplete.
 - [ ] Phase 7: Financial — current cap/capacity and forecast inputs unconfirmed; no paid projections fabricated.
 - [ ] Phase 8: Validation
 
@@ -109,3 +109,24 @@ Document verification: checked at 320, 390, 768, 1280 and 1440px with no page-wi
 The editable workspace source is now `product-workspace/src/workspace.html`; rebuild the complete artifact with `python3 product-workspace/build-workspace.py` after source edits. This replaces the earlier individual-builder instruction for the main workspace. Source layout and sharing instructions are documented in `product-workspace/README.md`.
 
 Verification covered section routing, evidence links, browser Back, read-only archive controls, calculator persistence across navigation/reload, and export opened offline outside the repository with current form text and settings preserved. Layout checks passed at 320, 390, 768, 1280 and 1440px without page-width overflow or JavaScript errors. The collection pipeline remains a proposal; this change connects its documentation.
+
+## Required local extraction logs — 2026-10-27
+
+The founder requested local error capture so extraction failures can be investigated and used to improve the engine. Added `scraping/04-LOCAL-ERROR-LOGGING.md` and a dedicated Local error logs section in the POC plan. The proposed contract uses per-run JSONL events, sanitized diagnostics and an `ops_errors` SQLite index, with source/stage/version context, bounded retries, visible coverage gaps and saved-input replay. The review browser includes an Errors view; confirmed fixes become small sanitized regression fixtures.
+
+Logging, redaction, failure injection and interrupted-job recovery are now first-milestone acceptance requirements. Offline replay cannot call providers or reuse an incompatible model cache as a fresh result; paid-model replay requires an explicit budget. Actual runtime logs remain local and outside Git and the hosted planning site. This updates the implementation contract; the collection engine and logging runtime have not been built.
+
+Reserved root `data/` for local runtime files and excluded it from Git and both Markdown/JSON library scans, preventing diagnostic files from being bundled into exported or hosted HTML. Verified exclusion with synthetic local JSON/Markdown files, checked all 11 POC navigation anchors and embedded references, preserved founder state, validated example JSON and inline JavaScript syntax, and confirmed a deterministic rebuild.
+
+
+## Separate local data-engine product — 2026-10-29
+
+The founder confirmed Computer Science across bachelor’s/master’s, delegated selection of three universities and low-cost models, specified OpenRouter for the generative layer, and requested a separate product folder, environment file and commit. Implemented `data-engine/` with an ignored product-level `.env`, a committed `.env.example`, a uv dependency lock, versioned SQLite/Alembic schema, persisted jobs/checkpoints, conservative HTML/PDF parsing, source snapshots, rule classification/extraction, review-gated publication, a read-only FastAPI catalogue, a local Streamlit review/Errors interface, structured logs and saved-input replay.
+
+Selected Saarland University, University of Passau and University of Freiburg: six core CS programmes, not a claim of complete country coverage or ten distinct programmes. No target intake was assumed. OpenRouter candidates are `qwen/qwen3.5-flash-02-23` and fallback `google/gemini-2.5-flash-lite`, with structured-output support advertised in the public catalogue; provider compatibility and extraction accuracy still need live testing. Requests are opt-in, have provider price ceilings and conservative reservations under the configured $5 per-run application cap. The secure API-key request timed out; no paid model calls occurred.
+
+Live no-key run `763deef7f5c2489489c607b8ccbd3689` completed all six seed documents, staging 38 claims: 19 passed deterministic validation and 19 were held for missing scope. Every real claim remains pending human review, and the published API is intentionally empty. An earlier Freiburg layout-table parser failure was captured locally, fixed in parser v2, replayed from its saved snapshot without network access, linked to its original error and resolved with a regression check. Runtime sources, databases, diagnostics, model inputs/caches and `.env` remain outside Git and workspace exports, including the nested `data-engine/data/` path.
+
+Verification: 22 engine tests cover publication/API visibility, bounded retries, robots/redirect handling, restarts, redaction, log-write failure, budget reservations, model response/usage/cache errors, linked replay resolution and synthetic PDF parsing. The workspace export exclusion test passes. Streamlit’s test harness renders all three review tabs against the real local dataset without exceptions. Runtime logs and source snapshots remain local and are not bundled in this commit.
+
+Known limits: automatic institution-name web discovery, broad country crawling, JavaScript/browser fallback, Jev integration, typed eligibility-rule compilation, automated retention/scheduling and authenticated hosted administration are later work. The existing Sites page remains the planning portal, not the Python worker. Start/review instructions and limitations are in `data-engine/README.md`.
