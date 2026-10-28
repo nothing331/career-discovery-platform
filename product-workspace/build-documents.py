@@ -23,7 +23,8 @@ def excluded_source(path):
     parts = path.relative_to(ROOT).parts
     # Runtime snapshots, diagnostics and log summaries are local operational data,
     # not documents to include in a shareable or hosted workspace.
-    return parts[0] == "data" or any(part.startswith(".") or part in {"node_modules", "venv"} for part in parts)
+    local_data = parts[0] == "data" or parts[:2] == ("data-engine", "data")
+    return local_data or any(part.startswith(".") or part in {"node_modules", "venv"} for part in parts)
 
 
 def build():
