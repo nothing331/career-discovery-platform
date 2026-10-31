@@ -6,15 +6,19 @@ from .acquire import normal
 
 EXTRACTOR_VERSION = "rules-v2"
 SCHEMA_VERSION = "claims-v1"
-PROMPT_VERSION = "grounded-v1"
+PROMPT_VERSION = "grounded-v2"
+CLASSIFIER_VERSION = "keyword-v2"
 
 
 def classify(block):
     text = (block.get("heading", "") + " " + block["text"]).lower()
+    # Programme titles and qualification rows are useful even without topic words.
+    if block.get("location", {}).get("tag") == "h1":
+        return "relevant"
     return (
         "relevant"
         if re.search(
-            r"admission|requirement|prerequis|fee|tuition|duration|semester|ects|language|deadline|zulassung|bewerbung|gebühr|sprach",
+            r"admission|requir|\bmust\b|prerequis|fee|tuition|duration|semester|ects|language|deadline|degree awarded|application|examination regulation|zulassung|bewerbung|gebühr|sprach|regelstudienzeit|leistungspunkt|studienbeitrag|einschreib|zugangsvoraussetzung|erforderlich|nachweis",
             text,
         )
         else "other"

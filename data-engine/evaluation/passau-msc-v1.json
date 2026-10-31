@@ -1,0 +1,1128 @@
+{
+  "schema_version": "evaluation-v1",
+  "name": "passau-msc-v1",
+  "annotation": "Manually labelled by implementation review from the retained 2026-10-28 official source. All 164 parsed blocks labelled before classifier tuning. Development regression, not independent admissions verification or a held-out accuracy estimate. No source body copied into Git.",
+  "source": {
+    "target_id": "passau-msc",
+    "url": "https://www.uni-passau.de/en/msc-computer-science/",
+    "sha256": "91af8aa53c5f16cb3ea73bc649b2c75588f2fd31b18699f4bb833c454f5015c3",
+    "raw_path": "raw/DE/passau-msc/91af8aa53c5f16cb3ea73bc649b2c75588f2fd31b18699f4bb833c454f5015c3.html",
+    "content_type": "text/html",
+    "observed_at": "2026-10-28T18:47:58.531109+00:00",
+    "parser": "blocks-v2"
+  },
+  "cases": [
+    {
+      "id": "b0000",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0001",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0002",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0003",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0004",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0005",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0006",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0007",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0008",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0009",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0010",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0011",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0012",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0013",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0014",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0015",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0016",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0017",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0018",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0019",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0020",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0021",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0022",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0023",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0024",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0025",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0026",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0027",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0028",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0029",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0030",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0031",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0032",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0033",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0034",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0035",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0036",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0037",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0038",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0039",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0040",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0041",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0042",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0043",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0044",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0045",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0046",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0047",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0048",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0049",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0050",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0051",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0052",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0053",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0054",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0055",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0056",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0057",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0058",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0059",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0060",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0061",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0062",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0063",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0064",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Programme identity or qualification metadata"
+    },
+    {
+      "id": "b0065",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Programme identity or qualification metadata"
+    },
+    {
+      "id": "b0066",
+      "expected": "relevant",
+      "critical": false,
+      "reason": "Programme identity or qualification metadata"
+    },
+    {
+      "id": "b0067",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Programme identity or qualification metadata"
+    },
+    {
+      "id": "b0068",
+      "expected": "relevant",
+      "critical": false,
+      "reason": "Programme identity or qualification metadata"
+    },
+    {
+      "id": "b0069",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Programme identity or qualification metadata"
+    },
+    {
+      "id": "b0070",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0071",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0072",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0073",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0074",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0075",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0076",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0077",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0078",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0079",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0080",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0081",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0082",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0083",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0084",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0085",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0086",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0087",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0088",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0089",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0090",
+      "expected": "relevant",
+      "critical": false,
+      "reason": "Entry conditions, alternatives, language waivers, or application timing; retain section context"
+    },
+    {
+      "id": "b0091",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Entry conditions, alternatives, language waivers, or application timing; retain section context"
+    },
+    {
+      "id": "b0092",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Entry conditions, alternatives, language waivers, or application timing; retain section context"
+    },
+    {
+      "id": "b0093",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Entry conditions, alternatives, language waivers, or application timing; retain section context"
+    },
+    {
+      "id": "b0094",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Entry conditions, alternatives, language waivers, or application timing; retain section context"
+    },
+    {
+      "id": "b0095",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Entry conditions, alternatives, language waivers, or application timing; retain section context"
+    },
+    {
+      "id": "b0096",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Entry conditions, alternatives, language waivers, or application timing; retain section context"
+    },
+    {
+      "id": "b0097",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Entry conditions, alternatives, language waivers, or application timing; retain section context"
+    },
+    {
+      "id": "b0098",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Entry conditions, alternatives, language waivers, or application timing; retain section context"
+    },
+    {
+      "id": "b0099",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Entry conditions, alternatives, language waivers, or application timing; retain section context"
+    },
+    {
+      "id": "b0100",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Entry conditions, alternatives, language waivers, or application timing; retain section context"
+    },
+    {
+      "id": "b0101",
+      "expected": "relevant",
+      "critical": false,
+      "reason": "Entry conditions, alternatives, language waivers, or application timing; retain section context"
+    },
+    {
+      "id": "b0102",
+      "expected": "relevant",
+      "critical": false,
+      "reason": "Entry conditions, alternatives, language waivers, or application timing; retain section context"
+    },
+    {
+      "id": "b0103",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Entry conditions, alternatives, language waivers, or application timing; retain section context"
+    },
+    {
+      "id": "b0104",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Entry conditions, alternatives, language waivers, or application timing; retain section context"
+    },
+    {
+      "id": "b0105",
+      "expected": "relevant",
+      "critical": false,
+      "reason": "Entry conditions, alternatives, language waivers, or application timing; retain section context"
+    },
+    {
+      "id": "b0106",
+      "expected": "relevant",
+      "critical": false,
+      "reason": "Entry conditions, alternatives, language waivers, or application timing; retain section context"
+    },
+    {
+      "id": "b0107",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Entry conditions, alternatives, language waivers, or application timing; retain section context"
+    },
+    {
+      "id": "b0108",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0109",
+      "expected": "relevant",
+      "critical": false,
+      "reason": "Pointer to programme-specific admissions or regulations"
+    },
+    {
+      "id": "b0110",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0111",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0112",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0113",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0114",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0115",
+      "expected": "relevant",
+      "critical": false,
+      "reason": "Pointer to programme-specific admissions or regulations"
+    },
+    {
+      "id": "b0116",
+      "expected": "relevant",
+      "critical": false,
+      "reason": "Pointer to programme-specific admissions or regulations"
+    },
+    {
+      "id": "b0117",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0118",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0119",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0120",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0121",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0122",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0123",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0124",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0125",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0126",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0127",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0128",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0129",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0130",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0131",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0132",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0133",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0134",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0135",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0136",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0137",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0138",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0139",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0140",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0141",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0142",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0143",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0144",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0145",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0146",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0147",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0148",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0149",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0150",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Tuition and semester-fee distinction"
+    },
+    {
+      "id": "b0151",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0152",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0153",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0154",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0155",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0156",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0157",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0158",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0159",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0160",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0161",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0162",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    },
+    {
+      "id": "b0163",
+      "expected": "other",
+      "critical": false,
+      "reason": "Navigation, module/career marketing, testimonials, privacy text, contact, or fields outside the supported claim schema"
+    }
+  ],
+  "expected_facts": [
+    {
+      "id": "title",
+      "field": "programme_title",
+      "location_id": "b0064",
+      "contains": [
+        "M.Sc. Computer Science"
+      ],
+      "critical": true
+    },
+    {
+      "id": "duration",
+      "field": "duration_semesters",
+      "location_id": "b0067",
+      "contains": [
+        "4"
+      ],
+      "critical": true
+    },
+    {
+      "id": "credits",
+      "field": "ects",
+      "location_id": "b0067",
+      "contains": [
+        "120"
+      ],
+      "critical": true
+    },
+    {
+      "id": "instruction-choices",
+      "field": "teaching_language",
+      "location_id": "b0069",
+      "contains": [
+        "German and English",
+        "entirely in either language"
+      ],
+      "critical": true
+    },
+    {
+      "id": "prior-degree-and-alternative-grade",
+      "field": "requirement",
+      "location_id": "b0091",
+      "contains": [
+        "110 ECTS",
+        "70%",
+        "2.7"
+      ],
+      "critical": true
+    },
+    {
+      "id": "non-ects-equivalence",
+      "field": "requirement",
+      "location_id": "b0092",
+      "contains": [
+        "four-year",
+        "two-thirds"
+      ],
+      "critical": true
+    },
+    {
+      "id": "thesis-alternative",
+      "field": "requirement",
+      "location_id": "b0094",
+      "contains": [
+        "If you did not write",
+        "research paper"
+      ],
+      "critical": true
+    },
+    {
+      "id": "language-waiver",
+      "field": "requirement",
+      "location_id": "b0096",
+      "contains": [
+        "neither your native language nor your language of instruction"
+      ],
+      "critical": true
+    },
+    {
+      "id": "german-a1-deferred-proof",
+      "field": "requirement",
+      "location_id": "b0100",
+      "contains": [
+        "A1 CEFR",
+        "end of your first year"
+      ],
+      "critical": true
+    },
+    {
+      "id": "winter-direct-date",
+      "field": "deadline",
+      "location_id": "b0103",
+      "contains": [
+        "31 May",
+        "direct applications"
+      ],
+      "critical": true
+    },
+    {
+      "id": "winter-uni-assist-date",
+      "field": "deadline",
+      "location_id": "b0104",
+      "contains": [
+        "31 May",
+        "uni-assist"
+      ],
+      "critical": true
+    },
+    {
+      "id": "summer-date",
+      "field": "deadline",
+      "location_id": "b0107",
+      "contains": [
+        "15 December"
+      ],
+      "critical": true
+    },
+    {
+      "id": "tuition-distinct-from-semester-fee",
+      "field": "tuition",
+      "location_id": "b0150",
+      "contains": [
+        "no tuition fees",
+        "semester fee"
+      ],
+      "critical": true
+    }
+  ]
+}

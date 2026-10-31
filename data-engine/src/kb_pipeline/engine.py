@@ -28,8 +28,10 @@ from .extract import (
     quality,
     EXTRACTOR_VERSION,
     SCHEMA_VERSION,
+    PROMPT_VERSION,
+    CLASSIFIER_VERSION,
 )
-from .openrouter import OpenRouter
+from .providers import extractor
 
 STOP_CODES = {
     "BUDGET_EXHAUSTED",
@@ -93,7 +95,10 @@ class Engine:
             "parser": PARSER_VERSION,
             "extractor": EXTRACTOR_VERSION,
             "schema": SCHEMA_VERSION,
+            "prompt": PROMPT_VERSION,
+            "classifier": CLASSIFIER_VERSION,
             "models": [self.settings.model, self.settings.fallback_model],
+            "model_config": self.settings.model_config(),
         }
         self.store.insert(
             runs,
@@ -219,6 +224,13 @@ class Engine:
             config["models"] != [self.settings.model, self.settings.fallback_model]
             or config["parser"] != PARSER_VERSION
             or config["extractor"] != EXTRACTOR_VERSION
+            or config.get("classifier", "keyword-v1") != CLASSIFIER_VERSION
+            or config.get("schema") != SCHEMA_VERSION
+            or config.get("prompt", "grounded-v1") != PROMPT_VERSION
+            or (
+                config["llm"]
+                and config.get("model_config") != self.settings.model_config()
+            )
         ):
             raise PipelineError(
                 "RUN_CONFIG_CHANGED",
@@ -226,7 +238,7 @@ class Engine:
             )
         log = RunLog(self.store, run_id, [self.settings.api_key])
         fetcher = Fetcher(self.settings, self.store, self.fetch_client, self.sleep)
-        model = OpenRouter(self.settings, self.store, run_id, log, self.model_client)
+        model = extractor(self.settings, self.store, run_id, log, self.model_client)
         self.store.update(runs, run_id, status="running", finished_at=None)
         try:
             log.emit(
@@ -391,7 +403,7 @@ class Engine:
             "document.classified",
             job_id=job["id"],
             counts=dict(classified),
-            classifier="keyword-v1",
+            classifier=CLASSIFIER_VERSION,
         )
         candidate = rule_claims(document, target)
         for skipped in document.get("rule_skips", []):
@@ -486,6 +498,9 @@ class Engine:
 
     def report(self, run_id):
         run = self.store.one(runs, id=run_id)
+        config = json.loads(run["config"])
+        provider = config.get("model_config", {}).get("provider", "openrouter")
+        estimated = config["llm"] and provider == "groq"
         js = self.store.rows(jobs, run_id=run_id)
         cs = self.store.rows(claims, run_id=run_id)
         es = self.store.rows(errors, run_id=run_id)
@@ -500,7 +515,15 @@ class Engine:
             "error_events": len(es),
             "error_jobs": len({e["job_id"] for e in es}),
             "budget_usd": run["budget"],
-            "known_cost_usd": run["spent"],
+            "provider": provider,
+            "cost_basis": "token_rate_estimate"
+            if estimated
+            else "provider_reported"
+            if config["llm"]
+            else "no_model_calls",
+            "accounted_cost_usd": run["spent"],
+            "known_cost_usd": None if estimated else run["spent"],
+            "estimated_cost_usd": run["spent"] if estimated else None,
             "reserved_or_uncertain_usd": run["reserved"],
             "parent_error_id": run["parent_error_id"],
             "publication": "No automatic publication; human review required",

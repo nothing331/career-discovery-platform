@@ -6,6 +6,7 @@ from logging.handlers import RotatingFileHandler
 from pathlib import Path
 import re
 import shutil
+import sys
 import traceback
 from urllib.parse import urlsplit, urlunsplit
 from .db import uid, now, errors
@@ -163,7 +164,9 @@ class RunLog:
             created_at=now(),
             retryable=int(getattr(exc, "retryable", False)),
         )
-        print(f"{stage}: {code} (error {error_id})")
+        print(
+            self.redactor.text(f"{stage}: {code} (error {error_id})"), file=sys.stderr
+        )
         return error_id
 
     def summary(self, value):

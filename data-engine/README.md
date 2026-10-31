@@ -12,7 +12,7 @@ The founder chose Computer Science across bachelor's and master's levels, and de
 
 These are collection test cases, not recommendations that a student should apply. The sources exercise English/German instruction, different page layouts and applicant-specific fees/requirements. A named intake has not been selected; the engine does not invent a future year from a recurring deadline.
 
-Generative extraction uses **OpenRouter**. Configurable low-cost candidates are `qwen/qwen3.5-flash-02-23` and fallback `google/gemini-2.5-flash-lite`. Both advertised `structured_outputs` in [OpenRouter's public model catalogue](https://openrouter.ai/api/v1/models) when selected. `models` prints current pricing/capabilities without a key. Actual provider/schema compatibility needs a live smoke test with a funded account. Price, latency and accuracy are not guaranteed by the catalogue.
+Generative extraction defaults to **OpenRouter**, with **Groq available for the initial one-programme pilot**. OpenRouter candidates are `qwen/qwen3.5-flash-02-23` and fallback `google/gemini-2.5-flash-lite`. Both advertised `structured_outputs` in [OpenRouter's public model catalogue](https://openrouter.ai/api/v1/models) when selected. Its `models` command prints current pricing/capabilities without a key. The Groq pilot uses `openai/gpt-oss-20b`; Groq documents [strict structured output](https://console.groq.com/docs/structured-outputs) for GPT-OSS 20B/120B. Each provider still needs a live smoke test: mock tests do not establish provider compatibility or extraction accuracy.
 
 ## Setup
 
@@ -26,7 +26,7 @@ uv run python -m kb_pipeline init
 uv run python -m kb_pipeline models
 ```
 
-`.env` is the product-level, ignored environment file. `.env.example` is the committed template. Paths resolve from this product folder, even when commands run from the repository root. Do not overwrite a populated `.env`. Live extraction reads `OPENROUTER_API_KEY` from this file or the process environment; it is never committed or printed by `init`.
+`.env` is the product-level, ignored environment file. `.env.example` is the committed template. Paths resolve from this product folder, even when commands run from the repository root. Do not overwrite a populated `.env`. Set `LLM_PROVIDER=openrouter` or `LLM_PROVIDER=groq`; only the selected provider's key/model/rates are read. Keys can also come from the process environment and are never committed or printed by `init`. Live requests always require an explicit `--llm`.
 
 ## Collect without a model key
 
@@ -62,6 +62,54 @@ No model calls occur without `--llm`. Model/provider prices are bounded through 
 
 Model inputs are archived locally without authorization headers. Responses must pass the JSON schema, exact evidence-location checks and value grounding. Rules and model outputs remain candidates. `requirement` candidates preserve source text and conditions; this version does not compile them into executable admissions/eligibility rules. There is no student matching engine or personal-profile ingestion.
 
+## Test one programme with Groq
+
+In the ignored `data-engine/.env`, set these values and enter your key locally:
+
+```dotenv
+LLM_PROVIDER=groq
+GROQ_API_KEY=
+GROQ_MODEL=openai/gpt-oss-20b
+GROQ_INPUT_PER_MILLION=0.075
+GROQ_OUTPUT_PER_MILLION=0.30
+GROQ_MAX_OUTPUT_TOKENS=4096
+```
+
+The existing development machine's `.env` has been prepared for Groq with a blank key. `init` confirms the selected provider/model and whether a key is configured without exposing it. The committed template continues to default to OpenRouter.
+
+From `data-engine/`:
+
+```sh
+# Portable synthetic classifier evaluation; no source or model requests:
+uv run python -m kb_pipeline evaluate-classifier
+# Evaluate every section of the retained Passau master's page:
+uv run python -m kb_pipeline evaluate-classifier --dataset evaluation/passau-msc-v1.json
+# Rehearse collection from that snapshot, using local rules only:
+uv run python -m kb_pipeline pilot
+# After adding the Groq key, run the same programme through the LLM layer:
+uv run python -m kb_pipeline pilot --llm --budget-usd 0.05
+# Re-evaluate an existing pilot's model claims without another provider call:
+uv run python -m kb_pipeline evaluate-extraction RUN_ID
+```
+
+The pilot is pinned to the official Passau M.Sc. Computer Science HTML snapshot captured on 2026-10-28. It verifies the source SHA-256 and parser version before any model request, checks classifier thresholds, and enqueues only that programme using the retained snapshot. It never refetches the page. This still allows provider requests when `--llm` is supplied; it is not an offline model run. All facts stay pending human review. Local rules alone do **not** count as successful LLM evaluation.
+
+The snapshot itself stays in ignored `data/`; Git contains labels/provenance and 13 selected expected facts, not the full captured page. **A fresh clone needs the exact retained source artifact and its database snapshot entry for this pilot.** A newly fetched or changed page cannot silently substitute for it: retain the original artifact or create and manually review a new version of the evaluation manifest. The portable synthetic classifier evaluation needs neither snapshots nor a key. A normal `run --target passau-msc --llm --budget-usd 0.05` can test a newly fetched page, but cannot reuse this manifest as accuracy evidence when its hash differs.
+
+Groq requests use its native OpenAI-compatible endpoint, strict JSON schema and a capped completion length, with low reasoning effort. There is no automatic cross-provider fallback; OpenRouter credits are not needed for a Groq run. Model inputs, results, errors and reservations retain the normal local audit trail. Provider, model, prompt, schema and rate settings separate caches; changing them requires a new run/replay. HTTP 429, timeouts, uncertain token usage, changed response models and ambiguous HTTP 400 generation/schema failures pause model work without a retry loop. Successful token usage is accounted even if returned JSON is invalid.
+
+Groq's API returns token counts rather than OpenRouter's `usage.cost`. Reports therefore distinguish `estimated_cost_usd` / `cost_basis=token_rate_estimate` from `known_cost_usd` (null for Groq). The internal run ledger's `spent` field is the token-rate estimate for Groq; it is not an invoice. [Groq's model prices](https://console.groq.com/docs/models), checked 2026-10-31, listed GPT-OSS 20B at $0.075/M input and $0.30/M output. Verify/update the configured rates when pricing/model changes; GPT-OSS 120B needs its own rates. Free-tier availability, reasoning tokens, retries and billing adjustments can affect the account bill. The $0.05 pilot cap bounds requests using configured estimates and conservative reservations, not a provider-enforced dollar ceiling. Provider spend settings remain separate. `models` under Groq prints configured estimates/documentation without calling the provider or claiming live prices.
+
+## Classifier and extraction evaluation
+
+The implemented classifier is a local binary relevance filter (`keyword-v2`), not Jev or a trained model. `evaluation/classifier-smoke-v1.json` contains 34 manually written English/German examples. `evaluation/passau-msc-v1.json` independently labels all 164 parsed sections of the retained programme, including titles, qualification/language alternatives, deadlines, fees, navigation and marketing. Labels were assigned by reading the source, not by accepting classifier predictions.
+
+Reports include the confusion matrix, precision, recall, critical misses and every mismatch. The pilot requires recall >=95%, precision >=70%, and zero critical misses. The precision threshold deliberately tolerates extra text to avoid dropping admission conditions; it is a development gate, not a product accuracy target. Source review and these examples exposed missed titles/degree rows, examination-regulation pointers and unheaded `must`/`required` conditions, which were added to the rules. The retained real-page evaluation reports 100% recall (28/28), 75.7% precision (28/37), and no critical misses. Nine irrelevant blocks still pass the filter and remain visible in the report. These are development fixtures used during tuning, **not held-out validation or country-wide accuracy estimates**.
+
+Extraction evaluation considers only claims marked with the selected LLM provider, not rule-generated candidates. It checks the exact source snapshot, 13 expected facts/condition phrases, verbatim grounding, validation holds/conflicts and job completion. A missed expected fact or ungrounded model claim fails the pilot. Missing applicant/intake scope remains a hold rather than an invented value; a passing regression does not approve those facts or verify every additional claim semantically. The same fixture can be rerun after setting `LLM_PROVIDER=openrouter` and adding that key. It measures provider/model changes without changing the underlying source.
+
+Evaluation JSON reports are written under ignored `data/evaluations/`. CLI diagnostics go to stderr so a single pilot/evaluation report on stdout remains machine-readable. Exit code 1 means evaluation failed, source provenance mismatched, or execution failed; inspect the JSON report and normal local error logs. Without `--llm`, the extraction evaluation is explicitly `not_run`.
+
 ## Inspect and review
 
 ```sh
@@ -89,6 +137,7 @@ data/
   parsed/<content-hash>/<parser-version>/document.json
   model_inputs/<request-fingerprint>.json
   model_cache/<request-fingerprint>.json
+  evaluations/<evaluation-id>.json
   logs/<run-id>/events.jsonl
   logs/<run-id>/run_summary.json
   logs/<run-id>/diagnostics/<error-id>.json

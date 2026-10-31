@@ -21,9 +21,14 @@ report = e.report(run_id)
 cols = st.columns(3)
 cols[0].metric("Completed documents", report["documents"].get("done", 0))
 cols[1].metric("Error events", report["error_events"])
-cols[2].metric("Known model cost", "$" + report["known_cost_usd"])
+cols[2].metric(
+    "Estimated model cost"
+    if report["cost_basis"] == "token_rate_estimate"
+    else "Known model cost",
+    "$" + report["accounted_cost_usd"],
+)
 st.caption(
-    f"Status: {report['status']} · Reserved/uncertain cost: ${report['reserved_or_uncertain_usd']} · Errors can include held candidates in an otherwise parsed document."
+    f"Status: {report['status']} · Provider: {report['provider']} · Cost basis: {report['cost_basis']} · Reserved/uncertain cost: ${report['reserved_or_uncertain_usd']} · Errors can include held candidates in an otherwise parsed document."
 )
 review_tab, error_tab, public_tab = st.tabs(
     ["Claims & evidence", "Errors", "Published catalogue"]
