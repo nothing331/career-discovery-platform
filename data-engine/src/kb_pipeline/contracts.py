@@ -1,5 +1,31 @@
 from typing import Literal
-from pydantic import BaseModel, ConfigDict, Field, HttpUrl, model_validator
+from pydantic import (
+    BaseModel,
+    ConfigDict,
+    Field,
+    HttpUrl,
+    model_validator,
+    field_validator,
+)
+
+UNKNOWN_SCOPE = {
+    "",
+    "unknown",
+    "not established",
+    "not specified",
+    "not provided",
+    "unspecified",
+    "null",
+    "none",
+    "n/a",
+}
+
+
+def scope_known(value):
+    return (
+        isinstance(value, str)
+        and " ".join(value.split()).casefold() not in UNKNOWN_SCOPE
+    )
 
 
 class Target(BaseModel):
@@ -40,14 +66,42 @@ class Claim(BaseModel):
         "deadline",
         "requirement",
     ]
-    value: str = Field(min_length=1, max_length=3000)
-    quote: str = Field(min_length=4, max_length=4000)
+    value: str = Field(
+        min_length=1,
+        max_length=3000,
+        description="Copy source text. duration_semesters and ects contain digits only, e.g. '4', '120'. For requirement copy the entire block text, preserving alternatives and exceptions.",
+    )
+    quote: str = Field(
+        min_length=4,
+        max_length=4000,
+        description="Verbatim supporting block text, including its conditions and exceptions.",
+    )
     location_id: str
     # Unknown applicability is explicit, never inferred from an institution-wide label.
-    applicant_group: str
-    intake: str | None
-    conditions: str | None
+    applicant_group: str = Field(
+        description="Explicitly stated applicant group; otherwise exactly 'not established'. Do not infer nationality or universal applicability."
+    )
+    intake: str | None = Field(
+        description="Explicit source-backed intake including a year, otherwise actual JSON null. Never the string 'null', 'unknown' or 'not established'. A recurring season/date without a year is not a named intake."
+    )
+    conditions: str | None = Field(
+        description="Copy applicability, alternatives and exceptions from the source, or actual JSON null when none are stated."
+    )
     method: str = "rules"
+
+    @field_validator("intake", "conditions", mode="before")
+    @classmethod
+    def canonical_null(cls, value):
+        return (
+            None
+            if value is None or isinstance(value, str) and not scope_known(value)
+            else value
+        )
+
+    @field_validator("applicant_group", mode="before")
+    @classmethod
+    def canonical_applicants(cls, value):
+        return value if scope_known(value) else "not established"
 
 
 class Batch(BaseModel):

@@ -1,12 +1,12 @@
 """Conservative rules and exact-evidence checks. No admissions decisions."""
 
 import re
-from .contracts import Claim
+from .contracts import Claim, scope_known
 from .acquire import normal
 
-EXTRACTOR_VERSION = "rules-v2"
-SCHEMA_VERSION = "claims-v1"
-PROMPT_VERSION = "grounded-v2"
+EXTRACTOR_VERSION = "rules-v3"
+SCHEMA_VERSION = "claims-v2"
+PROMPT_VERSION = "grounded-v3"
 CLASSIFIER_VERSION = "keyword-v2"
 
 
@@ -105,29 +105,43 @@ def rule_claims(document, target):
 
 
 def validate(claim, document):
+    if not normal(claim.value) or not normal(claim.quote):
+        return "EMPTY_CLAIM"
     block = next((b for b in document["blocks"] if b["id"] == claim.location_id), None)
     if not block or normal(claim.quote) not in normal(block["text"]):
         return "EVIDENCE_NOT_FOUND"
     if normal(claim.value).casefold() not in normal(claim.quote).casefold():
         return "VALUE_NOT_GROUNDED"
+    if claim.field == "requirement" and (
+        normal(claim.value) != normal(block["text"])
+        or normal(claim.quote) != normal(block["text"])
+    ):
+        return "INCOMPLETE_REQUIREMENT"
     if claim.field in ("duration_semesters", "ects") and (
         not claim.value.isdecimal() or not 1 <= int(claim.value) <= 1000
     ):
         return "INVALID_NUMERIC_VALUE"
-    if claim.field == "deadline" and not claim.intake:
-        return "MISSING_INTAKE_SCOPE"
+    if claim.field == "deadline":
+        years = re.findall(r"\b(?:19|20|21)\d{2}\b", claim.intake or "")
+        if not scope_known(claim.intake) or not years:
+            return "MISSING_INTAKE_SCOPE"
+        context = block.get("heading", "") + " " + block["text"]
+        if any(year not in context for year in years):
+            return "INTAKE_NOT_GROUNDED"
     if claim.field in (
         "tuition",
         "semester_contribution",
         "requirement",
-    ) and claim.applicant_group in ("", "not established", "unknown"):
+    ) and not scope_known(claim.applicant_group):
         return "MISSING_APPLICANT_SCOPE"
     return "valid"
 
 
 def quality(claim, status):
-    scope = claim.applicant_group not in ("", "unknown", "not established") and (
-        claim.field != "deadline" or claim.intake is not None
+    scope = scope_known(claim.applicant_group) and (
+        claim.field != "deadline"
+        or status != "MISSING_INTAKE_SCOPE"
+        and status != "INTAKE_NOT_GROUNDED"
     )
     components = {
         "authority": 30,

@@ -32,6 +32,7 @@ from .extract import (
     CLASSIFIER_VERSION,
 )
 from .providers import extractor
+from .grounding import ground, GROUNDING_VERSION
 
 STOP_CODES = {
     "BUDGET_EXHAUSTED",
@@ -97,6 +98,7 @@ class Engine:
             "schema": SCHEMA_VERSION,
             "prompt": PROMPT_VERSION,
             "classifier": CLASSIFIER_VERSION,
+            "grounder": GROUNDING_VERSION,
             "models": [self.settings.model, self.settings.fallback_model],
             "model_config": self.settings.model_config(),
         }
@@ -227,6 +229,7 @@ class Engine:
             or config.get("classifier", "keyword-v1") != CLASSIFIER_VERSION
             or config.get("schema") != SCHEMA_VERSION
             or config.get("prompt", "grounded-v1") != PROMPT_VERSION
+            or config.get("grounder") != GROUNDING_VERSION
             or (
                 config["llm"]
                 and config.get("model_config") != self.settings.model_config()
@@ -411,7 +414,20 @@ class Engine:
         if config["llm"]:
             model.job_id = job["id"]
             relevant = [b for b in document["blocks"] if classify(b) == "relevant"]
-            candidate += model.extract(relevant, target, offline=config["offline"])
+            raw_candidates = model.extract(relevant, target, offline=config["offline"])
+            log.emit(
+                "model.candidates_received",
+                job_id=job["id"],
+                count=len(raw_candidates),
+                grounder=GROUNDING_VERSION,
+            )
+            for raw_claim in raw_candidates:
+                grounded, action = ground(
+                    raw_claim, relevant, source_blocks=document["blocks"]
+                )
+                if action:
+                    log.emit("claim.grounded", job_id=job["id"], **action)
+                candidate.extend(grounded)
         log.emit(
             "stage.succeeded",
             job_id=job["id"],
@@ -507,6 +523,9 @@ class Engine:
         return {
             "run_id": run_id,
             "status": run["status"],
+            "validation_version_current": config.get("extractor") == EXTRACTOR_VERSION
+            and config.get("schema") == SCHEMA_VERSION
+            and config.get("grounder") == GROUNDING_VERSION,
             "documents": dict(Counter(j["status"] for j in js)),
             "attempted_documents": len(js),
             "claims": dict(Counter(c["validation"] for c in cs)),
