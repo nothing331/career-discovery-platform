@@ -4,8 +4,9 @@ import re
 from .contracts import Claim, scope_known, GENERAL_SCOPE, RECURRING_INTAKES
 from .acquire import normal
 from .clauses import requirement_hold
+from .structured import parse_amount
 
-EXTRACTOR_VERSION = "rules-v6"
+EXTRACTOR_VERSION = "rules-v7"
 SCHEMA_VERSION = "claims-v3"
 PROMPT_VERSION = "grounded-v4"
 CLASSIFIER_VERSION = "keyword-v2"
@@ -219,7 +220,7 @@ def rule_claims(document, target, primary=True):
 
 # Placeholder text some pages/models emit instead of a value. Never a fact.
 _PLACEHOLDER_EXACT = re.compile(
-    r"(?:not\s+(?:specified|stated|provided|available|given|yet\s+\w+)|n/?a|tba|tbd|tbc|unknown|unspecified|varies|various|"
+    r"(?:not\s+(?:specified|stated|provided|available|given|established|mentioned|listed|yet\s+\w+)|n/?a|tba|tbd|tbc|unknown|unspecified|varies|various|"
     r"to\s+be\s+(?:announced|determined|confirmed)|none\s+given|-+|\u2013|\u2014|\?+)",
     re.I,
 )
@@ -247,22 +248,44 @@ _DEGREE_TOKEN = re.compile(
 )
 
 
+_TITLE_NOISE = re.compile(
+    r"\b(?:degree\s+)?(?:programme|program)\s+(?:in|of)\b|\bdegree\s+in\b"
+    r"|\b(?:studiengang|studienprogramm|degree|programme|program)\b"
+)
+
+
+def _title_words(text):
+    text = re.sub(r"[()\[\]{}.,:;|\u2013\u2014-]+", " ", text)
+    text = _TITLE_NOISE.sub(" ", text)
+    words = " ".join(text.split())
+    return re.sub(r"^(?:in|of|im|in\s+der)\s+", "", words)
+
+
 def canonical_title(value):
     """Comparable form of a programme title: degree token(s) split off, case, brackets,
-    punctuation and the degree's position ignored. Returns (words, degree levels).
+    punctuation, "Degree Programme in"/"Studiengang" and the degree's position ignored.
+    Returns (words, degree levels).
 
-    'Computer Science (M.Sc.)', 'M.Sc. Computer Science' and 'computer science, MSc'
-    agree; 'Computer Science B.Sc.' differs from them by level, and 'Data Science
-    (M.Sc.)' by subject.
+    'Computer Science (M.Sc.)', 'M.Sc. Computer Science', "Master's Degree Programme in
+    Computer Science" and 'computer science, MSc' agree; 'Computer Science B.Sc.' differs
+    from them by level, and 'Data Science (M.Sc.)' by subject.
     """
     text = normal(value or "").casefold()
     levels = {
         "bachelor" if m.group("b") else "master" for m in _DEGREE_TOKEN.finditer(text)
     }
     text = _DEGREE_TOKEN.sub(" ", text)
-    text = re.sub(r"[()\[\]{}.,:;|/\u2013\u2014-]+", " ", text)
-    words = " ".join(text.split())
-    return words, frozenset(levels)
+    return _title_words(text.replace("/", " ")), frozenset(levels)
+
+
+def title_alternatives(value):
+    """Words of every name a title offers: 'Informatik/Computer Science' is the pair
+    (German/English) and matches either side or the joined form. (alternatives, levels)."""
+    words, levels = canonical_title(value)
+    text = normal(value or "").casefold()
+    text = _DEGREE_TOKEN.sub(" ", text)
+    parts = [p for p in (_title_words(x) for x in re.split(r"\s*/\s*", text)) if p]
+    return frozenset({words, *parts}), levels
 
 
 _NUMBER_WORDS = {
@@ -281,16 +304,71 @@ _NUMBER_WORDS = {
 }
 
 
+_MONEY_FIELDS = ("tuition", "semester_contribution")
+_AMOUNT_VALUE = re.compile(
+    r"(?:€|EUR(?![A-Za-z])|Euro(?![A-Za-z]))?\s*(\d[\d.,]*)\s*(?:€|EUR(?![A-Za-z])|Euros?(?![A-Za-z]))?",
+    re.I,
+)
+_AMOUNT_IN_TEXT = re.compile(
+    r"(?<![\d.,])(?:\d{1,3}(?:[.,]\d{3})+(?:[.,]\d{1,2})?|\d+(?:[.,]\d{1,2})?)(?!\d)"
+)
+
+
+def _amounts(text):
+    result = set()
+    for token in _AMOUNT_IN_TEXT.findall(text):
+        try:
+            result.add(parse_amount(token))
+        except ArithmeticError:
+            pass
+    return result
+
+
+def _money_in_quote(value, quote):
+    """A bare amount equals an amount of the quote across decimal comma/point and
+    thousand separators: 412.30 = 412,30 = 412.3; 1500 = 1.500 = 1,500 (EUR context)."""
+    m = _AMOUNT_VALUE.fullmatch(value.strip())
+    if not m:
+        return False
+    try:
+        wanted = parse_amount(m.group(1))
+    except ArithmeticError:
+        return False
+    return wanted in _amounts(quote)
+
+
 def value_in_quote(field, value, quote):
     """Is the value literally in the quote? A digit duration may also be a number word
-    directly before 'semester(s)' (EN: 'six semesters', DE: 'sechs Semester')."""
+    directly before 'semester(s)' (EN: 'six semesters', DE: 'sechs Semester'); a money
+    amount may differ in decimal/thousand separator ('412.30' vs '412,30')."""
     v, q = normal(value).casefold(), normal(quote).casefold()
     if v in q:
+        return True
+    if field in _MONEY_FIELDS and _money_in_quote(normal(value), normal(quote)):
         return True
     if field == "duration_semesters" and v.isdecimal() and int(v) in _NUMBER_WORDS:
         words = "|".join(_NUMBER_WORDS[int(v)])
         return bool(re.search(rf"\b(?:{words})[\s-]+(?:semesters?|semestern?)\b", q))
     return False
+
+
+_SEMESTER_FEE_TERMS = re.compile(
+    r"Studierendenwerk|administrative|student\s+council|semester\s+fee|Semesterbeitrag"
+    r"|Verwaltungs(?:geb[uü]hr|kosten)|Sozialbeitrag",
+    re.I,
+)
+_TUITION_TERM = re.compile(r"tuition|Studiengeb[uü]hr|Studienbeitr", re.I)
+
+
+def tuition_is_semester_fee(value, quote):
+    """True for a ``tuition`` value that is only the Studierendenwerk / administrative /
+    semester-fee text: it names those fees, never tuition itself, and no tuition label
+    sits just before it in the quote. (A value that follows 'tuition fees' is kept.)"""
+    if not _SEMESTER_FEE_TERMS.search(value) or _TUITION_TERM.search(value):
+        return False
+    start = normal(quote).casefold().find(normal(value).casefold())
+    before = normal(quote)[max(0, start - 40) : max(0, start)] if start >= 0 else ""
+    return not _TUITION_TERM.search(before)
 
 
 def validate(claim, document):
@@ -303,6 +381,10 @@ def validate(claim, document):
         return "EVIDENCE_NOT_FOUND"
     if not value_in_quote(claim.field, claim.value, claim.quote):
         return "VALUE_NOT_GROUNDED"
+    if claim.field == "tuition" and tuition_is_semester_fee(claim.value, claim.quote):
+        # Fee text filed under the wrong field: it would otherwise "conflict" with the
+        # real tuition (or with the same text under semester_contribution).
+        return "NOT_A_FACT"
     if claim.field != "programme_title":
         if block.get("location", {}).get("tag") in HEADING_TAGS or (
             normal(block.get("heading", ""))
@@ -317,6 +399,10 @@ def validate(claim, document):
             # Curriculum/exam/thesis/fee clauses are not admission facts; subsection
             # fragments are incomplete (admission) or noise (everything else).
             held = requirement_hold(block["text"])
+            if held != "NOT_A_FACT" and requirement_hold(claim.quote) == "NOT_A_FACT":
+                # A regulation clause quoted from inside a larger block (e.g. a whole
+                # PDF page) is judged on its own text, not on the page around it.
+                held = "NOT_A_FACT"
             if held:
                 return held
     if (

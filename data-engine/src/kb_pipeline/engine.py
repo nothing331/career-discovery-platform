@@ -24,7 +24,12 @@ from .db import (
 from .logging import RunLog
 from .acquire import Fetcher, parse, normal, PARSER_VERSION
 from .links import select_followups, LINK_SELECTOR_VERSION
-from .normalize import normalize_claims, merge_facts, superseded_windows
+from .normalize import (
+    filter_facts_for_level,
+    normalize_claims,
+    merge_facts,
+    superseded_windows,
+)
 from .structured import NORMALIZER_VERSION
 from .extract import (
     rule_claims,
@@ -32,7 +37,7 @@ from .extract import (
     validate,
     quality,
     is_placeholder,
-    canonical_title,
+    title_alternatives,
     EXTRACTOR_VERSION,
     SCHEMA_VERSION,
     PROMPT_VERSION,
@@ -673,11 +678,24 @@ class Engine:
     @staticmethod
     def _values_disagree(members):
         if members[0][1]["field"] == "programme_title":
-            # "Computer Science (M.Sc.)" == "M.Sc. Computer Science"; a different
-            # subject or a different degree level is a real disagreement.
-            titles = [canonical_title(b["value"]) for _, b in members]
+            # "Computer Science (M.Sc.)" == "M.Sc. Computer Science" ==
+            # "Master's Degree Programme in Computer Science"; "Informatik/Computer
+            # Science" (German/English pair) matches either side. A different subject
+            # or a different degree level is a real disagreement.
+            titles = [title_alternatives(b["value"]) for _, b in members]
             levels = {lv for _, lv in titles if lv}
-            return len({words for words, _ in titles}) > 1 or len(levels) > 1
+            parent = list(range(len(titles)))
+
+            def find(i):
+                while parent[i] != i:
+                    i = parent[i]
+                return i
+
+            for i in range(len(titles)):
+                for j in range(i + 1, len(titles)):
+                    if titles[i][0] & titles[j][0]:
+                        parent[find(i)] = find(j)
+            return len({find(i) for i in range(len(titles))}) > 1 or len(levels) > 1
         return len({normal(b["value"]).casefold() for _, b in members}) > 1
 
     # Kinds whose data carries its own applicability (tests, languages, APS countries):
@@ -708,7 +726,7 @@ class Engine:
             for f in normalize_claims(held)
             if f.kind in self._SCOPE_TOLERANT_KINDS
         ]
-        facts = merge_facts(facts)
+        facts = merge_facts(filter_facts_for_level(facts, target.level))
         superseded = superseded_windows(facts)
         for fact in facts:
             # entity is part of the key: identical wording on two programmes is two facts

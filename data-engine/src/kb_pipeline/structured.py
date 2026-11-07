@@ -15,7 +15,7 @@ from typing import Literal, Union
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
-NORMALIZER_VERSION = "regex-v3"
+NORMALIZER_VERSION = "regex-v4"
 
 Language = Literal["english", "german"]
 FactKind = Literal[

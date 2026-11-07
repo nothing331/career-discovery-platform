@@ -442,7 +442,7 @@ def test_all_evidence_is_verbatim_substring_and_method_set():
     for n, (field, quote) in FIXTURES.items():
         for fact in run(n):
             assert fact.grounded_in_quote(quote), (n, fact.evidence_text)
-            assert fact.method == NORMALIZER_VERSION == "regex-v3"
+            assert fact.method == NORMALIZER_VERSION == "regex-v4"
             assert fact.evidence_claim_ids == [f"c{n}"]
 
 

@@ -276,7 +276,7 @@ def test_config_records_versions_and_limit_change_is_detected(settings):
     e, _ = make(settings)
     rid = e.enqueue(targets=[target()])
     config = json.loads(e.store.one(runs, id=rid)["config"])
-    assert config["link_selector"] == "roles-v2" and config["normalizer"] == "regex-v3"
+    assert config["link_selector"] == "roles-v2" and config["normalizer"] == "regex-v4"
     assert config["followup_limit"] == 6
     other, _ = make(settings, followup_limit=2)
     other.store = e.store
@@ -369,7 +369,7 @@ def test_dedupe_merges_methods_instead_of_second_row(settings):
     ]
     assert len(titles) == 1
     methods = json.loads(titles[0]["agreeing_methods"])
-    assert methods[0] == "rules-v6" and methods[1].startswith("groq:")
+    assert methods[0] == "rules-v7" and methods[1].startswith("groq:")
     assert titles[0]["claim_key"]
 
 

@@ -727,6 +727,11 @@ _TUI_R = re.compile(
 _SEM_TERM = r"(?:semester\s+(?:fees?|contribution)|Semesterbeitrag|Semestergebühr|Sozialbeitrag|Studierendenschaftsbeitrag)"
 _SEM_L = re.compile(_SEM_TERM + _CONN, I)
 _SEM_R = re.compile(r"^\s*(?:of\s+)?" + _SEM_TERM, I)
+# "For summer semester 2027, the fee is € 134 ." names the whole fee of the term.
+_FEE_IS_L = re.compile(
+    r"\bthe\s+(?:semester\s+|tuition\s+)?(?:fees?|contribution)\s+(?:is|will\s+be|amounts?\s+to|:)\s*(?:of\s+)?$",
+    I,
+)
 _PER_SEM = re.compile(
     r"(?:per|each|every|pro|je|/)\s*(?:academic\s+)?semester|semesterly|jedes\s+Semester",
     I,
@@ -813,6 +818,15 @@ def _fees(claim: Claim) -> list[Raw]:
                 ev_start = s - (len(left) - lm.start())
                 term = lm.group(0)
                 break
+        if kind is None:
+            fm = _FEE_IS_L.search(left)
+            if fm and claim.field in {"tuition", "semester_contribution"}:
+                # The sentence start carries the stated term ("For summer semester 2027,").
+                sent = re.split(r"(?<!\d)\.\s", q[:s])[-1]
+                if re.search(r"semester", sent, I):
+                    kind = claim.field
+                    term = fm.group(0)
+                    ev_start = s - len(sent)
         period = None
         pr = _period_in(right[:40])
         if pr:
@@ -837,6 +851,8 @@ def _fees(claim: Claim) -> list[Raw]:
             and term
             and "semester" in term.lower()
         ):
+            period = "per_semester"
+        if kind and period is None and term and _FEE_IS_L.search(term):
             period = "per_semester"
         items.append(
             dict(
@@ -1206,10 +1222,30 @@ def superseded_windows(facts: Iterable[StructuredFact]) -> set[tuple]:
 DEFAULT_NORMALIZERS: tuple[Normalizer, ...] = (RegexNormalizer(),)
 
 
+def filter_facts_for_level(facts: list[StructuredFact], level: str) -> list[StructuredFact]:
+    """Drop facts that cannot hold for a programme of this level.
+
+    A bachelor programme cannot require a bachelor's degree: such a fact comes from a
+    sentence about Master's admission ("... joining a Master's programme is a completed
+    undergraduate degree") on a page shared with the bachelor entity.
+    """
+    if level != "bachelor":
+        return facts
+    return [
+        f
+        for f in facts
+        if not (f.kind == "required_degree" and f.data.level == "bachelor")
+    ]
+
+
 def normalize_claim(
     claim_id: str, claim: Claim, normalizers: Iterable[Normalizer] | None = None
 ) -> list[StructuredFact]:
     facts: list[StructuredFact] = []
+    if claim.field == "programme_title":
+        # A title says nothing about fees, dates or tests; its grounded quote can be a
+        # whole page block (e.g. a regulation preamble "... senate on 30th March 2022").
+        return facts
     for normalizer in normalizers or DEFAULT_NORMALIZERS:
         facts.extend(normalizer.normalize(claim_id, claim))
     return _dedupe(facts)
