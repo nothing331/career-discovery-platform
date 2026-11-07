@@ -241,13 +241,19 @@ def test_error_resolution_requires_successful_linked_replay(engine, monkeypatch)
     assert catalogue(engine.store) == []
 
 
-def test_cli_redacts_secret_even_if_settings_are_invalid(tmp_path):
+@pytest.mark.parametrize("provider", ["openrouter", "groq"])
+def test_cli_redacts_secret_even_if_settings_are_invalid(tmp_path, provider):
     import os
     import subprocess
     import sys
 
     secret = "synthetic-secret-invalid-setting"
-    env = {**os.environ, "OPENROUTER_API_KEY": secret, "ENGINE_DELAY_SECONDS": secret}
+    env = {
+        **os.environ,
+        "LLM_PROVIDER": provider,
+        provider.upper() + "_API_KEY": secret,
+        "ENGINE_DELAY_SECONDS": secret,
+    }
     result = subprocess.run(
         [sys.executable, "-m", "kb_pipeline", "init"],
         env=env,

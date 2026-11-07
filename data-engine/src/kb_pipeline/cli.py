@@ -2,12 +2,13 @@ import json
 from pathlib import Path
 from decimal import Decimal
 import typer
-from .config import Settings
+from .config import Settings, PROJECT
 from .contracts import PipelineError
 from .engine import Engine
-from .db import jobs, claims, errors, runs
+from .db import claims, errors
 from .knowledge import review, publish, catalogue, resolve_error
 from .logging import Redactor
+from .evaluation import load_dataset, classifier_report, extraction_report, save_report
 
 app = typer.Typer(
     help="Local programme collection. Model calls are opt-in; publication requires review.",
@@ -30,6 +31,8 @@ def init():
         {
             "database": str(e.store.directory / "poc.db"),
             "targets": len(e.registry().targets),
+            "provider": e.settings.provider,
+            "model": e.settings.model,
             "model_key_configured": bool(e.settings.api_key),
         }
     )
@@ -152,6 +155,19 @@ def models():
     import httpx
 
     e = engine()
+    if e.settings.provider == "groq":
+        output(
+            {
+                "provider": "groq",
+                "model": e.settings.model,
+                "cost_basis": "token_rate_estimate",
+                "configured_input_per_million": str(e.settings.input_rate),
+                "configured_output_per_million": str(e.settings.output_rate),
+                "documentation": "https://console.groq.com/docs/models",
+                "note": "Configured pilot settings, not a live model/pricing verification. No provider request made.",
+            }
+        )
+        return
     response = httpx.get("https://openrouter.ai/api/v1/models", timeout=30)
     response.raise_for_status()
     wanted = {e.settings.model, e.settings.fallback_model}
@@ -169,6 +185,78 @@ def models():
     )
 
 
+@app.command("evaluate-classifier")
+def evaluate_classifier(
+    dataset: Path = PROJECT / "evaluation/classifier-smoke-v1.json",
+):
+    settings = Settings.load()
+    labelled, document = load_dataset(dataset, settings.data_dir)
+    report = classifier_report(labelled, document)
+    output({**report, "report_path": save_report(settings.data_dir, report)})
+    if not report["passed"]:
+        raise typer.Exit(1)
+
+
+@app.command("evaluate-extraction")
+def evaluate_extraction(
+    run_id: str, dataset: Path = PROJECT / "evaluation/passau-msc-v1.json"
+):
+    e = engine()
+    labelled, document = load_dataset(dataset, e.settings.data_dir)
+    report = extraction_report(e.store, run_id, labelled, document)
+    output({**report, "report_path": save_report(e.settings.data_dir, report)})
+    if not report["passed"]:
+        raise typer.Exit(1)
+
+
+@app.command()
+def pilot(
+    llm: bool = False,
+    budget_usd: str = "0.05",
+    dataset: Path = PROJECT / "evaluation/passau-msc-v1.json",
+):
+    """One annotated programme from its retained snapshot; model calls require --llm."""
+    from .db import snapshots
+
+    e = engine()
+    labelled, document = load_dataset(dataset, e.settings.data_dir)
+    if not labelled.source or not labelled.expected_facts:
+        raise typer.BadParameter(
+            "Pilot requires a source snapshot and expected extraction facts"
+        )
+    report = {"classifier": classifier_report(labelled, document)}
+    if not report["classifier"]["passed"]:
+        output({**report, "report_path": save_report(e.settings.data_dir, report)})
+        raise typer.Exit(1)
+    source = labelled.source
+    targets = [
+        t
+        for t in e.registry().targets
+        if t.id == source.target_id and str(t.url) == source.url
+    ]
+    saved = e.store.rows(snapshots, hash=source.sha256, url=source.url)
+    if len(targets) != 1 or not saved:
+        raise PipelineError(
+            "EVALUATION_SNAPSHOT_MISSING",
+            "Pilot requires the registered target and the indexed, annotated snapshot; do not replace it with a changed source",
+        )
+    rid = e.enqueue(
+        targets=targets, snapshot_id=saved[0]["id"], llm=llm, budget=Decimal(budget_usd)
+    )
+    report["run"] = e.work(rid)
+    report["extraction"] = (
+        extraction_report(e.store, rid, labelled, document)
+        if llm
+        else {
+            "status": "not_run",
+            "reason": "Use --llm after configuring the selected provider key",
+        }
+    )
+    output({**report, "report_path": save_report(e.settings.data_dir, report)})
+    if llm and not report["extraction"]["passed"]:
+        raise typer.Exit(1)
+
+
 def main():
     try:
         app()
@@ -177,9 +265,11 @@ def main():
         from dotenv import dotenv_values
         from .config import PROJECT
 
+        local = dotenv_values(PROJECT / ".env")
         keys = [
-            os.environ.get("OPENROUTER_API_KEY"),
-            dotenv_values(PROJECT / ".env").get("OPENROUTER_API_KEY"),
+            value
+            for name in ("OPENROUTER_API_KEY", "GROQ_API_KEY")
+            for value in (os.environ.get(name), local.get(name))
         ]
         typer.echo(
             Redactor(keys).text(f"{getattr(exc, 'code', type(exc).__name__)}: {exc}"),

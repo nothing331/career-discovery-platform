@@ -2,6 +2,21 @@ import json
 from sqlalchemy import select
 from .db import claims, facts, releases, jobs, runs, errors, uid, now
 from .contracts import PipelineError
+from .extract import EXTRACTOR_VERSION, SCHEMA_VERSION
+from .grounding import GROUNDING_VERSION
+
+
+def check_review_version(run):
+    config = json.loads(run["config"])
+    if (
+        config.get("extractor") != EXTRACTOR_VERSION
+        or config.get("schema") != SCHEMA_VERSION
+        or config.get("grounder") != GROUNDING_VERSION
+    ):
+        raise PipelineError(
+            "REVIEW_VERSION_CHANGED",
+            "Create a new extraction/replay under the current checks before approving or publishing older candidates",
+        )
 
 
 def review(store, claim_id, reviewer, decision, note=""):
@@ -22,6 +37,8 @@ def review(store, claim_id, reviewer, decision, note=""):
             raise PipelineError(
                 "RUN_NOT_REVIEWABLE", "Wait for collection to finish before reviewing"
             )
+        if decision == "approved":
+            check_review_version(run)
         if c.execute(
             select(releases).where(releases.c.run_id == row["run_id"])
         ).first():
@@ -62,6 +79,7 @@ def publish(store, run_id):
             raise PipelineError(
                 "RUN_NOT_REVIEWABLE", "Only completed collection runs can be published"
             )
+        check_review_version(run)
         rows = list(
             c.execute(select(claims).where(claims.c.run_id == run_id)).mappings()
         )

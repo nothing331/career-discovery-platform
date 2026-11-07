@@ -18,12 +18,21 @@ if not all_runs:
     st.stop()
 run_id = st.sidebar.selectbox("Collection run", [r["id"] for r in reversed(all_runs)])
 report = e.report(run_id)
+if not report["validation_version_current"]:
+    st.warning(
+        "This run used older extraction checks. Collect or replay it with the current checks before approving or publishing candidates."
+    )
 cols = st.columns(3)
 cols[0].metric("Completed documents", report["documents"].get("done", 0))
 cols[1].metric("Error events", report["error_events"])
-cols[2].metric("Known model cost", "$" + report["known_cost_usd"])
+cols[2].metric(
+    "Estimated model cost"
+    if report["cost_basis"] == "token_rate_estimate"
+    else "Known model cost",
+    "$" + report["accounted_cost_usd"],
+)
 st.caption(
-    f"Status: {report['status']} · Reserved/uncertain cost: ${report['reserved_or_uncertain_usd']} · Errors can include held candidates in an otherwise parsed document."
+    f"Status: {report['status']} · Provider: {report['provider']} · Cost basis: {report['cost_basis']} · Reserved/uncertain cost: ${report['reserved_or_uncertain_usd']} · Errors can include held candidates in an otherwise parsed document."
 )
 review_tab, error_tab, public_tab = st.tabs(
     ["Claims & evidence", "Errors", "Published catalogue"]
@@ -73,7 +82,8 @@ with review_tab:
                 disabled=not reviewer.strip()
                 or not confirmed
                 or row["validation"] != "valid"
-                or report["status"] != "awaiting_review",
+                or report["status"] != "awaiting_review"
+                or not report["validation_version_current"],
             ):
                 review(e.store, cid, reviewer, "approved", note)
                 st.rerun()
@@ -86,7 +96,9 @@ with review_tab:
                 review(e.store, cid, reviewer, "rejected", note)
                 st.rerun()
     if st.button(
-        "Publish reviewed run", disabled=report["status"] != "awaiting_review"
+        "Publish reviewed run",
+        disabled=report["status"] != "awaiting_review"
+        or not report["validation_version_current"],
     ):
         try:
             st.success("Published release " + publish(e.store, run_id))

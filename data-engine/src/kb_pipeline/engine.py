@@ -28,8 +28,11 @@ from .extract import (
     quality,
     EXTRACTOR_VERSION,
     SCHEMA_VERSION,
+    PROMPT_VERSION,
+    CLASSIFIER_VERSION,
 )
-from .openrouter import OpenRouter
+from .providers import extractor
+from .grounding import ground, GROUNDING_VERSION
 
 STOP_CODES = {
     "BUDGET_EXHAUSTED",
@@ -93,7 +96,11 @@ class Engine:
             "parser": PARSER_VERSION,
             "extractor": EXTRACTOR_VERSION,
             "schema": SCHEMA_VERSION,
+            "prompt": PROMPT_VERSION,
+            "classifier": CLASSIFIER_VERSION,
+            "grounder": GROUNDING_VERSION,
             "models": [self.settings.model, self.settings.fallback_model],
+            "model_config": self.settings.model_config(),
         }
         self.store.insert(
             runs,
@@ -219,6 +226,14 @@ class Engine:
             config["models"] != [self.settings.model, self.settings.fallback_model]
             or config["parser"] != PARSER_VERSION
             or config["extractor"] != EXTRACTOR_VERSION
+            or config.get("classifier", "keyword-v1") != CLASSIFIER_VERSION
+            or config.get("schema") != SCHEMA_VERSION
+            or config.get("prompt", "grounded-v1") != PROMPT_VERSION
+            or config.get("grounder") != GROUNDING_VERSION
+            or (
+                config["llm"]
+                and config.get("model_config") != self.settings.model_config()
+            )
         ):
             raise PipelineError(
                 "RUN_CONFIG_CHANGED",
@@ -226,7 +241,7 @@ class Engine:
             )
         log = RunLog(self.store, run_id, [self.settings.api_key])
         fetcher = Fetcher(self.settings, self.store, self.fetch_client, self.sleep)
-        model = OpenRouter(self.settings, self.store, run_id, log, self.model_client)
+        model = extractor(self.settings, self.store, run_id, log, self.model_client)
         self.store.update(runs, run_id, status="running", finished_at=None)
         try:
             log.emit(
@@ -391,7 +406,7 @@ class Engine:
             "document.classified",
             job_id=job["id"],
             counts=dict(classified),
-            classifier="keyword-v1",
+            classifier=CLASSIFIER_VERSION,
         )
         candidate = rule_claims(document, target)
         for skipped in document.get("rule_skips", []):
@@ -399,7 +414,20 @@ class Engine:
         if config["llm"]:
             model.job_id = job["id"]
             relevant = [b for b in document["blocks"] if classify(b) == "relevant"]
-            candidate += model.extract(relevant, target, offline=config["offline"])
+            raw_candidates = model.extract(relevant, target, offline=config["offline"])
+            log.emit(
+                "model.candidates_received",
+                job_id=job["id"],
+                count=len(raw_candidates),
+                grounder=GROUNDING_VERSION,
+            )
+            for raw_claim in raw_candidates:
+                grounded, action = ground(
+                    raw_claim, relevant, source_blocks=document["blocks"]
+                )
+                if action:
+                    log.emit("claim.grounded", job_id=job["id"], **action)
+                candidate.extend(grounded)
         log.emit(
             "stage.succeeded",
             job_id=job["id"],
@@ -486,12 +514,18 @@ class Engine:
 
     def report(self, run_id):
         run = self.store.one(runs, id=run_id)
+        config = json.loads(run["config"])
+        provider = config.get("model_config", {}).get("provider", "openrouter")
+        estimated = config["llm"] and provider == "groq"
         js = self.store.rows(jobs, run_id=run_id)
         cs = self.store.rows(claims, run_id=run_id)
         es = self.store.rows(errors, run_id=run_id)
         return {
             "run_id": run_id,
             "status": run["status"],
+            "validation_version_current": config.get("extractor") == EXTRACTOR_VERSION
+            and config.get("schema") == SCHEMA_VERSION
+            and config.get("grounder") == GROUNDING_VERSION,
             "documents": dict(Counter(j["status"] for j in js)),
             "attempted_documents": len(js),
             "claims": dict(Counter(c["validation"] for c in cs)),
@@ -500,7 +534,15 @@ class Engine:
             "error_events": len(es),
             "error_jobs": len({e["job_id"] for e in es}),
             "budget_usd": run["budget"],
-            "known_cost_usd": run["spent"],
+            "provider": provider,
+            "cost_basis": "token_rate_estimate"
+            if estimated
+            else "provider_reported"
+            if config["llm"]
+            else "no_model_calls",
+            "accounted_cost_usd": run["spent"],
+            "known_cost_usd": None if estimated else run["spent"],
+            "estimated_cost_usd": run["spent"] if estimated else None,
             "reserved_or_uncertain_usd": run["reserved"],
             "parent_error_id": run["parent_error_id"],
             "publication": "No automatic publication; human review required",
