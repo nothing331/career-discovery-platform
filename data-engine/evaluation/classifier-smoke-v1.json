@@ -1,0 +1,483 @@
+{
+  "schema_version": "evaluation-v1",
+  "name": "classifier-smoke-v1",
+  "annotation": "Manually written synthetic English/German development examples; checks relevant sections, exceptions and irrelevant text. Not real university policy or a held-out accuracy estimate.",
+  "cases": [
+    {
+      "id": "s000",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Preserve supported fact/context",
+      "block": {
+        "id": "s000",
+        "text": "Computer Science B.Sc.",
+        "heading": "Computer Science",
+        "location": {
+          "tag": "h1"
+        }
+      }
+    },
+    {
+      "id": "s001",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Preserve supported fact/context",
+      "block": {
+        "id": "s001",
+        "text": "Informatik M.Sc.",
+        "heading": "Informatik",
+        "location": {
+          "tag": "h1"
+        }
+      }
+    },
+    {
+      "id": "s002",
+      "expected": "relevant",
+      "critical": false,
+      "reason": "Preserve supported fact/context",
+      "block": {
+        "id": "s002",
+        "text": "Degree awarded Master of Science",
+        "heading": "",
+        "location": {
+          "tag": "tr"
+        }
+      }
+    },
+    {
+      "id": "s003",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Preserve supported fact/context",
+      "block": {
+        "id": "s003",
+        "text": "Duration: 4 semesters",
+        "heading": "",
+        "location": {
+          "tag": "tr"
+        }
+      }
+    },
+    {
+      "id": "s004",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Preserve supported fact/context",
+      "block": {
+        "id": "s004",
+        "text": "Regelstudienzeit: 6 Semester",
+        "heading": "",
+        "location": {
+          "tag": "tr"
+        }
+      }
+    },
+    {
+      "id": "s005",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Preserve supported fact/context",
+      "block": {
+        "id": "s005",
+        "text": "Leistungspunkte: 180",
+        "heading": "",
+        "location": {
+          "tag": "tr"
+        }
+      }
+    },
+    {
+      "id": "s006",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Preserve supported fact/context",
+      "block": {
+        "id": "s006",
+        "text": "Language of instruction: English",
+        "heading": "",
+        "location": {
+          "tag": "tr"
+        }
+      }
+    },
+    {
+      "id": "s007",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Preserve supported fact/context",
+      "block": {
+        "id": "s007",
+        "text": "A prior degree is needed; an equivalent qualification may be accepted.",
+        "heading": "Entry requirements",
+        "location": {
+          "tag": "p"
+        }
+      }
+    },
+    {
+      "id": "s008",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Preserve supported fact/context",
+      "block": {
+        "id": "s008",
+        "text": "Applicants with prior English-medium education may be exempt.",
+        "heading": "Entry requirements",
+        "location": {
+          "tag": "p"
+        }
+      }
+    },
+    {
+      "id": "s009",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Preserve supported fact/context",
+      "block": {
+        "id": "s009",
+        "text": "15 April to 31 May",
+        "heading": "Application period",
+        "location": {
+          "tag": "li"
+        }
+      }
+    },
+    {
+      "id": "s010",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Preserve supported fact/context",
+      "block": {
+        "id": "s010",
+        "text": "1. November bis 15. Dezember",
+        "heading": "Bewerbung",
+        "location": {
+          "tag": "li"
+        }
+      }
+    },
+    {
+      "id": "s011",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Preserve supported fact/context",
+      "block": {
+        "id": "s011",
+        "text": "Tuition fees apply only to the specified applicant group.",
+        "heading": "",
+        "location": {
+          "tag": "p"
+        }
+      }
+    },
+    {
+      "id": "s012",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Preserve supported fact/context",
+      "block": {
+        "id": "s012",
+        "text": "A semester contribution is payable even when tuition is waived.",
+        "heading": "",
+        "location": {
+          "tag": "p"
+        }
+      }
+    },
+    {
+      "id": "s013",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Preserve supported fact/context",
+      "block": {
+        "id": "s013",
+        "text": "Studienbeitrag: Ausnahmen bitte beachten.",
+        "heading": "",
+        "location": {
+          "tag": "p"
+        }
+      }
+    },
+    {
+      "id": "s014",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Preserve supported fact/context",
+      "block": {
+        "id": "s014",
+        "text": "Zugangsvoraussetzung: ein erster Hochschulabschluss.",
+        "heading": "",
+        "location": {
+          "tag": "p"
+        }
+      }
+    },
+    {
+      "id": "s015",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Preserve supported fact/context",
+      "block": {
+        "id": "s015",
+        "text": "Einschreibung ist erst nach Vorlage der Nachweise möglich.",
+        "heading": "",
+        "location": {
+          "tag": "p"
+        }
+      }
+    },
+    {
+      "id": "s016",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Preserve supported fact/context",
+      "block": {
+        "id": "s016",
+        "text": "and/or",
+        "heading": "Language requirements",
+        "location": {
+          "tag": "p"
+        }
+      }
+    },
+    {
+      "id": "s017",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Preserve supported fact/context",
+      "block": {
+        "id": "s017",
+        "text": "The certificate may be submitted after enrolment under the stated exception.",
+        "heading": "Language requirements",
+        "location": {
+          "tag": "p"
+        }
+      }
+    },
+    {
+      "id": "s018",
+      "expected": "relevant",
+      "critical": false,
+      "reason": "Preserve supported fact/context",
+      "block": {
+        "id": "s018",
+        "text": "Subject-specific examination regulations",
+        "heading": "",
+        "location": {
+          "tag": "li"
+        }
+      }
+    },
+    {
+      "id": "s019",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Preserve supported fact/context",
+      "block": {
+        "id": "s019",
+        "text": "The application closes on the stated date; no year is specified.",
+        "heading": "",
+        "location": {
+          "tag": "p"
+        }
+      }
+    },
+    {
+      "id": "s020",
+      "expected": "other",
+      "critical": false,
+      "reason": "Exclude unrelated content",
+      "block": {
+        "id": "s020",
+        "text": "Library",
+        "heading": "Navigation",
+        "location": {
+          "tag": "li"
+        }
+      }
+    },
+    {
+      "id": "s021",
+      "expected": "other",
+      "critical": false,
+      "reason": "Exclude unrelated content",
+      "block": {
+        "id": "s021",
+        "text": "Campus map",
+        "heading": "Navigation",
+        "location": {
+          "tag": "li"
+        }
+      }
+    },
+    {
+      "id": "s022",
+      "expected": "other",
+      "critical": false,
+      "reason": "Exclude unrelated content",
+      "block": {
+        "id": "s022",
+        "text": "Playing this video sends your IP address to an external service.",
+        "heading": "Privacy",
+        "location": {
+          "tag": "p"
+        }
+      }
+    },
+    {
+      "id": "s023",
+      "expected": "other",
+      "critical": false,
+      "reason": "Exclude unrelated content",
+      "block": {
+        "id": "s023",
+        "text": "I enjoyed the research community and the city.",
+        "heading": "Student experiences",
+        "location": {
+          "tag": "p"
+        }
+      }
+    },
+    {
+      "id": "s024",
+      "expected": "other",
+      "critical": false,
+      "reason": "Exclude unrelated content",
+      "block": {
+        "id": "s024",
+        "text": "LinkedIn",
+        "heading": "Share content",
+        "location": {
+          "tag": "li"
+        }
+      }
+    },
+    {
+      "id": "s025",
+      "expected": "other",
+      "critical": false,
+      "reason": "Exclude unrelated content",
+      "block": {
+        "id": "s025",
+        "text": "Graduates work in industry and academia.",
+        "heading": "Career prospects",
+        "location": {
+          "tag": "p"
+        }
+      }
+    },
+    {
+      "id": "s026",
+      "expected": "other",
+      "critical": false,
+      "reason": "Exclude unrelated content",
+      "block": {
+        "id": "s026",
+        "text": "We study algorithms and distributed systems.",
+        "heading": "Research",
+        "location": {
+          "tag": "p"
+        }
+      }
+    },
+    {
+      "id": "s027",
+      "expected": "other",
+      "critical": false,
+      "reason": "Exclude unrelated content",
+      "block": {
+        "id": "s027",
+        "text": "The city has public and private accommodation.",
+        "heading": "Housing",
+        "location": {
+          "tag": "p"
+        }
+      }
+    },
+    {
+      "id": "s028",
+      "expected": "other",
+      "critical": false,
+      "reason": "Exclude unrelated content",
+      "block": {
+        "id": "s028",
+        "text": "Press office",
+        "heading": "Contacts",
+        "location": {
+          "tag": "li"
+        }
+      }
+    },
+    {
+      "id": "s029",
+      "expected": "other",
+      "critical": false,
+      "reason": "Exclude unrelated content",
+      "block": {
+        "id": "s029",
+        "text": "Accept optional analytics.",
+        "heading": "Cookie settings",
+        "location": {
+          "tag": "p"
+        }
+      }
+    },
+    {
+      "id": "s030",
+      "expected": "other",
+      "critical": false,
+      "reason": "Exclude unrelated content",
+      "block": {
+        "id": "s030",
+        "text": "Artificial Intelligence Engineering",
+        "heading": "Other programmes",
+        "location": {
+          "tag": "li"
+        }
+      }
+    },
+    {
+      "id": "s031",
+      "expected": "other",
+      "critical": false,
+      "reason": "Exclude unrelated content",
+      "block": {
+        "id": "s031",
+        "text": "The module explores computer networks.",
+        "heading": "Module descriptions",
+        "location": {
+          "tag": "p"
+        }
+      }
+    },
+    {
+      "id": "s032",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Plain requirement without a section heading",
+      "block": {
+        "id": "s032",
+        "text": "Applicants must provide proof of their prior qualification; exceptions are described below.",
+        "heading": "",
+        "location": {
+          "tag": "p"
+        }
+      }
+    },
+    {
+      "id": "s033",
+      "expected": "relevant",
+      "critical": true,
+      "reason": "Plain requirement without a section heading",
+      "block": {
+        "id": "s033",
+        "text": "A prior degree is required; equivalent qualifications may be accepted.",
+        "heading": "",
+        "location": {
+          "tag": "p"
+        }
+      }
+    }
+  ]
+}

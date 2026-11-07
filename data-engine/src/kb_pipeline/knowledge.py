@@ -1,7 +1,65 @@
 import json
 from sqlalchemy import select
-from .db import claims, facts, releases, jobs, runs, errors, uid, now
+from .db import (
+    claims,
+    facts,
+    releases,
+    jobs,
+    runs,
+    errors,
+    structured,
+    kb_structured,
+    uid,
+    now,
+)
 from .contracts import PipelineError
+from .extract import EXTRACTOR_VERSION, SCHEMA_VERSION
+from .grounding import GROUNDING_VERSION
+
+
+def check_review_version(run):
+    config = json.loads(run["config"])
+    if (
+        config.get("extractor") != EXTRACTOR_VERSION
+        or config.get("schema") != SCHEMA_VERSION
+        or config.get("grounder") != GROUNDING_VERSION
+    ):
+        raise PipelineError(
+            "REVIEW_VERSION_CHANGED",
+            "Create a new extraction/replay under the current checks before approving or publishing older candidates",
+        )
+
+
+def _newer_run(c, run, entity_ids):
+    """Newest-first search for a later reviewable run that re-collected an entity."""
+    newer = c.execute(
+        select(runs)
+        .where(
+            runs.c.created_at > run["created_at"],
+            runs.c.status.in_(("awaiting_review", "published")),
+        )
+        .order_by(runs.c.created_at.desc())
+    ).mappings()
+    for later in list(newer):
+        for job in c.execute(
+            select(jobs).where(jobs.c.run_id == later["id"], jobs.c.status == "done")
+        ).mappings():
+            if json.loads(job["target"])["id"] in entity_ids:
+                return later["id"]
+    return None
+
+
+def superseding_run(store, run_id):
+    """ID of a newer completed run covering any entity of this run, else None."""
+    with store.engine.connect() as c:
+        run = c.execute(select(runs).where(runs.c.id == run_id)).mappings().one()
+        entities = {
+            r[0]
+            for r in c.execute(
+                select(claims.c.entity_id).where(claims.c.run_id == run_id)
+            )
+        }
+        return _newer_run(c, run, entities)
 
 
 def review(store, claim_id, reviewer, decision, note=""):
@@ -22,6 +80,13 @@ def review(store, claim_id, reviewer, decision, note=""):
             raise PipelineError(
                 "RUN_NOT_REVIEWABLE", "Wait for collection to finish before reviewing"
             )
+        if decision == "approved":
+            check_review_version(run)
+            if _newer_run(c, run, {row["entity_id"]}):
+                raise PipelineError(
+                    "RUN_SUPERSEDED",
+                    "A newer completed run exists for this programme; review that run instead",
+                )
         if c.execute(
             select(releases).where(releases.c.run_id == row["run_id"])
         ).first():
@@ -62,9 +127,20 @@ def publish(store, run_id):
             raise PipelineError(
                 "RUN_NOT_REVIEWABLE", "Only completed collection runs can be published"
             )
+        check_review_version(run)
         rows = list(
             c.execute(select(claims).where(claims.c.run_id == run_id)).mappings()
         )
+        # Only programmes being published can be superseded; a run with nothing
+        # approved cannot publish, so report supersession for all its entities.
+        scope = {r["entity_id"] for r in rows if r["review"] == "approved"} or {
+            r["entity_id"] for r in rows
+        }
+        if _newer_run(c, run, scope):
+            raise PipelineError(
+                "RUN_SUPERSEDED",
+                "A newer completed run exists for this programme; publish that run instead",
+            )
         if not rows or any(r["review"] == "pending" for r in rows):
             raise PipelineError(
                 "REVIEW_INCOMPLETE",
@@ -90,6 +166,7 @@ def publish(store, run_id):
         c.execute(releases.insert().values(id=release, run_id=run_id, created_at=now()))
         from .db import snapshots
 
+        evidence_by_claim = {}
         for row in approved:
             job = (
                 c.execute(select(jobs).where(jobs.c.id == row["job_id"]))
@@ -117,6 +194,7 @@ def publish(store, run_id):
                 "reviewed_at": row["reviewed_at"],
                 "quality": q,
             }
+            evidence_by_claim[row["id"]] = evidence
             c.execute(
                 facts.insert().values(
                     id=uid(),
@@ -126,6 +204,34 @@ def publish(store, run_id):
                     target=job["target"],
                     body=row["body"],
                     evidence=json.dumps(evidence, ensure_ascii=False),
+                )
+            )
+        # Structured facts publish only when every claim they rest on was approved.
+        for sf in c.execute(
+            select(structured).where(structured.c.run_id == run_id)
+        ).mappings():
+            ids = json.loads(sf["evidence_claim_ids"])
+            if sf["review"] == "superseded":
+                continue  # an older year of the same window; never published as current
+            if not ids or any(i not in evidence_by_claim for i in ids):
+                continue
+            c.execute(
+                kb_structured.insert().values(
+                    id=uid(),
+                    release_id=release,
+                    entity_id=sf["entity_id"],
+                    kind=sf["kind"],
+                    data=sf["data"],
+                    evidence=json.dumps(
+                        {
+                            "claim_ids": ids,
+                            "evidence_text": sf["evidence_text"],
+                            "applicant_group": sf["applicant_group"],
+                            "claims": [evidence_by_claim[i] for i in ids],
+                        },
+                        ensure_ascii=False,
+                    ),
+                    method=sf["method"],
                 )
             )
         c.execute(runs.update().where(runs.c.id == run_id).values(status="published"))
@@ -167,6 +273,7 @@ def catalogue(store, *, country=None, level=None, entity=None):
                     "collection_run_id": row["release_run_id"],
                     "freshness_status": "effective_dates_unverified",
                     "facts": [],
+                    "structured": [],
                     "unknown_fields": [],
                     "eligibility_assessment": "not implemented",
                 }
@@ -179,6 +286,21 @@ def catalogue(store, *, country=None, level=None, entity=None):
                 }
             )
         for p in programmes.values():
+            for sf in c.execute(
+                select(kb_structured).where(
+                    kb_structured.c.release_id == p["release_id"],
+                    kb_structured.c.entity_id == p["id"],
+                )
+            ).mappings():
+                p["structured"].append(
+                    {
+                        "id": sf["id"],
+                        "kind": sf["kind"],
+                        "data": json.loads(sf["data"]),
+                        "method": sf["method"],
+                        "evidence": json.loads(sf["evidence"]),
+                    }
+                )
             present = {f["field"] for f in p["facts"]}
             p["unknown_fields"] = sorted(
                 {
@@ -193,6 +315,30 @@ def catalogue(store, *, country=None, level=None, entity=None):
                 - present
             )
         return list(programmes.values())
+
+
+def list_structured(store, run_id):
+    """Staged structured facts of a run with whether all their evidence is approved."""
+    review_by_claim = {c["id"]: c["review"] for c in store.rows(claims, run_id=run_id)}
+    out = []
+    for r in store.rows(structured, run_id=run_id):
+        ids = json.loads(r["evidence_claim_ids"])
+        out.append(
+            {
+                "id": r["id"],
+                "entity_id": r["entity_id"],
+                "kind": r["kind"],
+                "data": json.loads(r["data"]),
+                "applicant_group": r["applicant_group"],
+                "review": r["review"],
+                "evidence_text": r["evidence_text"],
+                "evidence_claim_ids": ids,
+                "method": r["method"],
+                "all_evidence_approved": bool(ids)
+                and all(review_by_claim.get(i) == "approved" for i in ids),
+            }
+        )
+    return out
 
 
 def resolve_error(store, error_id, replay_run_id, actor, note):
