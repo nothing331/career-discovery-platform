@@ -128,6 +128,7 @@ class RunLog:
                 "code": code,
                 "message": str(exc),
                 "traceback": "".join(traceback.format_exception(exc)),
+                **getattr(exc, "diagnostics", {}),
                 **context,
             }
         )

@@ -3,8 +3,8 @@
 import json
 import streamlit as st
 from kb_pipeline.engine import Engine
-from kb_pipeline.db import runs, jobs, claims, errors
-from kb_pipeline.knowledge import review, publish, catalogue
+from kb_pipeline.db import runs, jobs, claims, errors, snapshots
+from kb_pipeline.knowledge import review, publish, catalogue, list_structured
 
 st.set_page_config(page_title="Fieldnotes · Data review", layout="wide")
 st.title("Programme data review")
@@ -22,6 +22,11 @@ if not report["validation_version_current"]:
     st.warning(
         "This run used older extraction checks. Collect or replay it with the current checks before approving or publishing candidates."
     )
+superseded = report["superseded"]
+if superseded:
+    st.error(
+        "RUN_SUPERSEDED: a newer completed run exists for these programmes. Approval and publication are disabled here; review the newer run (rejections are still allowed)."
+    )
 cols = st.columns(3)
 cols[0].metric("Completed documents", report["documents"].get("done", 0))
 cols[1].metric("Error events", report["error_events"])
@@ -34,8 +39,8 @@ cols[2].metric(
 st.caption(
     f"Status: {report['status']} · Provider: {report['provider']} · Cost basis: {report['cost_basis']} · Reserved/uncertain cost: ${report['reserved_or_uncertain_usd']} · Errors can include held candidates in an otherwise parsed document."
 )
-review_tab, error_tab, public_tab = st.tabs(
-    ["Claims & evidence", "Errors", "Published catalogue"]
+review_tab, structured_tab, error_tab, public_tab = st.tabs(
+    ["Claims & evidence", "Structured facts", "Errors", "Published catalogue"]
 )
 with review_tab:
     rows = e.store.rows(claims, run_id=run_id)
@@ -69,7 +74,10 @@ with review_tab:
             st.write("Validation:", row["validation"])
             st.json(json.loads(row["quality"]))
             st.markdown("**Original source:**")
-            st.link_button("Open official source", target["url"])
+            page = e.store.one(snapshots, id=row["snapshot_id"])
+            st.link_button("Open official source", page["url"])
+            if page["url"] != target["url"]:
+                st.caption("Evidence comes from a linked follow-up page, not the programme page.")
             st.code(body["quote"], language=None)
             reviewer = st.text_input("Reviewer name")
             note = st.text_area("Review note / reason for rejection")
@@ -83,6 +91,7 @@ with review_tab:
                 or not confirmed
                 or row["validation"] != "valid"
                 or report["status"] != "awaiting_review"
+                or superseded
                 or not report["validation_version_current"],
             ):
                 review(e.store, cid, reviewer, "approved", note)
@@ -98,12 +107,19 @@ with review_tab:
     if st.button(
         "Publish reviewed run",
         disabled=report["status"] != "awaiting_review"
+        or superseded
         or not report["validation_version_current"],
     ):
         try:
             st.success("Published release " + publish(e.store, run_id))
         except Exception as exc:
             st.error(str(exc))
+with structured_tab:
+    st.caption(
+        "Typed facts derived from valid claims. They publish only when every evidence claim is approved."
+    )
+    st.json(report["structured"])
+    st.dataframe(list_structured(e.store, run_id), hide_index=True)
 with error_tab:
     rows = e.store.rows(errors, run_id=run_id)
     stage = st.selectbox("Stage", ["all"] + sorted({r["stage"] for r in rows}))

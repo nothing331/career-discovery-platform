@@ -6,7 +6,7 @@ from .config import Settings, PROJECT
 from .contracts import PipelineError
 from .engine import Engine
 from .db import claims, errors
-from .knowledge import review, publish, catalogue, resolve_error
+from .knowledge import review, publish, catalogue, resolve_error, list_structured
 from .logging import Redactor
 from .evaluation import load_dataset, classifier_report, extraction_report, save_report
 
@@ -78,6 +78,12 @@ def list_claims(run_id: str):
             for r in e.store.rows(claims, run_id=run_id)
         ]
     )
+
+
+@app.command("structured")
+def structured_facts(run_id: str, kind: str | None = None):
+    rows = list_structured(engine().store, run_id)
+    output([r for r in rows if kind is None or r["kind"] == kind])
 
 
 @app.command("errors")

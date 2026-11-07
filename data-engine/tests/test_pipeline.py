@@ -1,4 +1,3 @@
-from dataclasses import replace
 from decimal import Decimal
 import json
 import httpx
@@ -9,8 +8,7 @@ from kb_pipeline.db import jobs, claims, errors, runs, releases
 from kb_pipeline.contracts import PipelineError
 from kb_pipeline.knowledge import review, publish, catalogue
 from kb_pipeline.api import create_app
-from kb_pipeline.logging import RunLog, Redactor
-from conftest import HTML
+from kb_pipeline.logging import RunLog
 
 
 def test_collection_evidence_holds_and_review_gate(engine, settings):

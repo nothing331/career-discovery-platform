@@ -161,7 +161,12 @@ def test_extraction_evaluation_requires_model_grounding_and_exact_snapshot(
     model = dict(title)
     body = json.loads(model["body"])
     body["method"] = "openrouter:synthetic-model"
-    model.update(id=fingerprint(body), body=json.dumps(body))
+    model.update(
+        id=fingerprint(body),
+        body=json.dumps(body),
+        claim_key=None,  # a hand-made twin; the real pipeline would merge methods
+        agreeing_methods=None,
+    )
     engine.store.insert(claims, **model)
     assert extraction_report(engine.store, rid, labelled, document)["passed"]
     body["value"] = "An invented programme"

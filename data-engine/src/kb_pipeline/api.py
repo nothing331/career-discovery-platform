@@ -36,4 +36,9 @@ def create_app(settings=None):
             "facts": programme(programme_id)["facts"],
         }
 
+    @app.get("/v1/programmes/{programme_id}/structured")
+    def structured(programme_id: str):
+        p = programme(programme_id)
+        return {"release_id": p["release_id"], "structured": p["structured"]}
+
     return app

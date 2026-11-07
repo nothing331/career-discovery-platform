@@ -20,6 +20,9 @@ UNKNOWN_SCOPE = {
     "n/a",
 }
 
+GENERAL_SCOPE = "general (no specific applicant group stated)"
+RECURRING_INTAKES = {"winter semester (recurring)", "summer semester (recurring)"}
+
 
 def scope_known(value):
     return (
@@ -39,6 +42,8 @@ class Target(BaseModel):
     allowed_hosts: list[str]
     applicant_group: str = "not established"
     intake: str | None = None
+    # Depth-1 crawl of admissions-relevant same-host links from the programme page.
+    follow_links: bool = True
 
 
 class Registry(BaseModel):
@@ -79,10 +84,10 @@ class Claim(BaseModel):
     location_id: str
     # Unknown applicability is explicit, never inferred from an institution-wide label.
     applicant_group: str = Field(
-        description="Explicitly stated applicant group; otherwise exactly 'not established'. Do not infer nationality or universal applicability."
+        description="The explicitly stated applicant group; or exactly 'general (no specific applicant group stated)' when the block states no group at all; or exactly 'not established' when the block mentions applicant groups ambiguously. Never infer nationality."
     )
     intake: str | None = Field(
-        description="Explicit source-backed intake including a year, otherwise actual JSON null. Never the string 'null', 'unknown' or 'not established'. A recurring season/date without a year is not a named intake."
+        description="Explicit source-backed intake including a year; or, for a recurring day+month date tied to a semester with no year, exactly 'winter semester (recurring)' or 'summer semester (recurring)'; otherwise actual JSON null. Never invent a year. Never the string 'null', 'unknown' or 'not established'."
     )
     conditions: str | None = Field(
         description="Copy applicability, alternatives and exceptions from the source, or actual JSON null when none are stated."

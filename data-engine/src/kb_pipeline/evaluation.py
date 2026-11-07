@@ -204,7 +204,9 @@ def extraction_report(store, run_id, dataset, document):
     rows = [
         r
         for r in store.rows(claims, run_id=run_id)
-        if json.loads(r["body"])["method"].startswith(provider + ":")
+        # Follow-up pages carry their own snapshots and location ids.
+        if r["snapshot_id"] == job["snapshot_id"]
+        and json.loads(r["body"])["method"].startswith(provider + ":")
     ]
     parsed = [(r, Claim.model_validate_json(r["body"])) for r in rows]
     matches = []
@@ -223,7 +225,15 @@ def extraction_report(store, run_id, dataset, document):
             matches.append({"expected": expected.id, "claim_ids": matched})
         else:
             missing.append({"expected": expected.id, "critical": expected.critical})
-    allowed = {"valid", "MISSING_APPLICANT_SCOPE", "MISSING_INTAKE_SCOPE"}
+    # Scope/semantic holds are not grounding failures; they stay held for review.
+    allowed = {
+        "valid",
+        "MISSING_APPLICANT_SCOPE",
+        "MISSING_INTAKE_SCOPE",
+        "NOT_A_FACT",
+        "APPLICANT_SCOPE_CONFLICT",
+        "FOLLOWUP_PROGRAMME_UNVERIFIED",
+    }
     invalid = [
         {
             "claim_id": r["id"],

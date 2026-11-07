@@ -171,7 +171,6 @@ def test_unusable_groq_usage_retains_reservation(engine, settings, target, usage
     [
         ("timeout", "MODEL_TRANSPORT"),
         ("429", "MODEL_RATE_LIMIT"),
-        ("400", "MODEL_BILLING_UNCERTAIN"),
         ("usage", "MODEL_BILLING_UNCERTAIN"),
     ],
 )
@@ -186,18 +185,19 @@ def test_groq_engine_pauses_without_other_provider_fallback(
             raise httpx.ReadTimeout("Synthetic timeout")
         if failure == "429":
             return httpx.Response(429, headers={"retry-after": "60"})
-        if failure == "400":
-            return httpx.Response(400, json={"error": {"code": "json_validate_failed"}})
         return httpx.Response(200, json={"usage": {}})
 
     e = Engine(
         groq_settings(settings),
         fetch_client=fetch_client,
         model_client=httpx.Client(transport=httpx.MockTransport(handle)),
+        sleep=lambda _: None,
     )
     rid = e.enqueue(llm=True)
     report = e.work(rid)
-    assert report["status"] == "paused" and len(calls) == 1
+    # 429 is retried (default 4 retries) before the run pauses.
+    assert report["status"] == "paused"
+    assert len(calls) == (5 if failure == "429" else 1)
     assert e.store.rows(jobs, run_id=rid)[0]["error_id"]
     assert report["known_cost_usd"] is None
     assert Decimal(report["reserved_or_uncertain_usd"]) > 0

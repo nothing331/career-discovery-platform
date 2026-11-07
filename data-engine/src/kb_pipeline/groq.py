@@ -46,9 +46,34 @@ class Groq(OpenRouter):
         ) / Decimal(1_000_000)
         return usage, estimate
 
-    def error_code(self, status):
-        # Generation can fail schema validation with HTTP 400. Without usage,
-        # retain the reservation and stop rather than assuming it was free.
-        return (
-            "MODEL_BILLING_UNCERTAIN" if status == 400 else super().error_code(status)
+    def on_billed_http_error(self, status, detail, reserve):
+        if status != 400:
+            return
+        # Tokens may have been generated and usage is unknown: charge the whole
+        # reservation as spent so cost is never under-counted.
+        self.store.settle(self.run_id, reserve, reserve)
+        self.log.emit(
+            "model.charged_reservation",
+            "WARNING",
+            job_id=self.job_id,
+            provider=self.provider,
+            amount_usd=str(reserve),
+            reason="HTTP 400 without usage",
         )
+
+    def error_code(self, status, detail=None):
+        if status != 400:
+            return super().error_code(status, detail)
+        # Schema-validation failures and other rejections are per-request, not
+        # run-wide problems: non-stop codes.
+        hint = (
+            " ".join(
+                str(detail.get(k) or "")
+                for k in ("provider_error_code", "provider_error_type", "response_body")
+            ).lower()
+            if detail
+            else ""
+        )
+        if "json_validate_failed" in hint or "schema" in hint or "validation" in hint:
+            return "MODEL_SCHEMA_INVALID"
+        return "MODEL_REQUEST_REJECTED"

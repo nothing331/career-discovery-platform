@@ -23,6 +23,12 @@ class Settings:
     output_rate: Decimal = Decimal("0.50")
     output_tokens: int = 2048
     provider: str = "openrouter"
+    followup_limit: int = 6
+    # Pacing/retry knobs do not change outputs, so they stay out of model_config().
+    rate_limit_retries: int = 4
+    rate_limit_max_wait: float = 60
+    tpm_limit: int = 0
+    rpm_limit: int = 0
 
     def model_config(self):
         """Non-secret settings frozen into runs and provider-specific cache keys."""
@@ -60,6 +66,7 @@ class Settings:
             delay=float(env.get("ENGINE_DELAY_SECONDS", "3")),
             max_documents=int(env.get("ENGINE_MAX_DOCUMENTS", "50")),
             retries=int(env.get("ENGINE_MAX_RETRIES", "2")),
+            followup_limit=int(env.get("ENGINE_FOLLOWUP_LIMIT", "6")),
             budget=Decimal(env.get("ENGINE_RUN_BUDGET_USD", "5")),
             provider=provider,
             api_key=env.get(prefix + "_API_KEY") or "",
@@ -77,12 +84,19 @@ class Settings:
                 if groq
                 else env.get("OPENROUTER_MAX_OUTPUT_PER_MILLION", ".50")
             ),
+            rate_limit_retries=int(env.get("LLM_RATE_LIMIT_RETRIES", "4")),
+            rate_limit_max_wait=float(env.get("LLM_RATE_LIMIT_MAX_WAIT", "60")),
+            tpm_limit=int(env.get(prefix + "_TPM_LIMIT", "8000" if groq else "0")),
+            rpm_limit=int(env.get(prefix + "_RPM_LIMIT", "30" if groq else "0")),
             output_tokens=int(
                 env.get(prefix + "_MAX_OUTPUT_TOKENS", "4096" if groq else "2048")
             ),
         )
         if not (
-            0 <= s.delay <= 3600 and 1 <= s.max_documents <= 500 and 0 <= s.retries <= 2
+            0 <= s.delay <= 3600
+            and 1 <= s.max_documents <= 500
+            and 0 <= s.retries <= 2
+            and 0 <= s.followup_limit <= 12
         ):
             raise ValueError("Invalid collection limits")
         if (
@@ -92,4 +106,11 @@ class Settings:
             or not 128 <= s.output_tokens <= 8192
         ):
             raise ValueError("Invalid budget or model limits")
+        if not (
+            0 <= s.rate_limit_retries <= 10
+            and 0 <= s.rate_limit_max_wait <= 3600
+            and 0 <= s.tpm_limit <= 10_000_000
+            and 0 <= s.rpm_limit <= 100_000
+        ):
+            raise ValueError("Invalid rate-limit settings")
         return s

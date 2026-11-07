@@ -15,6 +15,7 @@ from sqlalchemy import (
     Integer,
     Text,
     ForeignKey,
+    Index,
     event,
     select,
 )
@@ -22,7 +23,7 @@ from .contracts import PipelineError
 
 
 def now():
-    return datetime.now(timezone.utc).isoformat()
+    return datetime.now(timezone.utc).isoformat(timespec="microseconds")
 
 
 def uid():
@@ -104,6 +105,11 @@ claims = Table(
     Column("reviewer", String),
     Column("review_note", Text),
     Column("reviewed_at", String),
+    # Fingerprint of entity + source content hash + claim body WITHOUT method.
+    Column("claim_key", String),
+    # JSON list of extractor methods that produced this exact claim (NULL on pre-002 rows).
+    Column("agreeing_methods", Text),
+    Index("uq_staging_claims_run_claim_key", "run_id", "claim_key", unique=True),
 )
 releases = Table(
     "kb_releases",
@@ -122,6 +128,51 @@ facts = Table(
     Column("target", Text),
     Column("body", Text),
     Column("evidence", Text),
+)
+pages = Table(
+    "ops_pages",
+    meta,
+    Column("id", String, primary_key=True),
+    Column("job_id", ForeignKey("ops_jobs.id")),
+    Column("url", String),
+    Column("roles", Text),
+    Column("link_text", Text),
+    Column("kind", String),
+    Column("snapshot_id", ForeignKey("ops_snapshots.id")),
+    Column("status", String),
+    Column("error_code", String),
+    Column("created_at", String),
+    Index("ix_ops_pages_job_id", "job_id"),
+)
+structured = Table(
+    "structured_facts",
+    meta,
+    Column("id", String, primary_key=True),
+    Column("run_id", ForeignKey("ops_runs.id")),
+    Column("job_id", ForeignKey("ops_jobs.id")),
+    Column("entity_id", String),
+    Column("kind", String),
+    Column("data", Text),
+    Column("evidence_claim_ids", Text),
+    Column("evidence_text", Text),
+    Column("method", String),
+    Column("applicant_group", String),
+    Column("fact_key", String),
+    Column("review", String, default="pending"),
+    Column("created_at", String),
+    Index("ix_structured_facts_kind", "kind"),
+    Index("uq_structured_facts_run_fact_key", "run_id", "fact_key", unique=True),
+)
+kb_structured = Table(
+    "kb_structured_facts",
+    meta,
+    Column("id", String, primary_key=True),
+    Column("release_id", ForeignKey("kb_releases.id")),
+    Column("entity_id", String),
+    Column("kind", String),
+    Column("data", Text),
+    Column("evidence", Text),
+    Column("method", String),
 )
 
 

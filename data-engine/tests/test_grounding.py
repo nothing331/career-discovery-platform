@@ -29,8 +29,8 @@ def test_unique_exact_quote_can_restore_wrong_location():
 
 
 def test_merged_requirements_expand_only_with_exact_consecutive_source_context():
-    a = "A prior degree is required."
-    b = "Alternatively, equivalent experience may be considered."
+    a = "A prior degree in a related field is required."
+    b = "Alternatively, equivalent professional experience may be considered."
     source = [block("a", a), block("b", b)]
     result, action = ground(claim(a + " " + b), source)
     assert [r.location_id for r in result] == ["a", "b"]
