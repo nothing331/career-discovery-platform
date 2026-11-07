@@ -1,0 +1,23 @@
+[project]
+name = "career-data-engine"
+version = "0.1.0"
+description = "Local evidence-backed programme collection, review and replay"
+requires-python = ">=3.12"
+dependencies = [
+  "httpx>=0.28,<1", "beautifulsoup4>=4.13,<5", "pydantic>=2.11,<3",
+  "sqlalchemy>=2.0,<3", "alembic>=1.16,<2", "pdfplumber>=0.11,<1",
+  "python-dotenv>=1.1,<2", "typer>=0.16,<1", "fastapi>=0.115,<1", "uvicorn>=0.34,<1"
+]
+[project.optional-dependencies]
+review = ["streamlit>=1.45,<2"]
+[dependency-groups]
+dev = ["pytest>=8.3,<10"]
+[project.scripts]
+kb-pipeline = "kb_pipeline.cli:main"
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+[tool.hatch.build.targets.wheel]
+packages = ["src/kb_pipeline"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]

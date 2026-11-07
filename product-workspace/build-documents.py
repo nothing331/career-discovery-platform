@@ -19,10 +19,18 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 
 
+def excluded_source(path):
+    parts = path.relative_to(ROOT).parts
+    # Runtime snapshots, diagnostics and log summaries are local operational data,
+    # not documents to include in a shareable or hosted workspace.
+    local_data = parts[0] == "data" or parts[:2] == ("data-engine", "data")
+    return local_data or any(part.startswith(".") or part in {"node_modules", "venv"} for part in parts)
+
+
 def build():
     documents = {}
     for path in sorted(ROOT.rglob("*.md")):
-        if any(part.startswith(".") or part in {"node_modules", "venv"} for part in path.relative_to(ROOT).parts):
+        if excluded_source(path):
             continue
         key = path.relative_to(ROOT).as_posix()
         text = path.read_text()
@@ -38,7 +46,7 @@ def build():
         documents[key] = {"title": title[1] if title else path.stem, "html": rendered, "toc": toc}
     # Structured source records should remain available in the single-file export.
     for path in sorted(ROOT.rglob("*.json")):
-        if any(part.startswith(".") or part in {"node_modules", "venv"} for part in path.relative_to(ROOT).parts):
+        if excluded_source(path):
             continue
         key = path.relative_to(ROOT).as_posix()
         record = json.loads(path.read_text())

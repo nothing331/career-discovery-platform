@@ -1,0 +1,89 @@
+{
+  "country": "DE",
+  "subject": "Computer Science",
+  "institutions": [
+    "Saarland University",
+    "University of Passau",
+    "University of Freiburg"
+  ],
+  "targets": [
+    {
+      "id": "saarland-bsc",
+      "institution": "Saarland University",
+      "programme": "Computer Science (English) B.Sc.",
+      "level": "bachelor",
+      "country": "DE",
+      "url": "https://www.uni-saarland.de/en/study/programmes/bachelor/computer-science.html",
+      "allowed_hosts": [
+        "www.uni-saarland.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null
+    },
+    {
+      "id": "saarland-msc",
+      "institution": "Saarland University",
+      "programme": "Computer Science M.Sc.",
+      "level": "master",
+      "country": "DE",
+      "url": "https://www.uni-saarland.de/en/study/programmes/master/informatics.html",
+      "allowed_hosts": [
+        "www.uni-saarland.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null
+    },
+    {
+      "id": "passau-bsc",
+      "institution": "University of Passau",
+      "programme": "Computer Science B.Sc.",
+      "level": "bachelor",
+      "country": "DE",
+      "url": "https://www.uni-passau.de/en/bsc-computer-science",
+      "allowed_hosts": [
+        "www.uni-passau.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null
+    },
+    {
+      "id": "passau-msc",
+      "institution": "University of Passau",
+      "programme": "Computer Science M.Sc.",
+      "level": "master",
+      "country": "DE",
+      "url": "https://www.uni-passau.de/en/msc-computer-science/",
+      "allowed_hosts": [
+        "www.uni-passau.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null
+    },
+    {
+      "id": "freiburg-bsc",
+      "institution": "University of Freiburg",
+      "programme": "Computer Science B.Sc.",
+      "level": "bachelor",
+      "country": "DE",
+      "url": "https://www.tf.uni-freiburg.de/en/study-programs/computer-science/b-sc-computer-science",
+      "allowed_hosts": [
+        "www.tf.uni-freiburg.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null
+    },
+    {
+      "id": "freiburg-msc",
+      "institution": "University of Freiburg",
+      "programme": "Computer Science M.Sc.",
+      "level": "master",
+      "country": "DE",
+      "url": "https://www.tf.uni-freiburg.de/en/study-programs/computer-science/m-sc-computer-science",
+      "allowed_hosts": [
+        "www.tf.uni-freiburg.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null
+    }
+  ]
+}
