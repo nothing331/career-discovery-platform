@@ -117,10 +117,12 @@ def brief(facts):
     return [(f.kind, f.data.model_dump(exclude_none=True)) for f in facts]
 
 
-def win(season, end, start=None, group=GEN):
+def win(season, end, start=None, group=GEN, year=None):
     d = {"season": season, "end": end, "applicant_group": group}
     if start:
         d["start"] = start
+    if year:
+        d["year"] = year
     return ("application_window", d)
 
 
@@ -345,7 +347,7 @@ def test_not_applicable_fee_text_emits_nothing(n):
             "Bewerbungsfrist: 1. April bis 31. Mai",
             win("unknown", "31-05", "01-04"),
         ),
-        ("deadline", "Wintersemester: 15.07.2025", win("winter", "15-07")),
+        ("deadline", "Wintersemester: 15.07.2025", win("winter", "15-07", year=2025)),
         ("deadline", "Sommersemester: 15.01.", win("summer", "15-01")),
         (
             "deadline",
@@ -440,7 +442,7 @@ def test_all_evidence_is_verbatim_substring_and_method_set():
     for n, (field, quote) in FIXTURES.items():
         for fact in run(n):
             assert fact.grounded_in_quote(quote), (n, fact.evidence_text)
-            assert fact.method == NORMALIZER_VERSION == "regex-v2"
+            assert fact.method == NORMALIZER_VERSION == "regex-v3"
             assert fact.evidence_claim_ids == [f"c{n}"]
 
 

@@ -24,13 +24,15 @@ from .db import (
 from .logging import RunLog
 from .acquire import Fetcher, parse, normal, PARSER_VERSION
 from .links import select_followups, LINK_SELECTOR_VERSION
-from .normalize import normalize_claims
+from .normalize import normalize_claims, merge_facts, superseded_windows
 from .structured import NORMALIZER_VERSION
 from .extract import (
     rule_claims,
     classify,
     validate,
     quality,
+    is_placeholder,
+    canonical_title,
     EXTRACTOR_VERSION,
     SCHEMA_VERSION,
     PROMPT_VERSION,
@@ -101,6 +103,8 @@ class Engine:
             model_client,
             sleep,
         )
+        self._llm_off = set()  # job ids whose follow-up model calls are rate limited
+        self._page_model_error = None
 
     def registry(self):
         return Registry.model_validate_json(self.settings.registry.read_text())
@@ -506,7 +510,19 @@ class Engine:
         candidate = rule_claims(document, target, primary=primary)
         for skipped in document.get("rule_skips", []):
             log.emit("extract.skipped", "WARNING", job_id=job["id"], **skipped, **ctx)
-        if config["llm"]:
+        self._page_model_error = None
+        if config["llm"] and not primary and job["id"] in self._llm_off:
+            # An earlier follow-up of this job exhausted its rate-limit retries.
+            log.emit(
+                "extract.model_skipped",
+                "WARNING",
+                job_id=job["id"],
+                code="MODEL_RATE_LIMIT",
+                reason="earlier follow-up exhausted rate-limit retries",
+                **ctx,
+            )
+            self._page_model_error = "MODEL_RATE_LIMIT"
+        elif config["llm"]:
             model.job_id = job["id"]
             relevant = [b for b in document["blocks"] if classify(b) == "relevant"]
             try:
@@ -514,9 +530,15 @@ class Engine:
                     relevant, target, offline=config["offline"]
                 )
             except PipelineError as exc:
-                if exc.code not in MODEL_SKIP_CODES:
+                rate_limited = exc.code == "MODEL_RATE_LIMIT" and not primary
+                if exc.code not in MODEL_SKIP_CODES and not rate_limited:
                     raise
                 # Size/shape failures only lose the optional LLM pass; rule candidates stay.
+                # A follow-up whose rate-limit retries are exhausted is also only a lost
+                # optional pass (primary pages still pause: nothing else to keep).
+                if rate_limited:
+                    self._llm_off.add(job["id"])
+                    self._page_model_error = exc.code
                 log.failure(
                     job["id"],
                     "extract",
@@ -614,6 +636,12 @@ class Engine:
             body = json.loads(row["body"])
             if body["field"] in ("requirement", "deadline"):
                 continue
+            # Placeholders ("Not specified", "See current fee structure") and rows
+            # already held as non-facts carry no value, so they cannot disagree.
+            if row["validation"] == "NOT_A_FACT" or is_placeholder(
+                body["value"], body["field"]
+            ):
+                continue
             key = (
                 body["field"],
                 body["applicant_group"],
@@ -622,7 +650,7 @@ class Engine:
             )
             grouped.setdefault(key, []).append((row, body))
         for members in grouped.values():
-            if len({normal(b["value"]).casefold() for _, b in members}) > 1:
+            if self._values_disagree(members):
                 for row, body in members:
                     self.store.update(
                         claims,
@@ -642,14 +670,47 @@ class Engine:
                         snapshot_id=row["snapshot_id"],
                     )
 
+    @staticmethod
+    def _values_disagree(members):
+        if members[0][1]["field"] == "programme_title":
+            # "Computer Science (M.Sc.)" == "M.Sc. Computer Science"; a different
+            # subject or a different degree level is a real disagreement.
+            titles = [canonical_title(b["value"]) for _, b in members]
+            levels = {lv for _, lv in titles if lv}
+            return len({words for words, _ in titles}) > 1 or len(levels) > 1
+        return len({normal(b["value"]).casefold() for _, b in members}) > 1
+
+    # Kinds whose data carries its own applicability (tests, languages, APS countries):
+    # staged for review even when the claim is only held for an unestablished scope.
+    _SCOPE_TOLERANT_KINDS = ("language_test", "language_level", "aps_required")
+
     def _structure(self, job, target, log):
-        """Typed facts from valid claims only; each stays tied to its evidence claims."""
+        """Typed facts from valid claims; each stays tied to its evidence claims.
+
+        Language/APS facts may also come from a claim held only as
+        MISSING_APPLICANT_SCOPE (the page names groups such as 'China, India'); they
+        stay unpublishable because every evidence claim must be approved first.
+        """
+        rows = self.store.rows(claims, job_id=job["id"])
         pairs = [
             (r["id"], Claim.model_validate_json(r["body"]))
-            for r in self.store.rows(claims, job_id=job["id"])
+            for r in rows
             if r["validation"] == "valid"
         ]
-        for fact in normalize_claims(pairs):
+        held = [
+            (r["id"], Claim.model_validate_json(r["body"]))
+            for r in rows
+            if r["validation"] == "MISSING_APPLICANT_SCOPE"
+        ]
+        facts = normalize_claims(pairs)
+        facts += [
+            f
+            for f in normalize_claims(held)
+            if f.kind in self._SCOPE_TOLERANT_KINDS
+        ]
+        facts = merge_facts(facts)
+        superseded = superseded_windows(facts)
+        for fact in facts:
             # entity is part of the key: identical wording on two programmes is two facts
             fact_key = fingerprint([target.id, *fact.key()])
             if self.store.rows(structured, run_id=job["run_id"], fact_key=fact_key):
@@ -667,7 +728,7 @@ class Engine:
                 method=fact.method,
                 applicant_group=fact.applicant_group,
                 fact_key=fact_key,
-                review="pending",
+                review="superseded" if fact.key() in superseded else "pending",
                 created_at=now(),
             )
         log.emit("structured.created", job_id=job["id"], normalizer=NORMALIZER_VERSION)
@@ -818,7 +879,17 @@ class Engine:
                     hold=hold,
                 )
                 total += len(candidate)
-                self._record_page(job, link, "done", snapshot["id"])
+                if self._page_model_error:
+                    # Rule claims were kept; the page's model pass was not possible.
+                    self._record_page(
+                        job,
+                        link,
+                        "skipped",
+                        snapshot["id"],
+                        error_code=self._page_model_error,
+                    )
+                else:
+                    self._record_page(job, link, "done", snapshot["id"])
             except Exception as exc:
                 code = getattr(exc, "code", "")
                 if (

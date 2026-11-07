@@ -130,7 +130,7 @@ def _negated_at(text: str, spans: list[tuple[int, int]], pos: int) -> bool:
 
 _TEST_TOKENS = [
     ("TOEFL_ESSENTIALS", re.compile(r"TOEFL\s+Essentials", I)),
-    ("TOEFL_IBT", re.compile(r"TOEFL[\s-]*iBT|\biBT\b", I)),
+    ("TOEFL_IBT", re.compile(r"TOEFL[\s-]*\(?\s*iBT\s*\)?|\biBT\b", I)),
     ("IELTS", re.compile(r"\bIELTS\b", I)),
     ("PTE", re.compile(r"\bPearson\s+PTE(?:\s+Academic)?|\bPTE(?:\s+Academic)?\b", I)),
     (
@@ -605,6 +605,13 @@ _COUNTRY_LIST = re.compile(
 )
 
 
+_COUNTRY_BEFORE = re.compile(
+    r"(?i:applicants?|students?|graduates?|degrees?)\s+(?i:from|in|aus)\s+"
+    r"((?:[A-ZÄÖÜ][A-Za-zäöüß]+)(?:\s*(?:,|and|or|und|oder|&)\s*[A-ZÄÖÜ][A-Za-zäöüß]+)*)"
+    r"(?=[^.;]*\bAPS\b)"
+)
+
+
 def _aps(claim: Claim) -> list[Raw]:
     q = claim.quote
     spans = _sentences(q)
@@ -624,11 +631,22 @@ def _aps(claim: Claim) -> list[Raw]:
             end = cm.end(1)
             if q[end : end + 1] == ")":
                 end += 1
+        start = m.start()
+        if not countries:
+            # "Applicants from India must submit the APS certificate"
+            bm = _COUNTRY_BEFORE.search(q, sa, sb)
+            if bm and bm.end(1) <= m.start():
+                countries = [
+                    c
+                    for c in re.split(r"\s*(?:,|and|or|und|oder|&)\s*", bm.group(1))
+                    if c
+                ]
+                start = bm.start()
         return [
             (
                 "aps_required",
                 ApsRequired(required=True, countries=countries),
-                _ev(q, m.start(), end),
+                _ev(q, start, end),
             )
         ]
     return []
@@ -953,16 +971,20 @@ def _valid_dm(day: int, month: int) -> bool:
     return 1 <= month <= 12 and 1 <= day <= days[month - 1]
 
 
-def _find_dates(q: str) -> list[tuple[int, int, int, int]]:
+def _find_dates(q: str) -> list[tuple[int, int, int, int, str | None]]:
     found = []
     for m in _DM.finditer(q):
-        found.append((m.start(), m.end(), int(m.group(1)), _MONTHS[m.group(2).lower()]))
+        found.append(
+            (m.start(), m.end(), int(m.group(1)), _MONTHS[m.group(2).lower()], m.group(3))
+        )
     for m in _MD.finditer(q):
-        found.append((m.start(), m.end(), int(m.group(2)), _MONTHS[m.group(1).lower()]))
+        found.append(
+            (m.start(), m.end(), int(m.group(2)), _MONTHS[m.group(1).lower()], m.group(3))
+        )
     for m in _NUMDATE.finditer(q):
-        found.append((m.start(), m.end(), int(m.group(1)), int(m.group(2))))
+        found.append((m.start(), m.end(), int(m.group(1)), int(m.group(2)), m.group(3)))
     found.sort(key=lambda x: (x[0], -(x[1] - x[0])))
-    out: list[tuple[int, int, int, int]] = []
+    out: list[tuple[int, int, int, int, str | None]] = []
     for d in found:
         if out and d[0] < out[-1][1]:
             continue
@@ -983,7 +1005,7 @@ def _windows(claim: Claim) -> list[Raw]:
     i = 0
     while i < len(dates):
         d = dates[i]
-        item = dict(start=d[0], end=d[1], s=None, e=(d[2], d[3]))
+        item = dict(start=d[0], end=d[1], s=None, e=(d[2], d[3], d[4]))
         if i + 1 < len(dates):
             n = dates[i + 1]
             gap = q[d[1] : n[0]]
@@ -997,7 +1019,7 @@ def _windows(claim: Claim) -> list[Raw]:
                     )
                 )
             if ok:
-                item.update(end=n[1], s=(d[2], d[3]), e=(n[2], n[3]))
+                item.update(end=n[1], s=(d[2], d[3], d[4]), e=(n[2], n[3], n[4]))
                 i += 1
         items.append(item)
         i += 1
@@ -1092,6 +1114,7 @@ def _windows(claim: Claim) -> list[Raw]:
                     start=f"{s[0]:02d}-{s[1]:02d}" if s else None,
                     end=f"{e[0]:02d}-{e[1]:02d}",
                     applicant_group=group,
+                    year=int(e[2] or (s[2] if s else None) or 0) or None,
                 ),
                 _ev(q, ev_start, ev_end),
             )
@@ -1151,6 +1174,33 @@ def _dedupe(facts: Iterable[StructuredFact]) -> list[StructuredFact]:
         else:
             merged[key] = fact.model_copy(deep=True)
     return list(merged.values())
+
+
+def merge_facts(facts: Iterable[StructuredFact]) -> list[StructuredFact]:
+    """Public dedupe: one fact per (kind, canonical data, scope); evidence ids merged."""
+    return _dedupe(facts)
+
+
+def superseded_windows(facts: Iterable[StructuredFact]) -> set[tuple]:
+    """Keys of dated application windows replaced by a later year of the same window.
+
+    Windows that differ only by year (same season, start, end, group) are one
+    recurring cycle; the latest stated year is current, older ones are superseded so
+    an expired deadline is never presented as current. Windows without a year are
+    explicitly recurring and never superseded.
+    """
+    groups: dict[tuple, list[StructuredFact]] = {}
+    for fact in facts:
+        d = fact.data
+        if fact.kind == "application_window" and d.year is not None:
+            groups.setdefault(
+                (d.season, d.start, d.end, d.applicant_group, fact.applicant_group), []
+            ).append(fact)
+    old: set[tuple] = set()
+    for members in groups.values():
+        latest = max(f.data.year for f in members)
+        old.update(f.key() for f in members if f.data.year < latest)
+    return old
 
 
 DEFAULT_NORMALIZERS: tuple[Normalizer, ...] = (RegexNormalizer(),)

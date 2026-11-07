@@ -2,8 +2,60 @@
 
 import re
 from .acquire import normal
+from .extract import value_in_quote
 
-GROUNDING_VERSION = "exact-blocks-v1"
+GROUNDING_VERSION = "exact-blocks-v2"
+
+
+def _spanning_blocks(claim, quote, blocks, source_blocks):
+    """Source blocks behind a quote that spans several blocks, or None.
+
+    requirement: one unique consecutive run of complete blocks equal to the quote.
+    other fields: the model often joins whole paragraphs with newlines (adjacent or
+    not). When every non-empty line is verbatim inside exactly one supplied block,
+    keep the single such block that carries the value; otherwise nothing.
+    """
+    positions = {
+        b["id"]: i
+        for i, b in enumerate(source_blocks if source_blocks is not None else blocks)
+    }
+    sequences = []
+    for i in range(len(blocks)):
+        text = ""
+        for j in range(i, len(blocks)):
+            text = (text + " " + normal(blocks[j]["text"])).strip()
+            if len(text) > len(quote):
+                break
+            if (
+                text == quote
+                and j > i
+                and all(
+                    positions.get(blocks[k]["id"], -2) + 1
+                    == positions.get(blocks[k + 1]["id"], -4)
+                    for k in range(i, j)
+                )
+            ):
+                sequences.append(blocks[i : j + 1])
+    if claim.field == "requirement":
+        return sequences[0] if len(sequences) == 1 else None
+    if len(sequences) == 1:
+        candidates = sequences[0]
+    else:
+        lines = [normal(x) for x in claim.quote.split("\n") if normal(x)]
+        if len(lines) < 2:
+            return None
+        candidates = []
+        for line in lines:
+            owners = [b for b in blocks if line in normal(b["text"])]
+            if len(owners) != 1:
+                return None
+            candidates.append(owners[0])
+    holders = [
+        b
+        for b in candidates
+        if value_in_quote(claim.field, claim.value, normal(b["text"]))
+    ]
+    return holders if len(holders) == 1 else None
 
 
 def ground(claim, blocks, *, source_blocks=None):
@@ -18,7 +70,7 @@ def ground(claim, blocks, *, source_blocks=None):
     if (
         not quote
         or not normal(claim.value)
-        or normal(claim.value).casefold() not in quote.casefold()
+        or not value_in_quote(claim.field, claim.value, quote)
     ):
         return [claim], None
     singles = [b for b in blocks if quote in normal(b["text"])]
@@ -29,35 +81,10 @@ def ground(claim, blocks, *, source_blocks=None):
         matched = singles
     elif singles:
         return [claim], None
-    elif claim.field == "requirement":
-        sequences = []
-        positions = {
-            b["id"]: i
-            for i, b in enumerate(
-                source_blocks if source_blocks is not None else blocks
-            )
-        }
-        for i in range(len(blocks)):
-            text = ""
-            for j in range(i, len(blocks)):
-                text = (text + " " + normal(blocks[j]["text"])).strip()
-                if len(text) > len(quote):
-                    break
-                if (
-                    text == quote
-                    and j > i
-                    and all(
-                        positions.get(blocks[k]["id"], -2) + 1
-                        == positions.get(blocks[k + 1]["id"], -4)
-                        for k in range(i, j)
-                    )
-                ):
-                    sequences.append(blocks[i : j + 1])
-        if len(sequences) != 1:
-            return [claim], None
-        matched = sequences[0]
     else:
-        return [claim], None
+        matched = _spanning_blocks(claim, quote, blocks, source_blocks)
+        if matched is None:
+            return [claim], None
     result = []
     for block in matched:
         text = block["text"]

@@ -211,6 +211,8 @@ def publish(store, run_id):
             select(structured).where(structured.c.run_id == run_id)
         ).mappings():
             ids = json.loads(sf["evidence_claim_ids"])
+            if sf["review"] == "superseded":
+                continue  # an older year of the same window; never published as current
             if not ids or any(i not in evidence_by_claim for i in ids):
                 continue
             c.execute(
@@ -328,6 +330,7 @@ def list_structured(store, run_id):
                 "kind": r["kind"],
                 "data": json.loads(r["data"]),
                 "applicant_group": r["applicant_group"],
+                "review": r["review"],
                 "evidence_text": r["evidence_text"],
                 "evidence_claim_ids": ids,
                 "method": r["method"],

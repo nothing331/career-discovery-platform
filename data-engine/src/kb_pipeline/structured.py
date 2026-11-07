@@ -15,7 +15,7 @@ from typing import Literal, Union
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
-NORMALIZER_VERSION = "regex-v2"
+NORMALIZER_VERSION = "regex-v3"
 
 Language = Literal["english", "german"]
 FactKind = Literal[
@@ -140,6 +140,9 @@ class ApplicationWindow(_Model):
     )
     end: str = Field(pattern=r"^(0[1-9]|[12]\d|3[01])-(0[1-9]|1[0-2])$")
     applicant_group: str
+    # Calendar year of the end date when the source states one ("by July 31, 2025").
+    # None means an explicitly recurring window (day+month only).
+    year: int | None = Field(default=None, ge=1990, le=2100)
 
 
 FactData = Union[
@@ -239,6 +242,8 @@ class StructuredFact(_Model):
             for part in (data.start, data.end):
                 if part and not _day_in(part, ev):
                     raise ValueError(f"day of {part!r} not in evidence_text")
+            if data.year is not None and str(data.year) not in ev:
+                raise ValueError(f"year {data.year} not in evidence_text")
         return self
 
     def grounded_in_quote(self, quote: str) -> bool:
@@ -246,11 +251,9 @@ class StructuredFact(_Model):
         return self.evidence_text in quote
 
     def key(self) -> tuple:
-        """Identity used for dedupe; evidence ids are merged, not compared."""
-        return (
-            self.kind,
-            self.data.model_dump_json(),
-            self.applicant_group,
-            self.evidence_text,
-            self.method,
-        )
+        """Identity used for dedupe: (kind, canonical data, provenance scope).
+
+        Different wordings of the same fact ("DSH -2" / "DSH -2 C1 CEFR ; DSH -2")
+        collapse into one; their evidence claim ids are merged, not compared.
+        """
+        return (self.kind, self.data.model_dump_json(), self.applicant_group)

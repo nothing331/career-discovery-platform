@@ -3,8 +3,9 @@
 import re
 from .contracts import Claim, scope_known, GENERAL_SCOPE, RECURRING_INTAKES
 from .acquire import normal
+from .clauses import requirement_hold
 
-EXTRACTOR_VERSION = "rules-v5"
+EXTRACTOR_VERSION = "rules-v6"
 SCHEMA_VERSION = "claims-v3"
 PROMPT_VERSION = "grounded-v4"
 CLASSIFIER_VERSION = "keyword-v2"
@@ -121,6 +122,13 @@ def classify(block):
 
 
 HEADING_TAGS = ("h1", "h2", "h3", "h4")
+# Words that make a paragraph/list item a requirement candidate. Language tests and
+# APS are admission conditions even when the text says "accepted" instead of "required".
+_REQUIREMENT_TRIGGER = (
+    r"must|required|requirement|prerequisite|voraussetzung|nachweis"
+    r"|\bIELTS\b|\bTOEFL\b|\bTestDaF\b|\bDSH\b|\bAPS\b|\bPTE\b"
+    r"|language\s+(?:certificates?|proficiency)\s+(?:is|are)\s+(?:accepted|needed|necessary)"
+)
 
 
 def is_question(text):
@@ -195,11 +203,7 @@ def rule_claims(document, target, primary=True):
         if (
             classify(b) == "relevant"
             and b["location"].get("tag") in ("p", "li")
-            and re.search(
-                r"must|required|requirement|prerequisite|voraussetzung|nachweis",
-                text,
-                re.I,
-            )
+            and re.search(_REQUIREMENT_TRIGGER, text, re.I)
             and 40 <= len(text) <= 3000
             and b["location"].get("tag") not in HEADING_TAGS
             and not is_question(text)
@@ -213,13 +217,91 @@ def rule_claims(document, target, primary=True):
     return result
 
 
+# Placeholder text some pages/models emit instead of a value. Never a fact.
+_PLACEHOLDER_EXACT = re.compile(
+    r"(?:not\s+(?:specified|stated|provided|available|given|yet\s+\w+)|n/?a|tba|tbd|tbc|unknown|unspecified|varies|various|"
+    r"to\s+be\s+(?:announced|determined|confirmed)|none\s+given|-+|\u2013|\u2014|\?+)",
+    re.I,
+)
+_PLACEHOLDER_SEE = re.compile(
+    r"\bsee\s+(?:the\s+)?(?:current\s+|latest\s+|our\s+)?(?:fee\s+(?:structure|table|schedule)|fees?|website|web\s*page|details|below|above|page|link)\b",
+    re.I,
+)
+
+
+def is_placeholder(value, field=None):
+    """True for 'Not specified', 'n/a', 'TBA', 'See current fee structure', ..."""
+    text = re.sub(r"[\s.:;,!]+$", "", normal(value or "")).strip()
+    if not text:
+        return True
+    if _PLACEHOLDER_EXACT.fullmatch(text):
+        return True
+    # Prefix-labelled placeholders such as "Semester fee See current fee structure".
+    return field != "requirement" and len(text) <= 80 and bool(_PLACEHOLDER_SEE.search(text))
+
+
+_DEGREE_TOKEN = re.compile(
+    r"(?<![\w.])(?:(?P<b>b\.?\s?(?:sc|a|eng|ed)\.?|ll\.?\s?b\.?|bachelor(?:'s|\u2019s)?(?:\s+of\s+(?:science|arts|engineering|education|laws))?)"
+    r"|(?P<m>m\.?\s?(?:sc|a|eng|ed)\.?|ll\.?\s?m\.?|master(?:'s|\u2019s)?(?:\s+of\s+(?:science|arts|engineering|education|laws))?))(?![\w])",
+    re.I,
+)
+
+
+def canonical_title(value):
+    """Comparable form of a programme title: degree token(s) split off, case, brackets,
+    punctuation and the degree's position ignored. Returns (words, degree levels).
+
+    'Computer Science (M.Sc.)', 'M.Sc. Computer Science' and 'computer science, MSc'
+    agree; 'Computer Science B.Sc.' differs from them by level, and 'Data Science
+    (M.Sc.)' by subject.
+    """
+    text = normal(value or "").casefold()
+    levels = {
+        "bachelor" if m.group("b") else "master" for m in _DEGREE_TOKEN.finditer(text)
+    }
+    text = _DEGREE_TOKEN.sub(" ", text)
+    text = re.sub(r"[()\[\]{}.,:;|/\u2013\u2014-]+", " ", text)
+    words = " ".join(text.split())
+    return words, frozenset(levels)
+
+
+_NUMBER_WORDS = {
+    1: ("one", "ein", "eins", "eine", "einem"),
+    2: ("two", "zwei"),
+    3: ("three", "drei"),
+    4: ("four", "vier"),
+    5: ("five", "fünf", "fuenf"),
+    6: ("six", "sechs"),
+    7: ("seven", "sieben"),
+    8: ("eight", "acht"),
+    9: ("nine", "neun"),
+    10: ("ten", "zehn"),
+    11: ("eleven", "elf"),
+    12: ("twelve", "zwölf", "zwoelf"),
+}
+
+
+def value_in_quote(field, value, quote):
+    """Is the value literally in the quote? A digit duration may also be a number word
+    directly before 'semester(s)' (EN: 'six semesters', DE: 'sechs Semester')."""
+    v, q = normal(value).casefold(), normal(quote).casefold()
+    if v in q:
+        return True
+    if field == "duration_semesters" and v.isdecimal() and int(v) in _NUMBER_WORDS:
+        words = "|".join(_NUMBER_WORDS[int(v)])
+        return bool(re.search(rf"\b(?:{words})[\s-]+(?:semesters?|semestern?)\b", q))
+    return False
+
+
 def validate(claim, document):
     if not normal(claim.value) or not normal(claim.quote):
         return "EMPTY_CLAIM"
+    if is_placeholder(claim.value, claim.field):
+        return "NOT_A_FACT"
     block = next((b for b in document["blocks"] if b["id"] == claim.location_id), None)
     if not block or normal(claim.quote) not in normal(block["text"]):
         return "EVIDENCE_NOT_FOUND"
-    if normal(claim.value).casefold() not in normal(claim.quote).casefold():
+    if not value_in_quote(claim.field, claim.value, claim.quote):
         return "VALUE_NOT_GROUNDED"
     if claim.field != "programme_title":
         if block.get("location", {}).get("tag") in HEADING_TAGS or (
@@ -231,6 +313,12 @@ def validate(claim, document):
             len(block["text"].strip()) < 40 or is_question(block["text"])
         ):
             return "NOT_A_FACT"
+        if claim.field == "requirement":
+            # Curriculum/exam/thesis/fee clauses are not admission facts; subsection
+            # fragments are incomplete (admission) or noise (everything else).
+            held = requirement_hold(block["text"])
+            if held:
+                return held
     if (
         claim.field != "programme_title"
         and " ".join(claim.applicant_group.split()).casefold()
