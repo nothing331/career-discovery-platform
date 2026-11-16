@@ -10,7 +10,7 @@ class Groq(OpenRouter):
     endpoint = "https://api.groq.com/openai/v1/chat/completions"
     key_env = "GROQ_API_KEY"
     cost_basis = "token_rate_estimate"
-    unbilled_statuses = (401, 402, 403, 404, 422)
+    unbilled_statuses = (401, 402, 403, 404, 413, 422)
 
     def request(self, blocks, target, model):
         if model not in ("openai/gpt-oss-20b", "openai/gpt-oss-120b"):
@@ -20,8 +20,10 @@ class Groq(OpenRouter):
             )
         request = super().request(blocks, target, model)
         del request["provider"]
+        del request["reasoning"]
         request["max_completion_tokens"] = request.pop("max_tokens")
-        request["reasoning_effort"] = "low"
+        effort = getattr(self.settings, "reasoning_effort", "low")
+        request["reasoning_effort"] = effort if effort != "none" else "low"
         request["include_reasoning"] = False
         return request
 

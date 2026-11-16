@@ -4,11 +4,11 @@ A separate Python product for collecting official programme information into an 
 
 ## Initial dataset and models
 
-The founder chose Computer Science across bachelor's and master's levels, and delegated university/model selection. The initial registry contains **six core programmes across three universities**, rather than claiming complete Germany coverage or padding the programme count with specialisations:
+The founder chose Computer Science across bachelor's and master's levels, and delegated university/model selection. The registry (`config/DE.json`) holds **34 core programmes (one B.Sc. and one M.Sc. each) across 17 universities**, not complete Germany coverage and no specialisations:
 
-- Saarland University: [English B.Sc.](https://www.uni-saarland.de/en/study/programmes/bachelor/computer-science.html), [M.Sc.](https://www.uni-saarland.de/en/study/programmes/master/informatics.html).
-- University of Passau: [B.Sc.](https://www.uni-passau.de/en/bsc-computer-science), [M.Sc.](https://www.uni-passau.de/en/msc-computer-science/).
-- University of Freiburg: [B.Sc.](https://www.tf.uni-freiburg.de/en/study-programs/computer-science/b-sc-computer-science), [M.Sc.](https://www.tf.uni-freiburg.de/en/study-programs/computer-science/m-sc-computer-science).
+- **Top 15 (POC expansion, 2026-11-09).** Germany's computer science order from a cross-ranking aggregator ([xuanxiao.org](https://xuanxiao.org/en/subjects/computer-science/de)) that combines QS 2026 CS & IS and THE 2026 CS (a consensus ordering, not an official ranking): TUM, LMU, RWTH Aachen, TU Darmstadt, KIT, Tübingen, FAU Erlangen-Nürnberg, Bonn, Heidelberg, Stuttgart, TU Dresden, FU Berlin, Ruhr University Bochum, Freiburg, Hamburg.
+- **Substitutions.** TU Berlin (rank 3) returns HTTP 403 to this crawler and HU Berlin (rank 14) serves an anti-bot challenge, so both were replaced with the next eligible universities rather than circumventing the block. Würzburg (rank 17) timed out on every request from the collection machine, so Hamburg (rank 18) took its place. Saarland (rank 19) and Passau stay from the original pilot.
+- **Verification.** Every URL was checked with the engine's own fetcher (robots policy, same-host redirects, content type) and parser (`blocks-v4`): each yields a title and at least 2,000 characters of text. Where a university has no single-subject bachelor's page, the closest official page is used (LMU: Informatik Bachelor with 30-ECTS minor; Heidelberg: Data and Computer Science M.Sc.).
 
 These are collection test cases, not recommendations that a student should apply. The sources exercise English/German instruction, different page layouts and applicant-specific fees/requirements. A named intake has not been selected; the engine does not invent a future year from a recurring deadline.
 
@@ -39,6 +39,11 @@ uv run python -m kb_pipeline run --target saarland-bsc --budget-usd 5
 This fetches the approved seed pages, checks robots policy, follows only same-host HTTPS redirects, archives original bytes, parses HTML/PDF, classifies relevant blocks with local rules, and stages grounded candidate facts. Generic PDF parsing is implemented; the six initial seed documents are HTML. Oversized/poorly parsed sections are held, not silently truncated into facts.
 
 Source bytes have size limits; PDFs have a page limit. Host requests are sequential and delayed, with bounded transient retries. Cross-host redirects and blocked/unsupported sources require source review. The programme registry is intentionally curated: automatic name-to-domain search, broad crawling, JavaScript browser fallback and Jev classification are later adapters, not implemented capabilities of this version.
+
+Parser `blocks-v4` handles three page patterns seen on university sites:
+- **Article-header titles.** It keeps a title `h1` that sits in the article's own `<header>`. Site-banner headers are still dropped, and a content `h1` takes precedence.
+- **Pages without an `h1`.** It falls back to the document `<title>` as the title block (`location.source = "title"`).
+- **Anti-bot interstitials.** "Making sure you're not a bot", browser checks and similar short pages fail with `BOT_CHALLENGE` instead of being parsed as content. These are the site refusing automated access, and the engine does not try to get around them.
 
 Jobs and checkpoints persist in SQLite. For separate execution:
 

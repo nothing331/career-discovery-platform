@@ -17,12 +17,16 @@ class Settings:
     retries: int = 2
     budget: Decimal = Decimal("5")
     api_key: str = field(default="", repr=False)
-    model: str = "qwen/qwen3.5-flash-02-23"
-    fallback_model: str = "google/gemini-2.5-flash-lite"
+    model: str = "openai/gpt-oss-20b"
+    fallback_model: str = "openai/gpt-oss-120b"
     input_rate: Decimal = Decimal("0.20")
     output_rate: Decimal = Decimal("0.50")
     output_tokens: int = 2048
     provider: str = "openrouter"
+    # Reasoning models otherwise spend the whole output budget thinking.
+    reasoning_effort: str = "low"
+    # OpenRouter upstream providers to try first (e.g. ("Groq",)); empty = cheapest.
+    provider_order: tuple = ()
     followup_limit: int = 6
     # Pacing/retry knobs do not change outputs, so they stay out of model_config().
     rate_limit_retries: int = 4
@@ -38,6 +42,8 @@ class Settings:
             "input_rate": str(self.input_rate),
             "output_rate": str(self.output_rate),
             "output_tokens": self.output_tokens,
+            "reasoning_effort": self.reasoning_effort,
+            "provider_order": list(self.provider_order),
         }
 
     @classmethod
@@ -91,6 +97,16 @@ class Settings:
             output_tokens=int(
                 env.get(prefix + "_MAX_OUTPUT_TOKENS", "4096" if groq else "2048")
             ),
+            reasoning_effort=(env.get(prefix + "_REASONING_EFFORT") or "low")
+            .strip()
+            .lower(),
+            provider_order=()
+            if groq
+            else tuple(
+                p.strip()
+                for p in (env.get("OPENROUTER_PROVIDER_ORDER") or "").split(",")
+                if p.strip()
+            ),
         )
         if not (
             0 <= s.delay <= 3600
@@ -113,4 +129,6 @@ class Settings:
             and 0 <= s.rpm_limit <= 100_000
         ):
             raise ValueError("Invalid rate-limit settings")
+        if s.reasoning_effort not in ("none", "low", "medium", "high"):
+            raise ValueError("Reasoning effort must be none, low, medium or high")
         return s

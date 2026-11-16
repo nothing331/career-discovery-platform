@@ -2,11 +2,563 @@
   "country": "DE",
   "subject": "Computer Science",
   "institutions": [
+    "Technical University of Munich",
+    "LMU Munich",
+    "RWTH Aachen University",
+    "Technische Universität Darmstadt",
+    "Karlsruhe Institute of Technology",
+    "University of Tübingen",
+    "Friedrich-Alexander-Universität Erlangen-Nürnberg",
+    "University of Bonn",
+    "Heidelberg University",
+    "University of Stuttgart",
+    "Technische Universität Dresden",
+    "Freie Universität Berlin",
+    "Ruhr University Bochum",
+    "University of Freiburg",
+    "Universität Hamburg",
     "Saarland University",
-    "University of Passau",
-    "University of Freiburg"
+    "University of Passau"
   ],
   "targets": [
+    {
+      "id": "tum-bsc",
+      "institution": "Technical University of Munich",
+      "programme": "Informatics B.Sc.",
+      "level": "bachelor",
+      "country": "DE",
+      "url": "https://www.tum.de/en/studies/degree-programs/detail/informatics-bachelor-of-science-bsc",
+      "allowed_hosts": [
+        "www.tum.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://www.tum.de/en/studies/tuition-fees"
+      ]
+    },
+    {
+      "id": "tum-msc",
+      "institution": "Technical University of Munich",
+      "programme": "Informatics M.Sc.",
+      "level": "master",
+      "country": "DE",
+      "url": "https://www.tum.de/en/studies/degree-programs/detail/informatics-master-of-science-msc",
+      "allowed_hosts": [
+        "www.tum.de",
+        "www.cit.tum.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://www.tum.de/en/studies/tuition-fees",
+        "https://www.cit.tum.de/en/cit/studies/degree-programs/master-informatics/"
+      ]
+    },
+    {
+      "id": "lmu-bsc",
+      "institution": "LMU Munich",
+      "programme": "Informatik B.Sc.",
+      "level": "bachelor",
+      "country": "DE",
+      "url": "https://www.lmu.de/de/studium/studienangebot/alle-studienfaecher-und-studiengaenge/informatik-bachelor-mit-nebenfach-30-ects-bachelor-hauptfach-2911.html",
+      "allowed_hosts": [
+        "www.lmu.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://www.lmu.de/de/studium/internationale-vollzeit-studierende/studienbewerbung/index.html",
+        "https://www.lmu.de/en/study/degree-students/applications-for-admission/",
+        "https://www.lmu.de/en/workspace-for-students/abc-study-guide/semester-fees-for-the-munich-student-union/index.html"
+      ]
+    },
+    {
+      "id": "lmu-msc",
+      "institution": "LMU Munich",
+      "programme": "Informatik M.Sc.",
+      "level": "master",
+      "country": "DE",
+      "url": "https://www.lmu.de/de/studium/studienangebot/alle-studienfaecher-und-studiengaenge/informatik-master-hauptfach-4501.html",
+      "allowed_hosts": [
+        "www.lmu.de",
+        "www.ifi.lmu.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://www.lmu.de/de/studium/internationale-vollzeit-studierende/studienbewerbung/index.html",
+        "https://www.lmu.de/en/study/degree-students/applications-for-admission/",
+        "https://www.lmu.de/en/workspace-for-students/abc-study-guide/semester-fees-for-the-munich-student-union/index.html",
+        "https://www.ifi.lmu.de/studium/studiengaenge/master/master_informatik/bewerbung/"
+      ]
+    },
+    {
+      "id": "rwth-bsc",
+      "institution": "RWTH Aachen University",
+      "programme": "Computer Science B.Sc.",
+      "level": "bachelor",
+      "country": "DE",
+      "url": "https://www.rwth-aachen.de/go/id/bnzs/lidx/1/",
+      "allowed_hosts": [
+        "www.rwth-aachen.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://www.rwth-aachen.de/cms/root/studium/vor-dem-studium/bewerbung-um-einen-studienplatz/bewerbung-bachelor/~bqrn/internationale-studierende/?lidx=1",
+        "https://www.rwth-aachen.de/go/id/bqmn/lidx/1"
+      ]
+    },
+    {
+      "id": "rwth-msc",
+      "institution": "RWTH Aachen University",
+      "programme": "Computer Science M.Sc.",
+      "level": "master",
+      "country": "DE",
+      "url": "https://www.rwth-aachen.de/cms/root/studium/vor-dem-studium/studiengaenge/liste-aktuelle-studiengaenge/studiengangbeschreibung/~bcfg/informatik-m-sc/?lidx=1",
+      "allowed_hosts": [
+        "www.rwth-aachen.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://www.rwth-aachen.de/cms/root/studium/vor-dem-studium/bewerbung-um-einen-studienplatz/master-bewerbung/~dqml/bewerbung-master-internationale/?lidx=1",
+        "https://www.rwth-aachen.de/go/id/bqmn/lidx/1"
+      ]
+    },
+    {
+      "id": "tudarmstadt-bsc",
+      "institution": "Technische Universität Darmstadt",
+      "programme": "Informatik B.Sc.",
+      "level": "bachelor",
+      "country": "DE",
+      "url": "https://www.tu-darmstadt.de/studieren/studieninteressierte/studienangebot_studiengaenge/studiengang_177792.en.jsp",
+      "allowed_hosts": [
+        "www.tu-darmstadt.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://www.tu-darmstadt.de/semesterbeitrag",
+        "https://www.tu-darmstadt.de/studieren/studieninteressierte/internationale_studieninteressierte/bewerbung_und_zulassung_international/index.en.jsp",
+        "https://www.tu-darmstadt.de/studieren/studieninteressierte/bewerbung_zulassung_tu/bewerbungsfristen/bachelor_studiengaenge_2/index.en.jsp"
+      ]
+    },
+    {
+      "id": "tudarmstadt-msc",
+      "institution": "Technische Universität Darmstadt",
+      "programme": "Informatik M.Sc.",
+      "level": "master",
+      "country": "DE",
+      "url": "https://www.tu-darmstadt.de/studieren/studieninteressierte/studienangebot_studiengaenge/studiengang_184129.en.jsp",
+      "allowed_hosts": [
+        "www.tu-darmstadt.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://www.tu-darmstadt.de/semesterbeitrag",
+        "https://www.tu-darmstadt.de/studieren/studieninteressierte/internationale_studieninteressierte/bewerbung_und_zulassung_international/index.en.jsp",
+        "https://www.tu-darmstadt.de/studieren/studieninteressierte/bewerbung_zulassung_tu/bewerbungsfristen/bachelor_studiengaenge_2/index.en.jsp"
+      ]
+    },
+    {
+      "id": "kit-bsc",
+      "institution": "Karlsruhe Institute of Technology",
+      "programme": "Informatics B.Sc.",
+      "level": "bachelor",
+      "country": "DE",
+      "url": "https://www.sle.kit.edu/english/vorstudium/bachelor-informatics.php",
+      "allowed_hosts": [
+        "www.sle.kit.edu",
+        "www.intl.kit.edu"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://www.intl.kit.edu/istudies/12606.php"
+      ]
+    },
+    {
+      "id": "kit-msc",
+      "institution": "Karlsruhe Institute of Technology",
+      "programme": "Informatics M.Sc.",
+      "level": "master",
+      "country": "DE",
+      "url": "https://www.sle.kit.edu/english/vorstudium/master-informatics.php",
+      "allowed_hosts": [
+        "www.sle.kit.edu",
+        "www.intl.kit.edu"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://www.intl.kit.edu/istudies/12606.php"
+      ]
+    },
+    {
+      "id": "tuebingen-bsc",
+      "institution": "University of Tübingen",
+      "programme": "Computer Science B.Sc.",
+      "level": "bachelor",
+      "country": "DE",
+      "url": "https://uni-tuebingen.de/en/study/finding-a-course/degree-programs-available/detail/course/informatik-bachelor-mono/",
+      "allowed_hosts": [
+        "uni-tuebingen.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://uni-tuebingen.de/en/study/organizing-your-studies/fees/tuition-fees/"
+      ]
+    },
+    {
+      "id": "tuebingen-msc",
+      "institution": "University of Tübingen",
+      "programme": "Computer Science M.Sc.",
+      "level": "master",
+      "country": "DE",
+      "url": "https://uni-tuebingen.de/en/study/finding-a-course/degree-programs-available/detail/course/computer-science-master/",
+      "allowed_hosts": [
+        "uni-tuebingen.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://uni-tuebingen.de/en/study/organizing-your-studies/fees/tuition-fees/",
+        "https://uni-tuebingen.de/en/study/application-and-enrollment/masters-degree/openingclosing-datesdeadlines-for-applications-for-the-masters-programmes-winter-semester/",
+        "https://uni-tuebingen.de/en/study/organizing-your-studies/fees/"
+      ]
+    },
+    {
+      "id": "fau-bsc",
+      "institution": "Friedrich-Alexander-Universität Erlangen-Nürnberg",
+      "programme": "Informatik B.Sc.",
+      "level": "bachelor",
+      "country": "DE",
+      "url": "https://www.fau.eu/degree-program/informatik-b-sc/",
+      "allowed_hosts": [
+        "www.fau.eu"
+      ],
+      "applicant_group": "not established",
+      "intake": null
+    },
+    {
+      "id": "fau-msc",
+      "institution": "Friedrich-Alexander-Universität Erlangen-Nürnberg",
+      "programme": "Informatik M.Sc.",
+      "level": "master",
+      "country": "DE",
+      "url": "https://www.fau.eu/degree-program/informatik-m-sc/",
+      "allowed_hosts": [
+        "www.fau.eu"
+      ],
+      "applicant_group": "not established",
+      "intake": null
+    },
+    {
+      "id": "bonn-bsc",
+      "institution": "University of Bonn",
+      "programme": "Computer Science B.Sc.",
+      "level": "bachelor",
+      "country": "DE",
+      "url": "https://www.uni-bonn.de/en/studying/degree-programs/degree-programs-a-z/computer-science-bsc",
+      "allowed_hosts": [
+        "www.uni-bonn.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://www.uni-bonn.de/en/studying/application-admission-and-enrollment/costs",
+        "https://www.uni-bonn.de/en/studying/application-admission-and-enrollment/application-deadlines"
+      ]
+    },
+    {
+      "id": "bonn-msc",
+      "institution": "University of Bonn",
+      "programme": "Computer Science M.Sc.",
+      "level": "master",
+      "country": "DE",
+      "url": "https://www.uni-bonn.de/en/studying/degree-programs/degree-programs-a-z/computer-science-msc",
+      "allowed_hosts": [
+        "www.uni-bonn.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://www.uni-bonn.de/en/studying/application-admission-and-enrollment/costs",
+        "https://www.uni-bonn.de/en/studying/application-admission-and-enrollment/application-deadlines"
+      ]
+    },
+    {
+      "id": "heidelberg-bsc",
+      "institution": "Heidelberg University",
+      "programme": "Computer Science B.Sc.",
+      "level": "bachelor",
+      "country": "DE",
+      "url": "https://www.uni-heidelberg.de/en/study/all-subjects/computer-science/computer-science-bachelor-100",
+      "allowed_hosts": [
+        "www.uni-heidelberg.de",
+        "www.mathinf.uni-heidelberg.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://www.uni-heidelberg.de/en/study/management-of-studies/semester-fees",
+        "https://www.mathinf.uni-heidelberg.de/en/studies/application-master-programs"
+      ]
+    },
+    {
+      "id": "heidelberg-msc",
+      "institution": "Heidelberg University",
+      "programme": "Data and Computer Science M.Sc.",
+      "level": "master",
+      "country": "DE",
+      "url": "https://www.uni-heidelberg.de/en/study/all-subjects/computer-science/data-and-computer-science-master",
+      "allowed_hosts": [
+        "www.uni-heidelberg.de",
+        "www.mathinf.uni-heidelberg.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://www.uni-heidelberg.de/en/study/management-of-studies/semester-fees",
+        "https://www.mathinf.uni-heidelberg.de/en/studies/application-master-programs",
+        "https://www.uni-heidelberg.de/en/study/management-of-studies/key-dates-deadlines/application-deadlines-for-the-1st-semester-of-the-masters-degree-programmes"
+      ]
+    },
+    {
+      "id": "stuttgart-bsc",
+      "institution": "University of Stuttgart",
+      "programme": "Informatik B.Sc.",
+      "level": "bachelor",
+      "country": "DE",
+      "url": "https://www.uni-stuttgart.de/studium/bachelor/informatik-b.sc./",
+      "allowed_hosts": [
+        "www.uni-stuttgart.de",
+        "www.student.uni-stuttgart.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://www.student.uni-stuttgart.de/en/organizing-studies/formalities/tuition-and-fees/tuition-fee/",
+        "https://www.uni-stuttgart.de/en/study/bachelor-programs/computer-science-b.sc./",
+        "https://www.uni-stuttgart.de/en/study/application/international-degree/application/"
+      ]
+    },
+    {
+      "id": "stuttgart-msc",
+      "institution": "University of Stuttgart",
+      "programme": "Computer Science M.Sc.",
+      "level": "master",
+      "country": "DE",
+      "url": "https://www.uni-stuttgart.de/en/study/study-programs/Computer-Science-M.Sc.-00001/",
+      "allowed_hosts": [
+        "www.uni-stuttgart.de",
+        "www.student.uni-stuttgart.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://www.student.uni-stuttgart.de/en/organizing-studies/formalities/tuition-and-fees/tuition-fee/",
+        "https://www.uni-stuttgart.de/en/study/application/master/admission/",
+        "https://www.uni-stuttgart.de/en/study/application/international-degree/application/"
+      ]
+    },
+    {
+      "id": "tudresden-bsc",
+      "institution": "Technische Universität Dresden",
+      "programme": "Informatik B.Sc.",
+      "level": "bachelor",
+      "country": "DE",
+      "url": "https://tu-dresden.de/ing/informatik/studium/studienangebot/bachelor-studiengaenge/bachelor-informatik",
+      "allowed_hosts": [
+        "tu-dresden.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://tu-dresden.de/studium/vor-dem-studium/internationales/faq",
+        "https://tu-dresden.de/gsw/zis/bewerbung/bachelor",
+        "https://tu-dresden.de/studium/vor-dem-studium/studienangebot/sins/entrance/281",
+        "https://tu-dresden.de/studium/im-studium/studienorganisation/rueckmeldung",
+        "https://tu-dresden.de/studium/vor-dem-studium/studienangebot/sins/sins_studiengang_faq_general"
+      ]
+    },
+    {
+      "id": "tudresden-msc",
+      "institution": "Technische Universität Dresden",
+      "programme": "Computer Science M.Sc.",
+      "level": "master",
+      "country": "DE",
+      "url": "https://tu-dresden.de/ing/informatik/studium/studienangebot/master-studiengaenge/m-sc-computer-science",
+      "allowed_hosts": [
+        "tu-dresden.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://tu-dresden.de/studium/vor-dem-studium/internationales/faq",
+        "https://tu-dresden.de/ing/informatik/studium/studienangebot/master-studiengaenge/m-sc-computer-science/admission?set_language=en",
+        "https://tu-dresden.de/studium/im-studium/studienorganisation/rueckmeldung",
+        "https://tu-dresden.de/studium/vor-dem-studium/studienangebot/sins/sins_studiengang_faq_general"
+      ]
+    },
+    {
+      "id": "fuberlin-bsc",
+      "institution": "Freie Universität Berlin",
+      "programme": "Informatik B.Sc.",
+      "level": "bachelor",
+      "country": "DE",
+      "url": "https://www.fu-berlin.de/studium/studienangebot/grundstaendige/informatik/index.html",
+      "allowed_hosts": [
+        "www.fu-berlin.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://www.fu-berlin.de/studium/studieren/studienorganisation/gebuehren/index.html",
+        "https://www.fu-berlin.de/studium/bewerbung/bewerbungsfristen/index.html",
+        "https://www.fu-berlin.de/studium/bewerbung/bachelor/ausl-hzb/index.html"
+      ]
+    },
+    {
+      "id": "fuberlin-msc",
+      "institution": "Freie Universität Berlin",
+      "programme": "Informatik M.Sc.",
+      "level": "master",
+      "country": "DE",
+      "url": "https://www.fu-berlin.de/studium/studienangebot/master/informatik/index.html",
+      "allowed_hosts": [
+        "www.fu-berlin.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://www.fu-berlin.de/studium/studieren/studienorganisation/gebuehren/index.html",
+        "https://www.fu-berlin.de/studium/bewerbung/bewerbungsfristen/index.html",
+        "https://www.fu-berlin.de/en/studium/studienangebot/master/informatik/index.html"
+      ]
+    },
+    {
+      "id": "bochum-bsc",
+      "institution": "Ruhr University Bochum",
+      "programme": "Informatik B.Sc.",
+      "level": "bachelor",
+      "country": "DE",
+      "url": "https://studienangebot.ruhr-uni-bochum.de/de/informatik/bachelor-1-fach",
+      "allowed_hosts": [
+        "studienangebot.ruhr-uni-bochum.de",
+        "studium.ruhr-uni-bochum.de",
+        "informatik.rub.de",
+        "international.ruhr-uni-bochum.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://studium.ruhr-uni-bochum.de/en/application-non-eu-citizens",
+        "https://studium.ruhr-uni-bochum.de/en/application-international-prospective-students",
+        "https://informatik.rub.de/en/studies/application/bsc/",
+        "https://international.ruhr-uni-bochum.de/sites/international.ruhr-uni-bochum.de/files/2025-08/Fact%20Sheet_RUB_English_2026_27.pdf"
+      ]
+    },
+    {
+      "id": "bochum-msc",
+      "institution": "Ruhr University Bochum",
+      "programme": "Computer Science M.Sc.",
+      "level": "master",
+      "country": "DE",
+      "url": "https://studienangebot.ruhr-uni-bochum.de/en/computer-science/master-1-subject",
+      "allowed_hosts": [
+        "studienangebot.ruhr-uni-bochum.de",
+        "studium.ruhr-uni-bochum.de",
+        "informatik.rub.de",
+        "international.ruhr-uni-bochum.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://studium.ruhr-uni-bochum.de/en/application-non-eu-citizens",
+        "https://studium.ruhr-uni-bochum.de/en/application-international-prospective-students",
+        "https://informatik.rub.de/en/studies/application/msc-cs/",
+        "https://studium.ruhr-uni-bochum.de/de/rueckmeldung-und-sozialbeitrag",
+        "https://international.ruhr-uni-bochum.de/sites/international.ruhr-uni-bochum.de/files/2025-08/Fact%20Sheet_RUB_English_2026_27.pdf"
+      ]
+    },
+    {
+      "id": "freiburg-bsc",
+      "institution": "University of Freiburg",
+      "programme": "Computer Science B.Sc.",
+      "level": "bachelor",
+      "country": "DE",
+      "url": "https://www.tf.uni-freiburg.de/en/study-programs/computer-science/b-sc-computer-science",
+      "allowed_hosts": [
+        "www.tf.uni-freiburg.de",
+        "uni-freiburg.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://uni-freiburg.de/en/studies/during-your-studies/semester-fees-and-tuition/",
+        "https://uni-freiburg.de/en/studies/applying/international-applicants/full-time-studies/"
+      ]
+    },
+    {
+      "id": "freiburg-msc",
+      "institution": "University of Freiburg",
+      "programme": "Computer Science M.Sc.",
+      "level": "master",
+      "country": "DE",
+      "url": "https://www.tf.uni-freiburg.de/en/study-programs/computer-science/m-sc-computer-science",
+      "allowed_hosts": [
+        "www.tf.uni-freiburg.de",
+        "uni-freiburg.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://uni-freiburg.de/en/studies/during-your-studies/semester-fees-and-tuition/"
+      ]
+    },
+    {
+      "id": "hamburg-bsc",
+      "institution": "Universität Hamburg",
+      "programme": "Informatik B.Sc.",
+      "level": "bachelor",
+      "country": "DE",
+      "url": "https://www.inf.uni-hamburg.de/en/studies/bachelor/inf.html",
+      "allowed_hosts": [
+        "www.inf.uni-hamburg.de",
+        "www.uni-hamburg.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://www.uni-hamburg.de/en/campuscenter/studienorganisation/studienverlauf/beitraege-gebuehren/semesterbeitrag.html",
+        "https://www.inf.uni-hamburg.de/en/studies/prospective-students/bachelor-application.html",
+        "https://www.uni-hamburg.de/en/campuscenter/studienorganisation/studienverlauf/beitraege-gebuehren.html"
+      ]
+    },
+    {
+      "id": "hamburg-msc",
+      "institution": "Universität Hamburg",
+      "programme": "Informatik M.Sc.",
+      "level": "master",
+      "country": "DE",
+      "url": "https://www.inf.uni-hamburg.de/en/studies/master/inf.html",
+      "allowed_hosts": [
+        "www.inf.uni-hamburg.de",
+        "www.uni-hamburg.de"
+      ],
+      "applicant_group": "not established",
+      "intake": null,
+      "extra_urls": [
+        "https://www.uni-hamburg.de/en/campuscenter/studienorganisation/studienverlauf/beitraege-gebuehren/semesterbeitrag.html",
+        "https://www.inf.uni-hamburg.de/en/studies/master/inf/msc-inf-application.html",
+        "https://www.uni-hamburg.de/en/campuscenter/studienorganisation/studienverlauf/beitraege-gebuehren.html"
+      ]
+    },
     {
       "id": "saarland-bsc",
       "institution": "Saarland University",
@@ -44,7 +596,11 @@
         "www.uni-passau.de"
       ],
       "applicant_group": "not established",
-      "intake": null
+      "intake": null,
+      "extra_urls": [
+        "https://www.uni-passau.de/en/costs-funding/enrolment-fee",
+        "https://www.uni-passau.de/en/study/news/news/no-tuition-fees-for-international-students-at-the-university-of-passau"
+      ]
     },
     {
       "id": "passau-msc",
@@ -57,33 +613,10 @@
         "www.uni-passau.de"
       ],
       "applicant_group": "not established",
-      "intake": null
-    },
-    {
-      "id": "freiburg-bsc",
-      "institution": "University of Freiburg",
-      "programme": "Computer Science B.Sc.",
-      "level": "bachelor",
-      "country": "DE",
-      "url": "https://www.tf.uni-freiburg.de/en/study-programs/computer-science/b-sc-computer-science",
-      "allowed_hosts": [
-        "www.tf.uni-freiburg.de"
-      ],
-      "applicant_group": "not established",
-      "intake": null
-    },
-    {
-      "id": "freiburg-msc",
-      "institution": "University of Freiburg",
-      "programme": "Computer Science M.Sc.",
-      "level": "master",
-      "country": "DE",
-      "url": "https://www.tf.uni-freiburg.de/en/study-programs/computer-science/m-sc-computer-science",
-      "allowed_hosts": [
-        "www.tf.uni-freiburg.de"
-      ],
-      "applicant_group": "not established",
-      "intake": null
+      "intake": null,
+      "extra_urls": [
+        "https://www.uni-passau.de/en/costs-funding/enrolment-fee"
+      ]
     }
   ]
 }

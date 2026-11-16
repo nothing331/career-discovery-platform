@@ -107,6 +107,61 @@ def detect_recurring_intake(block):
     return f"{next(iter(seasons))} semester (recurring)"
 
 
+_COUNTRIES_OUTSIDE = r"(?:third|non[-\s]?eu(?:/eea)?)[-\s]countr(?:y|ies)"
+# Applicant-group phrases copied verbatim (lower-cased) from a claim's own quote.
+_GROUP_PHRASE = re.compile(
+    rf"\b(?:(?:international|foreign|non[-\s]?eu(?:/eea)?)\s+(?:students|applicants)"
+    rf"(?:\s+from\s+{_COUNTRIES_OUTSIDE})?"
+    rf"|(?:students|applicants)\s+from\s+{_COUNTRIES_OUTSIDE})\b",
+    re.I,
+)
+_GROUP_FIELDS = ("tuition", "semester_contribution", "deadline")
+
+
+def fill_stated_group(claim, document):
+    """A model fee/deadline marked 'general' whose own quote names the applicant group
+    ("tuition fees for international students from third countries") takes that phrase
+    as its group. Only text in the quote is copied; a group named only in a heading or
+    nearby text leaves the claim held for review."""
+    if (
+        claim.field not in _GROUP_FIELDS
+        or " ".join(claim.applicant_group.split()).casefold() != GENERAL_SCOPE.casefold()
+    ):
+        return claim
+    m = _GROUP_PHRASE.search(claim.quote)
+    if not m:
+        return claim
+    return claim.model_copy(
+        update={"applicant_group": " ".join(m.group(0).split()).casefold()}
+    )
+
+
+def fill_recurring_intake(claim, document):
+    """A model deadline with no intake gets '<season> semester (recurring)' when its own
+    block names exactly one semester (or the quote names one of the block's two), the
+    quote has a day+month date and no year is in sight: the evidence ``validate``
+    demands for a recurring intake. Anything else is left for review."""
+    if claim.field != "deadline" or claim.intake is not None:
+        return claim
+    block = next(
+        (b for b in document["blocks"] if b["id"] == claim.location_id), None
+    )
+    if not block:
+        return claim
+    context = _context(block)
+    present = _seasons(context)
+    seasons = present if len(present) == 1 else _seasons(claim.quote) & present
+    if (
+        len(seasons) != 1
+        or not DATE_RE.search(claim.quote)
+        or YEAR_RE.search(context)
+    ):
+        return claim
+    return claim.model_copy(
+        update={"intake": f"{next(iter(seasons))} semester (recurring)"}
+    )
+
+
 def classify(block):
     text = (block.get("heading", "") + " " + block["text"]).lower()
     # Programme titles and qualification rows are useful even without topic words.
@@ -130,6 +185,80 @@ _REQUIREMENT_TRIGGER = (
     r"|\bIELTS\b|\bTOEFL\b|\bTestDaF\b|\bDSH\b|\bAPS\b|\bPTE\b"
     r"|language\s+(?:certificates?|proficiency)\s+(?:is|are)\s+(?:accepted|needed|necessary)"
 )
+
+
+# Key-fact rows ("Standard Period of Studies 6 semesters", "Dauer 6 Semester").
+_DURATION_LABEL = (
+    r"duration|period of stud|regelstudienzeit|studiendauer|^dauer\b"
+)
+# "ECTS Credits 180", "Leistungspunkte: 120": the row label, then the number.
+_ECTS_ROW = re.compile(
+    r"^(?:ECTS(?:[\s-]*(?:credits?|credit points|punkte|leistungspunkte))?|credit points|credits"
+    r"|leistungspunkte(?:\s*\(ECTS\))?)\s*[:：]?\s*(\d{2,3})\b",
+    re.I,
+)
+# "Language German and English", "Unterrichtssprache Deutsch, Englisch": the row is
+# only a teaching-language fact when the value is a language name.
+_LANGUAGE_ROW = re.compile(
+    r"^(?:language|sprache|unterrichtssprache|lehrsprache|studiensprache)\s*[:：]?\s*"
+    r"((?:german|english|deutsch|englisch|french|französisch)\b.*)$",
+    re.I,
+)
+
+
+# "Der Sozialbeitrag für das Wintersemester 2026/2027 beläuft sich auf insgesamt 380,00
+# Euro", "The semester contribution for the winter semester 2026/27 is €402": a sentence
+# whose subject is the semester fee and which states its amount.
+_FEE_SENTENCE = re.compile(
+    r"(?:^|(?<=[.!?:]\s))(?:(?:the|der|die|das)\s+)?"
+    r"(?:semester\s+(?:contribution|fee)|social\s+contribution|semesterbeitrag|sozialbeitrag"
+    r"|semestergeb[üu]hr)\b[^.!?;]{0,90}?\b(?:is|amounts\s+to|totals?|comes\s+to|betr[äa]gt"
+    r"|bel[äa]uft\s+sich\s+auf)\s+(?:insgesamt\s+|a\s+total\s+of\s+)?"
+    r"(?:(?:€|EUR)\s?\d[\d.,]*\d|\d[\d.,]*\s?(?:€|EUR\b|Euro\b|euros?\b))",
+    re.I,
+)
+# Not the regular fee: reduced, late, leave-of-absence, guest or partial amounts.
+_NOT_REGULAR_FEE = re.compile(
+    r"reduc|reduzier|erm[äa]ßig|leave|beurlaub|late|versp[äa]t|s[äa]umnis|auditor"
+    r"|gasth[öo]r|partial|teil|refund|erstatt",
+    re.I,
+)
+_SEMESTER_YEAR = re.compile(
+    r"\b(winter|summer|sommer)\s*semester[s]?\s+(\d{4}(?:\s*/\s*\d{2,4})?)", re.I
+)
+
+
+# "There are no tuition fees", "An der TU Dresden gibt es derzeit keine generellen
+# Studiengebühren", "... not charging additional tuition fees for international students".
+_NO_TUITION = re.compile(
+    r"[^.!?]*?(?:\bthere\s+are\s+no\s+tuition\s+fees\b"
+    r"|\bkeine\s+(?:generellen\s+|allgemeinen\s+)?studiengeb[üu]hren\b"
+    r"|\b(?:does|do)\s+not\s+charge\s+(?:any\s+)?tuition\b|\bnot\s+charging\s+(?:any\s+|additional\s+)?tuition\b"
+    r"|\babolished\s+(?:these\s+|the\s+)?tuition\s+fees\b)[^.!?]*[.!?]?",
+    re.I,
+)
+# Sentences after it that name exceptions ("Für Langzeitstudierende ... jedoch").
+_TUITION_EXCEPTION = re.compile(r"jedoch|however|except|ausnahme|but\b|second\s+degree|zweitstudium", re.I)
+
+
+def no_tuition_sentence(text):
+    """(sentence stating no tuition is charged, following exception sentences or None)."""
+    m = _NO_TUITION.search(text)
+    if not m:
+        return None
+    rest = [s.strip() for s in re.split(r"(?<=[.!?])\s+(?=[A-ZÄÖÜ])", text[m.end():]) if s.strip()]
+    exceptions = [s for s in rest[:2] if _TUITION_EXCEPTION.search(s) and re.search(r"tuition|studiengeb|fee|geb[üu]hr", s, re.I)]
+    return normal(m[0]), " ".join(exceptions) or None
+
+
+def semester_fee_sentence(text):
+    """(fee sentence, intake or None) when the text states the regular semester fee."""
+    m = _FEE_SENTENCE.search(text)
+    if not m or _NOT_REGULAR_FEE.search(m[0]):
+        return None
+    year = _SEMESTER_YEAR.search(m[0])
+    season = {"sommer": "summer"}.get(year[1].casefold(), year[1].casefold()) if year else None
+    return m[0], f"{season} semester {year[2]}" if year else None
 
 
 def is_question(text):
@@ -170,19 +299,19 @@ def rule_claims(document, target, primary=True):
     for b in document["blocks"]:
         text = b["text"]
         if b["location"].get("tag") == "tr":
-            if re.search(r"duration|period of study|regelstudienzeit", text, re.I):
-                m = re.search(r"\b(\d{1,2})\s*semesters?\b", text, re.I)
+            if re.search(_DURATION_LABEL, text, re.I):
+                m = re.search(r"\b(\d{1,2})\s*(?:fach)?semesters?\b", text, re.I)
                 if m:
                     add("duration_semesters", m[1], b)
-            if re.search(r"credits|scope|ects", text, re.I):
-                m = re.search(r"\b(\d{2,3})\s*ECTS\b", text, re.I)
+            if re.search(r"credits|scope|ects|leistungspunkte", text, re.I):
+                m = re.search(r"\b(\d{2,3})\s*ECTS\b", text, re.I) or _ECTS_ROW.match(text)
                 if m:
                     add("ects", m[1], b)
             m = re.search(
                 r"(?:languages? of instruction|teaching language)\s*[:：]?\s*(.+)",
                 text,
                 re.I,
-            )
+            ) or _LANGUAGE_ROW.match(text)
             if m:
                 add("teaching_language", m[1], b)
             m = re.search(r"tuition fees\s*[:：]?\s*(.+)", text, re.I)
@@ -193,7 +322,7 @@ def rule_claims(document, target, primary=True):
                     b,
                     conditions="Applicant applicability and exemptions require review",
                 )
-            if re.search(r"deadline", text, re.I):
+            if re.search(r"deadline|bewerbungsschluss|bewerbungsfrist", text, re.I):
                 add(
                     "deadline",
                     text,
@@ -201,6 +330,14 @@ def rule_claims(document, target, primary=True):
                     conditions="Recurring/source dates only; no target year inferred",
                     intake=None if target.intake else detect_recurring_intake(b),
                 )
+        if b["location"].get("tag") in ("p", "li"):
+            fee = semester_fee_sentence(text)
+            if fee:
+                add("semester_contribution", fee[0], b, intake=target.intake or fee[1])
+        if b["location"].get("tag") in ("p", "li") or "page" in b["location"]:
+            none = no_tuition_sentence(text)
+            if none:
+                add("tuition", none[0], b, conditions=none[1])
         if (
             classify(b) == "relevant"
             and b["location"].get("tag") in ("p", "li")
@@ -321,6 +458,29 @@ def _amounts(text):
             result.add(parse_amount(token))
         except ArithmeticError:
             pass
+    return result
+
+
+_EURO_NUM = r"\d{1,3}(?:[.,]\d{3})+(?:[.,]\d{1,2})?|\d+(?:[.,]\d{1,2})?"
+_EURO = r"(?:€|EUR(?![A-Za-z])|Euros?(?![A-Za-z]))"
+# "EUR 1,500", "1.500 €", "4,000 or 6,000 euros", "2,300 euros or 3,400 euros"
+_EURO_AMOUNT = re.compile(
+    rf"{_EURO}\s*({_EURO_NUM})"
+    rf"|((?:{_EURO_NUM})(?:\s*(?:or|and|to|oder|und|bis|[-–])\s*(?:{_EURO_NUM}))*)"
+    rf"\s*(?:[.,]-)?\s*{_EURO}",
+    re.I,
+)
+
+
+def euro_amounts(text):
+    """Amounts written next to a euro sign/word; other numbers (years, ECTS) ignored."""
+    result = set()
+    for m in _EURO_AMOUNT.finditer(text or ""):
+        for token in re.findall(_EURO_NUM, m.group(1) or m.group(2)):
+            try:
+                result.add(parse_amount(token))
+            except ArithmeticError:
+                pass
     return result
 
 

@@ -9,9 +9,12 @@ from .db import (
     errors,
     structured,
     kb_structured,
+    snapshots,
+    fingerprint,
     uid,
     now,
 )
+from .acquire import PARSER_VERSION, core_blocks
 from .contracts import PipelineError
 from .extract import EXTRACTOR_VERSION, SCHEMA_VERSION
 from .grounding import GROUNDING_VERSION
@@ -114,6 +117,139 @@ def review(store, claim_id, reviewer, decision, note=""):
                 reviewed_at=now(),
             )
         )
+
+
+CARRIED = "carried-over"
+
+
+def _evidence_hash(store, snapshot_hash, cache):
+    """Hash of the parsed page text (headings + block text), or the raw-bytes hash
+    when no parse is retained. Markup-only changes (tokens, timestamps) keep it.
+
+    Only the blocks-v4 core counts: blocks-v5 adds key-fact blocks under new ids and
+    never changes core blocks, so a decision on a core claim still holds - and an
+    older v4 parse of an earlier snapshot compares equal to the new core."""
+    if snapshot_hash not in cache:
+        root = store.directory / "parsed" / snapshot_hash
+        paths = [root / PARSER_VERSION / "document.json"] + [
+            root / v / "document.json" for v in ("blocks-v4",) if v != PARSER_VERSION
+        ]
+        path = next((p for p in paths if p.exists()), None)
+        if path is not None:
+            blocks = core_blocks(json.loads(path.read_text())["blocks"])
+            cache[snapshot_hash] = "text:" + fingerprint(
+                [[b.get("heading", ""), b["text"]] for b in blocks]
+            )
+        else:
+            cache[snapshot_hash] = "raw:" + snapshot_hash
+    return cache[snapshot_hash]
+
+
+def _versions_current(run):
+    try:
+        check_review_version(run)
+        return True
+    except PipelineError:
+        return False
+
+
+def carry_reviews(store, run_id):
+    """Copy the latest human decision onto identical claims in a completed run.
+
+    A claim matches only with the same programme, source URL, claim body (ignoring
+    which extractor produced it), validation outcome, and identical parsed page text.
+    Decisions come only from runs checked under the current extraction versions.
+    Re-running is idempotent: carried decisions that no longer match go back to
+    pending; decisions a human made in this run are never touched.
+    """
+    run = store.one(runs, id=run_id)
+    if run["status"] != "awaiting_review" or store.rows(releases, run_id=run_id):
+        return {"run_id": run_id, "carried": 0, "reset": 0}
+    snaps = {s["id"]: s for s in store.rows(snapshots)}
+    run_ok = {r["id"]: _versions_current(r) for r in store.rows(runs)}
+    cache = {}
+
+    def key(row):
+        snap = snaps[row["snapshot_id"]]
+        body = {k: v for k, v in json.loads(row["body"]).items() if k != "method"}
+        return (
+            row["entity_id"],
+            snap["url"],
+            json.dumps(body, sort_keys=True, ensure_ascii=False),
+            row["validation"],
+            _evidence_hash(store, snap["hash"], cache),
+        )
+
+    current = store.rows(claims, run_id=run_id)
+    entities = {r["entity_id"] for r in current}
+    priors = {}
+    for entity in entities:
+        for r in store.rows(claims, entity_id=entity):
+            if (
+                r["run_id"] == run_id
+                or r["review"] not in ("approved", "rejected")
+                or r["reviewer"] == CARRIED
+                or not run_ok.get(r["run_id"])
+            ):
+                continue
+            k = key(r)
+            if k not in priors or (r["reviewed_at"] or "") > (
+                priors[k]["reviewed_at"] or ""
+            ):
+                priors[k] = r
+    carried = reset = 0
+    for row in current:
+        if row["review"] != "pending" and row["reviewer"] != CARRIED:
+            continue
+        prior = priors.get(key(row))
+        if prior:
+            if row["reviewer"] == CARRIED and row["review"] == prior["review"]:
+                continue
+            store.update(
+                claims,
+                row["id"],
+                review=prior["review"],
+                reviewer=CARRIED,
+                review_note=(
+                    f"Same page text and claim as {prior['id']} in run "
+                    f"{prior['run_id']} ({prior['review']} by {prior['reviewer']})"
+                    + (f": {prior['review_note']}" if prior["review_note"] else "")
+                ),
+                reviewed_at=now(),
+            )
+            carried += 1
+        elif row["reviewer"] == CARRIED:
+            store.update(
+                claims,
+                row["id"],
+                review="pending",
+                reviewer=None,
+                review_note=None,
+                reviewed_at=None,
+            )
+            reset += 1
+    return {"run_id": run_id, "carried": carried, "reset": reset}
+
+
+def bulk_review(store, run_id, reviewer, mode, note=""):
+    """Apply review() to every pending claim of one kind in a run.
+
+    mode "valid": approve pending claims whose validation is ``valid``.
+    mode "held":  reject pending claims whose validation is not ``valid`` (note required).
+    Each claim goes through the normal review() checks and is recorded individually.
+    """
+    if mode not in ("valid", "held"):
+        raise PipelineError("REVIEW_INVALID", "mode must be 'valid' or 'held'")
+    decision = "approved" if mode == "valid" else "rejected"
+    with store.engine.connect() as c:
+        pending = [
+            r
+            for r in c.execute(select(claims).where(claims.c.run_id == run_id)).mappings()
+            if r["review"] == "pending" and (r["validation"] == "valid") == (mode == "valid")
+        ]
+    for r in pending:
+        review(store, r["id"], reviewer, decision, note)
+    return {"run_id": run_id, "decision": decision, "count": len(pending)}
 
 
 def publish(store, run_id):

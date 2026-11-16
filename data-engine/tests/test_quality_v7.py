@@ -431,4 +431,4 @@ def test_versions_bumped():
         "exact-blocks-v3",
         "regex-v4",
     )
-    assert PARSER_VERSION == "blocks-v2"
+    assert PARSER_VERSION == "blocks-v5"

@@ -4,7 +4,7 @@ import json
 import streamlit as st
 from kb_pipeline.engine import Engine
 from kb_pipeline.db import runs, jobs, claims, errors, snapshots
-from kb_pipeline.knowledge import review, publish, catalogue, list_structured
+from kb_pipeline.knowledge import review, bulk_review, publish, catalogue, list_structured
 
 st.set_page_config(page_title="Fieldnotes · Data review", layout="wide")
 st.title("Programme data review")
@@ -104,6 +104,36 @@ with review_tab:
             ):
                 review(e.store, cid, reviewer, "rejected", note)
                 st.rerun()
+    with st.expander("Bulk actions for this run"):
+        st.caption(
+            "Each claim is still recorded individually with your name and note. "
+            "Approval covers only pending claims marked valid; rejection covers only pending held claims."
+        )
+        bulk_name = st.text_input("Reviewer name", key="bulk_name")
+        bulk_note = st.text_input(
+            "Note (required to reject held claims)", key="bulk_note"
+        )
+        bulk_ok = st.checkbox(
+            "I spot-checked the valid claims against their sources", key="bulk_ok"
+        )
+        b1, b2 = st.columns(2)
+        off = report["status"] != "awaiting_review" or not bulk_name.strip()
+        if b1.button(
+            "Approve ALL pending valid claims",
+            disabled=off or not bulk_ok or superseded or not report["validation_version_current"],
+        ):
+            try:
+                st.success(str(bulk_review(e.store, run_id, bulk_name, "valid", bulk_note)))
+            except Exception as exc:
+                st.error(str(exc))
+        if b2.button(
+            "Reject ALL pending held claims",
+            disabled=off or not bulk_note.strip(),
+        ):
+            try:
+                st.success(str(bulk_review(e.store, run_id, bulk_name, "held", bulk_note)))
+            except Exception as exc:
+                st.error(str(exc))
     if st.button(
         "Publish reviewed run",
         disabled=report["status"] != "awaiting_review"

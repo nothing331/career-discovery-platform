@@ -231,3 +231,79 @@ def test_truncated_model_response_on_followup_keeps_rule_claims(settings):
         and ev["code"] == "MODEL_TRUNCATED_OR_REFUSED"
         for ev in events(e.settings, rid)
     )
+
+
+TOO_LARGE_413 = {
+    "error": {
+        "message": "Request too large for model on tokens per minute (TPM): Limit 8000, Requested 8158",
+        "type": "tokens",
+        "code": "rate_limit_exceeded",
+    }
+}
+
+
+def test_groq_413_is_unbilled_chunk_skip_not_a_run_stop(engine, settings, target):
+    # Run 88213b19 paused on this: a 413 is rejected before processing.
+    rid, model, log = client(
+        engine, settings, lambda _: httpx.Response(413, json=TOO_LARGE_413)
+    )
+    with pytest.raises(PipelineError) as exc:
+        model.call(BLOCKS, target, MODEL)
+    from kb_pipeline.engine import MODEL_SKIP_CODES, STOP_CODES
+    from kb_pipeline.openrouter import CHUNK_SKIP_CODES
+
+    assert exc.value.code == "MODEL_REQUEST_TOO_LARGE"
+    assert exc.value.code not in STOP_CODES
+    assert exc.value.code in CHUNK_SKIP_CODES and exc.value.code in MODEL_SKIP_CODES
+    row = engine.store.one(runs, id=rid)
+    assert Decimal(row["spent"]) == 0 and Decimal(row["reserved"]) == 0
+    log.close()
+
+
+def test_413_chunk_keeps_other_chunks(engine, settings, target):
+    calls = []
+
+    def handle(_):
+        calls.append(1)
+        if len(calls) == 1:
+            return httpx.Response(413, json=TOO_LARGE_413)
+        return httpx.Response(200, json=response())
+
+    rid, model, log = client(engine, settings, handle)
+    model.pacer = Pacer(0, 0, lambda _: None, time.monotonic)
+    claims_out = model.extract(big_blocks(), target)
+    assert len(calls) == 3 and len(claims_out) == 2
+    log.close()
+
+
+def test_chunk_size_fits_tpm_budget(engine, settings, target):
+    rid, model, log = client(engine, settings, lambda _: httpx.Response(200, json=response()))
+    model.pacer = Pacer(8000, 30, lambda _: None, time.monotonic)
+    limit = model.chunk_bytes(target)
+    overhead = len(
+        json.dumps(model.request([], target, MODEL), ensure_ascii=False).encode()
+    )
+    # Whole request (overhead + blocks) plus reserved output stays under the TPM limit.
+    assert (overhead + limit) / 3.5 + model.settings.output_tokens <= 8000
+    model.pacer = Pacer(0, 0, lambda _: None, time.monotonic)
+    assert model.chunk_bytes(target) == 12000  # no TPM limit: unchanged
+    log.close()
+
+
+def test_small_tpm_splits_blocks_into_more_chunks(engine, settings, target):
+    calls = []
+
+    def handle(_):
+        calls.append(1)
+        return httpx.Response(200, json=response())
+
+    rid, model, log = client(engine, settings, handle)
+    model.pacer = Pacer(8000, 0, lambda _: None, time.monotonic)
+    blocks = [
+        {"id": f"b{i:04d}", "text": "t" * 2000, "heading": "h", "location": {"tag": "p"}}
+        for i in range(6)
+    ]
+    model.extract(blocks, target)
+    # 12 KB would be 1 chunk; the TPM-sized limit needs several.
+    assert len(calls) > 1
+    log.close()
