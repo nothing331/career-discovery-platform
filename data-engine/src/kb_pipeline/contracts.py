@@ -44,6 +44,16 @@ class Target(BaseModel):
     intake: str | None = None
     # Depth-1 crawl of admissions-relevant same-host links from the programme page.
     follow_links: bool = True
+    # Curated pages (e.g. a central fees or international-deadlines page) fetched as
+    # follow-ups even when the programme page does not link them. Hosts must be allowed.
+    extra_urls: list[HttpUrl] = Field(default_factory=list)
+
+    @model_validator(mode="after")
+    def extra_hosts_allowed(self):
+        for url in self.extra_urls:
+            if url.host not in self.allowed_hosts:
+                raise ValueError(f"extra_urls host {url.host} not in allowed_hosts")
+        return self
 
 
 class Registry(BaseModel):

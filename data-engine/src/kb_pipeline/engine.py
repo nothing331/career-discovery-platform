@@ -22,7 +22,7 @@ from .db import (
     fingerprint,
 )
 from .logging import RunLog
-from .acquire import Fetcher, parse, normal, PARSER_VERSION
+from .acquire import Fetcher, parse, normal, PARSER_VERSION, core_blocks
 from .links import select_followups, LINK_SELECTOR_VERSION
 from .normalize import (
     filter_facts_for_level,
@@ -38,12 +38,15 @@ from .extract import (
     quality,
     is_placeholder,
     title_alternatives,
+    euro_amounts,
+    fill_recurring_intake,
+    fill_stated_group,
     EXTRACTOR_VERSION,
     SCHEMA_VERSION,
     PROMPT_VERSION,
     CLASSIFIER_VERSION,
 )
-from .knowledge import superseding_run
+from .knowledge import superseding_run, carry_reviews
 from .providers import extractor
 from .grounding import ground, GROUNDING_VERSION
 
@@ -80,10 +83,57 @@ def _mentions_programme(document, target):
     return subject in text
 
 
+# An organisational unit printed inside the h1 ("Faculty of Mathematics and Computer
+# Science / Data and Computer Science") is not part of the programme name.
+_UNIT_PREFIX = re.compile(
+    r"^(?:faculty|department|school|institute|fakultät|fachbereich|institut)\b"
+)
+
+
+def _same_title(a, b):
+    """Title word-sets name the same programme: shared alternative, or one is the
+    other behind an organisational-unit prefix."""
+    if a & b:
+        return True
+    for x in a:
+        for y in b:
+            long, short = (x, y) if len(x) > len(y) else (y, x)
+            if long.endswith(" " + short) and _UNIT_PREFIX.match(long):
+                return True
+    return False
+
+
+_MONEY_FIELDS = ("tuition", "semester_contribution")
+
+
+def _with_curated(links, extra_urls):
+    """Registry extra_urls come first with role 'curated'; a URL the crawl also chose
+    keeps its crawl roles and is fetched once."""
+    by_url = {link["url"]: link for link in links}
+    out = []
+    for raw in extra_urls:
+        url = str(raw)
+        found = by_url.pop(url, None)
+        if found:
+            out.append({**found, "roles": sorted({"curated", *found["roles"]})})
+        else:
+            out.append(
+                {
+                    "url": url,
+                    "text": "registry extra_url",
+                    "roles": ["curated"],
+                    "score": 0,
+                    "kind": "pdf" if url.lower().endswith(".pdf") else "html",
+                }
+            )
+    return out + [link for link in links if link["url"] in by_url]
+
+
 PROPAGATE_PREFIXES = ("LOG_",)
 MODEL_SKIP_CODES = {
     "MODEL_DOCUMENT_LIMIT",
     "SECTION_TOO_LARGE",
+    "MODEL_REQUEST_TOO_LARGE",
     "MODEL_TRUNCATED_OR_REFUSED",
     "MODEL_SCHEMA_INVALID",
     "MODEL_REQUEST_REJECTED",
@@ -354,6 +404,9 @@ class Engine:
                     status=state,
                     finished_at=None if state == "running" else now(),
                 )
+                if state == "awaiting_review":
+                    carried = carry_reviews(self.store, run_id)
+                    log.emit("review.carried", **carried)
             report = self.report(run_id)
             log.emit(
                 "run.finished", status=report["status"], counts=report["documents"]
@@ -530,10 +583,16 @@ class Engine:
         elif config["llm"]:
             model.job_id = job["id"]
             relevant = [b for b in document["blocks"] if classify(b) == "relevant"]
+            core = core_blocks(relevant)
+            extra = [b for b in relevant if b not in core]
             try:
-                raw_candidates = model.extract(
-                    relevant, target, offline=config["offline"]
-                )
+                # blocks-v4 blocks keep their own requests (and cached answers); the key
+                # facts added in blocks-v5 go in a separate request.
+                raw_candidates = model.extract(core, target, offline=config["offline"])
+                if extra:
+                    raw_candidates = raw_candidates + model.extract(
+                        extra, target, offline=config["offline"]
+                    )
             except PipelineError as exc:
                 rate_limited = exc.code == "MODEL_RATE_LIMIT" and not primary
                 if exc.code not in MODEL_SKIP_CODES and not rate_limited:
@@ -566,13 +625,33 @@ class Engine:
                 grounder=GROUNDING_VERSION,
                 **ctx,
             )
+            if not primary:
+                # A follow-up page's heading names that page ("Semester fees",
+                # "Application deadlines"), not the programme; the title comes only
+                # from the programme page, as for rule claims.
+                raw_candidates = [
+                    c for c in raw_candidates if c.field != "programme_title"
+                ]
             for raw_claim in raw_candidates:
                 grounded, action = ground(
                     raw_claim, relevant, source_blocks=document["blocks"]
                 )
                 if action:
                     log.emit("claim.grounded", job_id=job["id"], **action)
-                candidate.extend(grounded)
+                for claim in grounded:
+                    filled = fill_recurring_intake(
+                        fill_stated_group(claim, document), document
+                    )
+                    if filled is not claim:
+                        log.emit(
+                            "claim.scope_from_source",
+                            job_id=job["id"],
+                            location_id=claim.location_id,
+                            intake=filled.intake,
+                            applicant_group=filled.applicant_group,
+                            **ctx,
+                        )
+                    candidate.append(filled)
         return candidate
 
     def _stage(
@@ -655,25 +734,24 @@ class Engine:
             )
             grouped.setdefault(key, []).append((row, body))
         for members in grouped.values():
-            if self._values_disagree(members):
-                for row, body in members:
-                    self.store.update(
-                        claims,
-                        row["id"],
-                        validation="CONFLICTING_VALUES",
-                        quality=json.dumps(
-                            quality(Claim.model_validate(body), "CONFLICTING_VALUES")
-                        ),
-                    )
-                    log.failure(
-                        job["id"],
-                        "validate",
-                        PipelineError(
-                            "CONFLICTING_VALUES", "Same-scope candidates disagree"
-                        ),
-                        claim_id=row["id"],
-                        snapshot_id=row["snapshot_id"],
-                    )
+            for row, body in self._conflict_holds(members, snapshot["id"]):
+                self.store.update(
+                    claims,
+                    row["id"],
+                    validation="CONFLICTING_VALUES",
+                    quality=json.dumps(
+                        quality(Claim.model_validate(body), "CONFLICTING_VALUES")
+                    ),
+                )
+                log.failure(
+                    job["id"],
+                    "validate",
+                    PipelineError(
+                        "CONFLICTING_VALUES", "Same-scope candidates disagree"
+                    ),
+                    claim_id=row["id"],
+                    snapshot_id=row["snapshot_id"],
+                )
 
     @staticmethod
     def _values_disagree(members):
@@ -693,10 +771,48 @@ class Engine:
 
             for i in range(len(titles)):
                 for j in range(i + 1, len(titles)):
-                    if titles[i][0] & titles[j][0]:
+                    if _same_title(titles[i][0], titles[j][0]):
                         parent[find(i)] = find(j)
             return len({find(i) for i in range(len(titles))}) > 1 or len(levels) > 1
-        return len({normal(b["value"]).casefold() for _, b in members}) > 1
+        if members[0][1]["field"] in _MONEY_FIELDS:
+            # "EUR 1,500.- per semester" == "1,500 euros per semester".
+            return len({frozenset(euro_amounts(b["value"])) for _, b in members}) > 1
+        # Two readings of one block agree when one value contains the other: the rule
+        # copies "German and English" from the row, the model keeps the row label
+        # ("Language German and English").
+        values = [normal(b["value"]).casefold() for _, b in members]
+        where = [((r or {}).get("snapshot_id"), b.get("location_id")) for r, b in members]
+        groups = list(range(len(values)))
+        for i in range(len(values)):
+            for j in range(i + 1, len(values)):
+                same = values[i] == values[j] or (
+                    members[0][1]["field"] not in ("duration_semesters", "ects")
+                    and where[i] == where[j]
+                    and where[i][1] is not None
+                    and (values[i] in values[j] or values[j] in values[i])
+                )
+                if same:
+                    old, new = groups[j], groups[i]
+                    groups = [new if g == old else g for g in groups]
+        return len(set(groups)) > 1
+
+    @classmethod
+    def _conflict_holds(cls, members, primary_snapshot):
+        """Members to hold as CONFLICTING_VALUES. The programme's own page is the most
+        specific source: when it agrees with itself, only follow-up candidates that
+        disagree with it are held. Otherwise every disagreeing member is held."""
+        if members[0][1]["field"] in _MONEY_FIELDS:
+            # Fee text without a euro amount ("The semester fee must be paid in
+            # addition") states no value, so it cannot disagree with one.
+            members = [m for m in members if euro_amounts(m[1]["value"])]
+        if not members or not cls._values_disagree(members):
+            return []
+        own = [m for m in members if m[0]["snapshot_id"] == primary_snapshot]
+        if not own or cls._values_disagree(own):
+            return members
+        return [
+            m for m in members if m not in own and cls._values_disagree([own[0], m])
+        ]
 
     # Kinds whose data carries its own applicability (tests, languages, APS countries):
     # staged for review even when the claim is only held for an unestablished scope.
@@ -852,9 +968,13 @@ class Engine:
 
     def _followups(self, job, target, document, config, fetcher, model, log):
         limit = self.settings.followup_limit
-        if not limit or not target.follow_links:
+        links = []
+        if limit and target.follow_links:
+            links = select_followups(document, target, limit=limit)
+        if target.extra_urls:
+            links = _with_curated(links, target.extra_urls)
+        if not links:
             return 0
-        links = select_followups(document, target, limit=limit)
         log.emit(
             "followups.selected",
             job_id=job["id"],

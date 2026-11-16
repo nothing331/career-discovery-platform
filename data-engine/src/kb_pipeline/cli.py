@@ -6,7 +6,15 @@ from .config import Settings, PROJECT
 from .contracts import PipelineError
 from .engine import Engine
 from .db import claims, errors
-from .knowledge import review, publish, catalogue, resolve_error, list_structured
+from .knowledge import (
+    review,
+    bulk_review,
+    publish,
+    catalogue,
+    resolve_error,
+    list_structured,
+    carry_reviews,
+)
 from .logging import Redactor
 from .evaluation import load_dataset, classifier_report, extraction_report, save_report
 
@@ -128,9 +136,42 @@ def review_claim(
     output({"claim_id": claim_id, "decision": "approved" if approve else "rejected"})
 
 
+@app.command("review-bulk")
+def review_bulk(
+    run_id: str,
+    reviewer: str,
+    approve_valid: bool = False,
+    reject_held: bool = False,
+    note: str = "",
+    confirm_evidence: bool = False,
+):
+    """Approve every pending valid claim, or reject every pending held claim, in a run."""
+    if approve_valid == reject_held:
+        raise typer.BadParameter("Choose exactly one of --approve-valid / --reject-held")
+    if approve_valid and not confirm_evidence:
+        raise typer.BadParameter("--approve-valid needs --confirm-evidence")
+    if reject_held and not note.strip():
+        raise typer.BadParameter("--reject-held needs --note")
+    output(
+        bulk_review(
+            engine().store,
+            run_id,
+            reviewer,
+            "valid" if approve_valid else "held",
+            note,
+        )
+    )
+
+
 @app.command("publish")
 def publish_run(run_id: str):
     output({"release_id": publish(engine().store, run_id)})
+
+
+@app.command("carry-reviews")
+def carry(run_id: str):
+    """Copy earlier human decisions onto identical claims (same page text) in a run."""
+    output(carry_reviews(engine().store, run_id))
 
 
 @app.command("resolve-error")

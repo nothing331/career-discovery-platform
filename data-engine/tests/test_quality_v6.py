@@ -577,4 +577,4 @@ def test_versions_bumped():
     from kb_pipeline.acquire import PARSER_VERSION
 
     assert (EXTRACTOR_VERSION, NORMALIZER_VERSION) == ("rules-v7", "regex-v4")  # superseded by v7 tests
-    assert PARSER_VERSION == "blocks-v2"
+    assert PARSER_VERSION == "blocks-v5"

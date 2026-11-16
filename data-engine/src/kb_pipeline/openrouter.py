@@ -36,6 +36,7 @@ STOP_CODES = (
 )
 # Failures confined to one chunk: other chunks' claims are still kept.
 CHUNK_SKIP_CODES = (
+    "MODEL_REQUEST_TOO_LARGE",
     "MODEL_TRUNCATED_OR_REFUSED",
     "MODEL_SCHEMA_INVALID",
     "MODEL_REQUEST_REJECTED",
@@ -60,7 +61,9 @@ class OpenRouter:
     endpoint = "https://openrouter.ai/api/v1/chat/completions"
     key_env = "OPENROUTER_API_KEY"
     cost_basis = "provider_reported"
-    unbilled_statuses = (400, 401, 402, 403, 404, 422)
+    unbilled_statuses = (400, 401, 402, 403, 404, 413, 422)
+    MAX_CHUNK_BYTES = 12000
+    BYTES_PER_TOKEN = 3.5  # same conservative ratio as the pacing estimate
 
     def __init__(
         self,
@@ -84,19 +87,38 @@ class OpenRouter:
         self.owns_client = client is None
         self.job_id = None
 
+    def chunk_bytes(self, target):
+        """Block bytes per request. With a TPM limit, the whole request (prompt,
+        schema, blocks and the reserved completion) must fit in one minute's budget:
+        providers reject larger requests outright (Groq: HTTP 413)."""
+        limit = self.MAX_CHUNK_BYTES
+        tpm = self.pacer.tpm
+        if tpm:
+            overhead = len(
+                json.dumps(
+                    self.request([], target, self.settings.model), ensure_ascii=False
+                ).encode()
+            )
+            room = tpm - self.settings.output_tokens - 512
+            limit = min(limit, int(room * self.BYTES_PER_TOKEN) - overhead)
+        return max(limit, 1500)
+
     def extract(self, blocks, target, *, offline=False):
         batches = []
         # Bound context by bytes, never truncate a paragraph midway and lose exceptions.
+        limit = self.chunk_bytes(target)
         chunk = []
         size = 0
         for block in blocks:
             n = len(json.dumps(block, ensure_ascii=False).encode())
-            if n > 12000:
+            if n > self.MAX_CHUNK_BYTES:
                 raise PipelineError(
                     "SECTION_TOO_LARGE",
                     "A source block needs a reviewed splitting strategy",
                 )
-            if chunk and size + n > 12000:
+            # A block larger than the TPM-derived limit still goes alone in its own
+            # chunk; if the provider rejects it as too large, only that chunk is lost.
+            if chunk and size + n > limit:
                 batches.append(chunk)
                 chunk = []
                 size = 0
@@ -104,9 +126,9 @@ class OpenRouter:
             size += n
         if chunk:
             batches.append(chunk)
-        if len(batches) > 10:
+        if len(batches) > 10 * max(1, self.MAX_CHUNK_BYTES // limit):
             raise PipelineError(
-                "MODEL_DOCUMENT_LIMIT", "Document exceeds ten model chunks"
+                "MODEL_DOCUMENT_LIMIT", "Document exceeds the model chunk limit"
             )
         result = []
         skipped = []
@@ -160,20 +182,31 @@ class OpenRouter:
                 ),
             },
         ]
+        routing = {
+            "require_parameters": True,
+            "allow_fallbacks": True,
+            "max_price": {
+                "prompt": float(self.settings.input_rate),
+                "completion": float(self.settings.output_rate),
+            },
+        }
+        order = list(getattr(self.settings, "provider_order", ()) or ())
+        if order:
+            # Strict-JSON behaviour differs by upstream provider: try the tested one first.
+            routing["order"] = order
+        else:
+            routing["sort"] = "price"
+        effort = getattr(self.settings, "reasoning_effort", "low")
         return {
             "model": model,
             "messages": messages,
             "max_tokens": self.settings.output_tokens,
             "temperature": 0,
-            "provider": {
-                "require_parameters": True,
-                "sort": "price",
-                "allow_fallbacks": True,
-                "max_price": {
-                    "prompt": float(self.settings.input_rate),
-                    "completion": float(self.settings.output_rate),
-                },
-            },
+            "provider": routing,
+            # Without a cap, reasoning models can spend all output tokens thinking.
+            "reasoning": {"enabled": False}
+            if effort == "none"
+            else {"effort": effort, "exclude": True},
             "response_format": {
                 "type": "json_schema",
                 "json_schema": {"name": "claims", "strict": True, "schema": schema},
@@ -200,6 +233,7 @@ class OpenRouter:
             401: "MODEL_AUTH_FAILED",
             403: "MODEL_AUTH_FAILED",
             402: "MODEL_CREDITS_MISSING",
+            413: "MODEL_REQUEST_TOO_LARGE",
             429: "MODEL_RATE_LIMIT",
         }.get(
             status,

@@ -132,7 +132,9 @@ def test_german_deadline():
     b = blk(text, tag="tr")
     assert detect_recurring_intake(b) == WINTER
     c = rule_claims(doc(b), target())
-    assert not c  # rule only fires on English 'deadline' rows
+    # German 'Bewerbungsfrist'/'Bewerbungsschluss' rows are deadline rows too
+    assert [(x.field, x.intake) for x in c] == [("deadline", WINTER)]
+    assert validate(c[0], doc(b)) == "valid"
     assert validate(claim("deadline", text, intake=WINTER), doc(b)) == "valid"
     sose = blk("Bewerbung zum SoSe bis 15.01.")
     assert detect_recurring_intake(sose) == SUMMER

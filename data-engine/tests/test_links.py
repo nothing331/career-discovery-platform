@@ -184,7 +184,7 @@ def test_deterministic_and_order_independent():
 
 def test_real_parsed_documents():
     root = Path(__file__).resolve().parent.parent / "data" / "parsed"
-    files = sorted(root.glob("*/blocks-v2/document.json"))
+    files = sorted(root.glob("*/blocks-v4/document.json"))
     hosts = {"www.uni-passau.de", "www.tf.uni-freiburg.de"}
     ran = 0
     for f in files:
